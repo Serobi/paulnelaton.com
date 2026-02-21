@@ -488,30 +488,44 @@
 
 @media (max-width: 800px) {
   .header {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
     padding: 20px;
     gap: 12px;
   }
 
-  .rightHeader {
-    align-items: center;
+  .identityBlock {
+    flex: 1 1 60%;
+    order: 1;
   }
 
-  .contactInfo {
-    align-items: center;
-    text-align: center;
+  .rightHeader {
+    flex: 0 0 auto;
+    align-items: flex-end;
+    order: 2;
   }
 
   .profilePic {
-    width: 90px;
-    height: 90px;
+    width: 85px;
+    height: 85px;
   }
 
+  /* Intro sous le bloc identité */
   .summary {
+    order: 3;
+    flex-basis: 100%;
     max-width: 100%;
-    font-size: 0.9rem;
+    margin-top: 10px;
+    text-align: left;
+    order: 3;
+  }
+
+  .contactInfo {
+    align-items: flex-end;
+    text-align: right;
+    font-size: 0.75rem;
+    margin-top: 8px;
   }
 
   .mainGrid {
@@ -576,7 +590,7 @@
 
   .cvActions {
     right: 0px;
-    top: 20%;
+    top: 35%;
   }
 
   .cvButton {
