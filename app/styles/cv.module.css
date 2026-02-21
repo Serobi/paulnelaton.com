@@ -487,6 +487,93 @@
 }
 
 @media (max-width: 800px) {
+  .header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    gap: 12px;
+  }
+
+  .rightHeader {
+    align-items: center;
+  }
+
+  .contactInfo {
+    align-items: center;
+    text-align: center;
+  }
+
+  .profilePic {
+    width: 90px;
+    height: 90px;
+  }
+
+  .summary {
+    max-width: 100%;
+    font-size: 0.9rem;
+  }
+
+  .mainGrid {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .sidebar {
+    margin-left: 0;
+  }
+
+  .section {
+    margin-left: 0;
+    padding: 12px;
+  }
+
+  .timeline {
+    border-left: none;
+    padding-left: 0;
+    margin-left: 0;
+  }
+
+  .expCard::before {
+    display: none;
+  }
+
+  .expCard {
+    padding: 12px;
+  }
+
+  .expHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+
+  .expHeader .period {
+    font-size: 0.8rem;
+  }
+
+  .name {
+    font-size: 1.6rem;
+  }
+
+  .mainTitle {
+    font-size: 1.2rem;
+  }
+
+  .expList li {
+    font-size: 0.85rem;
+  }
+
+  .tag {
+    font-size: 11px;
+    padding: 3px 6px;
+  }
+
+  .cvPageWrapper {
+    flex-direction: column;
+  }
+
   .cvActions {
     right: 0px;
     top: 20%;
