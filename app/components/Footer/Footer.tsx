@@ -22,7 +22,7 @@ export default function Footer() {
 
           <div className={styles.links}>
             <a
-              href="https://github.com/paulnelaton"
+              href="https://github.com/Serobi"
               target="_blank"
               rel="noopener noreferrer"
               className={styles.link}
@@ -30,7 +30,7 @@ export default function Footer() {
               GitHub
             </a>
             <a
-              href="https://linkedin.com/in/paul-nelaton"
+              href="https://www.linkedin.com/in/paul-nelaton-791721aa/"
               target="_blank"
               rel="noopener noreferrer"
               className={styles.link}
