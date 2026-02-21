@@ -31,10 +31,6 @@
   color: #94a3b8;
 }
 
-.navLink:hover {
-  color: #00e5a8;
-}
-
 .main {
   flex: 1;
 }
@@ -110,14 +106,13 @@
   text-decoration: none;
   margin-top: 1.5rem;
   margin-bottom: 2rem;
-  margin-left: 50px;
   transition: all 0.25s ease;
-}
 
-.btnPrimary:hover {
-  background: #00e5a8cc;
-  color: #0c0f14;
-  box-shadow: 0 0 25px rgba(0, 229, 168, 0.3);
+  /* On centre par défaut */
+  margin-left: auto;
+  margin-right: auto;
+
+  /* Optionnel : un petit décalage seulement sur desktop */
 }
 
 /* ───────────────── INTRO TEXT ───────────────── */
@@ -150,11 +145,6 @@
   padding: 0.25rem 0.5rem;
 }
 
-.techBadge:hover {
-  border-color: #00e5a8;
-  color: #00e5a8;
-}
-
 /* ───────────────── PROJECTS ───────────────── */
 
 .projectsSection {
@@ -182,12 +172,6 @@
   padding: 1.5rem;
   background: #0c0f14;
   transition: all 0.2s ease;
-}
-
-.projectCard:hover {
-  border-color: #00e5a8;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 20px rgba(0, 229, 168, 0.08);
 }
 
 .projectCard h3 {
@@ -224,10 +208,6 @@
   transition: color 0.2s ease;
 }
 
-.projectLink:hover {
-  color: #00e5a8;
-}
-
 /* ───────────────── DESKTOP SIDEBAR ───────────────── */
 
 @media (min-width: 1024px) {
@@ -243,6 +223,11 @@
     padding: 2rem;
   }
 
+  .btnPrimary {
+    margin-left: 50px; /* ton décalage désiré sur desktop */
+    margin-right: 0; /* on enlève le centrage auto */
+  }
+
   .main {
     margin-left: 280px;
   }
@@ -250,5 +235,46 @@
   .heroSection,
   .projectsSection {
     padding: 5rem 4rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .btnPrimary {
+    margin-left: 30px; /* ton décalage désiré sur desktop */
+    margin-right: 0; /* on enlève le centrage auto */
+  }
+}
+
+@media (max-width: 640px) {
+  .btnPrimary {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media (hover: hover) {
+  .navLink:hover {
+    color: #00e5a8;
+  }
+
+  .btnPrimary:hover {
+    background: #00e5a8cc;
+    color: #0c0f14;
+    box-shadow: 0 0 25px rgba(0, 229, 168, 0.3);
+  }
+
+  .techBadge:hover {
+    border-color: #00e5a8;
+    color: #00e5a8;
+  }
+
+  .projectCard:hover {
+    border-color: #00e5a8;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 20px rgba(0, 229, 168, 0.08);
+  }
+
+  .projectLink:hover {
+    color: #00e5a8;
   }
 }
