@@ -1,0 +1,146 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  background: #0c0f14;
+  border-bottom: 1px solid #1c2330;
+
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+.container {
+  max-width: 90rem;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+@media (min-width: 1024px) {
+  .container {
+    padding: 0 5rem;
+  }
+}
+
+.inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 4rem;
+}
+
+/* ─── Logo ─── */
+
+.logo {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #e2e8f0;
+  text-decoration: none;
+  transition: color 0.25s ease;
+}
+
+.logo:hover {
+  background: rgba(0, 229, 168, 0.08);
+  box-shadow: 0 0 8px rgba(0, 229, 168, 0.15);
+}
+
+/* ─── Desktop Nav ─── */
+
+.desktopNav {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .desktopNav {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    letter-spacing: 0.05em;
+  }
+}
+
+.navLink {
+  color: #94a3b8;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.navLink:hover {
+  color: #00e5a8;
+}
+
+.cvButton {
+  padding: 0.5rem 1rem;
+  border: 1px solid #00e5a8;
+  background: transparent;
+  color: #00e5a8;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.cvButton:hover {
+  background: #00e5a8;
+  color: #0c0f14;
+}
+
+.navLink,
+.cvButton {
+  font-family: var(--font-mono);
+}
+
+/* ─── Mobile Button ─── */
+
+.mobileMenuBtn {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  background: none;
+  border: none;
+  color: #e2e8f0;
+  cursor: pointer;
+}
+
+@media (min-width: 768px) {
+  .mobileMenuBtn {
+    display: none;
+  }
+}
+
+/* ─── Mobile Menu ─── */
+
+.mobileMenu {
+  background: #0c0f14;
+  border-top: 1px solid #1c2330;
+}
+
+@media (min-width: 768px) {
+  .mobileMenu {
+    display: none;
+  }
+}
+
+.mobileNav {
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+  gap: 1rem;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+}
+
+.mobileNavLink {
+  color: #94a3b8;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.mobileNavLink:hover {
+  color: #00e5a8;
+}

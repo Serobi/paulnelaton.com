@@ -1,0 +1,254 @@
+.container {
+  min-height: 100vh;
+  display: flex;
+  background: #0e1116;
+}
+
+/* ───────────────── SIDEBAR ───────────────── */
+
+.sidebar {
+  display: none;
+  margin-top: 0px;
+}
+
+.sidebarName {
+  font-size: 1.75rem;
+  font-weight: 600;
+  font-family: var(--font-mono);
+  line-height: 1.2;
+  margin-bottom: 2rem;
+}
+
+.sidebarNav {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+}
+
+.navLink {
+  color: #94a3b8;
+}
+
+.navLink:hover {
+  color: #00e5a8;
+}
+
+.main {
+  flex: 1;
+}
+
+.heroSection {
+  position: relative;
+  padding: 8rem 1.5rem;
+  max-width: 1200px;
+  min-height: 90vh;
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* clé */
+}
+
+.heroSection > * {
+  position: relative;
+  z-index: 1;
+}
+
+.heroSection::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 600px;
+  height: 600px;
+  z-index: 0;
+  will-change: transform;
+  background: radial-gradient(
+    circle,
+    rgba(0, 229, 168, 0.07) 0%,
+    rgba(0, 229, 168, 0.04) 40%,
+    transparent 75%
+  );
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+
+  animation: heroWave 15s ease-in-out infinite;
+}
+
+@keyframes heroWave {
+  0% {
+    transform: translate(-90%, -66%) scale(0.5);
+  }
+  50% {
+    transform: translate(-20%, -55%) scale(1);
+  }
+  100% {
+    transform: translate(-90%, -66%) scale(0.5);
+  }
+}
+.role {
+  font-size: clamp(2.2rem, 4vw, 3rem);
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: #f1f5f9;
+  margin-bottom: 2.5rem;
+}
+
+.btnPrimary {
+  display: inline-block;
+  padding: 0.9rem 2rem;
+  border: 1px solid #00e5a8;
+  max-width: 300px;
+  background: transparent;
+  color: #00e5a8;
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  margin-top: 1.5rem;
+  margin-bottom: 2rem;
+  margin-left: 50px;
+  transition: all 0.25s ease;
+}
+
+.btnPrimary:hover {
+  background: #00e5a8cc;
+  color: #0c0f14;
+  box-shadow: 0 0 25px rgba(0, 229, 168, 0.3);
+}
+
+/* ───────────────── INTRO TEXT ───────────────── */
+
+.introText {
+  max-width: 600px;
+}
+
+.introText p {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+  color: #94a3b8;
+}
+
+/* ───────────────── TECH STACK ───────────────── */
+
+.techStack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.techBadge {
+  padding: 0.25rem 0.75rem;
+  font-size: 0.75rem;
+  font-family: var(--font-mono);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 0.25rem 0.5rem;
+}
+
+.techBadge:hover {
+  border-color: #00e5a8;
+  color: #00e5a8;
+}
+
+/* ───────────────── PROJECTS ───────────────── */
+
+.projectsSection {
+  padding: 6rem 1.5rem;
+  border-top: 1px solid #1c2330;
+  max-width: 900px;
+}
+
+.projectsSection h2 {
+  font-size: 1.5rem;
+  font-family: var(--font-mono);
+  letter-spacing: 0.05em;
+  margin-bottom: 3rem;
+  color: #e2e8f0;
+}
+
+.projectsList {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.projectCard {
+  border: 1px solid #1c2330;
+  padding: 1.5rem;
+  background: #0c0f14;
+  transition: all 0.2s ease;
+}
+
+.projectCard:hover {
+  border-color: #00e5a8;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(0, 229, 168, 0.08);
+}
+
+.projectCard h3 {
+  font-size: 1.1rem;
+  font-family: var(--font-mono);
+  color: #e2e8f0;
+}
+
+.projectCard p {
+  color: #94a3b8;
+}
+
+.projectTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+}
+
+.projectTags span {
+  font-size: 0.75rem;
+  font-family: var(--font-mono);
+  padding: 0.25rem 0.5rem;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+}
+
+.projectLink {
+  font-size: 0.875rem;
+  font-family: var(--font-mono);
+  text-decoration: none;
+  color: #e2e8f0;
+  transition: color 0.2s ease;
+}
+
+.projectLink:hover {
+  color: #00e5a8;
+}
+
+/* ───────────────── DESKTOP SIDEBAR ───────────────── */
+
+@media (min-width: 1024px) {
+  .sidebar {
+    display: flex;
+    width: 280px;
+    position: fixed;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: space-between;
+    border-right: 1px solid #1c2330;
+    background: #0c0f14;
+    padding: 2rem;
+  }
+
+  .main {
+    margin-left: 280px;
+  }
+
+  .heroSection,
+  .projectsSection {
+    padding: 5rem 4rem;
+  }
+}
