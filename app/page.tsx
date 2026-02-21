@@ -64,10 +64,11 @@ export default function Home() {
           <div className={styles.projectsList}>
             {/* CV Generator */}
             <article className={styles.projectCard}>
-              <h3>Générateur de CV — ATS Friendly</h3>
+              <h3>Générateur de CV ATS Friendly</h3>
               <p>
                 Application web permettant de générer des CV optimisés pour les
-                systèmes de tracking (ATS), avec export PDF automatisé.
+                systèmes de tracking (ATS), avec export PDF automatisé. <br />
+                Work in progress ...
               </p>
 
               <div className={styles.projectTags}>
@@ -78,7 +79,7 @@ export default function Home() {
               </div>
 
               <Link href="/cv" className={styles.projectLink}>
-                Accéder à l'outil →
+                Accéder à l'outil
               </Link>
             </article>
 
@@ -86,8 +87,12 @@ export default function Home() {
             <article className={styles.projectCard}>
               <h3>Brain Eaters — Jeu mobile de stratégie</h3>
               <p>
-                Développement d'un moteur événementiel custom avec génération
-                procédurale et architecture modulaire en C# (Unity).
+                Développement d'un jeu mobile / PC combinant stratégie, survie
+                et coopération. <br />
+                Le jeu a été entièrement développé par mes soins, du code aux
+                designs, du gameplay aux UI, du site Web à la direction
+                artistique. <br />
+                Découvrez en plus sur le site officiel du projet !
               </p>
 
               <div className={styles.projectTags}>
@@ -103,7 +108,7 @@ export default function Home() {
                 rel="noopener noreferrer"
                 className={styles.projectLink}
               >
-                Voir le projet ↗
+                Découvrir le projet
               </a>
             </article>
           </div>

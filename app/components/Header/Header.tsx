@@ -25,9 +25,6 @@ export default function Header() {
             <a href="/#projets" className={styles.navLink}>
               Projets
             </a>
-            <a href="/#about" className={styles.navLink}>
-              À propos
-            </a>
             <Link href="/cv" className={styles.cvButton}>
               CV Interactif
             </Link>
