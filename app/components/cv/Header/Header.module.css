@@ -5,7 +5,6 @@
   background: #0c0c80;
   color: #ffffff;
   padding: 20px 60px;
-  margin: -40px -60px 30px -60px;
 }
 
 .identityBlock {
@@ -44,7 +43,7 @@
 }
 
 .summary {
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   color: #f8f8f8;
   max-width: 90%;
   margin: 0;
@@ -61,8 +60,54 @@
   align-items: flex-end;
   justify-content: flex-start;
   text-align: right;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   display: flex;
   flex-direction: column;
   gap: 4px;
+}
+
+@media (max-width: 680px) {
+  .header {
+    padding: 20px 20px;
+  }
+  .name {
+    font-size: clamp(0.8rem, 5vw, 2rem);
+  }
+
+  .role {
+    font-size: clamp(0.7rem, 2.8vw, 1rem);
+  }
+
+  .target {
+    font-size: clamp(0.6rem, 2.6vw, 0.9rem);
+  }
+
+  .summary {
+    font-size: clamp(0.5rem, 2.5vw, 0.85rem);
+  }
+
+  .contactInfo {
+    font-size: clamp(0.5rem, 2.5vw, 0.85rem);
+  }
+
+  .profilePic {
+    width: clamp(80px, 20vw, 130px);
+    height: clamp(80px, 20vw, 130px);
+  }
+}
+
+@media (max-width: 270px) {
+  .header {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .rightHeader {
+    align-items: flex-start;
+  }
+
+  .contactInfo {
+    text-align: left;
+    align-items: flex-start;
+  }
 }

@@ -9,6 +9,11 @@
   --border: #e2e8f0;
   --muted: #64748b;
   --accent: #2563eb;
+  --thales-blue: #0c0c80;
+  --thales-accent: #5dbfd5;
+  --slate-text: #1e293b;
+  --light-gray: #f8fafc;
+  --grey-text: #252526;
 }
 
 @media (prefers-color-scheme: dark) {

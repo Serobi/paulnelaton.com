@@ -1,17 +1,28 @@
+export interface ContactInfo {
+  email: string;
+  phone: string;
+  linkedin: string;
+}
+
 export interface Identity {
   name: string;
   role: string;
-  location: string;
+  mobility: string;
   summary: string;
+  contact: ContactInfo;
 }
 
+export type Stats = {
+  label: string;
+  value: number;
+  color: string;
+};
+
 export interface Experience {
-  id: string;
-  title: string;
+  role: string;
   company: string;
-  start: string;
-  end: string;
-  description: string;
+  period: string;
+  desc: string[];
 }
 
 export interface SkillCategory {
@@ -25,3 +36,6 @@ export interface CV {
   experiences: Experience[];
   skills: SkillCategory[];
 }
+
+export type Mode = "dev" | "sec";
+export type Lang = "fr" | "en";

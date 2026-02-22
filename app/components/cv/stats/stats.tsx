@@ -1,0 +1,33 @@
+// components/StatsBlock.tsx
+import styles from "./stats.module.css";
+import type { Stats } from "@/data/cv.types";
+
+type StatsProps = {
+  stats: Stats[];
+};
+
+export default function Stats({ stats }: StatsProps) {
+  return (
+    <section className={styles.section}>
+      <h3>Domaines d'intervention</h3>
+
+      <div className={styles.statsContainer}>
+        {stats.map((stat, i) => (
+          <div key={i} className={styles.statItem}>
+            <span className={styles.statLabel}>{stat.label}</span>
+
+            <div className={styles.statBarBg}>
+              <div
+                className={styles.statBarFill}
+                style={{
+                  width: `${stat.value}%`,
+                  backgroundColor: stat.color,
+                }}
+              />
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}

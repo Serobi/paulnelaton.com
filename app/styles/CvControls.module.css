@@ -1,0 +1,82 @@
+.controls {
+  position: fixed;
+  top: 4.5rem;
+  left: 50%;
+  width: 80%;
+  max-width: 600px;
+  transform: translateX(-50%);
+  z-index: 1000;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+
+  padding: 0.75rem 1rem;
+
+  background: rgba(15, 23, 42, 0.95);
+  backdrop-filter: blur(6px);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  position: fixed; /* rappel */
+}
+
+.controls::after {
+  content: "";
+  position: absolute;
+
+  left: 50%;
+  top: 5%;
+  bottom: 5%;
+
+  width: 2px;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    rgba(255, 255, 255, 0.35),
+    transparent
+  );
+
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+.group {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+}
+
+.button {
+  padding: 6px 14px;
+  border-radius: 8px;
+  width: 100%;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  font-weight: 600;
+  cursor: pointer;
+  color: white;
+}
+
+.active {
+  background: #00aff0;
+  border-color: #00aff0;
+  color: white;
+}
+
+@media (max-width: 400px) {
+  .controls {
+    width: 92%;
+    padding: 0.5rem 0.5rem; /* 👈 clé */
+    gap: 6px;
+  }
+
+  .group {
+    gap: 4px;
+  }
+
+  .button {
+    padding: 8px 4px;
+    font-size: clamp(0.6rem, 3.8vw, 0.85rem);
+  }
+}

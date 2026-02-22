@@ -1,18 +1,7 @@
 // app/components/Header.tsx
 
 import styles from "./Header.module.css";
-
-type Identity = {
-  name: string;
-  role: string;
-  mobility: string;
-  summary: string;
-  contact: {
-    email: string;
-    phone: string;
-    linkedin: string;
-  };
-};
+import type { Identity } from "@/data/cv.types";
 
 type HeaderProps = {
   identity: Identity;
@@ -32,7 +21,7 @@ export function Header({ identity }: HeaderProps) {
         <div className={styles.contactInfo}>
           <img
             src="/profile2.png"
-            alt="profile"
+            alt={`Photo de ${identity.name}`}
             className={styles.profilePic}
           />
           <span>{identity.contact.email}</span>

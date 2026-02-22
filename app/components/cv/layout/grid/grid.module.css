@@ -1,0 +1,16 @@
+.grid {
+  display: grid;
+  gap: 24px;
+}
+
+.twoCol {
+  grid-template-columns: 32% 1fr;
+}
+
+.oneCol {
+  grid-template-columns: 1fr;
+}
+
+.col {
+  min-width: 0;
+}

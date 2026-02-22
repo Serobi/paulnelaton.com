@@ -2,7 +2,7 @@ import { CV } from "./cv.types";
 
 export const CVData = {
   fr: {
-    security: {
+    sec: {
       identity: {
         name: "Paul NELATON",
         role: "Ingénieur Sécurité Systèmes et Réseaux",
@@ -258,7 +258,7 @@ export const CVData = {
     },
   },
   en: {
-    security: {
+    sec: {
       identity: {
         name: "Paul NELATON",
         role: "Systems & Network Security Engineer",
