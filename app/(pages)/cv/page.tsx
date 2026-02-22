@@ -5,7 +5,7 @@ import styles from "@/styles/cv.module.css";
 import { usePathname } from "next/navigation";
 import { CVData } from "@/data/cv.data";
 import { CvControls } from "@/components/cv/CvControls";
-import { Header } from "@/components/cv/header/Header";
+import { Header } from "@/components/cv/Header/Header";
 import Stats from "@/components/cv/stats/stats";
 import { CvGrid } from "@/components/cv/layout/grid/grid";
 import { CvSidebar } from "@/components/cv/layout/sidebar/sidebar";
