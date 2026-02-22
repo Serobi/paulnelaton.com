@@ -1,15 +1,17 @@
 // components/StatsBlock.tsx
 import styles from "./stats.module.css";
 import type { Stats } from "@/data/cv.types";
-
+import { useIsMobile } from "@/components/useIsMobile";
 type StatsProps = {
   stats: Stats[];
 };
 
 export default function Stats({ stats }: StatsProps) {
+  const isMobile = useIsMobile();
+
   return (
     <section className={styles.section}>
-      <h3>Domaines d'intervention</h3>
+      <h3>{isMobile ? "Domaines" : "Domaines d'intervention"}</h3>
 
       <div className={styles.statsContainer}>
         {stats.map((stat, i) => (

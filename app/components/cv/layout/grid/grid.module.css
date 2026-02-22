@@ -14,3 +14,15 @@
 .col {
   min-width: 0;
 }
+
+@media (max-width: 768px) {
+  .grid {
+    gap: 2%;
+  }
+}
+
+@media (max-width: 300px) {
+  .twoCol {
+    grid-template-columns: 100%;
+  }
+}

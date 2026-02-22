@@ -48,9 +48,14 @@
 }
 
 @media (max-width: 768px) {
+  .section {
+    margin-bottom: 12px;
+  }
+
   .section h3 {
     font-size: clamp(0.6rem, 2vw, 0.9rem);
     margin-bottom: 6px;
+    padding: 4px 6px;
   }
 
   .statLabel {
@@ -60,5 +65,13 @@
 
   .statBarBg {
     height: 4px;
+  }
+
+  .statItem {
+    margin-bottom: 8px;
+  }
+
+  .statItem {
+    margin-bottom: 6px;
   }
 }
