@@ -11,6 +11,9 @@ import { CvGrid } from "@/components/cv/layout/grid/grid";
 import { CvSidebar } from "@/components/cv/layout/sidebar/sidebar";
 import { CvMain } from "@/components/cv/layout/main/main";
 import { Experiences } from "@/components/cv/experiences/experiences";
+import { Skills } from "@/components/cv/skills/skills";
+import { Formations } from "@/components/cv/formations/formations";
+import { Languages } from "@/components/cv/languages/languages";
 
 function ScrollToTop() {
   const pathname = usePathname();
@@ -47,8 +50,19 @@ export default function Cv() {
               columns={2}
               primary={
                 <CvSidebar>
-                  <Stats stats={profile.stats} />
-                  {/* <Skills skills={profile.skills} /> */}
+                  <Stats stats={profile.stats} title={profile.labels.domains} />
+                  <Skills
+                    skills={profile.skillTrees}
+                    title={profile.labels.technicalSkills}
+                  />
+                  <Formations
+                    formations={profile.formations}
+                    title={profile.labels.education}
+                  />
+                  <Languages
+                    languages={profile.languages}
+                    title={profile.labels.languages}
+                  />
                   {/* <Languages languages={profile.languages} /> */}
                   {/* <Education education={profile.education} /> */}
                 </CvSidebar>

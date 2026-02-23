@@ -4,14 +4,15 @@ import type { Stats } from "@/data/cv.types";
 import { useIsMobile } from "@/components/useIsMobile";
 type StatsProps = {
   stats: Stats[];
+  title: string;
 };
 
-export default function Stats({ stats }: StatsProps) {
+export default function Stats({ stats, title }: StatsProps) {
   const isMobile = useIsMobile();
 
   return (
     <section className={styles.section}>
-      <h3>{isMobile ? "Domaines" : "Domaines d'intervention"}</h3>
+      <h3>{title}</h3>
 
       <div className={styles.statsContainer}>
         {stats.map((stat, i) => (

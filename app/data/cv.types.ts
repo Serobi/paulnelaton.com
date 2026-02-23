@@ -26,15 +26,31 @@ export interface Experience {
 }
 
 export interface SkillCategory {
-  id: string;
   title: string;
   skills: string[];
+}
+
+export interface Formations {
+  year: string;
+  title: string;
+  school: string;
+}
+
+export interface Languages {
+  name: string;
+  level: string;
 }
 
 export interface CV {
   identity: Identity;
   experiences: Experience[];
   skills: SkillCategory[];
+  formations: Formations[];
+  languages: Languages[];
+}
+
+export interface Labels {
+  label: string;
 }
 
 export type Mode = "dev" | "sec";

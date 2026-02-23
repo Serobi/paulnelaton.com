@@ -8,15 +8,15 @@ type Props = {
 export function Experiences({ experiences }: Props) {
   return (
     <main className={styles.content}>
-      <h3 className={styles.mainTitle}>Expérience Professionnelle</h3>
+      <h2 className={styles.mainTitle}>Expérience Professionnelle</h2>
 
       <div className={styles.timeline}>
         {experiences.map((exp, i) => (
           <div key={i} className={styles.expCard}>
             <div className={styles.expHeader}>
               <div className={styles.expTitleGroup}>
-                <h4>{exp.role}</h4>
-                <span className={styles.company}>{exp.company}</span>
+                <h3>{exp.role}</h3>
+                <h4 className={styles.company}>{exp.company}</h4>
               </div>
               <span className={styles.period}>{exp.period}</span>
             </div>

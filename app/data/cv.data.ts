@@ -25,28 +25,37 @@ export const CVData = {
         },
         { label: "Ingénierie Logicielle", value: 80, color: "#60a5fa" },
       ],
-      skillTrees: {
-        security: [
-          "CyberArk",
-          "Qualys",
-          "Firewall",
-          "AD",
-          "SOC / ELK",
-          "McAfee EDR",
-          "Proxy",
-          "DNS",
-        ],
-        systems: ["Windows Server", "Linux", "Windows", "VMware ESXi", "SCCM"],
-        dev_automation: [
-          "C# / .NET",
-          "PowerShell",
-          "Python",
-          "Ansible",
-          "REST API",
-          "Git",
-          "React / NextJs",
-        ],
-      },
+      skillTrees: [
+        {
+          title: "Securité",
+          skills: [
+            "CyberArk",
+            "Qualys",
+            "Firewall",
+            "AD",
+            "SOC / ELK",
+            "McAfee EDR",
+            "Proxy",
+            "DNS",
+          ],
+        },
+        {
+          title: "Systèmes",
+          skills: ["Windows Server", "Linux", "Windows", "VMware ESXi", "SCCM"],
+        },
+        {
+          title: "Devops",
+          skills: [
+            "C# / .NET",
+            "PowerShell",
+            "Python",
+            "Ansible",
+            "REST API",
+            "Git",
+            "React / NextJs",
+          ],
+        },
+      ],
       experience: [
         {
           period: "2024 - Présent",
@@ -153,33 +162,42 @@ export const CVData = {
         { label: "Automatisation & DevOps", value: 85, color: "#2563eb" },
         { label: "Sécurité & Infrastructure", value: 90, color: "#1e40af" },
       ],
-      skillTrees: {
-        software: [
-          "C#",
-          ".NET / .NET Core",
-          "ASP.NET",
-          "APIs",
-          "SQL",
-          "Algorithmique",
-          "SOLID",
-        ],
-        frontend: [
-          "React",
-          "Next.js",
-          "HTML/CSS",
-          "TypeScript",
-          "Tailwind CSS",
-        ],
-        devops: [
-          "PowerShell",
-          "Python",
-          "Ansible",
-          "REST API",
-          "Git",
-          "CI/CD",
-          "Automatisation",
-        ],
-      },
+      skillTrees: [
+        {
+          title: "Software",
+          skills: [
+            "C#",
+            ".NET / .NET Core",
+            "ASP.NET",
+            "APIs",
+            "SQL",
+            "Algorithmique",
+            "SOLID",
+          ],
+        },
+        {
+          title: "Frontend",
+          skills: [
+            "React",
+            "Next.js",
+            "HTML/CSS",
+            "TypeScript",
+            "Tailwind CSS",
+          ],
+        },
+        {
+          title: "Devops",
+          skills: [
+            "PowerShell",
+            "Python",
+            "Ansible",
+            "REST API",
+            "Git",
+            "CI/CD",
+            "Automatisation",
+          ],
+        },
+      ],
 
       experience: [
         {
@@ -283,28 +301,37 @@ export const CVData = {
         { label: "Software Engineering", value: 80, color: "#60a5fa" },
       ],
 
-      skillTrees: {
-        security: [
-          "CyberArk",
-          "Qualys",
-          "Firewall",
-          "Active Directory",
-          "SOC / ELK",
-          "McAfee EDR",
-          "Proxy",
-          "DNS",
-        ],
-        systems: ["Windows Server", "Linux", "Windows", "VMware ESXi", "SCCM"],
-        dev_automation: [
-          "C# / .NET",
-          "PowerShell",
-          "Python",
-          "Ansible",
-          "REST APIs",
-          "Git",
-          "React / Next.js",
-        ],
-      },
+      skillTrees: [
+        {
+          title: "Security",
+          skills: [
+            "CyberArk",
+            "Qualys",
+            "Firewall",
+            "AD",
+            "SOC / ELK",
+            "McAfee EDR",
+            "Proxy",
+            "DNS",
+          ],
+        },
+        {
+          title: "Systems",
+          skills: ["Windows Server", "Linux", "Windows", "VMware ESXi", "SCCM"],
+        },
+        {
+          title: "Devops & Automation",
+          skills: [
+            "C# / .NET",
+            "PowerShell",
+            "Python",
+            "Ansible",
+            "REST API",
+            "Git",
+            "React / NextJs",
+          ],
+        },
+      ],
 
       experience: [
         {
@@ -384,7 +411,7 @@ export const CVData = {
         { name: "Portuguese", level: "Fluent" },
       ],
       labels: {
-        domains: "Core Competencies",
+        domains: "Core Areas",
         technicalSkills: "Technical Skills",
         skillCategories: {
           security: "Security & Infrastructure",
@@ -420,33 +447,42 @@ export const CVData = {
         { label: "Security & Infrastructure", value: 90, color: "#1e40af" },
       ],
 
-      skillTrees: {
-        software: [
-          "C#",
-          ".NET / .NET Core",
-          "ASP.NET",
-          "APIs",
-          "SQL",
-          "Algorithms",
-          "SOLID Principles",
-        ],
-        frontend: [
-          "React",
-          "Next.js",
-          "HTML/CSS",
-          "TypeScript",
-          "Tailwind CSS",
-        ],
-        devops: [
-          "PowerShell",
-          "Python",
-          "Ansible",
-          "REST APIs",
-          "Git",
-          "CI/CD",
-          "Automation",
-        ],
-      },
+      skillTrees: [
+        {
+          title: "Software",
+          skills: [
+            "C#",
+            ".NET / .NET Core",
+            "ASP.NET",
+            "APIs",
+            "SQL",
+            "Algorithmique",
+            "SOLID",
+          ],
+        },
+        {
+          title: "Frontend",
+          skills: [
+            "React",
+            "Next.js",
+            "HTML/CSS",
+            "TypeScript",
+            "Tailwind CSS",
+          ],
+        },
+        {
+          title: "Devops",
+          skills: [
+            "PowerShell",
+            "Python",
+            "Ansible",
+            "REST API",
+            "Git",
+            "CI/CD",
+            "Automatisation",
+          ],
+        },
+      ],
 
       experience: [
         {
@@ -515,7 +551,7 @@ export const CVData = {
       ],
 
       labels: {
-        domains: "Core Competencies",
+        domains: "Core Areas",
         technicalSkills: "Technical Skills",
         skillCategories: {
           software: "Software & Backend",
