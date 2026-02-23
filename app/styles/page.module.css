@@ -212,17 +212,6 @@
 /* ───────────────── DESKTOP SIDEBAR ───────────────── */
 
 @media (min-width: 1024px) {
-  .heroSection {
-    padding: 8rem 1.5rem;
-    max-width: 1200px;
-    min-height: 90vh;
-    overflow: hidden;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center; /* clé */
-  }
-
   .sidebar {
     display: flex;
     width: 280px;

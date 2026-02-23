@@ -27,9 +27,7 @@ export default function Home() {
       <main className={styles.main}>
         {/* HERO */}
         <section id="intro" className={styles.heroSection}>
-          <h2 className={styles.role}>
-            Ingénieur logiciel, Cybersécurité & DevOps
-          </h2>
+          <h2 className={styles.role}>Ingénieur logiciel & Cybersécurité</h2>
 
           <div className={styles.introText}>
             <p>
