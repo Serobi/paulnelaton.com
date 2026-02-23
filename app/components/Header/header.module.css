@@ -3,7 +3,7 @@
   top: 0;
   left: 0;
   right: 0;
-  z-index: 50;
+  z-index: 1000;
   background: #0c0f14;
   border-bottom: 1px solid #1c2330;
 
@@ -116,8 +116,14 @@
 /* ─── Mobile Menu ─── */
 
 .mobileMenu {
+  position: fixed;
+  top: 4rem;
+  left: 0;
+  right: 0;
+
   background: #0c0f14;
   border-top: 1px solid #1c2330;
+  z-index: 999;
 }
 
 @media (min-width: 768px) {

@@ -50,28 +50,21 @@ export default function Header() {
               onClick={() => setMobileMenuOpen(false)}
               className={styles.mobileNavLink}
             >
-              → Intro
+              Intro
             </a>
             <a
               href="/#projets"
               onClick={() => setMobileMenuOpen(false)}
               className={styles.mobileNavLink}
             >
-              → Projets
-            </a>
-            <a
-              href="/#about"
-              onClick={() => setMobileMenuOpen(false)}
-              className={styles.mobileNavLink}
-            >
-              → À propos
+              Projets
             </a>
             <Link
               href="/cv"
               onClick={() => setMobileMenuOpen(false)}
               className={styles.mobileNavLink}
             >
-              → CV Interactif
+              CV Interactif
             </Link>
           </nav>
         </div>

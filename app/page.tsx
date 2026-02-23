@@ -4,16 +4,6 @@ import Link from "next/link";
 import styles from "@/styles/page.module.css";
 
 export default function Home() {
-  const techStack = [
-    "C#",
-    ".NET",
-    "React",
-    "Next.js",
-    "Unity",
-    "PostgreSQL",
-    "Docker",
-  ];
-
   return (
     <div className={styles.container}>
       {/* Sidebar */}
