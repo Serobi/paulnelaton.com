@@ -81,6 +81,7 @@ export function CvControls({ lang, mode, onLangChange, onModeChange }: Props) {
           SEC
         </button>
       </div>
+      {/*}
       <button
         onClick={handleDownload}
         disabled={isGenerating}
@@ -96,6 +97,7 @@ export function CvControls({ lang, mode, onLangChange, onModeChange }: Props) {
           <>Télécharger PDF</>
         )}
       </button>
+      */}
     </div>
   );
 }
