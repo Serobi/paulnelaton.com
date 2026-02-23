@@ -1,8 +1,7 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import { useState } from "react";
 import styles from "@/styles/cv.module.css";
-import { usePathname } from "next/navigation";
 import { CVData } from "@/data/cv.data";
 import { CvControls } from "@/components/cv/CvControls";
 import { Header } from "@/components/cv/Header/Header";
@@ -14,16 +13,6 @@ import { Experiences } from "@/components/cv/experiences/experiences";
 import { Skills } from "@/components/cv/skills/skills";
 import { Formations } from "@/components/cv/formations/formations";
 import { Languages } from "@/components/cv/languages/languages";
-
-function ScrollToTop() {
-  const pathname = usePathname();
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [pathname]);
-
-  return null;
-}
 
 export default function Cv() {
   const [lang, setLang] = useState<"fr" | "en">("fr");

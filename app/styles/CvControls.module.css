@@ -1,5 +1,5 @@
 .controls {
-  position: fixed;
+  position: absolute;
   top: 4.5rem;
   left: 50%;
   width: 80%;
@@ -17,28 +17,6 @@
   backdrop-filter: blur(6px);
   border-radius: 12px;
   border: 1px solid rgba(255, 255, 255, 0.08);
-
-  position: fixed; /* rappel */
-}
-
-.controls::after {
-  content: "";
-  position: absolute;
-
-  left: 50%;
-  top: 5%;
-  bottom: 5%;
-
-  width: 2px;
-  background: linear-gradient(
-    to bottom,
-    transparent,
-    rgba(255, 255, 255, 0.35),
-    transparent
-  );
-
-  transform: translateX(-50%);
-  pointer-events: none;
 }
 
 .group {
@@ -64,6 +42,49 @@
   color: white;
 }
 
+.downloadBtn {
+  grid-column: 1 / -1; /* Prend toute la largeur */
+  padding: 10px 16px;
+  border-radius: 8px;
+  background: #00b0f0c0;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  color: white;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.downloadBtn:hover:not(:disabled) {
+  background: #00aff0;
+  transform: scale(1.02);
+}
+
+.downloadBtn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.spinner {
+  width: 14px;
+  height: 14px;
+  border: 2px solid rgba(12, 15, 20, 0.3);
+  border-top-color: #0c0f14;
+  border-radius: 50%;
+  animation: spin 0.6s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 @media (max-width: 400px) {
   .controls {
     width: 92%;
@@ -78,5 +99,22 @@
   .button {
     padding: 8px 4px;
     font-size: clamp(0.6rem, 3.8vw, 0.85rem);
+  }
+}
+
+@media (hover: hover) {
+  .button:hover {
+    color: #00aff0;
+    border-color: #00aff0;
+  }
+
+  .active:hover {
+    color: white;
+  }
+}
+
+@media print {
+  .controls {
+    display: none !important;
   }
 }
