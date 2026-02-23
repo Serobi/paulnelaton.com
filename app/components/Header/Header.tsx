@@ -19,7 +19,7 @@ export default function Header() {
 
           {/* Desktop Navigation */}
           <nav className={styles.desktopNav}>
-            <a href="/#intro" className={styles.navLink}>
+            <a href="/#" className={styles.navLink}>
               Intro
             </a>
             <a href="/#projets" className={styles.navLink}>
@@ -46,7 +46,7 @@ export default function Header() {
         <div className={styles.mobileMenu}>
           <nav className={styles.mobileNav}>
             <a
-              href="/#intro"
+              href="/#"
               onClick={() => setMobileMenuOpen(false)}
               className={styles.mobileNavLink}
             >

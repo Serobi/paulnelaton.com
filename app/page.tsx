@@ -1,7 +1,19 @@
 "use client";
 
+import { useEffect } from "react";
 import Link from "next/link";
 import styles from "@/styles/page.module.css";
+import { usePathname } from "next/navigation";
+
+function ScrollToTop() {
+  const pathname = usePathname();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+}
 
 export default function Home() {
   return (
@@ -10,7 +22,7 @@ export default function Home() {
       <aside className={styles.sidebar}>
         <div>
           <nav className={styles.sidebarNav}>
-            <a href="#intro" className={styles.navLink}>
+            <a href="#" className={styles.navLink}>
               Introduction
             </a>
             <a href="#projets" className={styles.navLink}>
@@ -24,7 +36,7 @@ export default function Home() {
       </aside>
 
       {/* Main */}
-      <main id="intro" className={styles.main}>
+      <main className={styles.main}>
         {/* HERO */}
         <section className={styles.heroSection}>
           <h2 className={styles.role}>Ingénieur logiciel & Cybersécurité</h2>
