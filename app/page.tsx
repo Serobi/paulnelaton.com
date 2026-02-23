@@ -24,9 +24,9 @@ export default function Home() {
       </aside>
 
       {/* Main */}
-      <main className={styles.main}>
+      <main id="intro" className={styles.main}>
         {/* HERO */}
-        <section id="intro" className={styles.heroSection}>
+        <section className={styles.heroSection}>
           <h2 className={styles.role}>Ingénieur logiciel & Cybersécurité</h2>
 
           <div className={styles.introText}>
