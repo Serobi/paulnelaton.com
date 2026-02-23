@@ -4,7 +4,7 @@
 }
 
 .twoCol {
-  grid-template-columns: 32% 1fr;
+  grid-template-columns: 34% 1fr;
 }
 
 .oneCol {
@@ -19,9 +19,13 @@
   .grid {
     gap: 2%;
   }
+
+  .twoCol {
+    grid-template-columns: 36% 1fr;
+  }
 }
 
-@media (max-width: 300px) {
+@media (max-width: 350px) {
   .twoCol {
     grid-template-columns: 100%;
   }

@@ -1,10 +1,4 @@
 .section {
-  --thales-blue: #0c0c80; /* Le bleu officiel Thales */
-  --thales-accent: #5dbfd5; /* Le bleu clair de leurs éléments tech */
-  --slate-text: #1e293b;
-  --light-gray: #f8fafc;
-  --grey-text: #252526;
-
   margin-bottom: 0px;
   border: 1px solid #e5e7eb;
   border-radius: 10px;
@@ -48,10 +42,6 @@
 }
 
 @media (max-width: 768px) {
-  .section {
-    margin-bottom: 12px;
-  }
-
   .section h3 {
     font-size: clamp(0.6rem, 2vw, 0.9rem);
     margin-bottom: 6px;
@@ -65,10 +55,6 @@
 
   .statBarBg {
     height: 4px;
-  }
-
-  .statItem {
-    margin-bottom: 8px;
   }
 
   .statItem {

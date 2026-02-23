@@ -26,15 +26,13 @@ function ScrollToTop() {
 }
 
 export default function Cv() {
-  const [lang, setLang] = useState("fr" as "fr" | "en");
-  const [mode, setMode] = useState("dev" as "dev" | "sec");
+  const [lang, setLang] = useState<"fr" | "en">("fr");
+  const [mode, setMode] = useState<"dev" | "sec">("dev");
 
   const profile = CVData[lang][mode];
 
   return (
     <>
-      <ScrollToTop />
-
       <div className={styles.cvPageWrapper}>
         <CvControls
           lang={lang}
@@ -63,13 +61,14 @@ export default function Cv() {
                     languages={profile.languages}
                     title={profile.labels.languages}
                   />
-                  {/* <Languages languages={profile.languages} /> */}
-                  {/* <Education education={profile.education} /> */}
                 </CvSidebar>
               }
               secondary={
                 <CvMain>
-                  <Experiences experiences={profile.experience} />
+                  <Experiences
+                    experiences={profile.experience}
+                    title={profile.labels.experience}
+                  />
                 </CvMain>
               }
             />

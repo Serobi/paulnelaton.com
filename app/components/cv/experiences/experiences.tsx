@@ -3,16 +3,20 @@ import { Experience } from "@/data/cv.types";
 
 type Props = {
   experiences: Experience[];
+  title: string;
 };
 
-export function Experiences({ experiences }: Props) {
+export function Experiences({ experiences, title }: Props) {
   return (
     <main className={styles.content}>
-      <h2 className={styles.mainTitle}>Expérience Professionnelle</h2>
+      <h2 className={styles.mainTitle}>{title}</h2>
 
       <div className={styles.timeline}>
-        {experiences.map((exp, i) => (
-          <div key={i} className={styles.expCard}>
+        {experiences.map((exp) => (
+          <article
+            key={`${exp.company}-${exp.period}`}
+            className={styles.expCard}
+          >
             <div className={styles.expHeader}>
               <div className={styles.expTitleGroup}>
                 <h3>{exp.role}</h3>
@@ -26,7 +30,7 @@ export function Experiences({ experiences }: Props) {
                 <li key={index}>{line}</li>
               ))}
             </ul>
-          </div>
+          </article>
         ))}
       </div>
     </main>

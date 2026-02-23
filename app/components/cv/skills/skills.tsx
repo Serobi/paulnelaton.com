@@ -17,7 +17,7 @@ export function Skills({ skills, title }: Props) {
 
       {skills.map((category, index) => (
         <div key={index} className={styles.skillGroup}>
-          <h4 className={styles.skillCategory}>{category.title}</h4>
+          <h3 className={styles.skillCategory}>{category.title}</h3>
 
           <div className={styles.tags}>
             {category.skills.map((skill) => (
