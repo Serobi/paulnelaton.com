@@ -98,9 +98,9 @@ export function CvControls({
       <button
         onClick={() => downloadCV(mode, lang)}
         className={styles.downloadBtn}
-        aria-label="Télécharger le CV en PDF"
+        aria-label={lang === "fr" ? "Télécharger le CV" : "Download CV"}
       >
-        Télécharger le CV
+        {lang === "fr" ? "Télécharger le CV" : "Download CV"}
       </button>
     </div>
   );
