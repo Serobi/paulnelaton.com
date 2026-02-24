@@ -26,7 +26,7 @@ export function CvControls({
     const filename = `CV_Paul_NELATON_${mode}_${lang}_${year}.pdf`;
 
     const link = document.createElement("a");
-    link.href = `/cv/${filename}`;
+    link.href = `/cv-pdf/${filename}`;
     link.download = filename;
     document.body.appendChild(link);
     link.click();
