@@ -1,0 +1,61 @@
+/* components/Header/LanguageToggle.module.css */
+
+.toggle {
+  display: inline-flex;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 6px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.btn {
+  padding: 6px 12px;
+  background: transparent;
+  border: none;
+  color: #94a3b8;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn:not(:last-child) {
+  border-right: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.btn:hover {
+  color: #00e5a8;
+  background: rgba(0, 229, 168, 0.08);
+}
+
+.active {
+  background: #00e5a8;
+  color: #0c0f14;
+}
+
+.active:hover {
+  background: #00d498;
+  color: #0c0f14;
+}
+
+/* Desktop: à droite du menu */
+@media (min-width: 768px) {
+  .toggle {
+    margin-left: 1rem;
+  }
+}
+
+/* Mobile: dans le menu */
+@media (max-width: 767px) {
+  .toggle {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .btn {
+    flex: 1;
+    padding: 10px;
+  }
+}

@@ -1,21 +1,11 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import { IBM_Plex_Sans, IBM_Plex_Mono } from "next/font/google";
 import "./globals.css";
 
 import Header from "@/components/Header/Header";
 import Footer from "@/components/Footer/Footer";
 import ScrollToTop from "@/components/scrolltotop";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+import { LanguageProvider } from "@/contexts/LanguageContext";
 
 const plexSans = IBM_Plex_Sans({
   subsets: ["latin"],
@@ -29,7 +19,6 @@ const plexMono = IBM_Plex_Mono({
   weight: ["400", "500"],
 });
 
-// Métadonnées adaptées à ton portfolio pour le référencement (SEO)
 export const metadata: Metadata = {
   title: "Paul Nelaton | Portfolio & Apps",
   description:
@@ -44,12 +33,12 @@ export default function RootLayout({
   return (
     <html lang="fr">
       <body className={`${plexSans.variable} ${plexMono.variable}`}>
-        <ScrollToTop />
-        <Header />
-
-        <main className="page">{children}</main>
-
-        <Footer />
+        <LanguageProvider>
+          <ScrollToTop />
+          <Header />
+          <main className="page">{children}</main>
+          <Footer />
+        </LanguageProvider>
       </body>
     </html>
   );

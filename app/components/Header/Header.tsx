@@ -2,10 +2,13 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import { useLanguage } from "@/contexts/LanguageContext";
+import { LanguageToggle } from "./LanguageToggle";
 import styles from "./header.module.css";
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { t } = useLanguage();
 
   return (
     <header className={styles.header}>
@@ -20,14 +23,17 @@ export default function Header() {
           {/* Desktop Navigation */}
           <nav className={styles.desktopNav}>
             <a href="/#" className={styles.navLink}>
-              Intro
+              {t("nav.intro")}
             </a>
             <a href="/#projets" className={styles.navLink}>
-              Projets
+              {t("nav.projects")}
             </a>
             <Link href="/cv" className={styles.cvButton}>
-              CV Interactif
+              {t("nav.cv")}
             </Link>
+
+            {/* Language toggle - Desktop */}
+            <LanguageToggle />
           </nav>
 
           {/* Mobile menu button */}
@@ -50,22 +56,27 @@ export default function Header() {
               onClick={() => setMobileMenuOpen(false)}
               className={styles.mobileNavLink}
             >
-              Intro
+              {t("nav.intro")}
             </a>
             <a
               href="/#projets"
               onClick={() => setMobileMenuOpen(false)}
               className={styles.mobileNavLink}
             >
-              Projets
+              {t("nav.projects")}
             </a>
             <Link
               href="/cv"
               onClick={() => setMobileMenuOpen(false)}
               className={styles.mobileNavLink}
             >
-              CV Interactif
+              {t("nav.cv")}
             </Link>
+
+            {/* Language toggle - Mobile */}
+            <div className={styles.mobileLangWrapper}>
+              <LanguageToggle />
+            </div>
           </nav>
         </div>
       )}

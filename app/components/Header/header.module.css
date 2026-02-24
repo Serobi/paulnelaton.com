@@ -1,3 +1,5 @@
+/* components/Header/header.module.css */
+
 .header {
   position: fixed;
   top: 0;
@@ -145,8 +147,17 @@
   color: #94a3b8;
   text-decoration: none;
   transition: color 0.2s ease;
+  padding: 0.5rem 0;
 }
 
 .mobileNavLink:hover {
   color: #00e5a8;
+}
+
+/* ─── Mobile Language Toggle ─── */
+
+.mobileLangWrapper {
+  margin-top: 0.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid #1c2330;
 }

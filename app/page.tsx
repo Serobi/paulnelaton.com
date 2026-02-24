@@ -1,9 +1,12 @@
 "use client";
 
 import Link from "next/link";
+import { useLanguage } from "@/contexts/LanguageContext";
 import styles from "@/styles/page.module.css";
 
 export default function Home() {
+  const { t } = useLanguage();
+
   return (
     <div className={styles.container}>
       {/* Sidebar */}
@@ -11,13 +14,13 @@ export default function Home() {
         <div>
           <nav className={styles.sidebarNav}>
             <a href="/#" className={styles.navLink}>
-              Introduction
+              {t("nav.intro")}
             </a>
             <a href="#projets" className={styles.navLink}>
-              Projets
+              {t("nav.projects")}
             </a>
             <Link href="/cv" className={styles.navLink}>
-              CV interactif
+              {t("nav.cv")}
             </Link>
           </nav>
         </div>
@@ -27,36 +30,29 @@ export default function Home() {
       <main className={styles.main}>
         {/* HERO */}
         <section className={styles.heroSection}>
-          <h2 className={styles.role}>Ingénieur logiciel & Cybersécurité</h2>
+          <h2 className={styles.role}>{t("home.title")}</h2>
 
           <div className={styles.introText}>
-            <p>
-              Ingénieur issu de la cybersécurité avec 6+ ans d'expérience en
-              infrastructures critiques (Vinci, BT, Orange Cyberdefense).
-            </p>
-            <p>
-              Spécialisé en architecture système, automatisation et
-              développement full-stack. Conception de systèmes modulaires,
-              performants et évolutifs.
-            </p>
+            <p>{t("home.intro1")}</p>
+            <p>{t("home.intro2")}</p>
           </div>
+
           <Link href="/cv" className={styles.btnPrimary}>
-            Consulter mon CV
+            {t("home.cta")}
           </Link>
         </section>
 
         {/* PROJECTS */}
         <section id="projets" className={styles.projectsSection}>
-          <h2>Projets</h2>
+          <h2>{t("projects.title")}</h2>
 
           <div className={styles.projectsList}>
             {/* CV Generator */}
             <article className={styles.projectCard}>
-              <h3>Générateur de CV ATS Friendly</h3>
+              <h3>{t("projects.cv.title")}</h3>
               <p>
-                Application web permettant de générer des CV optimisés pour les
-                systèmes de tracking (ATS), avec export PDF automatisé. <br />
-                Work in progress ...
+                {t("projects.cv.desc")} <br />
+                {t("projects.cv.wip")}
               </p>
 
               <div className={styles.projectTags}>
@@ -67,21 +63,14 @@ export default function Home() {
               </div>
 
               <Link href="/cv" className={styles.projectLink}>
-                Accéder à l'outil
+                {t("projects.cv.link")}
               </Link>
             </article>
 
             {/* Brain Eaters */}
             <article className={styles.projectCard}>
-              <h3>Brain Eaters — Jeu mobile de stratégie</h3>
-              <p>
-                Développement d'un jeu mobile / PC combinant stratégie, survie
-                et coopération. <br />
-                Le jeu a été entièrement développé par mes soins, du code aux
-                designs, du gameplay aux UI, du site Web à la direction
-                artistique. <br />
-                Découvrez en plus sur le site officiel du projet !
-              </p>
+              <h3>{t("projects.brain.title")}</h3>
+              <p>{t("projects.brain.desc")}</p>
 
               <div className={styles.projectTags}>
                 <span className={styles.techBadge}>C#</span>
@@ -96,7 +85,7 @@ export default function Home() {
                 rel="noopener noreferrer"
                 className={styles.projectLink}
               >
-                Découvrir le projet
+                {t("projects.brain.cta")}
               </a>
             </article>
           </div>
