@@ -49,10 +49,6 @@
 
 /* Mobile: en haut à droite du menu mobile */
 @media (max-width: 767px) {
-  .toggle {
-    /* Pas de width: 100% */
-  }
-
   .btn {
     padding: 8px 14px;
     font-size: 0.7rem;
