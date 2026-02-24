@@ -5,14 +5,14 @@
   border-left: 5px solid var(--thales-blue);
   padding-left: 15px;
   margin-top: 0;
-  margin-bottom: 25px;
+  margin-bottom: 10px;
   text-transform: uppercase;
 }
 
 .timeline {
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  gap: 10px;
   border-left: 1.5px solid #dbe2ea;
 
   padding-left: 20px;
@@ -135,5 +135,19 @@
   .description {
     font-size: clamp(0.5rem, 2vw, 0.85rem);
     text-align: left;
+  }
+}
+
+@media print {
+  .expCard {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+}
+
+@media print {
+  .timeline {
+    break-inside: auto;
+    page-break-inside: auto;
   }
 }

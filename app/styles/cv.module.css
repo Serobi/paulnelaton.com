@@ -1,3 +1,10 @@
+html,
+body {
+  background: white !important;
+  -webkit-print-color-adjust: exact !important;
+  print-color-adjust: exact !important;
+}
+
 .cvPageWrapper {
   min-height: 100vh;
   width: 100%;
@@ -12,7 +19,7 @@
 .cvSheet {
   width: 100%;
   max-width: 210mm;
-  background: white;
+  background: white !important;
 }
 
 .cvBody {
@@ -20,26 +27,53 @@
   padding: 20px 2%;
 }
 
-@media (max-width: 680px) {
-  .cvPageWrapper {
-    padding: 5rem 2%;
-  }
+.screenOnly {
+  display: block;
 }
 
-@media (max-width: 400px) {
-  .cvPageWrapper {
-    padding: 4rem 1%;
-  }
-
-  .cvBody {
-    padding: 20px 1%;
-    padding-bottom: 50px;
-  }
+.printOnly {
+  display: none;
 }
 
 @media print {
-  .cvPageWrapper {
-    padding: 0 !important;
+  :global(body) {
     background: white !important;
+    margin: 0 !important;
   }
+
+  .cvPageWrapper {
+    background: white !important;
+    width: 210mm !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+    border: none !important;
+  }
+
+  .cvPageWrapper * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  .screenOnly {
+    display: none !important;
+  }
+
+  .printOnly {
+    display: block !important;
+  }
+
+  .pageBreak {
+    break-before: page;
+    page-break-before: always;
+  }
+}
+
+@page:first {
+  margin: 0mm 0mm 10mm 0mm;
+}
+
+@page {
+  size: A4;
+  margin: 10mm 0mm 10mm 0mm;
 }

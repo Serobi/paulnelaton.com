@@ -1,11 +1,11 @@
 .sidebar {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 5px;
 }
 
 @media (max-width: 768px) {
   .sidebar {
-    gap: 10px;
+    gap: 5px;
   }
 }

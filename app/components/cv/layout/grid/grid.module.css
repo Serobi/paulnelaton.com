@@ -30,3 +30,9 @@
     grid-template-columns: 100%;
   }
 }
+
+@media print {
+  .twoCol {
+    grid-template-columns: 70mm 1fr;
+  }
+}

@@ -9,43 +9,28 @@ type Props = {
   mode: Mode;
   onLangChange: (lang: Lang) => void;
   onModeChange: (mode: Mode) => void;
+  onDownload: () => void;
+  isGenerating: boolean;
 };
 
-export function CvControls({ lang, mode, onLangChange, onModeChange }: Props) {
-  const [isGenerating, setIsGenerating] = useState(false);
+export function CvControls({
+  lang,
+  mode,
+  onLangChange,
+  onModeChange,
+  onDownload,
+  isGenerating,
+}: Props) {
+  const downloadCV = (mode: Mode, lang: Lang) => {
+    const year = new Date().getFullYear();
+    const filename = `CV_Paul_NELATON_${mode}_${lang}_${year}.pdf`;
 
-  const handleDownload = async () => {
-    setIsGenerating(true);
-
-    try {
-      const response = await fetch("/api/generate-cv", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ lang, mode }),
-      });
-
-      if (!response.ok) {
-        const text = await response.text();
-        throw new Error(text || "Failed to generate PDF");
-      }
-
-      // Télécharge le PDF
-      const blob = await response.blob();
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement("a");
-      const year = new Date().getFullYear();
-      a.href = url;
-      a.download = `CV_Paul_NELATON_${mode}_${lang}_${year}.pdf`;
-      document.body.appendChild(a);
-      a.click();
-      document.body.removeChild(a);
-      URL.revokeObjectURL(url);
-    } catch (error) {
-      console.error("PDF generation error:", error);
-      alert("Erreur lors de la génération du PDF");
-    } finally {
-      setIsGenerating(false);
-    }
+    const link = document.createElement("a");
+    link.href = `/cv/${filename}`;
+    link.download = filename;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   };
 
   return (
@@ -55,12 +40,18 @@ export function CvControls({ lang, mode, onLangChange, onModeChange }: Props) {
         <button
           className={`${styles.button} ${lang === "fr" ? styles.active : ""}`}
           onClick={() => onLangChange("fr")}
+          disabled={isGenerating}
+          aria-label="Français"
+          aria-pressed={lang === "fr"}
         >
           FR
         </button>
         <button
           className={`${styles.button} ${lang === "en" ? styles.active : ""}`}
           onClick={() => onLangChange("en")}
+          disabled={isGenerating}
+          aria-label="English"
+          aria-pressed={lang === "en"}
         >
           EN
         </button>
@@ -71,19 +62,25 @@ export function CvControls({ lang, mode, onLangChange, onModeChange }: Props) {
         <button
           className={`${styles.button} ${mode === "dev" ? styles.active : ""}`}
           onClick={() => onModeChange("dev")}
+          disabled={isGenerating}
+          aria-label="Développeur"
+          aria-pressed={mode === "dev"}
         >
           DEV
         </button>
         <button
           className={`${styles.button} ${mode === "sec" ? styles.active : ""}`}
           onClick={() => onModeChange("sec")}
+          disabled={isGenerating}
+          aria-label="Sécurité"
+          aria-pressed={mode === "sec"}
         >
           SEC
         </button>
       </div>
       {/*}
       <button
-        onClick={handleDownload}
+        onClick={onDownload}
         disabled={isGenerating}
         className={styles.downloadBtn}
         aria-label="Télécharger le CV en PDF"
@@ -98,6 +95,13 @@ export function CvControls({ lang, mode, onLangChange, onModeChange }: Props) {
         )}
       </button>
       */}
+      <button
+        onClick={() => downloadCV(mode, lang)}
+        className={styles.downloadBtn}
+        aria-label="Télécharger le CV en PDF"
+      >
+        Télécharger le CV
+      </button>
     </div>
   );
 }
