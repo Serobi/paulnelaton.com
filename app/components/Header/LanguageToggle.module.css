@@ -47,15 +47,14 @@
   }
 }
 
-/* Mobile: dans le menu */
+/* Mobile: en haut à droite du menu mobile */
 @media (max-width: 767px) {
   .toggle {
-    width: 100%;
-    justify-content: center;
+    /* Pas de width: 100% */
   }
-  
+
   .btn {
-    flex: 1;
-    padding: 10px;
+    padding: 8px 14px;
+    font-size: 0.7rem;
   }
 }

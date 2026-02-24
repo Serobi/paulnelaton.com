@@ -157,7 +157,7 @@
 /* ─── Mobile Language Toggle ─── */
 
 .mobileLangWrapper {
-  margin-top: 0.5rem;
-  padding-top: 1rem;
-  border-top: 1px solid #1c2330;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
 }
