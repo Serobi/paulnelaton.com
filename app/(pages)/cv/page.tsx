@@ -6,10 +6,8 @@ import { CVData } from "@/data/cv.data";
 import { CvControls } from "@/components/cv/CvControls";
 import { Header } from "@/components/cv/Header/Header";
 import Stats from "@/components/cv/stats/stats";
-import { CvGrid } from "@/components/cv/layout/grid/grid";
-import { CvSidebar } from "@/components/cv/layout/sidebar/sidebar";
-import { CvMain } from "@/components/cv/layout/main/main";
 import { Experiences } from "@/components/cv/experiences/experiences";
+import { Experiencespdf } from "@/components/cv/experiences/experiences-pdf";
 import { Skills } from "@/components/cv/skills/skills";
 import { Formations } from "@/components/cv/formations/formations";
 import { Languages } from "@/components/cv/languages/languages";
@@ -18,12 +16,15 @@ export default function Cv() {
   const [lang, setLang] = useState<"fr" | "en">("fr");
   const [mode, setMode] = useState<"dev" | "sec">("dev");
   const [isGenerating, setIsGenerating] = useState(false);
-  const cvSheetRef = useRef<HTMLDivElement>(null);
+
+  const webVersionRef = useRef<HTMLDivElement>(null);
+  const pdfVersionRef = useRef<HTMLDivElement>(null);
+
   const profile = CVData[lang][mode];
 
   const handleDownload = async () => {
-    if (!cvSheetRef.current) {
-      alert("Erreur : CV non trouvé");
+    if (!pdfVersionRef.current) {
+      alert("Erreur : Version PDF non trouvée");
       return;
     }
 
@@ -31,8 +32,7 @@ export default function Cv() {
 
     try {
       const profilePicBase64 = await imageToBase64("/profile2.png");
-
-      let cvHTML = cvSheetRef.current.outerHTML;
+      let cvHTML = pdfVersionRef.current.outerHTML;
 
       if (profilePicBase64) {
         cvHTML = cvHTML.replaceAll(
@@ -46,7 +46,6 @@ export default function Cv() {
       }
 
       let allCSS = "";
-
       for (const sheet of Array.from(document.styleSheets)) {
         try {
           const rules = Array.from(sheet.cssRules || sheet.rules);
@@ -56,12 +55,8 @@ export default function Cv() {
         }
       }
 
-      const computedStyles = window.getComputedStyle(cvSheetRef.current);
-      allCSS += `\n/* Computed fallback */\n`;
-      allCSS += `.cvSheet { 
-        font-family: ${computedStyles.fontFamily};
-        background: ${computedStyles.background};
-      }`;
+      const computedStyles = window.getComputedStyle(pdfVersionRef.current);
+      allCSS += `\n.cvSheet { font-family: ${computedStyles.fontFamily}; background: ${computedStyles.background}; }`;
 
       console.log("[Client] Sending HTML/CSS to API...");
       console.log("[Client] HTML length:", cvHTML.length);
@@ -71,12 +66,7 @@ export default function Cv() {
       const response = await fetch("/api/generate-cv", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          html: cvHTML,
-          css: allCSS,
-          lang,
-          mode,
-        }),
+        body: JSON.stringify({ html: cvHTML, css: allCSS, lang, mode }),
       });
 
       if (!response.ok) {
@@ -99,9 +89,7 @@ export default function Cv() {
     } catch (error) {
       console.error("[Client] ❌ PDF generation error:", error);
       alert(
-        `Erreur lors de la génération du PDF: ${
-          error instanceof Error ? error.message : "Erreur inconnue"
-        }`,
+        `Erreur lors de la génération du PDF: ${error instanceof Error ? error.message : "Erreur inconnue"}`,
       );
     } finally {
       setIsGenerating(false);
@@ -112,7 +100,6 @@ export default function Cv() {
     try {
       const response = await fetch(url);
       const blob = await response.blob();
-
       return new Promise((resolve, reject) => {
         const reader = new FileReader();
         reader.onloadend = () => resolve(reader.result as string);
@@ -136,87 +123,98 @@ export default function Cv() {
         isGenerating={isGenerating}
       />
 
-      <div ref={cvSheetRef} className={styles.cvSheet}>
+      {/* ═══════════════════════════════════════════════════════════════
+          VERSION WEB (AFFICHAGE ÉCRAN)
+          ═══════════════════════════════════════════════════════════════ */}
+      <div
+        ref={webVersionRef}
+        className={`${styles.cvSheet} ${styles.screenOnly}`}
+      >
         <Header identity={profile.identity} />
 
         <div className={styles.cvBody}>
-          {/* ───────────────── WEB (SCREEN) ───────────────── */}
-          <div className={styles.screenOnly}>
-            <CvGrid
-              columns={2}
-              primary={
-                <CvSidebar>
-                  <Stats stats={profile.stats} title={profile.labels.domains} />
-                  <Skills
-                    skills={profile.skillTrees}
-                    title={profile.labels.technicalSkills}
-                  />
-                  <Formations
-                    formations={profile.formations}
-                    title={profile.labels.education}
-                  />
-                  <Languages
-                    languages={profile.languages}
-                    title={profile.labels.languages}
-                  />
-                </CvSidebar>
-              }
-              secondary={
-                <CvMain>
-                  <Experiences
-                    experiences={profile.experience}
-                    title={profile.labels.experience}
-                  />
-                </CvMain>
-              }
-            />
-          </div>
-          {/* ───────────────── PRINT - PAGE 1 ───────────────── */}
-          <div className={styles.printOnly}>
-            <CvGrid
-              columns={2}
-              primary={
-                <CvSidebar>
-                  <Stats stats={profile.stats} title={profile.labels.domains} />
-                  <Formations
-                    formations={profile.formations}
-                    title={profile.labels.education}
-                  />
-                  <Languages
-                    languages={profile.languages}
-                    title={profile.labels.languages}
-                  />
-                </CvSidebar>
-              }
-              secondary={
-                <CvMain>
-                  <Experiences
-                    experiences={profile.experience.slice(0, 2)} // Change if you can have more or less experiences page 1
-                    title={profile.labels.experience}
-                  />
-                </CvMain>
-              }
-            />
+          {/* Grid 2 colonnes : Sidebar + Main */}
+          <div className={styles.webGrid}>
+            {/* Sidebar gauche */}
+            <aside className={styles.webSidebar}>
+              <section className={styles.section}>
+                <Stats stats={profile.stats} title={profile.labels.domains} />
+              </section>
+              <section className={styles.section}>
+                <Skills
+                  skills={profile.skillTrees}
+                  title={profile.labels.technicalSkills}
+                />
+              </section>
+              <section className={styles.section}>
+                <Formations
+                  formations={profile.formations}
+                  title={profile.labels.education}
+                />
+              </section>
+              <section className={styles.section}>
+                <Languages
+                  languages={profile.languages}
+                  title={profile.labels.languages}
+                />
+              </section>
+            </aside>
 
-            <div className={styles.pageBreak} />
-
-            {/* ───────────────── PRINT – PAGE 2+ ───────────────── */}
-            <CvGrid
-              columns={1}
-              primary={
-                <CvMain>
-                  <Experiences
-                    experiences={profile.experience.slice(2)} // Change if you can have more or less experiences page 1
-                    title=""
-                  />
-                  <Skills
-                    skills={profile.skillTrees}
-                    title={profile.labels.technicalSkills}
-                  />
-                </CvMain>
-              }
-            />
+            {/* Main droite */}
+            <main className={styles.webMain}>
+              <Experiences
+                experiences={profile.experience}
+                title={profile.labels.experience}
+              />
+            </main>
           </div>
+        </div>
+      </div>
+
+      {/* ═══════════════════════════════════════════════════════════════
+          VERSION PDF (GÉNÉRATION PUPPETEER)
+          ═══════════════════════════════════════════════════════════════ */}
+      <div
+        ref={pdfVersionRef}
+        className={`${styles.cvSheet} ${styles.printOnly}`}
+      >
+        <Header identity={profile.identity} />
+
+        <div className={styles.cvBody}>
+          {/* ─────── PAGE 1 : Grid 2 colonnes ─────── */}
+          <div className={styles.pdfPage1}>
+            {/* Sidebar gauche */}
+            <aside className={styles.pdfSidebar}>
+              <section className={styles.section}>
+                <Formations
+                  formations={profile.formations}
+                  title={profile.labels.education}
+                />
+              </section>
+              <section className={styles.section}>
+                <Skills
+                  skills={profile.skillTrees}
+                  title={profile.labels.technicalSkills}
+                />
+              </section>
+              <section className={styles.section}>
+                <Languages
+                  languages={profile.languages}
+                  title={profile.labels.languages}
+                />
+              </section>
+            </aside>
+
+            {/* Main droite */}
+            <main className={styles.pdfMain}>
+              <Experiencespdf
+                experiences={profile.experience}
+                title={profile.labels.experience}
+              />
+            </main>
+          </div>
+
+          <div className={styles.pdfPage2}></div>
         </div>
       </div>
     </div>

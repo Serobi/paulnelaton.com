@@ -42,10 +42,8 @@ export async function POST(request: NextRequest) {
     console.log(`[PDF Generator] Generating CV: ${lang}/${mode}`);
     const startTime = Date.now();
 
-    // Récupère les data pour la couche ATS
     const data = CVData[lang][mode];
 
-    // Génère le PDF
     const pdfBuffer = await generatePDFFromReact({
       html,
       css,

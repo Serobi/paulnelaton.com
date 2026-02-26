@@ -22,7 +22,6 @@ export async function generatePDFFromReact(options: {
   html: string;
   css: string;
 }): Promise<Buffer> {
-  // ← Enlève atsLayer
   const browser = await getBrowser();
   const page = await browser.newPage();
 
@@ -33,34 +32,13 @@ export async function generatePDFFromReact(options: {
       <head>
         <meta charset="UTF-8" />
         <style>
-          /* Reset pour PDF */
-          * { margin: 0; padding: 0; box-sizing: border-box; }
-          
-          @page {
-            size: A4;
-            margin: 0;
-          }
-          
-          /* Styles extraits du React */
           ${options.css}
           
-          .cvSheet { 
-            width: 210mm !important; 
-            background: white !important; 
-          }
-            
-          /* Chaque section/card évite les coupures */
-          section,
-          article,
-          [class*="Card"],
-          [class*="section"] {
-            break-inside: avoid;
-            page-break-inside: avoid;
-          }
         </style>
       </head>
       <body>
         ${options.html}
+        
       </body>
       </html>
     `;

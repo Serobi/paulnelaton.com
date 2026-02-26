@@ -119,7 +119,6 @@ export const CVData = {
           title: "Licence Informatique",
           school: "Univ. Franche-Comté",
         },
-        { year: "2014", title: "DUT Informatique", school: "IUT de Belfort" },
         { year: "", title: "Certifications", school: "Zscaler ZCCA/ZCCP" },
       ],
       languages: [
@@ -251,7 +250,6 @@ export const CVData = {
           school: "Univ. Franche-Comté",
         },
         { year: "2014", title: "DUT Informatique", school: "IUT de Belfort" },
-        { year: "", title: "Certifications", school: "Zscaler ZCCA/ZCCP" },
       ],
       languages: [
         { name: "Français", level: "Langue maternelle" },
@@ -397,11 +395,6 @@ export const CVData = {
           title: "Bachelor's Degree in Computer Science",
           school: "University of Franche-Comté",
         },
-        {
-          year: "2014",
-          title: "DUT Computer Science",
-          school: "IUT of Belfort",
-        },
         { year: "", title: "Certifications", school: "Zscaler ZCCA / ZCCP" },
       ],
 
@@ -541,7 +534,6 @@ export const CVData = {
           title: "DUT Computer Science",
           school: "IUT of Belfort",
         },
-        { year: "", title: "Certifications", school: "Zscaler ZCCA/ZCCP" },
       ],
 
       languages: [

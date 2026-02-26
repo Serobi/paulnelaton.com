@@ -1,16 +1,16 @@
 // components/Skills.tsx
-import styles from "./languages.module.css"; // ou crée skills.module.css si tu préfères isoler
+import styles from "./languages.module.css";
 
 import type { Languages } from "@/data/cv.types";
 
 type Props = {
   languages: Languages[];
-  title: string; // ex: data.labels.technicalSkills
+  title: string;
 };
 
 export function Languages({ languages, title }: Props) {
   return (
-    <section className={styles.section}>
+    <div>
       <h2 className={styles.mainTitle}>{title}</h2>
       <ul className={styles.langList}>
         {languages.map((l) => (
@@ -19,6 +19,6 @@ export function Languages({ languages, title }: Props) {
           </li>
         ))}
       </ul>
-    </section>
+    </div>
   );
 }

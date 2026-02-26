@@ -17,6 +17,7 @@ body {
 }
 
 .cvSheet {
+  display: block;
   width: 100%;
   max-width: 210mm;
   background: white !important;
@@ -27,13 +28,105 @@ body {
   padding: 20px 2%;
 }
 
+.section {
+  margin-bottom: 0px;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 10px;
+  background: rgb(248, 248, 248);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   VERSION WEB (ÉCRAN)
+   ═══════════════════════════════════════════════════════════════ */
+
 .screenOnly {
   display: block;
 }
 
+.webGrid {
+  display: grid;
+  grid-template-columns: 34% 1fr;
+  gap: 24px;
+}
+
+.webSidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.webMain {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   VERSION PDF (PUPPETEER)
+   ═══════════════════════════════════════════════════════════════ */
+
 .printOnly {
   display: none;
 }
+
+/* ─── PAGE 1 : Grid 2 colonnes ─── */
+.pdfPage1 {
+  display: grid;
+  grid-template-columns: 70mm 1fr;
+  gap: 20px;
+}
+
+.pdfSidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.pdfMain {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ─── PAGE 2+ : Single column ─── */
+.pdfPage2 {
+  padding: 0 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.pageBreak {
+  height: 0;
+  visibility: hidden;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   RESPONSIVE (WEB)
+   ═══════════════════════════════════════════════════════════════ */
+
+@media (max-width: 768px) {
+  .webGrid {
+    grid-template-columns: 36% 1fr;
+    gap: 2%;
+  }
+
+  .webSidebar,
+  .webMain {
+    gap: 3%;
+  }
+}
+
+@media (max-width: 350px) {
+  .webGrid {
+    grid-template-columns: 100%;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   PRINT MEDIA (PUPPETEER)
+   ═══════════════════════════════════════════════════════════════ */
 
 @media print {
   :global(body) {
@@ -55,25 +148,40 @@ body {
     print-color-adjust: exact !important;
   }
 
+  /* Masque la version web */
   .screenOnly {
     display: none !important;
   }
 
+  /* Affiche la version PDF */
   .printOnly {
     display: block !important;
   }
 
+  /* Force le page break */
   .pageBreak {
-    break-before: page;
-    page-break-before: always;
+    break-before: page !important;
+    page-break-before: always !important;
+    display: block !important;
+    height: 1px !important;
   }
-}
 
-@page:first {
-  margin: 0mm 0mm 10mm 0mm;
+  .section {
+    background: transparent;
+    border: none;
+    padding: 0;
+  }
+
+  .cvBody {
+    padding: 5mm 5mm;
+  }
 }
 
 @page {
   size: A4;
   margin: 10mm 0mm 10mm 0mm;
+}
+
+@page :first {
+  margin-top: 0mm;
 }

@@ -8,8 +8,8 @@ type StatsProps = {
 
 export default function Stats({ stats, title }: StatsProps) {
   return (
-    <section className={styles.section}>
-      <h3>{title}</h3>
+    <div>
+      <h2 className={styles.mainTitle}>{title}</h2>
 
       <div className={styles.statsContainer}>
         {stats.map((stat) => (
@@ -28,6 +28,6 @@ export default function Stats({ stats, title }: StatsProps) {
           </div>
         ))}
       </div>
-    </section>
+    </div>
   );
 }

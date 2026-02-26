@@ -1,12 +1,4 @@
-.section {
-  margin-bottom: 0px;
-  border: 1px solid #e5e7eb;
-  border-radius: 10px;
-  padding: 10px;
-  background: rgb(248, 248, 248);
-}
-
-.section h3 {
+.mainTitle {
   font-size: 0.9rem;
   text-transform: uppercase;
   font-weight: 800;

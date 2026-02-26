@@ -10,7 +10,7 @@ type Props = {
 
 export function Formations({ formations, title }: Props) {
   return (
-    <section className={styles.section}>
+    <div>
       <h2 className={styles.mainTitle}>{title}</h2>
       <div className={styles.eduList}>
         {formations.map((f, i) => (
@@ -23,6 +23,6 @@ export function Formations({ formations, title }: Props) {
           </div>
         ))}
       </div>
-    </section>
+    </div>
   );
 }

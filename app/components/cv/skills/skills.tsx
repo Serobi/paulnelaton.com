@@ -12,7 +12,7 @@ export function Skills({ skills, title }: Props) {
   if (!skills?.length) return null;
 
   return (
-    <section className={styles.section}>
+    <div>
       <h2 className={styles.mainTitle}>{title}</h2>
 
       {skills.map((category, index) => (
@@ -28,6 +28,6 @@ export function Skills({ skills, title }: Props) {
           </div>
         </div>
       ))}
-    </section>
+    </div>
   );
 }

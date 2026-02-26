@@ -1,4 +1,4 @@
-import styles from "./experiences.module.css";
+import styles from "./experiences-pdf.module.css";
 import { Experience } from "@/data/cv.types";
 
 type Props = {
@@ -6,7 +6,7 @@ type Props = {
   title: string;
 };
 
-export function Experiences({ experiences, title }: Props) {
+export function Experiencespdf({ experiences, title }: Props) {
   return (
     <div className={styles.content}>
       <h2 className={styles.mainTitle}>{title}</h2>

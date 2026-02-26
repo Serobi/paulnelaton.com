@@ -78,7 +78,7 @@ export function CvControls({
           SEC
         </button>
       </div>
-      {/*}
+      {/*
       <button
         onClick={onDownload}
         disabled={isGenerating}
