@@ -5,14 +5,13 @@ export const CVData = {
     sec: {
       identity: {
         name: "Paul NELATON",
-        role: "Ingénieur Sécurité Systèmes et Réseaux",
-        mobility: "Mobilité Toulouse / France / Suisse / Europe",
+        role: "Ingénieur Cybersécurité",
+        mobility: "Mobilité Toulouse / Besançon / Suisse",
         summary:
           "Ingénieur cybersécurité spécialisé dans la sécurisation d'infrastructures critiques, avec plus de six ans d'expérience en environnements à fortes contraintes de disponibilité.",
         contact: {
           email: "paul.nelaton@gmail.com",
           phone: "+55 48 988117655",
-          linkedin: "linkedin.com/in/paul-nelaton",
         },
       },
       stats: [
@@ -27,32 +26,40 @@ export const CVData = {
       ],
       skillTrees: [
         {
-          title: "Securité",
+          title: "Cybersécurité",
           skills: [
-            "CyberArk",
+            "CyberArk PAM",
             "Qualys",
-            "Firewall",
-            "AD",
-            "SOC / ELK",
+            "Firewalls",
+            "ELK",
+            "Threat detection & SOC",
             "McAfee EDR",
-            "Proxy",
-            "DNS",
+            "Proxy & Web Filtering",
+            "DNS Security",
           ],
         },
         {
-          title: "Systèmes",
-          skills: ["Windows Server", "Linux", "Windows", "VMware ESXi", "SCCM"],
+          title: "Systèmes & Infrastructures",
+          skills: [
+            "Windows Server",
+            "Linux",
+            "Windows",
+            "Active Directory",
+            "VMware ESXi",
+            "SCCM",
+            "IAM",
+          ],
         },
         {
-          title: "Devops",
+          title: "DevOps & Automatisation",
           skills: [
             "C# / .NET",
             "PowerShell",
             "Python",
             "Ansible",
-            "REST API",
+            "REST APIs",
             "Git",
-            "React / NextJs",
+            "CI/CD Automation",
           ],
         },
       ],
@@ -60,7 +67,7 @@ export const CVData = {
         {
           period: "2024 - Présent",
           company: "Projet Indépendant",
-          role: "Architecte Logiciel & Développeur",
+          role: "Ingénieur logiciel",
           desc: [
             "Conception et développement d'une architecture logicielle modulaire en C# (.NET / Unity).",
             "Développement d'un moteur de génération procédurale multi-couches paramétrable (règles, contraintes, priorités).",
@@ -72,8 +79,8 @@ export const CVData = {
         },
         {
           period: "2019 - 2024",
-          company: "ESCOTA (Vinci Autoroutes)",
-          role: "Ingénieur Sécurité Opérationnelle",
+          company: "Vinci Autoroutes",
+          role: "Ingénieur Cybersécurité",
           desc: [
             "MCO d'infrastructures critiques (OIV).",
             "Rémédiation et investigation des vulnérabilités (Qualys).",
@@ -86,7 +93,7 @@ export const CVData = {
         },
         {
           period: "2018 - 2019",
-          company: "BT (British Telecom)",
+          company: "British Telecom",
           role: "Ingénieur Cybersécurité & DevOps",
           desc: [
             "Automatisation des flux de détection et d'escalade via intégration API.",
@@ -119,7 +126,11 @@ export const CVData = {
           title: "Licence Informatique",
           school: "Univ. Franche-Comté",
         },
-        { year: "", title: "Certifications", school: "Zscaler ZCCA/ZCCP" },
+        {
+          year: "2019–2020",
+          title: "Certifications",
+          school: "Zscaler ZCCA / ZCCP",
+        },
       ],
       languages: [
         { name: "Français", level: "Langue maternelle" },
@@ -127,73 +138,70 @@ export const CVData = {
         { name: "Portugais", level: "Courant" },
       ],
       labels: {
-        domains: "Domaines d'intervention",
-        technicalSkills: "Compétences Techniques",
-        skillCategories: {
-          security: "Sécurité & Infra",
-          systems: "Systèmes & Virtualisation",
-          dev_automation: "Dev & Automatisation",
-        },
-        education: "Formation & Certifications",
+        domains: "Domaines d'expertise",
+        technicalSkills: "Compétences techniques",
+        education: "Formation & certifications",
         languages: "Langues",
-        experience: "Expérience Professionnelle",
-        additional: "Informations complémentaires",
-        downloadNote:
-          "CV professionnel (version design, Français/Anglais - Développement/Cybersécurité) disponible sur :",
+        experience: "Expérience professionnelle",
       },
     },
     dev: {
       identity: {
         name: "Paul NELATON",
-        role: "Ingénieur Logiciel & Web Full Stack",
-        mobility: "Mobilité France / Suisse / Europe",
+        role: "Ingénieur Logiciel & Web FullStack",
+        mobility: "Mobilité Toulouse / Besançon / Suisse",
         summary:
-          "Spécialisé en développement backend C#/.NET, automatisation et conception d'architectures modulaires orientées performance, scalabilité et maintenabilité.",
+          "Ingénieur logiciel avec 6+ années d'expérience, spécialisé en développement fullstack, automatisation, sécurité et conception d'architectures modulaires orientées performance et scalabilité.",
         contact: {
           email: "paul.nelaton@gmail.com",
           phone: "+55 48 988117655",
-          linkedin: "linkedin.com/in/paul-nelaton",
         },
       },
       stats: [
         { label: "Ingénierie Logicielle", value: 90, color: "#1e40af" },
-        { label: "Full Stack Web", value: 80, color: "#3b82f6" },
-        { label: "Automatisation & DevOps", value: 85, color: "#2563eb" },
+        { label: "FullStack Web", value: 80, color: "#3b82f6" },
+        { label: "Automatisation", value: 85, color: "#2563eb" },
         { label: "Sécurité & Infrastructure", value: 90, color: "#1e40af" },
       ],
       skillTrees: [
         {
-          title: "Software",
+          title: "Développement Backend",
           skills: [
             "C#",
-            ".NET / .NET Core",
+            ".NET",
+            ".NET Core",
             "ASP.NET",
-            "APIs",
+            "Node.js",
+            "REST APIs",
             "SQL",
-            "Algorithmique",
-            "SOLID",
+            "OOP",
+            "SOLID Principles",
+            "Algorithm Design",
           ],
         },
         {
-          title: "Frontend",
+          title: "Développement Frontend",
           skills: [
             "React",
             "Next.js",
-            "HTML/CSS",
             "TypeScript",
+            "HTML5",
+            "CSS3",
             "Tailwind CSS",
+            "Responsive UI",
+            "Frontend API Integration",
           ],
         },
         {
-          title: "Devops",
+          title: "DevOps & Automatisation",
           skills: [
             "PowerShell",
             "Python",
             "Ansible",
-            "REST API",
             "Git",
-            "CI/CD",
-            "Automatisation",
+            "CI/CD Pipelines",
+            "Automation & Scripting",
+            "REST APIs",
           ],
         },
       ],
@@ -202,7 +210,7 @@ export const CVData = {
         {
           period: "2024 - Présent",
           company: "Projet Indépendant",
-          role: "Ingénieur Logiciel C#",
+          role: "Ingénieur Logiciel",
           desc: [
             "Conception et développement d'une architecture backend modulaire en C# (.NET / .NET Core).",
             "Développement d'un moteur de génération procédurale paramétrable (gestion de règles, contraintes et priorités).",
@@ -215,8 +223,8 @@ export const CVData = {
         },
         {
           period: "2019 - 2024",
-          company: "ESCOTA (Vinci Autoroutes)",
-          role: "Ingénieur Automatisation et Sécurité",
+          company: "Vinci Autoroutes",
+          role: "Ingénieur Cybersécurité",
           desc: [
             "Automatisation des contrôles de sécurité et reporting via scripts PowerShell.",
             "Industrialisation du patch management et du durcissement système.",
@@ -227,7 +235,7 @@ export const CVData = {
         },
         {
           period: "2018 - 2019",
-          company: "BT (British Telecom)",
+          company: "British Telecom",
           role: "Ingénieur DevOps & Automatisation",
           desc: [
             "Automatisation des flux de détection et d'escalade via intégration d'API REST.",
@@ -257,19 +265,11 @@ export const CVData = {
         { name: "Portugais", level: "Courant" },
       ],
       labels: {
-        domains: "Domaines d'intervention",
-        technicalSkills: "Compétences Techniques",
-        skillCategories: {
-          software: "Software & Backend",
-          frontend: "Front End",
-          devops: "DevOps",
-        },
-        education: "Formation & Certifications",
+        domains: "Domaines d'expertise",
+        technicalSkills: "Compétences techniques",
+        education: "Formation & certifications",
         languages: "Langues",
-        experience: "Expérience Professionnelle",
-        additional: "Informations complémentaires",
-        downloadNote:
-          "CV professionnel (version design, Français/Anglais - Développement/Cybersécurité) disponible sur :",
+        experience: "Expérience professionnelle",
       },
     },
   },
@@ -277,14 +277,13 @@ export const CVData = {
     sec: {
       identity: {
         name: "Paul NELATON",
-        role: "Systems & Network Security Engineer",
-        mobility: "Mobility Toulouse / France / Switzerland / Europe",
+        role: "Cybersecurity Engineer",
+        mobility: "Mobility Toulouse / Besançon / Switzerland",
         summary:
           "Cybersecurity engineer with over six years of experience securing critical infrastructures. Strong background in automation, software engineering, and high-availability environments.",
         contact: {
           email: "paul.nelaton@gmail.com",
           phone: "+55 48 988117655",
-          linkedin: "linkedin.com/in/paul-nelaton",
         },
       },
 
@@ -301,32 +300,40 @@ export const CVData = {
 
       skillTrees: [
         {
-          title: "Security",
+          title: "Cybersecurity",
           skills: [
-            "CyberArk",
+            "CyberArk PAM",
             "Qualys",
-            "Firewall",
-            "AD",
-            "SOC / ELK",
+            "Firewalls",
+            "ELK",
+            "Threat detection & SOC",
             "McAfee EDR",
-            "Proxy",
-            "DNS",
+            "Proxy & Web Filtering",
+            "DNS Security",
           ],
         },
         {
-          title: "Systems",
-          skills: ["Windows Server", "Linux", "Windows", "VMware ESXi", "SCCM"],
+          title: "Systems & Infrastructures",
+          skills: [
+            "Windows Server",
+            "Linux",
+            "Windows",
+            "Active Directory",
+            "VMware ESXi",
+            "SCCM",
+            "IAM",
+          ],
         },
         {
-          title: "Devops & Automation",
+          title: "DevOps & Automation",
           skills: [
             "C# / .NET",
             "PowerShell",
             "Python",
             "Ansible",
-            "REST API",
+            "REST APIs",
             "Git",
-            "React / NextJs",
+            "CI/CD Automation",
           ],
         },
       ],
@@ -335,7 +342,7 @@ export const CVData = {
         {
           period: "2024 - Present",
           company: "Independent Project",
-          role: "Software Architect & Developer",
+          role: "Software Engineer",
           desc: [
             "Designed and developed a modular software architecture using C# (.NET / Unity).",
             "Built a multi-layer procedural generation engine with configurable rules and constraints.",
@@ -347,8 +354,8 @@ export const CVData = {
         },
         {
           period: "2019 - 2024",
-          company: "ESCOTA (Vinci Autoroutes)",
-          role: "Operational Security Engineer",
+          company: "Vinci Autoroutes",
+          role: "Cybersecurity Engineer",
           desc: [
             "Maintained and secured critical infrastructure environments.",
             "Vulnerability remediation and investigation using Qualys.",
@@ -361,8 +368,8 @@ export const CVData = {
         },
         {
           period: "2018 - 2019",
-          company: "BT (British Telecom)",
-          role: "Cybersecurity & DevOps Engineer",
+          company: "British Telecom",
+          role: "Cybersecurity Engineer",
           desc: [
             "Automated detection and escalation workflows via API integrations.",
             "Integrated SIEM ecosystem (RTIR, TheHive, ELK) for incident response.",
@@ -395,7 +402,11 @@ export const CVData = {
           title: "Bachelor's Degree in Computer Science",
           school: "University of Franche-Comté",
         },
-        { year: "", title: "Certifications", school: "Zscaler ZCCA / ZCCP" },
+        {
+          year: "2019–2020",
+          title: "Certifications",
+          school: "Zscaler ZCCA / ZCCP",
+        },
       ],
 
       languages: [
@@ -404,32 +415,23 @@ export const CVData = {
         { name: "Portuguese", level: "Fluent" },
       ],
       labels: {
-        domains: "Core Areas",
+        domains: "Areas of Expertise",
         technicalSkills: "Technical Skills",
-        skillCategories: {
-          security: "Security & Infrastructure",
-          systems: "Systems & Virtualization",
-          dev_automation: "Development & Automation",
-        },
         education: "Education & Certifications",
         languages: "Languages",
         experience: "Professional Experience",
-        additional: "Additional Information",
-        downloadNote:
-          "Professional CV (design version, English/French - Software/Cybersecurity) available at:",
       },
     },
     dev: {
       identity: {
         name: "Paul NELATON",
-        role: "Software Engineer & Full Stack Web Developer",
-        mobility: "Mobility France / Switzerland / Europe",
+        role: "Software Engineer & FullStack Web Developer",
+        mobility: "Mobility Toulouse / Besançon / Switzerland",
         summary:
-          "Specialized in C#/.NET backend development, automation, and modular architecture design focused on performance, scalability, and maintainability.",
+          "Software Engineer with 6+ years of experience, specialized in fullstack development, automation, and modular architecture  focused on performance and scalability.",
         contact: {
           email: "paul.nelaton@gmail.com",
           phone: "+55 48 988117655",
-          linkedin: "linkedin.com/in/paul-nelaton",
         },
       },
 
@@ -442,37 +444,43 @@ export const CVData = {
 
       skillTrees: [
         {
-          title: "Software",
+          title: "Backend Development",
           skills: [
             "C#",
-            ".NET / .NET Core",
+            ".NET",
+            ".NET Core",
             "ASP.NET",
-            "APIs",
+            "Node.js",
+            "REST APIs",
             "SQL",
-            "Algorithmique",
-            "SOLID",
+            "OOP",
+            "SOLID Principles",
+            "Algorithm Design",
           ],
         },
         {
-          title: "Frontend",
+          title: "Frontend Development",
           skills: [
             "React",
             "Next.js",
-            "HTML/CSS",
             "TypeScript",
+            "HTML5",
+            "CSS3",
             "Tailwind CSS",
+            "Responsive UI",
+            "Frontend API Integration",
           ],
         },
         {
-          title: "Devops",
+          title: "DevOps & Automation",
           skills: [
             "PowerShell",
             "Python",
             "Ansible",
-            "REST API",
             "Git",
-            "CI/CD",
-            "Automatisation",
+            "CI/CD Pipelines",
+            "Automation & Scripting",
+            "REST APIs",
           ],
         },
       ],
@@ -481,7 +489,7 @@ export const CVData = {
         {
           period: "2024 - Present",
           company: "Independent Project",
-          role: "C# Software Engineer",
+          role: "Software Engineer",
           desc: [
             "Designed and developed a modular backend architecture using C# (.NET / .NET Core).",
             "Developed a configurable procedural generation engine (rules, constraints, priorities).",
@@ -494,7 +502,7 @@ export const CVData = {
         },
         {
           period: "2019 - 2024",
-          company: "ESCOTA (Vinci Autoroutes)",
+          company: "Vinci Autoroutes",
           role: "Automation & Security Engineer",
           desc: [
             "Automated security controls and reporting using PowerShell scripts.",
@@ -506,7 +514,7 @@ export const CVData = {
         },
         {
           period: "2018 - 2019",
-          company: "BT (British Telecom)",
+          company: "British Telecom",
           role: "DevOps & Automation Engineer",
           desc: [
             "Automated detection and escalation workflows via REST API integrations.",
@@ -543,19 +551,11 @@ export const CVData = {
       ],
 
       labels: {
-        domains: "Core Areas",
+        domains: "Areas of Expertise",
         technicalSkills: "Technical Skills",
-        skillCategories: {
-          software: "Software & Backend",
-          frontend: "Front End",
-          devops: "DevOps",
-        },
         education: "Education & Certifications",
         languages: "Languages",
         experience: "Professional Experience",
-        additional: "Additional Information",
-        downloadNote:
-          "Professional CV (design version, English/French - Software/Cybersecurity) available at:",
       },
     },
   },

@@ -26,7 +26,6 @@ export function Header({ identity }: HeaderProps) {
           />
           <span>{identity.contact.email}</span>
           <span>{identity.contact.phone}</span>
-          <span>{identity.contact.linkedin}</span>
         </div>
       </div>
     </header>

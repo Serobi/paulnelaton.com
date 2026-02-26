@@ -95,6 +95,7 @@ export function CvControls({
         )}
       </button>
       */}
+
       <button
         onClick={() => downloadCV(mode, lang)}
         className={styles.downloadBtn}

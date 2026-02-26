@@ -74,13 +74,12 @@ body {
 .pdfPage1 {
   display: grid;
   grid-template-columns: 70mm 1fr;
-  gap: 20px;
 }
 
 .pdfSidebar {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 5px;
 }
 
 .pdfMain {
@@ -158,14 +157,6 @@ body {
     display: block !important;
   }
 
-  /* Force le page break */
-  .pageBreak {
-    break-before: page !important;
-    page-break-before: always !important;
-    display: block !important;
-    height: 1px !important;
-  }
-
   .section {
     background: transparent;
     border: none;
@@ -173,7 +164,7 @@ body {
   }
 
   .cvBody {
-    padding: 5mm 5mm;
+    padding: 2mm 5mm;
   }
 }
 

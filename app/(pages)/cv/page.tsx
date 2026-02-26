@@ -160,7 +160,6 @@ export default function Cv() {
               </section>
             </aside>
 
-            {/* Main droite */}
             <main className={styles.webMain}>
               <Experiences
                 experiences={profile.experience}
@@ -213,8 +212,6 @@ export default function Cv() {
               />
             </main>
           </div>
-
-          <div className={styles.pdfPage2}></div>
         </div>
       </div>
     </div>

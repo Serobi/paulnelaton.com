@@ -6,7 +6,7 @@
   background: var(--light-gray);
   padding: 8px 12px;
   border-left: 4px solid var(--thales-blue);
-  margin-bottom: 5px;
+  margin-bottom: 3px;
 }
 
 .timeline {
@@ -71,7 +71,7 @@
   margin-bottom: 6px;
   font-size: 0.9rem;
   color: var(--grey-text);
-  line-height: 1.5;
+  line-height: 1.2;
 }
 
 .expHeader .period {

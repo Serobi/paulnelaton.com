@@ -1,7 +1,6 @@
 export interface ContactInfo {
   email: string;
   phone: string;
-  linkedin: string;
 }
 
 export interface Identity {
