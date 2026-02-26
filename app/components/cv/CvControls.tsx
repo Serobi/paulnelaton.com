@@ -23,7 +23,7 @@ export function CvControls({
 }: Props) {
   const downloadCV = (mode: Mode, lang: Lang) => {
     const year = new Date().getFullYear();
-    const filename = `CV_Paul_NELATON_${mode}_${lang}_${year}.pdf`;
+    const filename = `CV_Paul_NELATON_${mode}_${lang}.pdf`;
 
     const link = document.createElement("a");
     link.href = `/cv-pdf/${filename}`;

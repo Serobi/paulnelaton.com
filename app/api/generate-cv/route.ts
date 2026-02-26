@@ -52,8 +52,7 @@ export async function POST(request: NextRequest) {
     const elapsed = ((Date.now() - startTime) / 1000).toFixed(2);
     console.log(`[PDF Generator] ✅ PDF generated in ${elapsed}s`);
 
-    const year = new Date().getFullYear();
-    const filename = `CV_Paul_NELATON_${mode}_${lang}_${year}.pdf`;
+    const filename = `Paul_NELATON_${mode}_${lang}.pdf`;
 
     return new NextResponse(new Uint8Array(pdfBuffer), {
       status: 200,
