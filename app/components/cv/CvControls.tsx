@@ -78,7 +78,7 @@ export function CvControls({
           SEC
         </button>
       </div>
-      {/*
+      {/*}
       <button
         onClick={onDownload}
         disabled={isGenerating}
@@ -91,11 +91,10 @@ export function CvControls({
             Génération...
           </>
         ) : (
-          <>Télécharger PDF</>
+          <>Génerer PDF</>
         )}
       </button>
-      */}
-
+*/}
       <button
         onClick={() => downloadCV(mode, lang)}
         className={styles.downloadBtn}

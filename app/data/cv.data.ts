@@ -74,7 +74,7 @@ export const CVData = {
             "Implémentation d'algorithmes de distribution et de logique événementielle complexe.",
             "Optimisation des performances et gestion des dépendances systèmes.",
             "Structuration complète de l'architecture.",
-            "Développement d'une interface web full stack (React / Next.js) intégrée à l'écosystème du projet.",
+            "Développement d'une interface web fullstack (React / Next.js) intégrée à l'écosystème du projet.",
           ],
         },
         {
@@ -117,6 +117,11 @@ export const CVData = {
       ],
       formations: [
         {
+          year: "2019–2020",
+          title: "Certifications",
+          school: "Zscaler ZCCA / ZCCP",
+        },
+        {
           year: "2016",
           title: "Ingénieur Systèmes, réseaux et sécurité",
           school: "AFTI (Orsay)",
@@ -125,11 +130,6 @@ export const CVData = {
           year: "2015",
           title: "Licence Informatique",
           school: "Univ. Franche-Comté",
-        },
-        {
-          year: "2019–2020",
-          title: "Certifications",
-          school: "Zscaler ZCCA / ZCCP",
         },
       ],
       languages: [
@@ -148,10 +148,10 @@ export const CVData = {
     dev: {
       identity: {
         name: "Paul NELATON",
-        role: "Ingénieur Logiciel & Web FullStack",
+        role: "Ingénieur Logiciel & FullStack Développeur",
         mobility: "Mobilité Toulouse / Besançon / Suisse",
         summary:
-          "Ingénieur logiciel avec 6+ années d'expérience, spécialisé en développement fullstack, automatisation, sécurité et conception d'architectures modulaires orientées performance et scalabilité.",
+          "Ingénieur logiciel avec plus de six ans d'expérience, orienté automatisation, sécurité et développement applicatif, avec une forte sensibilité aux architectures modulaires, performantes et scalables.",
         contact: {
           email: "paul.nelaton@gmail.com",
           phone: "+55 48 988117655",
@@ -184,6 +184,7 @@ export const CVData = {
           skills: [
             "React",
             "Next.js",
+            "Vue.js",
             "TypeScript",
             "HTML5",
             "CSS3",
@@ -217,7 +218,7 @@ export const CVData = {
             "Implémentation d'algorithmes de distribution, logique événementielle et gestion d'états complexes.",
             "Optimisation des performances mémoire et CPU.",
             "Structuration de l'architecture projet (séparation des responsabilités, modularité, maintenabilité).",
-            "Développement d'une interface web full stack (React / Next.js).",
+            "Développement d'une interface web fullstack (React / Next.js).",
             "Portfolio : https://braineatersgame.com/",
           ],
         },
@@ -393,19 +394,19 @@ export const CVData = {
 
       formations: [
         {
+          year: "2019-2020",
+          title: "Certifications",
+          school: "Zscaler ZCCA / ZCCP",
+        },
+        {
           year: "2016",
-          title: "Networks, systems and security engineer",
+          title: "Engineering Degree in Networks, Systems and Security",
           school: "AFTI (Orsay)",
         },
         {
           year: "2015",
           title: "Bachelor's Degree in Computer Science",
           school: "University of Franche-Comté",
-        },
-        {
-          year: "2019–2020",
-          title: "Certifications",
-          school: "Zscaler ZCCA / ZCCP",
         },
       ],
 
@@ -428,7 +429,7 @@ export const CVData = {
         role: "Software Engineer & FullStack Web Developer",
         mobility: "Mobility Toulouse / Besançon / Switzerland",
         summary:
-          "Software Engineer with 6+ years of experience, specialized in fullstack development, automation, and modular architecture  focused on performance and scalability.",
+          "Software engineer with over six years of experience, focused on automation, security, and application development, with a strong emphasis on modular, high-performance, and scalable architectures.",
         contact: {
           email: "paul.nelaton@gmail.com",
           phone: "+55 48 988117655",
@@ -437,7 +438,7 @@ export const CVData = {
 
       stats: [
         { label: "Software Engineering", value: 90, color: "#1e40af" },
-        { label: "Full Stack Web Development", value: 80, color: "#3b82f6" },
+        { label: "Fullstack Web Development", value: 80, color: "#3b82f6" },
         { label: "Automation & DevOps", value: 85, color: "#2563eb" },
         { label: "Security & Infrastructure", value: 90, color: "#1e40af" },
       ],
@@ -463,6 +464,7 @@ export const CVData = {
           skills: [
             "React",
             "Next.js",
+            "Vue.js",
             "TypeScript",
             "HTML5",
             "CSS3",
@@ -529,7 +531,7 @@ export const CVData = {
       formations: [
         {
           year: "2016",
-          title: "Networks, systems and security engineer",
+          title: "Engineering Degree in Networks, Systems and Security",
           school: "AFTI (Orsay)",
         },
         {
