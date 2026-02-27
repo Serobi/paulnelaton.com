@@ -1,6 +1,7 @@
 export interface ContactInfo {
   email: string;
   phone: string;
+  website: string;
 }
 
 export interface Identity {

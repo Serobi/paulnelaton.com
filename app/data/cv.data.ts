@@ -12,6 +12,7 @@ export const CVData = {
         contact: {
           email: "paul.nelaton@gmail.com",
           phone: "+55 48 988117655",
+          website: "paulnelaton.com",
         },
       },
       stats: [
@@ -155,6 +156,7 @@ export const CVData = {
         contact: {
           email: "paul.nelaton@gmail.com",
           phone: "+55 48 988117655",
+          website: "paulnelaton.com",
         },
       },
       stats: [
@@ -285,6 +287,7 @@ export const CVData = {
         contact: {
           email: "paul.nelaton@gmail.com",
           phone: "+55 48 988117655",
+          website: "paulnelaton.com",
         },
       },
 
@@ -433,6 +436,7 @@ export const CVData = {
         contact: {
           email: "paul.nelaton@gmail.com",
           phone: "+55 48 988117655",
+          website: "paulnelaton.com",
         },
       },
 

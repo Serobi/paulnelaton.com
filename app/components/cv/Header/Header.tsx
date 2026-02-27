@@ -26,6 +26,15 @@ export function Header({ identity }: HeaderProps) {
           />
           <span>{identity.contact.email}</span>
           <span>{identity.contact.phone}</span>
+          <span>
+            <a
+              href={`https://${identity.contact.website}`}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {identity.contact.website}
+            </a>
+          </span>
         </div>
       </div>
     </header>
