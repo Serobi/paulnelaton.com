@@ -6,11 +6,11 @@
   background: var(--light-gray);
   padding: 8px 12px;
   border-left: 4px solid var(--thales-blue);
-  margin-bottom: 12px;
+  margin-bottom: 6px;
 }
 
 .statItem {
-  margin-bottom: 12px;
+  margin-bottom: 10px;
 }
 
 .statLabel {
@@ -34,8 +34,8 @@
 }
 
 @media (max-width: 768px) {
-  .section h3 {
-    font-size: clamp(0.6rem, 2vw, 0.9rem);
+  .mainTitle {
+    font-size: clamp(0.7rem, 2vw, 1rem);
     margin-bottom: 6px;
     padding: 4px 6px;
   }

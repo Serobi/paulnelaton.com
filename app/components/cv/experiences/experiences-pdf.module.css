@@ -48,7 +48,7 @@
 }
 
 .expTitleGroup h3 {
-  font-size: 1.15rem;
+  font-size: 0.9rem;
   color: var(--thales-blue);
   font-weight: 700;
   margin: 0;
@@ -69,7 +69,7 @@
 
 .expList li {
   margin-bottom: 6px;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   color: var(--grey-text);
   line-height: 1.2;
 }

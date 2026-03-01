@@ -6,7 +6,7 @@
   background: var(--light-gray);
   padding: 8px 12px;
   border-left: 4px solid var(--thales-blue);
-  margin-bottom: 12px;
+  margin-bottom: 6px;
 }
 
 .langList {
@@ -17,13 +17,13 @@
 
 .langList li {
   margin-bottom: 6px;
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   color: var(--grey-text);
 }
 
 @media (max-width: 768px) {
   .mainTitle {
-    font-size: clamp(0.6rem, 2vw, 0.9rem);
+    font-size: clamp(0.7rem, 2vw, 1rem);
     margin-bottom: 6px;
     padding: 4px 6px;
   }

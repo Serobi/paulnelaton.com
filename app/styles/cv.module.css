@@ -52,13 +52,15 @@ body {
 }
 
 .webSidebar {
-  display: grid;
+  display: flex;
+  flex-direction: column;
   gap: 10px;
 }
 
 .webMain {
-  display: grid;
-  gap: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 /* ═══════════════════════════════════════════════════════════════
