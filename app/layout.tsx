@@ -76,9 +76,17 @@ export const metadata: Metadata = {
 
   icons: {
     icon: [
-      { url: "/favicon.ico" },
-      { url: "/favicon.png", sizes: "512x512", type: "image/png" },
-      { url: "/favicon_apple.png", sizes: "256x256", type: "image/png" },
+      { url: "https://paulnelaton.com/favicon.ico" },
+      {
+        url: "https://paulnelaton.com/favicon.png",
+        sizes: "512x512",
+        type: "image/png",
+      },
+      {
+        url: "https://paulnelaton.com/favicon_apple.png",
+        sizes: "256x256",
+        type: "image/png",
+      },
     ],
   },
 
