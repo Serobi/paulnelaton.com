@@ -66,7 +66,25 @@ body {
 /* ═══════════════════════════════════════════════════════════════
    VERSION PDF (PUPPETEER)
    ═══════════════════════════════════════════════════════════════ */
+/* Potentielle solution au bug page 2
+   .pdfPage1 {
+    height: 1123px;
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    overflow: hidden;
+  }
+  
+  .pdfSidebar {
+    height: 100%;
+    overflow: hidden;
+  }
+  
+  .pdfMain {
+    height: 100%;
+    overflow-y: auto;
+  }
 
+  */
 .printOnly {
   display: none;
 }
