@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { IBM_Plex_Sans, IBM_Plex_Mono } from "next/font/google";
 import "./globals.css";
+import Script from "next/script";
 
 import Header from "@/components/Header/Header";
 import Footer from "@/components/Footer/Footer";
@@ -20,7 +21,7 @@ const plexMono = IBM_Plex_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://paulnelaton.com"), // adapte si besoin
+  metadataBase: new URL("https://paulnelaton.com"),
 
   title: {
     default: "Paul Nelaton | Software Engineer & Cybersecurity",
@@ -30,17 +31,13 @@ export const metadata: Metadata = {
   description:
     "Paul Nelaton, ingénieur spécialisé en développement fullstack, cybersécurité et automatisation. Découvrez mes projets et applications.",
 
-  keywords: [
-    "Paul Nelaton",
-    "ingénieur logiciel",
-    "software engineer",
-    "développeur fullstack",
-    "cybersécurité",
-    "sécurité informatique",
-    "automation",
-    "applications web",
-    "Brain Eaters",
-  ],
+  alternates: {
+    canonical: "/",
+    languages: {
+      fr: "/fr",
+      en: "/en",
+    },
+  },
 
   authors: [{ name: "Paul Nelaton" }],
   creator: "Paul Nelaton",
@@ -53,7 +50,7 @@ export const metadata: Metadata = {
     siteName: "Paul Nelaton",
     images: [
       {
-        url: "/og-image.png",
+        url: "https://paulnelaton.com/og-image.png",
         width: 1200,
         height: 630,
         alt: "Paul Nelaton - Software Engineer & Cybersecurity",
@@ -67,7 +64,14 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Paul Nelaton | Software Engineer & Cybersecurity",
     description: "Software, Cybersecurity and Automation Engineer.",
-    images: ["/og-image.png"],
+    images: [
+      {
+        url: "https://paulnelaton.com/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Paul Nelaton - Software Engineer & Cybersecurity",
+      },
+    ],
   },
 
   icons: {
@@ -91,6 +95,26 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="fr">
+      <head>
+        <Script
+          type="application/ld+json"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Person",
+              "@id": "https://paulnelaton.com/#person",
+              name: "Paul Nelaton",
+              url: "https://paulnelaton.com",
+              jobTitle: "Software Engineer / Cybersecurity Engineer",
+              sameAs: [
+                "https://www.linkedin.com/in/paul-nelaton-791721aa",
+                "https://github.com/Serobi",
+              ],
+            }),
+          }}
+        />
+      </head>
       <body className={`${plexSans.variable} ${plexMono.variable}`}>
         <LanguageProvider>
           <ScrollToTop />
