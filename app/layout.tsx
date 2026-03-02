@@ -20,9 +20,68 @@ const plexMono = IBM_Plex_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Paul Nelaton | Portfolio & Apps",
+  metadataBase: new URL("https://paulnelaton.com"), // adapte si besoin
+
+  title: {
+    default: "Paul Nelaton | Software Engineer & Cybersecurity",
+    template: "%s | Paul Nelaton",
+  },
+
   description:
-    "Découvrez le portfolio de Paul Nelaton, créateur d'applications, ainsi que ses projets comme Brain Eaters et son générateur de CV interactif.",
+    "Paul Nelaton, ingénieur spécialisé en développement fullstack, cybersécurité et automatisation. Découvrez mes projets et applications.",
+
+  keywords: [
+    "Paul Nelaton",
+    "ingénieur logiciel",
+    "software engineer",
+    "développeur fullstack",
+    "cybersécurité",
+    "sécurité informatique",
+    "automation",
+    "applications web",
+    "Brain Eaters",
+  ],
+
+  authors: [{ name: "Paul Nelaton" }],
+  creator: "Paul Nelaton",
+
+  openGraph: {
+    title: "Paul Nelaton | Software Engineer & Cybersecurity",
+    description:
+      "Paul Nelaton, ingénieur spécialisé en développement fullstack, cybersécurité et automatisation. Découvrez mes projets et applications.",
+    url: "https://paulnelaton.com",
+    siteName: "Paul Nelaton",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Paul Nelaton - Software Engineer & Cybersecurity",
+      },
+    ],
+    locale: "fr_FR",
+    type: "website",
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "Paul Nelaton | Software Engineer & Cybersecurity",
+    description: "Software, Cybersecurity and Automation Engineer.",
+    images: ["/og-image.png"],
+  },
+
+  icons: {
+    icon: [
+      { url: "/favicon.ico" },
+      { url: "/favicon.png", sizes: "512x512", type: "image/png" },
+      { url: "/favicon_apple.png", sizes: "256x256", type: "image/png" },
+    ],
+  },
+
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function RootLayout({
