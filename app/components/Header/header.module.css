@@ -18,25 +18,32 @@
 .container {
   max-width: 90rem;
   margin: 0 auto;
-  padding: 0 1.5rem;
-}
-
-@media (min-width: 1024px) {
-  .container {
-    padding: 0 5rem;
-  }
+  padding: 0 5rem;
 }
 
 .inner {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: max-content 1fr max-content;
   align-items: center;
+  width: 100%;
   height: 4rem;
 }
 
-/* ─── Logo ─── */
+.desktopNav {
+  display: flex;
+  align-items: center;
+  justify-self: end;
+  gap: 2rem;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.05em;
+}
 
 .logo {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+  white-space: nowrap;
   font-family: var(--font-mono);
   font-size: 0.85rem;
   letter-spacing: 0.15em;
@@ -49,23 +56,6 @@
 .logo:hover {
   background: rgba(0, 229, 168, 0.08);
   box-shadow: 0 0 8px rgba(0, 229, 168, 0.15);
-}
-
-/* ─── Desktop Nav ─── */
-
-.desktopNav {
-  display: none;
-}
-
-@media (min-width: 768px) {
-  .desktopNav {
-    display: flex;
-    align-items: center;
-    gap: 2rem;
-    font-family: var(--font-mono);
-    font-size: 0.8rem;
-    letter-spacing: 0.05em;
-  }
 }
 
 .navLink {
@@ -100,7 +90,7 @@
 /* ─── Mobile Button ─── */
 
 .mobileMenuBtn {
-  display: block;
+  display: none;
   font-family: var(--font-mono);
   font-size: 0.8rem;
   background: none;
@@ -109,29 +99,17 @@
   cursor: pointer;
 }
 
-@media (min-width: 768px) {
-  .mobileMenuBtn {
-    display: none;
-  }
-}
-
 /* ─── Mobile Menu ─── */
 
 .mobileMenu {
+  display: none;
   position: fixed;
   top: 4rem;
   left: 0;
   right: 0;
-
   background: #0c0f14;
   border-top: 1px solid #1c2330;
   z-index: 999;
-}
-
-@media (min-width: 768px) {
-  .mobileMenu {
-    display: none;
-  }
 }
 
 .mobileNav {
@@ -160,4 +138,24 @@
   position: absolute;
   top: 1rem;
   right: 1rem;
+}
+
+@media (max-width: 1024px) {
+  .container {
+    padding: 0 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .desktopNav {
+    display: none;
+  }
+
+  .mobileMenuBtn {
+    display: block;
+  }
+
+  .mobileMenu {
+    display: block;
+  }
 }
