@@ -1,22 +1,10 @@
-export interface ContactInfo {
-  email: string;
-  phone: string;
-  website: string;
-}
-
-export interface Identity {
+export interface Header {
   name: string;
   role: string;
   domains: string[];
   experience: string;
   dispo: string;
 }
-
-export type Stats = {
-  label: string;
-  value: number;
-  color: string;
-};
 
 export interface Experience {
   role: string;
@@ -42,7 +30,7 @@ export interface Languages {
 }
 
 export interface CV {
-  identity: Identity;
+  header: Header;
   experiences: Experience[];
   skills: SkillCategory[];
   formations: Formations[];
@@ -52,6 +40,3 @@ export interface CV {
 export interface Labels {
   label: string;
 }
-
-export type Mode = "dev" | "sec";
-export type Lang = "fr" | "en";

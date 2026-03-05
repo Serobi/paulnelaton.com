@@ -1,6 +1,5 @@
 "use client";
 
-import { useState, useRef } from "react";
 import styles from "./dossierskills.module.css";
 import { CVData } from "./data";
 import { Header } from "@/components/dossierskills/Header/Header";
@@ -15,7 +14,7 @@ export default function Dossierskills() {
   return (
     <div className={styles.cvPageWrapper}>
       <div className={styles.cvSheet}>
-        <Header identity={profile.identity} />
+        <Header header={profile.header} />
 
         <div className={styles.cvBody}>
           <div className={styles.webGrid}>

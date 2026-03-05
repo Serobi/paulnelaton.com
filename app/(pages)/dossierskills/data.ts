@@ -1,23 +1,11 @@
-import { CV } from "./types";
-
 export const CVData = {
-  identity: {
+  header: {
     name: "Paul N",
     role: "Ingénieur Cybersécurité",
     domains: ["Cybersécurité", "Développement full-stack", "Systèmes et infra"],
     experience: "9",
     dispo: "30/04/2026",
   },
-  stats: [
-    { label: "Sécurité Systèmes & Réseaux", value: 90, color: "#00005c" },
-    { label: "Automatisation & DevOps", value: 88, color: "#21219b" },
-    {
-      label: "Architecture & Industrialisation",
-      value: 85,
-      color: "#3b82f6",
-    },
-    { label: "Ingénierie Logicielle", value: 80, color: "#60a5fa" },
-  ],
   skillTrees: [
     {
       title: "Cybersécurité",
@@ -111,8 +99,8 @@ export const CVData = {
   ],
   formations: [
     {
-      year: "2019–2020",
-      title: "Certifications",
+      year: "2019-2020",
+      title: "Certification",
       school: "Zscaler ZCCA / ZCCP",
     },
     {
@@ -132,7 +120,6 @@ export const CVData = {
     { name: "Portugais", level: "Courant" },
   ],
   labels: {
-    domains: "Domaines d'expertise",
     technicalSkills: "Compétences techniques",
     education: "Formation & certifications",
     languages: "Langues",
