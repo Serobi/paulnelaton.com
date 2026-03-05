@@ -33,7 +33,7 @@ export function Header({ header }: HeaderProps) {
       <div className={styles.rightSide}>
         <div className={styles.brandBlock}>
           <img
-            src="/images/logo_wit.png"
+            src="/images/logo_wit_transparent.png"
             alt="Wit Digital"
             className={styles.logo}
           />
