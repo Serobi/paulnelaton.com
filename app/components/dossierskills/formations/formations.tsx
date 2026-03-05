@@ -1,7 +1,7 @@
 // components/Skills.tsx
 import styles from "./formations.module.css"; // ou crée skills.module.css si tu préfères isoler
 
-import type { Formations } from "@/data/cv.types";
+import type { Formations } from "@/(pages)/dossierskills/types";
 
 type Props = {
   formations: Formations[];

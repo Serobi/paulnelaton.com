@@ -1,5 +1,5 @@
 import styles from "./experiences.module.css";
-import { Experience } from "@/data/cv.types";
+import { Experience } from "@/(pages)/dossierskills/types";
 
 type Props = {
   experiences: Experience[];

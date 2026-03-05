@@ -1,7 +1,7 @@
 // components/Skills.tsx
 import styles from "./languages.module.css";
 
-import type { Languages } from "@/data/cv.types";
+import type { Languages } from "@/(pages)/dossierskills/types";
 
 type Props = {
   languages: Languages[];

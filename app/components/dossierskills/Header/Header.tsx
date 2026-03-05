@@ -1,5 +1,5 @@
 import styles from "./Header.module.css";
-import type { Identity } from "@/data/cv.types";
+import type { Identity } from "@/(pages)/dossierskills/types";
 
 type HeaderProps = {
   identity: Identity;
@@ -13,15 +13,19 @@ export function Header({ identity }: HeaderProps) {
         <h2 className={styles.role}>{identity.role}</h2>
 
         <div className={styles.tags}>
-          <span className={styles.tag}>Cybersécurité</span>
-          <span className={styles.tag}>Développement full-stack</span>
-          <span className={styles.tag}>Systèmes et infra</span>
+          {identity.domains.map((domain) => (
+            <span className={styles.tag} key={domain}>
+              {domain}
+            </span>
+          ))}
         </div>
 
         <div className={styles.statusBlock}>
-          <span className={styles.xpBadge}>9 ans d'expérience</span>
+          <span className={styles.xpBadge}>
+            {identity.experience} ans d'expérience
+          </span>
           <span className={styles.availability}>
-            Disponible le : <strong>30/04/2026</strong>
+            Disponible le : <strong>{identity.dispo}</strong>
           </span>
         </div>
       </div>
