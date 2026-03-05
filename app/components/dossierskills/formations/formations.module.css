@@ -1,0 +1,83 @@
+.mainTitle {
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+
+  color: #0f172a;
+
+  padding-bottom: 6px;
+  margin-bottom: 14px;
+
+  border-bottom: 2px solid #c9ad8d;
+}
+
+.eduList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.eduItem {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+
+  padding: 10px 12px;
+
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-left: 1px solid #c9ad8d;
+  border-radius: 8px;
+}
+
+/* Year */
+
+.year {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #64748b;
+  min-width: 42px;
+}
+
+/* Details */
+
+.eduDetail {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.eduDetail strong {
+  font-size: 0.85rem;
+  color: #0f172a;
+}
+
+.eduDetail span {
+  font-size: 0.78rem;
+  color: #475569;
+}
+
+/* Responsive */
+
+@media (max-width: 768px) {
+  .mainTitle {
+    font-size: clamp(0.7rem, 2vw, 1rem);
+  }
+
+  .eduItem {
+    padding: 8px 10px;
+  }
+
+  .year {
+    font-size: clamp(0.6rem, 1.8vw, 0.75rem);
+  }
+
+  .eduDetail strong {
+    font-size: clamp(0.7rem, 2vw, 0.85rem);
+  }
+
+  .eduDetail span {
+    font-size: clamp(0.65rem, 1.8vw, 0.78rem);
+  }
+}

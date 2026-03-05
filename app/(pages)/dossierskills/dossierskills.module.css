@@ -1,0 +1,120 @@
+html,
+body {
+  background: white !important;
+  -webkit-print-color-adjust: exact !important;
+  print-color-adjust: exact !important;
+}
+
+.cvPageWrapper {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  background: #0e1116;
+  padding: 4rem 20px 3rem;
+  box-sizing: border-box;
+}
+
+.cvSheet {
+  width: 100%;
+  max-width: 210mm;
+  background: white;
+}
+
+.cvBody {
+  padding: 24px 20px;
+}
+
+.section {
+  padding: 14px;
+  border-radius: 10px;
+  background: #f8fafc;
+  border: 1px solid #e5e7eb;
+}
+
+.webGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+.webMain {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   RESPONSIVE (WEB)
+   ═══════════════════════════════════════════════════════════════ */
+
+@media (max-width: 768px) {
+  .webGrid {
+    grid-template-columns: 36% 1fr;
+    gap: 5px;
+  }
+
+  .webSidebar,
+  .webMain {
+    gap: 5px;
+  }
+}
+
+@media (max-width: 350px) {
+  .webGrid {
+    grid-template-columns: 100%;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   PRINT MEDIA (PUPPETEER)
+   ═══════════════════════════════════════════════════════════════ */
+
+@media print {
+  :global(body) {
+    background: white !important;
+    margin: 0 !important;
+  }
+
+  .cvPageWrapper {
+    background: white !important;
+    width: 210mm !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+    border: none !important;
+  }
+
+  .cvPageWrapper * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Masque la version web */
+  .screenOnly {
+    display: none !important;
+  }
+
+  /* Affiche la version PDF */
+  .printOnly {
+    display: block !important;
+  }
+
+  .section {
+    background: transparent;
+    border: none;
+    padding: 0;
+  }
+
+  .cvBody {
+    padding: 2mm 5mm;
+  }
+}
+
+@page {
+  size: A4;
+  margin: 10mm 0mm 10mm 0mm;
+}
+
+@page :first {
+  margin-top: 0mm;
+}

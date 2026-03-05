@@ -1,0 +1,65 @@
+.mainTitle {
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+
+  color: #0f172a;
+
+  padding-bottom: 6px;
+  margin-bottom: 14px;
+
+  border-bottom: 2px solid #c9ad8d;
+}
+
+.langList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.langList li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 8px 10px;
+
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+
+  font-size: 0.82rem;
+  color: #334155;
+}
+
+.langName {
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.langLevel {
+  font-size: 0.75rem;
+  color: #64748b;
+  font-weight: 500;
+}
+
+/* Responsive */
+
+@media (max-width: 768px) {
+  .mainTitle {
+    font-size: clamp(0.7rem, 2vw, 1rem);
+  }
+
+  .langList li {
+    font-size: clamp(0.65rem, 1.8vw, 0.82rem);
+  }
+
+  .langLevel {
+    font-size: clamp(0.6rem, 1.6vw, 0.75rem);
+  }
+}

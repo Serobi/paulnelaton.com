@@ -1,0 +1,57 @@
+.mainTitle {
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+
+  color: #0f172a;
+
+  padding-bottom: 6px;
+  margin-bottom: 12px;
+
+  border-bottom: 2px solid #c9ad8d;
+}
+
+/* Skill group */
+
+.skillGroup {
+  margin-bottom: 12px;
+}
+
+.skillCategory {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #475569;
+  margin-bottom: 10px;
+}
+
+/* Tags container */
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+/* Tag */
+
+.tag {
+  font-size: 0.72rem;
+  font-weight: 600;
+
+  padding: 4px 8px;
+  border-radius: 6px;
+
+  background: #f8fafc;
+  border: 1px solid #e5e7eb;
+
+  color: #1f2937;
+
+  transition: all 0.2s ease;
+}
+
+.tag:hover {
+  background: #c9ad8d;
+  border-color: #c9ad8d;
+  color: #0f172a;
+}

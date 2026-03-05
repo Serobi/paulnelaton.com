@@ -1,0 +1,85 @@
+.mainTitle {
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+
+  color: #0f172a;
+
+  padding-bottom: 6px;
+  margin-bottom: 14px;
+
+  border-bottom: 2px solid #c9ad8d;
+}
+
+/* Timeline */
+
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+
+  border-left: 4px solid #c9ad8d;
+  padding-left: 16px;
+}
+
+.expCard {
+  position: relative;
+  padding: 12px 14px;
+
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+}
+
+.expCard:hover {
+  border-color: #c9ad8d;
+  transition: border 0.2s ease;
+}
+
+.expHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 8px;
+}
+
+.expTitleGroup h3 {
+  font-size: 0.95rem;
+  color: #0f172a;
+  font-weight: 700;
+  margin: 0;
+}
+
+.company {
+  font-size: 0.78rem;
+  color: #475569;
+  font-weight: 600;
+  margin-top: 2px;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+/* Period */
+
+.period {
+  font-size: 0.75rem;
+  color: #475569;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+/* Description list */
+
+.expList {
+  margin: 0;
+  padding-left: 18px;
+  list-style-type: disc;
+}
+
+.expList li {
+  margin-bottom: 5px;
+  font-size: 0.8rem;
+  color: #334155;
+  line-height: 1.5;
+}
