@@ -22,7 +22,7 @@ export function Header({ header }: HeaderProps) {
 
         <div className={styles.statusBlock}>
           <span className={styles.xpBadge}>
-            {header.experience} ans d'expérience
+            Expérience : <strong>{header.experience} ans</strong>
           </span>
           <span className={styles.availability}>
             Disponible le : <strong>{header.dispo}</strong>

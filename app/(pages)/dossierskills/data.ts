@@ -1,4 +1,6 @@
 export const CVData = {
+  // Ici il suffit de remplir les champs par les données du CV.
+  // Tu peux aussi envoyer le tout à chat gpt et lui demander de transposer un CV dans ce format et coller le résultat.
   header: {
     name: "Paul N",
     role: "Ingénieur Cybersécurité",
@@ -6,6 +8,8 @@ export const CVData = {
     experience: "9",
     dispo: "30/04/2026",
   },
+
+  // Ici on met les catégories et compétences techniques. Chaque catégorie a un titre et une liste de compétences.
   skillTrees: [
     {
       title: "Cybersécurité",
@@ -45,6 +49,8 @@ export const CVData = {
       ],
     },
   ],
+
+  // Ici on remplit nos expériences professionnelles. Chaque expérience a une période, une entreprise, un rôle et une description (liste de points).
   experience: [
     {
       period: "2024 - Présent",
@@ -97,6 +103,7 @@ export const CVData = {
       ],
     },
   ],
+  // Ici les formations et certifications. Chaque formation a une année, un titre et une école.
   formations: [
     {
       year: "2019-2020",
@@ -114,11 +121,15 @@ export const CVData = {
       school: "Univ. Franche-Comté",
     },
   ],
+
+  //Ici les langues. Chaque langue a un nom et un niveau.
   languages: [
     { name: "Français", level: "Langue maternelle" },
     { name: "Anglais", level: "Courant professionnel" },
     { name: "Portugais", level: "Courant" },
   ],
+
+  // Ici ce sont les noms de catégories, normalement pas besoin de modifier mais si besoin.
   labels: {
     technicalSkills: "Compétences techniques",
     education: "Formation & certifications",

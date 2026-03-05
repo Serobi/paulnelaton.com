@@ -69,16 +69,14 @@
 
 /* EXPERIENCE */
 .xpBadge {
-  font-size: 12px;
-  font-weight: 700;
-  padding: 5px 12px;
-  background: #c9ad8d;
-  color: #0f172a;
-  border-radius: 6px;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
+  font-size: 14px;
+  color: #cbd5f5;
 }
 
+.xpBadge strong {
+  color: #c9ad8d; /* Rappel du doré */
+  font-weight: 700;
+}
 /* AVAILABILITY */
 .availability {
   font-size: 14px;
