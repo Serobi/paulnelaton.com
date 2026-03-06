@@ -8,7 +8,7 @@ export const maxDuration = 30;
 export async function POST(request: NextRequest) {
   try {
     const LANGS = ["fr", "en"] as const;
-    const MODES = ["dev", "sec"] as const;
+    const MODES = Object.keys(CVData.fr) as Array<keyof typeof CVData.fr>;
 
     type Lang = (typeof LANGS)[number];
     type Mode = (typeof MODES)[number];

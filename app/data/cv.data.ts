@@ -5,8 +5,8 @@ export const CVData = {
     sec: {
       identity: {
         name: "Paul NELATON",
-        role: "Ingénieur Cybersécurité",
-        mobility: "Mobilité Toulouse / Besançon / Suisse",
+        role: "Ingénieur SecOps",
+        mobility: "Mobilité Toulouse / Montpellier",
         summary:
           "Ingénieur cybersécurité spécialisé dans la sécurisation d'infrastructures critiques, avec plus de six ans d'expérience en environnements à fortes contraintes de disponibilité.",
         contact: {
@@ -81,7 +81,7 @@ export const CVData = {
         {
           period: "2019 - 2024",
           company: "Vinci Autoroutes",
-          role: "Ingénieur Cybersécurité",
+          role: "Ingénieur SecOps",
           desc: [
             "MCO d'infrastructures critiques (OIV).",
             "Rémédiation et investigation des vulnérabilités (Qualys).",
@@ -150,7 +150,7 @@ export const CVData = {
       identity: {
         name: "Paul NELATON",
         role: "Ingénieur Logiciel & FullStack Développeur",
-        mobility: "Mobilité Toulouse / Besançon / Suisse",
+        mobility: "Mobilité Toulouse / Montpellier",
         summary:
           "Ingénieur logiciel avec plus de six ans d'expérience, orienté automatisation, sécurité et développement applicatif, avec une forte sensibilité aux architectures modulaires, performantes et scalables.",
         contact: {
@@ -227,7 +227,7 @@ export const CVData = {
         {
           period: "2019 - 2024",
           company: "Vinci Autoroutes",
-          role: "Ingénieur Cybersécurité",
+          role: "Ingénieur SecOps",
           desc: [
             "Automatisation des contrôles de sécurité et reporting via scripts PowerShell.",
             "Industrialisation du patch management et du durcissement système.",
@@ -275,15 +275,178 @@ export const CVData = {
         experience: "Expérience professionnelle",
       },
     },
+    product: {
+      identity: {
+        name: "Paul NELATON",
+        role: "Ingénieur Logiciel & Technical Product Owner",
+        mobility: "Mobilité Toulouse / Montpellier",
+        summary:
+          "Ingénieur logiciel et cybersécurité avec 9 ans d'expérience dans la conception d'outils techniques et l'automatisation de plateformes internes. Habitué à structurer des solutions et à travailler à l'interface entre enjeux techniques et besoins opérationnels.",
+        contact: {
+          email: "paul.nelaton@gmail.com",
+          phone: "+55 48 988117655",
+          website: "paulnelaton.com",
+        },
+      },
+      stats: [
+        {
+          label: "Architecture & conception de solutions",
+          value: 90,
+          color: "#00005c",
+        },
+        {
+          label: "Ingénierie logicielle",
+          value: 88,
+          color: "#21219b",
+        },
+        {
+          label: "Automatisation & industrialisation",
+          value: 86,
+          color: "#3b82f6",
+        },
+        {
+          label: "Pilotage technique & coordination",
+          value: 85,
+          color: "#60a5fa",
+        },
+      ],
+      skillTrees: [
+        {
+          title: "Produit & Plateforme",
+          skills: [
+            "Vision produit",
+            "Roadmap technique",
+            "Automatisation des outils",
+            "Jira / Confluence",
+            "Documentation technique",
+            "Méthodes agiles",
+          ],
+        },
+        {
+          title: "Développement logiciel",
+          skills: [
+            "C# / .NET",
+            "Typescript",
+            "React",
+            "Next.js",
+            "API REST",
+            "UI/UX",
+            "Git",
+          ],
+        },
+        {
+          title: "Automatisation & DevOps",
+          skills: [
+            "Python",
+            "PowerShell",
+            "Pipelines CI/CD",
+            "Automatisation de workflows",
+            "Intégrations API",
+          ],
+        },
+      ],
+      experience: [
+        {
+          period: "2024 - Présent",
+          company: "Projet indépendant",
+          role: "Ingénieur logiciel & Product Owner",
+          desc: [
+            "Conception et développement d'un projet logiciel complet (C# / Unity).",
+            "Conception des systèmes et de l'architecture technique globale.",
+            "Pilotage de la roadmap technique et structuration du projet.",
+            "Amélioration continue du projet par itérations.",
+            "Définition de la vision produit et prise en compte de l'expérience utilisateur dans les choix de conception.",
+            "Optimisation de l'UX et de la lisibilité des fonctionnalités.",
+            "Développement d'une interface web fullstack (React / Next.js).",
+          ],
+        },
+        {
+          period: "2019 - 2024",
+          company: "Vinci Autoroutes",
+          role: "Ingénieur SecOps",
+          desc: [
+            "Pilotage technique d'implémentations de sécurité sur des infrastructures critiques (OIV).",
+            "Analyse des besoins sécurité et définition des plans de remédiation.",
+            "Coordination avec les équipes systèmes et réseaux pour déploiement des solutions.",
+            "Industrialisation et automatisation de contrôles de sécurité.",
+            "Centralisation et exploitation des logs via ELK pour amélioration de la détection.",
+          ],
+        },
+        {
+          period: "2018 - 2019",
+          company: "British Telecom",
+          role: "Ingénieur Cybersécurité & DevOps",
+          desc: [
+            "Automatisation des flux de détection et d'escalade via intégration API.",
+            "Intégration de plateformes SIEM et outils SOC (RTIR, TheHive, ELK).",
+            "Automatisation de compliance des équipements sécurité et réseau avec Ansible.",
+            "Réalisation de maquettes techniques et contribution aux choix d'architecture.",
+          ],
+        },
+        {
+          period: "2017 - 2018",
+          company: "Orange Cyberdefense",
+          role: "Ingénieur Sécurité Réseau",
+          desc: [
+            "MCO sur le périmètre mondial de Air Liquide incluant :",
+            "Administration firewalls (Checkpoint, Cisco ASA, Fortinet, Palo Alto).",
+            "Gestion proxy (Zscaler) et solutions DNS / sécurité F5.",
+            "Gestion d'incidents N1/N2 en environnement multi-sites mondial.",
+          ],
+        },
+        {
+          period: "2016 - 2017",
+          company: "Cinquième Avenue",
+          role: "Ingénieur réseau & chef de projet junior",
+          desc: [
+            "Gestion des déploiements d'infrastructures et solutions télécom chez les clients.",
+            "Organisation et planification des interventions techniques.",
+            "Interface directe avec les clients pour cadrage des besoins et suivi des déploiements.",
+            "Participation à la conception et au lancement d'une nouvelle offre de téléphonie IP.",
+            "Formation interne SFR : fondamentaux de la gestion de projet.",
+          ],
+        },
+      ],
+
+      formations: [
+        {
+          year: "2016-2017",
+          title: "Formation",
+          school: "Chef de projet déploiement téléphonie SFR",
+        },
+        {
+          year: "2016",
+          title: "Ingénieur Systèmes, réseaux et sécurité",
+          school: "AFTI (Orsay)",
+        },
+        {
+          year: "2015",
+          title: "Licence Informatique",
+          school: "Univ. Franche-Comté",
+        },
+      ],
+      languages: [
+        { name: "Français", level: "Langue maternelle" },
+        { name: "Anglais", level: "Courant professionnel" },
+        { name: "Portugais", level: "Courant" },
+      ],
+      labels: {
+        domains: "Domaines d'expertise",
+        technicalSkills: "Compétences techniques",
+        education: "Formation & certifications",
+        languages: "Langues",
+        experience: "Expérience professionnelle",
+      },
+    },
   },
   en: {
     sec: {
       identity: {
         name: "Paul NELATON",
-        role: "Cybersecurity Engineer",
-        mobility: "Mobility Toulouse / Besançon / Switzerland",
+        role: "SecOps Engineer",
+        mobility: "Open to opportunities in Toulouse / Montpellier",
         summary:
-          "Cybersecurity engineer with over six years of experience securing critical infrastructures. Strong background in automation, software engineering, and high-availability environments.",
+          "SecOps engineer with over six years of experience securing critical infrastructures. Strong background in automation, software engineering, and high-availability environments.",
         contact: {
           email: "paul.nelaton@gmail.com",
           phone: "+55 48 988117655",
@@ -359,7 +522,7 @@ export const CVData = {
         {
           period: "2019 - 2024",
           company: "Vinci Autoroutes",
-          role: "Cybersecurity Engineer",
+          role: "SecOps Engineer",
           desc: [
             "Maintained and secured critical infrastructure environments.",
             "Vulnerability remediation and investigation using Qualys.",
@@ -430,7 +593,7 @@ export const CVData = {
       identity: {
         name: "Paul NELATON",
         role: "Software Engineer & FullStack Web Developer",
-        mobility: "Mobility Toulouse / Besançon / Switzerland",
+        mobility: "Open to opportunities in Toulouse / Montpellier",
         summary:
           "Software engineer with over six years of experience, focused on automation, security, and application development, with a strong emphasis on modular, high-performance, and scalable architectures.",
         contact: {
@@ -509,7 +672,7 @@ export const CVData = {
         {
           period: "2019 - 2024",
           company: "Vinci Autoroutes",
-          role: "Automation & Security Engineer",
+          role: "Automation & SecOps Engineer",
           desc: [
             "Automated security controls and reporting using PowerShell scripts.",
             "Industrialized patch management and system hardening processes.",
@@ -547,6 +710,174 @@ export const CVData = {
           year: "2014",
           title: "DUT Computer Science",
           school: "IUT of Belfort",
+        },
+      ],
+
+      languages: [
+        { name: "French", level: "Native" },
+        { name: "English", level: "Professional proficiency" },
+        { name: "Portuguese", level: "Fluent" },
+      ],
+
+      labels: {
+        domains: "Areas of Expertise",
+        technicalSkills: "Technical Skills",
+        education: "Education & Certifications",
+        languages: "Languages",
+        experience: "Professional Experience",
+      },
+    },
+    product: {
+      identity: {
+        name: "Paul NELATON",
+        role: "Software Engineer & Technical Product Owner",
+        mobility: "Open to opportunities in Toulouse / Montpellier",
+        summary:
+          "Software and cybersecurity engineer with 9 years of experience designing technical tools and automating internal platforms. Used to structuring solutions and working at the intersection of technical challenges and operational needs.",
+        contact: {
+          email: "paul.nelaton@gmail.com",
+          phone: "+55 48 988117655",
+          website: "paulnelaton.com",
+        },
+      },
+
+      stats: [
+        {
+          label: "Solution Architecture & Design",
+          value: 90,
+          color: "#00005c",
+        },
+        {
+          label: "Software Engineering",
+          value: 88,
+          color: "#21219b",
+        },
+        {
+          label: "Automation & Industrialization",
+          value: 86,
+          color: "#3b82f6",
+        },
+        {
+          label: "Technical Leadership & Coordination",
+          value: 85,
+          color: "#60a5fa",
+        },
+      ],
+
+      skillTrees: [
+        {
+          title: "Product & Platform",
+          skills: [
+            "Product vision",
+            "Technical roadmap",
+            "Tooling automation",
+            "Jira / Confluence",
+            "Technical documentation",
+            "Agile methodologies",
+          ],
+        },
+        {
+          title: "Software Development",
+          skills: [
+            "C# / .NET",
+            "Typescript",
+            "React",
+            "Next.js",
+            "REST APIs",
+            "UI/UX",
+            "Git",
+          ],
+        },
+        {
+          title: "Automation & DevOps",
+          skills: [
+            "Python",
+            "PowerShell",
+            "CI/CD pipelines",
+            "Workflow automation",
+            "API integrations",
+          ],
+        },
+      ],
+
+      experience: [
+        {
+          period: "2024 - Present",
+          company: "Independent Project",
+          role: "Software Engineer & Product Owner",
+          desc: [
+            "Design and development of a complete software project (C# / Unity).",
+            "Design of core systems and overall technical architecture.",
+            "Ownership of the technical roadmap and project structuring.",
+            "Continuous improvement through iterative development.",
+            "Definition of product vision with strong focus on user experience.",
+            "UX optimization and feature clarity improvements.",
+            "Development of a fullstack web interface (React / Next.js).",
+          ],
+        },
+        {
+          period: "2019 - 2024",
+          company: "Vinci Autoroutes",
+          role: "SecOps Engineer",
+          desc: [
+            "Technical leadership for security implementations on critical infrastructures (OIV).",
+            "Security needs analysis and definition of remediation strategies.",
+            "Coordination with system and network teams for solution deployment.",
+            "Industrialization and automation of security controls.",
+            "Centralization and analysis of logs using ELK to improve detection capabilities.",
+          ],
+        },
+        {
+          period: "2018 - 2019",
+          company: "British Telecom",
+          role: "Cybersecurity & DevOps Engineer",
+          desc: [
+            "Automation of detection and escalation workflows through API integrations.",
+            "Integration of SIEM platforms and SOC tools (RTIR, TheHive, ELK).",
+            "Automation of network and security equipment compliance using Ansible.",
+            "Technical prototyping and contribution to architectural decisions.",
+          ],
+        },
+        {
+          period: "2017 - 2018",
+          company: "Orange Cyberdefense",
+          role: "Network Security Engineer",
+          desc: [
+            "Operational maintenance for Air Liquide's global security infrastructure.",
+            "Firewall administration (Checkpoint, Cisco ASA, Fortinet, Palo Alto).",
+            "Proxy management (Zscaler) and DNS security solutions (F5).",
+            "N1/N2 incident management in a global multi-site environment.",
+          ],
+        },
+        {
+          period: "2016 - 2017",
+          company: "Cinquième Avenue",
+          role: "Network Engineer & Junior Project Manager",
+          desc: [
+            "Management of telecom infrastructure deployments for clients.",
+            "Planning and organization of technical interventions.",
+            "Direct client interface for requirement definition and deployment follow-up.",
+            "Participation in the design and launch of a new IP telephony offering.",
+            "Internal SFR training on project management fundamentals.",
+          ],
+        },
+      ],
+
+      formations: [
+        {
+          year: "2016-2017",
+          title: "Training",
+          school: "SFR - Telecom Deployment Project Manager",
+        },
+        {
+          year: "2016",
+          title: "Engineering Degree - Systems, Networks & Security",
+          school: "AFTI (Orsay)",
+        },
+        {
+          year: "2015",
+          title: "Bachelor's Degree - Computer Science",
+          school: "University of Franche-Comté",
         },
       ],
 

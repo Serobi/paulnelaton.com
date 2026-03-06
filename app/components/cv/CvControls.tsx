@@ -77,6 +77,15 @@ export function CvControls({
         >
           SEC
         </button>
+        <button
+          className={`${styles.button} ${mode === "product" ? styles.active : ""}`}
+          onClick={() => onModeChange("product")}
+          disabled={isGenerating}
+          aria-label="Product"
+          aria-pressed={mode === "product"}
+        >
+          PRODUCT
+        </button>
       </div>
       {/*
       <button

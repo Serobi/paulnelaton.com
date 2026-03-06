@@ -53,5 +53,5 @@ export interface Labels {
   label: string;
 }
 
-export type Mode = "dev" | "sec";
+export type Mode = "dev" | "sec" | "product";
 export type Lang = "fr" | "en";
