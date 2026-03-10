@@ -152,7 +152,7 @@ export const CVData = {
         role: "Ingénieur Logiciel & FullStack Développeur",
         mobility: "Mobilité Toulouse / Montpellier",
         summary:
-          "Ingénieur logiciel avec plus de six ans d'expérience, orienté automatisation, sécurité et développement applicatif, avec une forte sensibilité aux architectures modulaires, performantes et scalables.",
+          "Développeur FullStack concevant et livrant des applications web et logicielles complètes, avec une forte sensibilité à l'expérience utilisateur et aux architectures modulaires, performantes et scalables. Capable de transformer rapidement une idée produit en solution fonctionnelle.",
         contact: {
           email: "paul.nelaton@gmail.com",
           phone: "+55 48 988117655",
@@ -167,6 +167,21 @@ export const CVData = {
       ],
       skillTrees: [
         {
+          title: "Développement Frontend",
+          skills: [
+            "React",
+            "Next.js",
+            "Angular",
+            "Vue.js",
+            "TypeScript",
+            "HTML5",
+            "CSS3",
+            "Tailwind CSS",
+            "Responsive UI",
+            "Frontend API Integration",
+          ],
+        },
+        {
           title: "Développement Backend",
           skills: [
             "C#",
@@ -179,20 +194,7 @@ export const CVData = {
             "OOP",
             "SOLID Principles",
             "Algorithm Design",
-          ],
-        },
-        {
-          title: "Développement Frontend",
-          skills: [
-            "React",
-            "Next.js",
-            "Vue.js",
-            "TypeScript",
-            "HTML5",
-            "CSS3",
-            "Tailwind CSS",
-            "Responsive UI",
-            "Frontend API Integration",
+            "IA Generative",
           ],
         },
         {
@@ -211,16 +213,31 @@ export const CVData = {
 
       experience: [
         {
+          period: "2025 - Présent",
+          company: "Projet Indépendant",
+          role: "FullStack Developer / Product Builder",
+          desc: [
+            "Conception et développement d'une plateforme web personnelle (React / Next.js / Node.js).",
+            "Création d'un générateur automatisé de CV et dossiers de compétences optimisés ATS.",
+            "Implémentation d'un moteur de génération de contenu structuré et de templates dynamiques.",
+            "Développement frontend orienté UX avec interface responsive et modulaire.",
+            "Conception de l'architecture applicative et gestion complète du cycle produit (design, développement, tests, déploiement).",
+            "Intégration API et génération PDF dynamique via puppeteer.",
+            "Portfolio : https://paulnelaton.com/",
+          ],
+        },
+        {
           period: "2024 - Présent",
           company: "Projet Indépendant",
-          role: "Ingénieur Logiciel",
+          role: "Software Engineer",
           desc: [
             "Conception et développement d'une architecture backend modulaire en C# (.NET / .NET Core).",
             "Développement d'un moteur de génération procédurale paramétrable (gestion de règles, contraintes et priorités).",
-            "Implémentation d'algorithmes de distribution, logique événementielle et gestion d'états complexes.",
+            "Implémentation d'algorithmes de simulation, logique événementielle et gestion d'états complexes.",
             "Optimisation des performances mémoire et CPU.",
-            "Structuration de l'architecture projet (séparation des responsabilités, modularité, maintenabilité).",
-            "Développement d'une interface web fullstack (React / Next.js).",
+            "Structuration d'une architecture logicielle maintenable (SOLID, modularité, séparation des responsabilités).",
+            "Développement d'une interface web fullstack pour la présentation du projet (React / Next.js).",
+            "Gestion complète du projet : conception produit, développement, tests et itérations.",
             "Portfolio : https://braineatersgame.com/",
           ],
         },
