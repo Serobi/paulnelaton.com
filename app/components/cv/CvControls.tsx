@@ -77,6 +77,7 @@ export function CvControls({
         >
           SEC
         </button>
+        {/*
         <button
           className={`${styles.button} ${mode === "product" ? styles.active : ""}`}
           onClick={() => onModeChange("product")}
@@ -86,6 +87,7 @@ export function CvControls({
         >
           PRODUCT
         </button>
+        */}
       </div>
       {/*
       <button
