@@ -89,7 +89,7 @@ export function CvControls({
         </button>
         */}
       </div>
-      {/*
+      {/*}
       <button
         onClick={onDownload}
         disabled={isGenerating}
@@ -105,7 +105,7 @@ export function CvControls({
           <>Génerer PDF</>
         )}
       </button>
-*/}
+      */}
       <button
         onClick={() => downloadCV(mode, lang)}
         className={styles.downloadBtn}
