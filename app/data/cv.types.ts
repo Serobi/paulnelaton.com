@@ -14,8 +14,6 @@ export interface Identity {
 
 export type Stats = {
   label: string;
-  value: number;
-  color: string;
 };
 
 export interface Experience {
