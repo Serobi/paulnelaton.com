@@ -89,7 +89,7 @@ export function CvControls({
         </button>
         */}
       </div>
-      {/*}
+      {/*
       <button
         onClick={onDownload}
         disabled={isGenerating}

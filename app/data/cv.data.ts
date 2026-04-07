@@ -8,7 +8,7 @@ export const CVData = {
         role: "Ingénieur SecOps & Spécialiste Technico-Fonctionnel",
         mobility: "Mobilité Montpellier / Toulouse / Besançon",
         summary:
-          "Ingénieur SecOps avec une forte approche fonctionnelle, spécialisé dans la sécurisation d'infrastructures critiques et l'industrialisation des processus de sécurité. Combine cybersécurité, automatisation et analyse métier avec une capacité à structurer des environnements, améliorer les processus et répondre efficacement aux enjeux opérationnels et organisationnels.",
+          "Ingénieur SecOps avec une forte approche fonctionnelle, spécialisé dans la sécurisation d'infrastructures critiques et l'industrialisation des processus de sécurité. Mêlant cybersécurité, automatisation et analyse métier avec une capacité à structurer des environnements, améliorer les processus et répondre efficacement aux enjeux opérationnels et organisationnels.",
         contact: {
           email: "paul.nelaton@gmail.com",
           phone: "+33 685589364",
@@ -173,7 +173,7 @@ export const CVData = {
         role: "Ingénieur Logiciel & Spécialiste Technico-Fonctionnel",
         mobility: "Mobilité Montpellier / Toulouse / Besançon",
         summary:
-          "Ingénieur logiciel avec une approche produit et fonctionnelle, spécialisé dans la conception de systèmes scalables de bout en bout. Combine développement logiciel, automatisation et sécurité, avec une capacité à structurer des projets, analyser les besoins et livrer des solutions efficaces.",
+          "Ingénieur logiciel avec une approche produit et fonctionnelle, spécialisé dans la conception de systèmes scalables de bout en bout. Mêlant développement logiciel, automatisation et sécurité, avec une capacité à structurer des projets, analyser les besoins et livrer des solutions efficaces.",
         contact: {
           email: "paul.nelaton@gmail.com",
           phone: "+33 685589364",
