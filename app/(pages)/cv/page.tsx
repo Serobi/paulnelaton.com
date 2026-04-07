@@ -14,7 +14,7 @@ import { Languages } from "@/components/cv/languages/languages";
 
 export default function Cv() {
   const [lang, setLang] = useState<"fr" | "en">("fr");
-  const [mode, setMode] = useState<"dev" | "sec" | "product">("dev");
+  const [mode, setMode] = useState<"dev" | "sec">("dev");
   const [isGenerating, setIsGenerating] = useState(false);
 
   const webVersionRef = useRef<HTMLDivElement>(null);
