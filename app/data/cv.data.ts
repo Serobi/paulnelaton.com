@@ -229,7 +229,7 @@ export const CVData = {
 
       experience: [
         {
-          period: "2025 - 2026",
+          period: "2026",
           company: "Projet Indépendant",
           role: "Développeur Full-Stack",
           desc: [
@@ -241,7 +241,7 @@ export const CVData = {
           ],
         },
         {
-          period: "2024 - 2025",
+          period: "2024 - 2026",
           company: "Projet Indépendant",
           role: "Ingénieur Logiciel",
           desc: [
@@ -570,7 +570,7 @@ export const CVData = {
 
       experience: [
         {
-          period: "2025 - 2026",
+          period: "2026",
           company: "Independent Project",
           role: "Full-Stack Developer",
           desc: [
@@ -582,7 +582,7 @@ export const CVData = {
           ],
         },
         {
-          period: "2024 - 2025",
+          period: "2024 - 2026",
           company: "Independent Project",
           role: "Software Engineer",
           desc: [
