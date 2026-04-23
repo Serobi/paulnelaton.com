@@ -230,6 +230,14 @@ export const CVData = {
       experience: [
         {
           period: "2026",
+          company: "Maty",
+          role: "Développeur Full-Stack C# .NET",
+          desc: [
+            "Développement d'un outil d'import et de validation de données avec parsing, conformité des données et synchronisation avec BDD (C# / .NET)",
+          ],
+        },
+        {
+          period: "2026",
           company: "Projet Indépendant",
           role: "Développeur Full-Stack",
           desc: [
