@@ -2,28 +2,24 @@
 
 import { useState } from "react";
 import styles from "@/styles/CvControls.module.css";
-import type { Lang, Mode } from "@/data/cv.types";
+import type { Lang } from "@/data/cv.types";
 
 type Props = {
   lang: Lang;
-  mode: Mode;
   onLangChange: (lang: Lang) => void;
-  onModeChange: (mode: Mode) => void;
   onDownload: () => void;
   isGenerating: boolean;
 };
 
 export function CvControls({
   lang,
-  mode,
   onLangChange,
-  onModeChange,
   onDownload,
   isGenerating,
 }: Props) {
-  const downloadCV = (mode: Mode, lang: Lang) => {
+  const downloadCV = (lang: Lang) => {
     const year = new Date().getFullYear();
-    const filename = `CV_Paul_NELATON_${mode}_${lang}.pdf`;
+    const filename = `CV_Paul_NELATON_${lang}.pdf`;
 
     const link = document.createElement("a");
     link.href = `/cv-pdf/${filename}`;
@@ -57,29 +53,7 @@ export function CvControls({
         </button>
       </div>
 
-      {/* MODE */}
-      <div className={styles.group}>
-        <button
-          className={`${styles.button} ${mode === "dev" ? styles.active : ""}`}
-          onClick={() => onModeChange("dev")}
-          disabled={isGenerating}
-          aria-label="Développeur"
-          aria-pressed={mode === "dev"}
-        >
-          DEV
-        </button>
-        <button
-          className={`${styles.button} ${mode === "sec" ? styles.active : ""}`}
-          onClick={() => onModeChange("sec")}
-          disabled={isGenerating}
-          aria-label="Sécurité"
-          aria-pressed={mode === "sec"}
-        >
-          SEC
-        </button>
-      </div>
-      {/*}
-      <button
+      {/* <button
         onClick={onDownload}
         disabled={isGenerating}
         className={styles.downloadBtn}
@@ -93,10 +67,9 @@ export function CvControls({
         ) : (
           <>Génerer PDF</>
         )}
-      </button>
-*/}
+      </button> */}
       <button
-        onClick={() => downloadCV(mode, lang)}
+        onClick={() => downloadCV(lang)}
         className={styles.downloadBtn}
         aria-label={lang === "fr" ? "Télécharger le CV" : "Download CV"}
       >

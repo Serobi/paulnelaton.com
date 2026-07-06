@@ -14,13 +14,12 @@ import { Languages } from "@/components/cv/languages/languages";
 
 export default function Cv() {
   const [lang, setLang] = useState<"fr" | "en">("fr");
-  const [mode, setMode] = useState<"dev" | "sec">("dev");
   const [isGenerating, setIsGenerating] = useState(false);
 
   const webVersionRef = useRef<HTMLDivElement>(null);
   const pdfVersionRef = useRef<HTMLDivElement>(null);
 
-  const profile = CVData[lang][mode];
+  const profile = CVData[lang];
 
   const handleDownload = async () => {
     if (!pdfVersionRef.current) {
@@ -66,7 +65,7 @@ export default function Cv() {
       const response = await fetch("/api/generate-cv", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ html: cvHTML, css: allCSS, lang, mode }),
+        body: JSON.stringify({ html: cvHTML, css: allCSS, lang }),
       });
 
       if (!response.ok) {
@@ -77,9 +76,8 @@ export default function Cv() {
       const blob = await response.blob();
       const url = URL.createObjectURL(blob);
       const a = document.createElement("a");
-      const year = new Date().getFullYear();
       a.href = url;
-      a.download = `CV_Paul_NELATON_${mode}_${lang}_${year}.pdf`;
+      a.download = `CV_Paul_NELATON_${lang}.pdf`;
       document.body.appendChild(a);
       a.click();
       document.body.removeChild(a);
@@ -116,9 +114,7 @@ export default function Cv() {
     <div className={styles.cvPageWrapper}>
       <CvControls
         lang={lang}
-        mode={mode}
         onLangChange={setLang}
-        onModeChange={setMode}
         onDownload={handleDownload}
         isGenerating={isGenerating}
       />
