@@ -18,7 +18,6 @@ export function CvControls({
   isGenerating,
 }: Props) {
   const downloadCV = (lang: Lang) => {
-    const year = new Date().getFullYear();
     const filename = `CV_Paul_NELATON_${lang}.pdf`;
 
     const link = document.createElement("a");
