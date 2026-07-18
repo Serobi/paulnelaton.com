@@ -170,7 +170,7 @@ export const CVData = {
       identity: {
         name: "Paul NELATON",
         role: "Ingénieur Logiciel Full-Stack / Produit & Fonctionnel",
-        mobility: "Mobilité Montpellier / Lausanne",
+        mobility: "Mobilité Montpellier / Lyon / Lausanne",
         summary:
           "Ingénieur logiciel Full-Stack spécialisé dans la conception et le développement d'applications métier. Habitué à intervenir sur l'ensemble du cycle de vie d'un projet, de l'analyse des besoins jusqu'à la mise en production, en alliant expertise technique, vision produit et expérience utilisateur.",
         contact: {
@@ -515,7 +515,7 @@ export const CVData = {
       identity: {
         name: "Paul NELATON",
         role: "Full-Stack Software Engineer / Product & Functional",
-        mobility: "Mobility Montpellier / Lausanne",
+        mobility: "Mobility Montpellier / Lyon / Lausanne",
         summary:
           "Full-Stack Software Engineer specialized in the design and development of business applications. Experienced across the full project lifecycle, from requirements analysis to production deployment, combining technical expertise, product vision and user experience.",
         contact: {

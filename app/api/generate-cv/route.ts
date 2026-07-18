@@ -36,8 +36,6 @@ export async function POST(request: NextRequest) {
     console.log(`[PDF Generator] Generating CV: ${lang}`);
     const startTime = Date.now();
 
-    const data = CVData[lang];
-
     const pdfBuffer = await generatePDFFromReact({
       html,
       css,
