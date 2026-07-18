@@ -8,17 +8,11 @@ export const maxDuration = 30;
 export async function POST(request: NextRequest) {
   try {
     const LANGS = ["fr", "en"] as const;
-    const MODES = Object.keys(CVData.fr) as Array<keyof typeof CVData.fr>;
 
     type Lang = (typeof LANGS)[number];
-    type Mode = (typeof MODES)[number];
 
     function isLang(value: unknown): value is Lang {
       return LANGS.includes(value as Lang);
-    }
-
-    function isMode(value: unknown): value is Mode {
-      return MODES.includes(value as Mode);
     }
 
     const body = await request.json();
@@ -32,17 +26,17 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    if (!isLang(lang) || !isMode(mode)) {
+    if (!isLang(lang)) {
       return NextResponse.json(
-        { error: "Invalid lang or mode" },
+        { error: "Invalid lang" },
         { status: 400 },
       );
     }
 
-    console.log(`[PDF Generator] Generating CV: ${lang}/${mode}`);
+    console.log(`[PDF Generator] Generating CV: ${lang}`);
     const startTime = Date.now();
 
-    const data = CVData[lang][mode];
+    const data = CVData[lang];
 
     const pdfBuffer = await generatePDFFromReact({
       html,
@@ -52,7 +46,7 @@ export async function POST(request: NextRequest) {
     const elapsed = ((Date.now() - startTime) / 1000).toFixed(2);
     console.log(`[PDF Generator] ✅ PDF generated in ${elapsed}s`);
 
-    const filename = `Paul_NELATON_${mode}_${lang}.pdf`;
+    const filename = `Paul_NELATON_${lang}.pdf`;
 
     return new NextResponse(new Uint8Array(pdfBuffer), {
       status: 200,
