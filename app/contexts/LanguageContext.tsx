@@ -20,7 +20,6 @@ const LanguageContext = createContext<LanguageContextType | undefined>(
   undefined,
 );
 
-// Traductions
 const translations = {
   fr: {
     "hero.eyebrow": "Ingénieur logiciel · Créateur de produits",
@@ -45,6 +44,7 @@ const translations = {
     "hero.nav.contact.label": "Contact",
     "hero.nav.contact.description":
       "Discutons de la suite.",
+      
     // Header
     "nav.intro": "Intro",
     "nav.projects": "Projets",
