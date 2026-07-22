@@ -1,0 +1,246 @@
+.hero {
+    position: relative;
+    isolation: isolate;
+    
+    width: min(
+        calc(100% - (var(--page-padding) * 2)),
+        var(--page-width)
+    );
+
+    margin-inline: auto;
+}
+
+.hero::before {
+  z-index: -1;
+  position: absolute;
+  top: 8%;
+  left: 42%;
+
+  width: 26rem;
+  height: 26rem;
+
+  pointer-events: none;
+  content: "";
+
+  background: var(--color-glow-primary);
+  filter: blur(100px);
+  border-radius: 50%;
+
+  opacity: 0.65;
+}
+
+.eyebrow {
+  position: absolute;
+  bottom: calc(100% + 2rem);
+  left: 0;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+
+  color: var(--color-primary-light);
+
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.heroGrid {
+  display: grid;
+  width: 100%;
+  grid-template-columns:
+    minmax(0, 1.05fr)
+    minmax(22rem, 0.95fr);
+  align-items: stretch;
+  gap: clamp(3rem, 7vw, 7rem);
+}
+
+.heroContent {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  min-width: 0;
+}
+
+.heroCopy {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  transform: translateY(0.5rem);
+}
+
+.heroTitle {
+  max-width: 11ch;
+  margin: 0;
+
+  font-size: clamp(3.2rem, 8vw, 6.3rem);
+  font-weight: 750;
+  line-height: 0.92;
+  letter-spacing: -0.065em;
+}
+
+.heroTitle span {
+  display: block;
+
+  color: var(--color-primary-light);
+}
+
+.heroDescription {
+  max-width: 40rem;
+  margin: 1.5rem 0 0;
+
+  color: var(--color-text-secondary);
+
+  font-size: clamp(1rem, 1.5vw, 1.18rem);
+  line-height: 1.75;
+}
+
+.heroActions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.9rem;
+
+  margin-top: 1rem;
+  transform: translateY(2rem);
+}
+
+.primaryButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+
+  min-height: 3.25rem;
+  padding-inline: 1.4rem;
+
+  border: 1px solid transparent;
+  border-radius: var(--radius-small);
+
+  font-size: 0.92rem;
+  font-weight: 650;
+
+  transition:
+    color var(--transition-fast),
+    background-color var(--transition-fast),
+    border-color var(--transition-fast),
+    box-shadow var(--transition-default),
+    transform var(--transition-fast);
+}
+
+.primaryButton {
+  color: var(--color-primary-contrast);
+  background: var(--color-primary);
+  box-shadow: 0 10px 35px var(--color-glow-primary);
+}
+
+.primaryButton:hover {
+  background: var(--color-primary-light);
+  box-shadow: 0 16px 45px var(--color-glow-primary);
+  transform: translateY(-2px);
+}
+
+.heroNavigation {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-rows: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+
+  min-width: 0;
+}
+
+.heroNavCard {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+
+  min-height: 13rem;
+  padding: 1.5rem;
+
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-medium);
+
+  transition:
+    transform var(--transition-default),
+    background-color var(--transition-default),
+    border-color var(--transition-default),
+    box-shadow var(--transition-default);
+}
+
+.heroNavCard:hover {
+  background: var(--color-surface-raised);
+  border-color: var(--color-primary);
+
+  box-shadow: 0 0 30px var(--color-glow-primary);
+
+  transform: translateY(-3px) scale(1.015);
+}
+
+.heroNavIndex {
+  color: var(--color-text-muted);
+
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+
+  transition:
+    color var(--transition-default),
+    transform var(--transition-default);
+}
+
+.heroNavLabel {
+  align-self: center;
+  justify-self: center;
+
+  color: var(--color-text-primary);
+
+  font-size: 1.3rem;
+  font-weight: 650;
+  line-height: 1.2;
+  text-align: center;
+
+  transform: translateY(-0.35rem);
+
+  transition: color var(--transition-default);
+}
+
+.heroNavDescription {
+  align-self: end;
+
+  min-height: 2.6rem;
+  margin: 0;
+
+  color: var(--color-text-muted);
+
+  font-size: 0.8rem;
+  line-height: 1.55;
+  text-align: left;
+
+  transition: color var(--transition-default);
+}
+
+.heroNavCard:hover .heroNavIndex {
+  color: var(--color-primary);
+  transform: scale(1.05);
+}
+
+.heroNavCard:hover .heroNavLabel {
+  color: var(--color-primary-light);
+}
+
+.heroNavCard:hover .heroNavDescription {
+  color: var(--color-text-primary);
+}
+
+.primaryButton:focus-visible,
+.heroNavCard:focus-visible {
+  outline: 2px solid var(--color-primary-light);
+  outline-offset: 4px;
+}

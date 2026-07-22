@@ -23,6 +23,28 @@ const LanguageContext = createContext<LanguageContextType | undefined>(
 // Traductions
 const translations = {
   fr: {
+    "hero.eyebrow": "Ingénieur logiciel · Créateur de produits",
+    "hero.title.line1": "Le client",
+    "hero.title.line2": "au centre.",
+    "hero.description":
+      "Je conçois et développe des produits numériques robustes, en combinant ingénierie logicielle, expérience utilisateur et compréhension approfondie des besoins métier.",
+    "hero.cta": "Voir mon CV",
+
+    "hero.nav.about.label": "À propos",
+    "hero.nav.about.description":
+      "Profil, expérience et vision produit.",
+
+    "hero.nav.process.label": "Mon approche",
+    "hero.nav.process.description":
+      "Comprendre, construire et améliorer.",
+
+    "hero.nav.projects.label": "Projets",
+    "hero.nav.projects.description":
+      "Produits personnels et réalisations professionnelles.",
+
+    "hero.nav.contact.label": "Contact",
+    "hero.nav.contact.description":
+      "Discutons de la suite.",
     // Header
     "nav.intro": "Intro",
     "nav.projects": "Projets",
@@ -56,6 +78,29 @@ const translations = {
   },
 
   en: {
+        // Hero
+    "hero.eyebrow": "Software Engineer · Product Builder",
+    "hero.title.line1": "Your clients",
+    "hero.title.line2": "deserve more.",
+    "hero.description":
+      "I design and build robust digital products, combining software engineering, user experience and a strong understanding of business needs.",
+    "hero.cta": "View my CV",
+
+    "hero.nav.about.label": "About me",
+    "hero.nav.about.description":
+      "Profile, experience and product mindset.",
+
+    "hero.nav.process.label": "How I work",
+    "hero.nav.process.description":
+      "Understand, build and improve.",
+
+    "hero.nav.projects.label": "Projects",
+    "hero.nav.projects.description":
+      "Personal products and professional work.",
+
+    "hero.nav.contact.label": "Contact",
+    "hero.nav.contact.description":
+      "Let's talk about what comes next.",
     // Header
     "nav.intro": "Intro",
     "nav.projects": "Projects",
@@ -93,43 +138,33 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
   const [lang, setLangState] = useState<Language>("fr");
   const [mounted, setMounted] = useState(false);
 
-  useEffect(() => {
-    const stored = localStorage.getItem("lang") as Language | null;
+useEffect(() => {
+  const stored = localStorage.getItem("lang") as Language | null;
 
-    if (stored && (stored === "fr" || stored === "en")) {
-      setLangState(stored);
-    } else {
-      // Détection navigateur si pas de préférence sauvegardée
-      const browserLang = navigator.language.toLowerCase();
-      const detectedLang = browserLang.startsWith("fr") ? "fr" : "en";
-      setLangState(detectedLang);
-      localStorage.setItem("lang", detectedLang); // 👈 Sauvegarde la détection
-    }
+  if (stored === "fr" || stored === "en") {
+    setLangState(stored);
+  } else {
+    const browserLang = navigator.language.toLowerCase();
+    const detectedLang: Language = browserLang.startsWith("fr")
+      ? "fr"
+      : "en";
 
-    setMounted(true);
-  }, []);
+    setLangState(detectedLang);
+    localStorage.setItem("lang", detectedLang);
+  }
 
-  // Charge la langue depuis localStorage au mount
-  useEffect(() => {
-    const stored = localStorage.getItem("lang") as Language | null;
-    if (stored && (stored === "fr" || stored === "en")) {
-      setLangState(stored);
-    }
-    setMounted(true);
-  }, []);
+  setMounted(true);
+}, []);
 
-  // Sauvegarde dans localStorage quand la langue change
   const setLang = (newLang: Language) => {
     setLangState(newLang);
     localStorage.setItem("lang", newLang);
   };
 
-  // Fonction de traduction
   const t = (key: string): string => {
     return translations[lang][key as keyof typeof translations.fr] || key;
   };
 
-  // Évite le flash de contenu non traduit
   if (!mounted) {
     return null;
   }
