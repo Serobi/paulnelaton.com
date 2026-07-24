@@ -6,7 +6,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  scroll-margin-top: 50px;
+  scroll-margin-top: 100px;
 }
 
 .eyebrow {
@@ -223,6 +223,7 @@
   .cardsSection {
     min-height: auto;
     padding: 5rem 0;
+    scroll-margin-top: 40px;
   }
 
   .eyebrow,
@@ -263,7 +264,7 @@
 @media (max-width: 600px) {
   .cardsSection {
     padding: 4rem 0;
-    scroll-margin-top: 80px;
+    scroll-margin-top: 20px;
   }
 
   .eyebrow,
