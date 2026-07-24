@@ -55,39 +55,39 @@ export default function Intro() {
     longPressTimerRef.current = null;
   };
 
-  const handlePointerDown = (
-    event: ReactPointerEvent<HTMLElement>
-  ) => {
-    if (event.pointerType !== "touch") {
-      return;
-    }
+const handlePointerDown = (
+  event: ReactPointerEvent<HTMLElement>
+) => {
+  if (event.pointerType !== "touch") {
+    return;
+  }
 
-    const section = event.currentTarget;
+  const section = event.currentTarget;
 
-    startPositionRef.current = {
-      x: event.clientX,
-      y: event.clientY,
-    };
+  startPositionRef.current = {
+    x: event.clientX,
+    y: event.clientY,
+  };
 
-    activePointerIdRef.current = event.pointerId;
+  activePointerIdRef.current = event.pointerId;
+
+  clearLongPressTimer();
+
+  longPressTimerRef.current = setTimeout(() => {
+    touchActiveRef.current = true;
 
     updateCardsLight(
       section,
-      event.clientX,
-      event.clientY
+      startPositionRef.current.x,
+      startPositionRef.current.y
     );
 
-    clearLongPressTimer();
+    section.classList.add(styles.cardsSectionTouchActive);
+    section.setPointerCapture(event.pointerId);
 
-    longPressTimerRef.current = setTimeout(() => {
-      touchActiveRef.current = true;
-
-      section.classList.add(styles.cardsSectionTouchActive);
-      section.setPointerCapture(event.pointerId);
-
-      navigator.vibrate?.(15);
-    }, LONG_PRESS_DELAY);
-  };
+    navigator.vibrate?.(15);
+  }, LONG_PRESS_DELAY);
+};
 
   const handlePointerMove = (
     event: ReactPointerEvent<HTMLElement>
