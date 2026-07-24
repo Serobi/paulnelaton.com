@@ -51,26 +51,10 @@
   overflow-x: hidden;
   margin-top: 3.5rem;
 
-  color: var(--color-text-primary);
-  background:
-    radial-gradient(
-      circle at 82% 8%,
-      var(--color-glow-primary),
-      transparent 28rem
-    ),
-    radial-gradient(
-      circle at 8% 88%,
-      var(--color-glow-accent),
-      transparent 24rem
-    ),
-    var(--color-background);
+
     
 }
 
-
-/* =========================================================
-   GLOBAL ELEMENTS INSIDE PAGE
-   ========================================================= */
 
 .page *,
 .page *::before,
@@ -108,10 +92,6 @@
   overflow: hidden;
   scroll-snap-align: start;
 }
-
-/* =========================================================
-   SHARED SECTION STRUCTURE
-   ========================================================= */
 
 .workSection,
 .profileSection,
