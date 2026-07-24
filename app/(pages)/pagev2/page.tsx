@@ -3,8 +3,8 @@
 import Link from "next/link";
 import { useLanguage } from "@/contexts/LanguageContext";
 import styles from "@/styles/pagev2.module.css";
-import Hero from "@/components/pagev2/Hero/hero";
-import Intro from "@/components/pagev2/Intro/intro";
+import Hero from "@/components/pagev2/hero/hero";
+import Intro from "@/components/pagev2/intro/intro";
 
 export default function Home() {
     const { t } = useLanguage();
