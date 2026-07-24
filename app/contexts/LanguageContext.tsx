@@ -89,6 +89,16 @@ const translations: Record<Language,Record<string, TranslationValue>> = {
       "J'interviens de la conception des interfaces et des parcours utilisateurs jusqu'au développement d'API REST, de services métier et de solutions .NET maintenables.",
       "J'accorde une attention particulière à la qualité du code, à la clarté de l'architecture et à la capacité des applications à évoluer dans le temps.",
     ],
+"Intro.card2.content": [
+  "Je contribue à l'ensemble du cycle de vie d'un produit, de la définition des besoins jusqu'à la livraison en production.",
+  "J'aime transformer des problématiques métier en solutions concrètes, en participant à la conception fonctionnelle, à la structuration des fonctionnalités et à l'amélioration continue du produit.",
+  "Mon objectif est de livrer des solutions cohérentes, pérennes et créatrices de valeur, en conciliant enjeux métier, vision produit et excellence technique."
+],
+"Intro.card3.content": [
+  "Ma démarche de conception commence toujours par la compréhension des utilisateurs, de leurs besoins et des problématiques métier qu'ils rencontrent au quotidien.",
+  "À partir de cette analyse, je conçois une solution adaptée, en réfléchissant à l'interface, aux fonctionnalités, à l'architecture et aux choix techniques les plus pertinents.",
+  "Chaque décision est guidée par un objectif : créer des outils utiles, intuitifs et durables, réellement pensés pour les personnes qui les utiliseront."
+],
   },
   en: {
         // Hero
@@ -145,16 +155,26 @@ const translations: Record<Language,Record<string, TranslationValue>> = {
     "footer.online": "ONLINE",
     "footer.contact": "Contact",
 
-// Intro
-"Intro.eyebrow": "About me",
-"Intro.card1.title": "Software Engineer",
-"Intro.card2.title": "Product Builder",
-"Intro.card3.title": "User Experience",
-"Intro.card1.content": [
-  "I design robust and scalable full-stack applications, working confidently across both front-end and back-end development.",
-  "From crafting intuitive user interfaces and user journeys to building REST APIs, business services, and maintainable .NET solutions, I deliver software built to last.",
-  "I place strong emphasis on code quality, clear architecture, and building applications that remain easy to maintain and evolve over time."
-],
+    // Intro
+    "Intro.eyebrow": "About me",
+    "Intro.card1.title": "Software Engineer",
+    "Intro.card2.title": "Product Builder",
+    "Intro.card3.title": "User Experience",
+    "Intro.card1.content": [
+      "I design robust and scalable full-stack applications, working confidently across both front-end and back-end development.",
+      "From crafting intuitive user interfaces and user journeys to building REST APIs, business services, and maintainable .NET solutions, I deliver software built to last.",
+      "I place strong emphasis on code quality, clear architecture, and building applications that remain easy to maintain and evolve over time."
+    ],
+    "Intro.card2.content": [
+      "I contribute across the entire product lifecycle, from defining business requirements to delivering production-ready solutions.",
+      "I enjoy turning business challenges into practical solutions by contributing to functional design, feature definition, and continuous product improvement.",
+      "My goal is to deliver consistent, scalable, and valuable products by combining business needs, product vision, and technical excellence."
+    ],
+    "Intro.card3.content": [
+      "My design approach always starts with understanding users, their needs, and the business challenges they face every day.",
+      "From there, I design solutions by carefully considering the interface, features, architecture, and the technical choices best suited to the problem.",
+      "Every decision is driven by a simple goal: creating tools that are useful, intuitive, and built around the people who will use them."
+    ],
   },
 };
 

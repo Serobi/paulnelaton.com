@@ -144,7 +144,6 @@
 .primaryButton:hover {
   background: var(--color-primary-light);
   box-shadow: 0 16px 45px var(--color-glow-primary);
-  transform: translateY(-2px);
 }
 
 .heroNavigation {
@@ -242,4 +241,198 @@
 .heroNavCard:focus-visible {
   outline: 2px solid var(--color-primary-light);
   outline-offset: 4px;
+}
+
+/* Tablet and smaller */
+@media (max-width: 1024px) {
+  .hero {
+    width: min(
+      calc(100% - (var(--page-padding) * 2)),
+      48rem
+    );
+
+    padding-block: 3rem;
+  }
+
+  .hero::before {
+    top: 5%;
+    left: 50%;
+
+    width: 22rem;
+    height: 22rem;
+
+    transform: translateX(-50%);
+    filter: blur(90px);
+    opacity: 0.5;
+  }
+
+  .heroGrid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 4rem;
+  }
+
+  .heroContent {
+    min-height: auto;
+  }
+
+  .heroCopy {
+    transform: none;
+  }
+
+  .eyebrow {
+    position: static;
+
+    margin-bottom: 1.5rem;
+  }
+
+  .heroTitle {
+    max-width: 10ch;
+
+    font-size: clamp(3.2rem, 10vw, 5.5rem);
+  }
+
+  .heroDescription {
+    max-width: 38rem;
+  }
+
+  .heroActions {
+    margin-top: 2rem;
+    transform: none;
+  }
+
+  .heroNavigation {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: auto;
+  }
+
+  .heroNavCard {
+    min-height: 12rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero {
+    width: calc(100% - 2rem);
+    padding-block: 2rem 3rem;
+  }
+
+  .hero::before {
+    top: 3rem;
+
+    width: 16rem;
+    height: 16rem;
+
+    filter: blur(75px);
+    opacity: 0.4;
+  }
+
+  .heroGrid {
+    gap: 3rem;
+  }
+
+  .eyebrow {
+    gap: 0.5rem;
+    margin-bottom: 1.25rem;
+
+    font-size: 0.68rem;
+    letter-spacing: 0.13em;
+  }
+
+  .heroTitle {
+    max-width: 100%;
+
+    font-size: clamp(2.8rem, 14vw, 4.2rem);
+    line-height: 0.96;
+    letter-spacing: -0.055em;
+  }
+
+  .heroDescription {
+    max-width: 100%;
+    margin-top: 1.25rem;
+
+    font-size: 1rem;
+    line-height: 1.65;
+  }
+
+  .heroActions {
+    width: 100%;
+    margin-top: 1.75rem;
+  }
+
+  .primaryButton {
+    width: 100%;
+    min-height: 3.4rem;
+  }
+
+  .heroNavigation {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.85rem;
+  }
+
+  .heroNavCard {
+    grid-template-columns: auto minmax(0, 1fr);
+    grid-template-rows: auto auto;
+
+    min-height: auto;
+    padding: 1.25rem;
+    column-gap: 1rem;
+    row-gap: 0.65rem;
+  }
+
+  .heroNavIndex {
+    grid-column: 1;
+    grid-row: 1 / 3;
+
+    align-self: start;
+
+    padding-top: 0.2rem;
+  }
+
+  .heroNavLabel {
+    grid-column: 2;
+    grid-row: 1;
+
+    align-self: start;
+    justify-self: start;
+
+    font-size: 1.15rem;
+    text-align: left;
+
+    transform: none;
+  }
+
+  .heroNavDescription {
+    grid-column: 2;
+    grid-row: 2;
+
+    min-height: auto;
+
+    font-size: 0.8rem;
+    text-align: left;
+  }
+}
+
+@media (hover: none) {
+  .heroNavCard:hover {
+    background: var(--color-surface);
+    border-color: var(--color-border);
+    box-shadow: none;
+  }
+
+  .heroNavCard:hover .heroNavIndex {
+    color: var(--color-text-secondary);
+  }
+
+  .heroNavCard:hover .heroNavLabel {
+    color: var(--color-text-primary);
+  }
+
+  .heroNavCard:hover .heroNavDescription {
+    color: var(--color-text-secondary);
+  }
+
+  .primaryButton:hover {
+    background: var(--color-primary);
+    box-shadow: 0 10px 35px var(--color-glow-primary);
+  }
 }
