@@ -1,0 +1,242 @@
+.cardsSection {
+  width: 100%;
+  min-height: 100vh;
+  padding: 6rem 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  scroll-margin-top: 100px;
+}
+
+.eyebrow {
+  width: min(70%, 1400px);
+  margin-bottom: 2rem;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+
+  color: var(--color-primary-light);
+
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+
+.cardsContainer {
+  position: relative;
+  isolation: isolate;
+
+  width: min(70%, 1400px);
+
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: start;
+  gap: clamp(1rem, 2vw, 2rem);
+}
+
+.cardsContainer::before {
+  content: "";
+
+  position: absolute;
+  z-index: -1;
+
+  top: 4%;
+  left: 18%;
+
+  width: 46rem;
+  height: 28rem;
+
+  border-radius: 50%;
+  background: var(--color-glow-primary);
+  filter: blur(100px);
+  opacity: 0.75;
+
+  pointer-events: none;
+}
+
+.cardsColumn {
+  position: relative;
+  z-index: 1;
+
+  min-width: 0;
+}
+
+.cardsColumnFirst {
+  --card-reflection: 92, 112, 255;
+
+  padding-top: 0;
+}
+
+.cardsColumnSecond {
+  --card-reflection: 205, 120, 72;
+
+  padding-top: 4rem;
+}
+
+.cardsColumnThird {
+  --card-reflection: 202, 164, 92;
+
+  padding-top: 8rem;
+}
+
+
+.cardsCard {
+  position: relative;
+  overflow: hidden;
+
+  width: 100%;
+  min-height: 320px;
+  padding: 1.5rem 2rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+
+  border: 1px solid rgba(255, 255, 255, 0.025);
+  border-radius: 1.5rem;
+
+  background:
+    radial-gradient(circle at 18% 8%,
+      rgba(var(--card-reflection), 0.035),
+      transparent 45%),
+    rgba(18, 21, 33, 0.46);
+
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.04),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.1),
+    0 6px 16px rgba(0, 0, 0, 0.08);
+
+  transition:
+    transform 0.35s ease,
+    background 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.cardsCard::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+
+  background:
+    radial-gradient(180px circle at var(--mouse-x) var(--mouse-y),
+      rgba(var(--card-reflection), .18),
+      rgba(var(--card-reflection), .08) 35%,
+      transparent 70%);
+  filter: blur(8px);
+  opacity: 0;
+  transition: opacity .25s ease;
+}
+
+.cardsSection:hover .cardsCard::before {
+  opacity: 1;
+}
+
+.cardsCard::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    padding: 1px;
+    border-radius: inherit;
+
+    background:
+        radial-gradient(
+            220px circle at var(--mouse-x) var(--mouse-y),
+            rgba(var(--card-reflection), .8),
+            transparent 75%
+        );
+
+    -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+
+    mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+
+    opacity: 0;
+    transition: opacity .25s;
+}
+
+.cardsSection:hover .cardsCard::after {
+  opacity: 1;
+}
+
+.cardsColumn:hover .cardsCard {
+  border-color: rgba(var(--card-reflection), 0.12);
+
+  
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.075),
+    inset 0 0 24px rgba(var(--card-reflection), 0.025),
+    0 10px 24px rgba(0, 0, 0, 0.16),
+    0 0 22px rgba(var(--card-reflection), 0.07);
+}
+
+
+.cardsHeader {
+  margin-bottom: 2rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.cardsTitle {
+  margin: 0;
+
+  color: var(--color-primary-light);
+
+  font-size: 1.45rem;
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+}
+
+.cardsSeparator {
+  width: 100%;
+  height: 1px;
+
+  background: linear-gradient(90deg,
+      rgba(111, 137, 255, 0.9),
+      rgba(111, 137, 255, 0.4),
+      transparent);
+}
+
+.cardsContent {
+  flex: 1;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+}
+
+@media (max-width: 900px) {
+
+  .eyebrow,
+  .cardsContainer {
+    width: min(90%, 700px);
+  }
+
+  .cardsContainer {
+    grid-template-columns: 1fr;
+  }
+
+  .cardsColumnSecond,
+  .cardsColumnThird {
+    padding-top: 0;
+  }
+}

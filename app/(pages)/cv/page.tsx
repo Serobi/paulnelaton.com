@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useRef } from "react";
+import { useLanguage } from "@/contexts/LanguageContext";
 import styles from "@/styles/cv.module.css";
 import { CVData } from "@/data/cv.data";
 import { CvControls } from "@/components/cv/CvControls";
@@ -13,7 +14,7 @@ import { Formations } from "@/components/cv/formations/formations";
 import { Languages } from "@/components/cv/languages/languages";
 
 export default function Cv() {
-  const [lang, setLang] = useState<"fr" | "en">("fr");
+  const { lang } = useLanguage();
   const [isGenerating, setIsGenerating] = useState(false);
 
   const webVersionRef = useRef<HTMLDivElement>(null);
@@ -113,8 +114,6 @@ export default function Cv() {
   return (
     <div className={styles.cvPageWrapper}>
       <CvControls
-        lang={lang}
-        onLangChange={setLang}
         onDownload={handleDownload}
         isGenerating={isGenerating}
       />

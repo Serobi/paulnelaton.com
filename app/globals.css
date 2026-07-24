@@ -24,14 +24,10 @@
 }
 
 body {
+  margin: 0;
   font-family: var(--font-sans);
   background: #0e1116;
   color: #e2e8f0;
-}
-
-.page {
-  margin-top: 4rem;
-  background: #0e1116;
 }
 
 .logo,
@@ -41,4 +37,8 @@ body {
 .projectTags span,
 .techBadge {
   font-family: var(--font-mono);
+}
+
+html {
+  scroll-behavior: smooth;
 }

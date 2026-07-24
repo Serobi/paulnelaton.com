@@ -1,22 +1,19 @@
 "use client";
 
-import { useState } from "react";
 import styles from "@/styles/CvControls.module.css";
 import type { Lang } from "@/data/cv.types";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 type Props = {
-  lang: Lang;
-  onLangChange: (lang: Lang) => void;
   onDownload: () => void;
   isGenerating: boolean;
 };
 
 export function CvControls({
-  lang,
-  onLangChange,
   onDownload,
   isGenerating,
 }: Props) {
+  const { lang } = useLanguage();
   const downloadCV = (lang: Lang) => {
     const filename = `CV_Paul_NELATON_${lang}.pdf`;
 
@@ -30,28 +27,6 @@ export function CvControls({
 
   return (
     <div className={styles.controls}>
-      {/* LANG */}
-      <div className={styles.group}>
-        <button
-          className={`${styles.button} ${lang === "fr" ? styles.active : ""}`}
-          onClick={() => onLangChange("fr")}
-          disabled={isGenerating}
-          aria-label="Français"
-          aria-pressed={lang === "fr"}
-        >
-          FR
-        </button>
-        <button
-          className={`${styles.button} ${lang === "en" ? styles.active : ""}`}
-          onClick={() => onLangChange("en")}
-          disabled={isGenerating}
-          aria-label="English"
-          aria-pressed={lang === "en"}
-        >
-          EN
-        </button>
-      </div>
-
       {/* <button
         onClick={onDownload}
         disabled={isGenerating}

@@ -75,6 +75,13 @@ const translations = {
     "footer.status": "SYSTEM STATUS:",
     "footer.online": "ONLINE",
     "footer.contact": "Contact",
+
+    //intro
+    "Intro.eyebrow": "Mon approche",
+    "Intro.card1.title": "Ingénieur logiciel",
+    "Intro.card2.title": "Créateur de produits",
+    "Intro.card3.title": "Expérience utilisateur",
+
   },
 
   en: {
@@ -131,6 +138,13 @@ const translations = {
     "footer.status": "SYSTEM STATUS:",
     "footer.online": "ONLINE",
     "footer.contact": "Contact",
+
+// Intro
+"Intro.eyebrow": "About me",
+"Intro.card1.title": "Software Engineer",
+"Intro.card2.title": "Product Builder",
+"Intro.card3.title": "User Experience",
+
   },
 };
 

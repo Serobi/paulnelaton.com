@@ -1,7 +1,7 @@
 "use client";
 
+import type { MouseEvent } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
-
 import styles from "./hero.module.css";
 
 const navigationItems = [
@@ -29,6 +29,24 @@ const navigationItems = [
 
 export default function Hero() {
   const { t } = useLanguage();
+
+  const handleNavigation = (
+    event: MouseEvent<HTMLAnchorElement>,
+    href: string
+  ) => {
+    const target = document.querySelector<HTMLElement>(href);
+
+    if (!target) return;
+
+    event.preventDefault();
+
+    target.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+
+    window.history.pushState(null, "", href);
+  };
 
   return (
     <section className={styles.hero}>
@@ -65,6 +83,9 @@ export default function Hero() {
               key={item.href}
               href={item.href}
               className={styles.heroNavCard}
+              onClick={(event) =>
+                handleNavigation(event, item.href)
+              }
             >
               <span className={styles.heroNavIndex}>
                 {item.index}
