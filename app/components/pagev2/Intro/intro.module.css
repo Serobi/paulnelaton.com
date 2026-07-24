@@ -394,3 +394,10 @@
       0 0 22px rgba(var(--card-reflection), 0.07);
   }
 }
+
+@media (hover: hover) {
+  .cardsSectionTouchActive .cardsCard::before,
+  .cardsSectionTouchActive .cardsCard::after {
+    opacity: 0;
+  }
+}
