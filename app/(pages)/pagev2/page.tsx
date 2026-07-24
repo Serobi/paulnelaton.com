@@ -17,7 +17,7 @@ export default function Home() {
             <section className={styles.heroSection}>
                 <Intro />
             </section>
-            <section id="work" className={styles.workSection}>
+            {/* <section id="work" className={styles.workSection}>
                 <div className={styles.sectionHeader}>
                     <span>Selected work</span>
                     <h2>Projects built around real needs.</h2>
@@ -91,9 +91,9 @@ export default function Home() {
                         </div>
                     </article>
                 </div>
-            </section>
+            </section> */}
 
-            <section id="profile" className={styles.profileSection}>
+            {/* <section id="profile" className={styles.profileSection}>
                 <div className={styles.profileIntro}>
                     <span>How I work</span>
                     <h2>Engineering with a product mindset.</h2>
@@ -127,9 +127,9 @@ export default function Home() {
                         </p>
                     </article>
                 </div>
-            </section>
+            </section> */}
 
-            <section id="contact" className={styles.contactSection}>
+            {/* <section id="contact" className={styles.contactSection}>
                 <span>Let&apos;s build something useful.</span>
 
                 <h2>
@@ -139,7 +139,7 @@ export default function Home() {
                 <a href="mailto:contact@paulnelaton.com">
                     contact@paulnelaton.com
                 </a>
-            </section>
+            </section> */}
         </main>
     );
 }
