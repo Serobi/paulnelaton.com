@@ -9,9 +9,10 @@
   --color-border: rgba(255, 255, 255, 0.08);
   --color-border-strong: rgba(255, 255, 255, 0.14);
 
-  --color-text-primary: #f4f6fa;
-  --color-text-secondary: #a7afbd;
-  --color-text-muted: #737c8c;
+--color-text-primary:   #F4F6FA;
+--color-text-body:      #D5DCEB;
+--color-text-secondary: #A7AFBD;
+--color-text-muted:     #737C8C;
 
   --color-primary: #5d8cff;
   --color-primary-light: #8cabff;

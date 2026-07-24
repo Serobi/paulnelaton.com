@@ -5,7 +5,7 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import styles from "./intro.module.css";
 
 export default function Intro() {
-  const { t } = useLanguage();
+  const { t, tArray } = useLanguage();
 
 const handleCardsMouseMove = (
   event: React.MouseEvent<HTMLElement>
@@ -53,7 +53,11 @@ const handleCardsMouseMove = (
             </header>
 
             <div className={styles.cardsContent}>
-              Content
+              {tArray("Intro.card1.content").map((paragraph, index) => (
+                <p key={index} className={styles.cardParagraph}>
+                  {paragraph}
+                </p>
+              ))}
             </div>
           </div>
         </article>
@@ -74,7 +78,11 @@ const handleCardsMouseMove = (
             </header>
 
             <div className={styles.cardsContent}>
-              Content
+              {tArray("Intro.card2.content").map((paragraph, index) => (
+                <p key={index} className={styles.cardParagraph}>
+                  {paragraph}
+                </p>
+              ))}
             </div>
           </div>
         </article>
@@ -95,7 +103,11 @@ const handleCardsMouseMove = (
             </header>
 
             <div className={styles.cardsContent}>
-              Content
+              {tArray("Intro.card3.content").map((paragraph, index) => (
+                <p key={index} className={styles.cardParagraph}>
+                  {paragraph}
+                </p>
+              ))}
             </div>
           </div>
         </article>

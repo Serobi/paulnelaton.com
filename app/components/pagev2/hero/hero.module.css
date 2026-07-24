@@ -96,7 +96,7 @@
   max-width: 40rem;
   margin: 1.5rem 0 0;
 
-  color: var(--color-text-secondary);
+  color: var(--color-text-body);
 
   font-size: clamp(1rem, 1.5vw, 1.18rem);
   line-height: 1.75;
@@ -180,11 +180,11 @@
 
   box-shadow: 0 0 30px var(--color-glow-primary);
 
-  transform: translateY(-3px) scale(1.015);
+  
 }
 
 .heroNavIndex {
-  color: var(--color-text-muted);
+  color: var(--color-text-secondary);
 
   font-size: 0.7rem;
   font-weight: 700;
@@ -217,7 +217,7 @@
   min-height: 2.6rem;
   margin: 0;
 
-  color: var(--color-text-muted);
+  color: var(--color-text-secondary);
 
   font-size: 0.8rem;
   line-height: 1.55;
@@ -227,8 +227,7 @@
 }
 
 .heroNavCard:hover .heroNavIndex {
-  color: var(--color-primary);
-  transform: scale(1.05);
+  color: var(--color-primary-light);
 }
 
 .heroNavCard:hover .heroNavLabel {

@@ -10,17 +10,20 @@ import {
 
 type Language = "fr" | "en";
 
+type TranslationValue = string | string[];
+
 type LanguageContextType = {
   lang: Language;
   setLang: (lang: Language) => void;
   t: (key: string) => string;
+  tArray: (key: string) => string[];
 };
 
 const LanguageContext = createContext<LanguageContextType | undefined>(
   undefined,
 );
 
-const translations = {
+const translations: Record<Language,Record<string, TranslationValue>> = {
   fr: {
     "hero.eyebrow": "Ingénieur logiciel · Créateur de produits",
     "hero.title.line1": "Le client",
@@ -81,9 +84,12 @@ const translations = {
     "Intro.card1.title": "Ingénieur logiciel",
     "Intro.card2.title": "Créateur de produits",
     "Intro.card3.title": "Expérience utilisateur",
-
+    "Intro.card1.content": [
+      "Je conçois des applications full-stack robustes et évolutives, avec la même aisance côté front-end que côté back-end.",
+      "J'interviens de la conception des interfaces et des parcours utilisateurs jusqu'au développement d'API REST, de services métier et de solutions .NET maintenables.",
+      "J'accorde une attention particulière à la qualité du code, à la clarté de l'architecture et à la capacité des applications à évoluer dans le temps.",
+    ],
   },
-
   en: {
         // Hero
     "hero.eyebrow": "Software Engineer · Product Builder",
@@ -144,7 +150,11 @@ const translations = {
 "Intro.card1.title": "Software Engineer",
 "Intro.card2.title": "Product Builder",
 "Intro.card3.title": "User Experience",
-
+"Intro.card1.content": [
+  "I design robust and scalable full-stack applications, working confidently across both front-end and back-end development.",
+  "From crafting intuitive user interfaces and user journeys to building REST APIs, business services, and maintainable .NET solutions, I deliver software built to last.",
+  "I place strong emphasis on code quality, clear architecture, and building applications that remain easy to maintain and evolve over time."
+],
   },
 };
 
@@ -176,18 +186,26 @@ useEffect(() => {
   };
 
   const t = (key: string): string => {
-    return translations[lang][key as keyof typeof translations.fr] || key;
-  };
+  const value = translations[lang][key];
+
+  return typeof value === "string" ? value : key;
+};
+
+const tArray = (key: string): string[] => {
+  const value = translations[lang][key];
+
+  return Array.isArray(value) ? value : [];
+};
 
   if (!mounted) {
     return null;
   }
 
   return (
-    <LanguageContext.Provider value={{ lang, setLang, t }}>
-      {children}
-    </LanguageContext.Provider>
-  );
+  <LanguageContext.Provider value={{ lang, setLang, t, tArray }}>
+    {children}
+  </LanguageContext.Provider>
+);
 }
 
 // Hook pour utiliser le contexte
