@@ -6,7 +6,7 @@ import type { PointerEvent as ReactPointerEvent } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import styles from "./intro.module.css";
 
-const LONG_PRESS_DELAY = 600;
+const LONG_PRESS_DELAY = 400;
 const MOVE_TOLERANCE = 10;
 
 export default function Intro() {

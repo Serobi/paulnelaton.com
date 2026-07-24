@@ -169,7 +169,7 @@
    PROJECTS
    ========================================================= */
 
-.projectGrid {
+/* .projectGrid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1rem;
@@ -416,10 +416,6 @@
 }
 
 
-/* =========================================================
-   PROFILE / HOW I WORK
-   ========================================================= */
-
 .profileGrid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -474,10 +470,6 @@
   line-height: 1.75;
 }
 
-
-/* =========================================================
-   CONTACT
-   ========================================================= */
 
 .contactSection {
   display: flex;
@@ -546,12 +538,8 @@
 .contactSection > a:hover::after {
   transform: scaleX(1);
   transform-origin: left;
-}
+} */
 
-
-/* =========================================================
-   RESPONSIVE — TABLET
-   ========================================================= */
 
 @media (max-width: 1024px) {
   .hero {
