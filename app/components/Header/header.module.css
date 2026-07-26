@@ -366,11 +366,31 @@
   .navLink {
     padding-inline: 0.8rem;
   }
+
+  @media (hover: none) {
+  .brandMark {
+    border-color: rgba(74, 144, 245, 0.62);
+
+    background:
+      radial-gradient(
+        circle at 30% 25%,
+        rgba(74, 144, 245, 0.34),
+        transparent 58%
+      ),
+      rgba(74, 144, 245, 0.09);
+
+    box-shadow:
+      0 0.45rem 1rem rgba(74, 144, 245, 0.08),
+      inset 0 1px 0 rgba(255, 255, 255, 0.03);
+
+    color: #9fc4ff;
+  }
+}
 }
 
 @media (max-width: 768px) {
   .header {
-    padding: 0.4rem 0.75rem 0.75rem;
+    padding: 0.4rem 0.4rem 0.4rem;
   }
 
   .headerBar {
