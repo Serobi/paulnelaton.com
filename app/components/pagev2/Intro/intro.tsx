@@ -1,12 +1,12 @@
 "use client";
 
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import type { PointerEvent as ReactPointerEvent } from "react";
 
 import { useLanguage } from "@/contexts/LanguageContext";
 import styles from "./intro.module.css";
 
-const LONG_PRESS_DELAY = 400;
+const LONG_PRESS_DELAY = 500;
 const MOVE_TOLERANCE = 10;
 
 export default function Intro() {
@@ -22,6 +22,32 @@ export default function Intro() {
     x: 0,
     y: 0,
   });
+
+  const sectionRef = useRef<HTMLElement | null>(null);
+
+  useEffect(() => {
+  const section = sectionRef.current;
+
+  if (!section) {
+    return;
+  }
+
+  const blockTouchScroll = (event: TouchEvent) => {
+    if (!touchActiveRef.current) {
+      return;
+    }
+
+    event.preventDefault();
+  };
+
+  section.addEventListener("touchmove", blockTouchScroll, {
+    passive: false,
+  });
+
+  return () => {
+    section.removeEventListener("touchmove", blockTouchScroll);
+  };
+}, []);
 
   const updateCardsLight = (
     section: HTMLElement,
@@ -63,29 +89,36 @@ const handlePointerDown = (
   }
 
   const section = event.currentTarget;
+  const pointerId = event.pointerId;
+
+  const startX = event.clientX;
+  const startY = event.clientY;
 
   startPositionRef.current = {
-    x: event.clientX,
-    y: event.clientY,
+    x: startX,
+    y: startY,
   };
 
-  activePointerIdRef.current = event.pointerId;
+  activePointerIdRef.current = pointerId;
 
   clearLongPressTimer();
 
   longPressTimerRef.current = setTimeout(() => {
     touchActiveRef.current = true;
 
-    updateCardsLight(
-      section,
-      startPositionRef.current.x,
-      startPositionRef.current.y
+    updateCardsLight(section, startX, startY);
+
+    section.classList.add(
+      styles.cardsSectionTouchActive
     );
 
-    section.classList.add(styles.cardsSectionTouchActive);
-    section.setPointerCapture(event.pointerId);
+    if (!section.hasPointerCapture(pointerId)) {
+      section.setPointerCapture(pointerId);
+    }
 
     navigator.vibrate?.(15);
+
+    longPressTimerRef.current = null;
   }, LONG_PRESS_DELAY);
 };
 
@@ -163,13 +196,14 @@ const handlePointerDown = (
 
   return (
     <section
-      id="about"
-      className={styles.cardsSection}
-      onPointerDown={handlePointerDown}
-      onPointerMove={handlePointerMove}
-      onPointerUp={stopTouchInteraction}
-      onPointerCancel={stopTouchInteraction}
-    >
+  ref={sectionRef}
+  id="about"
+  className={styles.cardsSection}
+  onPointerDown={handlePointerDown}
+  onPointerMove={handlePointerMove}
+  onPointerUp={stopTouchInteraction}
+  onPointerCancel={stopTouchInteraction}
+>
       <span className={styles.eyebrow}>
         {t("Intro.eyebrow")}
       </span>
