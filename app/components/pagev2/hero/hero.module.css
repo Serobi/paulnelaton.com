@@ -112,38 +112,48 @@
   transform: translateY(2rem);
 }
 
-.primaryButton {
+.heroCvButton {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 0.65rem;
 
-  min-height: 3.25rem;
-  padding-inline: 1.4rem;
+  min-height: 3.35rem;
+  padding: 0 1.35rem;
 
-  border: 1px solid transparent;
-  border-radius: var(--radius-small);
+  border: 1px solid rgba(74, 144, 245, 0.62);
+  border-radius: 0.8rem;
 
-  font-size: 0.92rem;
-  font-weight: 650;
+  background:
+    linear-gradient(
+      135deg,
+      rgba(74, 144, 245, 0.22),
+      rgba(74, 144, 245, 0.09)
+    );
+
+  color: #e7efff;
+
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  text-decoration: none;
+  text-transform: uppercase;
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.04),
+    0 0.45rem 1.1rem rgba(74, 144, 245, 0.07);
 
   transition:
-    color var(--transition-fast),
-    background-color var(--transition-fast),
-    border-color var(--transition-fast),
-    box-shadow var(--transition-default),
-    transform var(--transition-fast);
+    color 180ms ease,
+    border-color 180ms ease,
+    background 180ms ease,
+    box-shadow 180ms ease,
+    transform 180ms ease;
 }
 
-.primaryButton {
-  color: var(--color-primary-contrast);
-  background: var(--color-primary);
-  box-shadow: 0 10px 35px var(--color-glow-primary);
-}
-
-.primaryButton:hover {
-  background: var(--color-primary-light);
-  box-shadow: 0 16px 45px var(--color-glow-primary);
+.heroCvButton:focus-visible {
+  outline: 2px solid rgba(74, 144, 245, 0.75);
+  outline-offset: 0.35rem;
 }
 
 .heroNavigation {
@@ -171,15 +181,6 @@
     background-color var(--transition-default),
     border-color var(--transition-default),
     box-shadow var(--transition-default);
-}
-
-.heroNavCard:hover {
-  background: var(--color-surface-raised);
-  border-color: var(--color-primary);
-
-  box-shadow: 0 0 30px var(--color-glow-primary);
-
-  
 }
 
 .heroNavIndex {
@@ -225,25 +226,11 @@
   transition: color var(--transition-default);
 }
 
-.heroNavCard:hover .heroNavIndex {
-  color: var(--color-primary-light);
-}
-
-.heroNavCard:hover .heroNavLabel {
-  color: var(--color-primary-light);
-}
-
-.heroNavCard:hover .heroNavDescription {
-  color: var(--color-text-primary);
-}
-
-.primaryButton:focus-visible,
 .heroNavCard:focus-visible {
   outline: 2px solid var(--color-primary-light);
   outline-offset: 4px;
 }
 
-/* Tablet and smaller */
 @media (max-width: 1024px) {
   .hero {
     width: min(
@@ -359,7 +346,7 @@
     margin-top: 1.75rem;
   }
 
-  .primaryButton {
+  .heroCvButton {
     width: 100%;
     min-height: 3.4rem;
   }
@@ -412,27 +399,42 @@
   }
 }
 
-@media (hover: none) {
+@media (hover: hover) {
+  .heroCvButton:hover {
+    transform: translateY(-1px);
+
+    border-color: rgba(74, 144, 245, 0.9);
+
+    background:
+      linear-gradient(
+        135deg,
+        rgba(74, 144, 245, 0.34),
+        rgba(74, 144, 245, 0.14)
+      );
+
+    color: #ffffff;
+
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.06),
+      0 0.65rem 1.35rem rgba(74, 144, 245, 0.13);
+  }
+
   .heroNavCard:hover {
-    background: var(--color-surface);
-    border-color: var(--color-border);
-    box-shadow: none;
+    background: var(--color-surface-raised);
+    border-color: var(--color-primary);
+
+    box-shadow: 0 0 30px var(--color-glow-primary);
   }
 
   .heroNavCard:hover .heroNavIndex {
-    color: var(--color-text-secondary);
+    color: var(--color-primary-light);
   }
 
   .heroNavCard:hover .heroNavLabel {
-    color: var(--color-text-primary);
+    color: var(--color-primary-light);
   }
 
   .heroNavCard:hover .heroNavDescription {
-    color: var(--color-text-secondary);
-  }
-
-  .primaryButton:hover {
-    background: var(--color-primary);
-    box-shadow: 0 10px 35px var(--color-glow-primary);
+    color: var(--color-text-primary);
   }
 }

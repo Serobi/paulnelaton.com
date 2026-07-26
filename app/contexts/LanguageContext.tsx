@@ -25,6 +25,22 @@ const LanguageContext = createContext<LanguageContextType | undefined>(
 
 const translations: Record<Language,Record<string, TranslationValue>> = {
   fr: {
+    "header.role": "Ingénieur logiciel",
+    "header.productBuilder": "Créateur de produits",
+    "header.nav.intro": "Intro",
+    "header.nav.projects": "Projets",
+    "header.nav.cv": "CV Interactif",
+    "header.brandAriaLabel": "Paul Nelaton — Accueil",
+    "header.desktopNavigationLabel": "Navigation principale",
+    "header.mobileNavigationLabel": "Navigation mobile",
+    "header.navigation": "Navigation",
+    "header.openMenu": "Ouvrir le menu principal",
+    "header.closeMenu": "Fermer le menu principal",
+    "footer.role": "Ingénieur logiciel",
+    "footer.backToTop": "Revenir en haut de la page",
+    "footer.builtWith": "Construit avec Next.js · React · TypeScript",
+    "footer.contact": "Me contacter",
+    "footer.externalLinks": "Liens externes",
     "hero.eyebrow": "Ingénieur logiciel · Créateur de produits",
     "hero.title.line1": "Le client",
     "hero.title.line2": "au centre.",
@@ -46,12 +62,7 @@ const translations: Record<Language,Record<string, TranslationValue>> = {
 
     "hero.nav.contact.label": "Contact",
     "hero.nav.contact.description":
-      "Discutons de la suite.",
-      
-    // Header
-    "nav.intro": "Intro",
-    "nav.projects": "Projets",
-    "nav.cv": "CV Interactif",
+    "Discutons de la suite.",
 
     // Homepage
     "home.title": "Ingénieur logiciel & Cybersécurité",
@@ -72,12 +83,6 @@ const translations: Record<Language,Record<string, TranslationValue>> = {
     "projects.brain.desc":
       "Développement d'un jeu mobile / PC combinant stratégie, survie et coopération. Le jeu a été entièrement développé par mes soins, du code aux designs, du gameplay aux UI, du site Web à la direction artistique.",
     "projects.brain.cta": "Découvrir le projet",
-
-    // Footer
-    "footer.built": "Construit avec Next.js, React & TypeScript",
-    "footer.status": "SYSTEM STATUS:",
-    "footer.online": "ONLINE",
-    "footer.contact": "Contact",
 
     //intro
     "Intro.eyebrow": "Mon approche",
@@ -101,7 +106,22 @@ const translations: Record<Language,Record<string, TranslationValue>> = {
 ],
   },
   en: {
-        // Hero
+    "header.role": "Software Engineer",
+    "header.productBuilder": "Product Builder",
+    "header.nav.intro": "Intro",
+    "header.nav.projects": "Projects",
+    "header.nav.cv": "Interactive CV",
+    "header.brandAriaLabel": "Paul Nelaton — Home",
+    "header.desktopNavigationLabel": "Main navigation",
+    "header.mobileNavigationLabel": "Mobile navigation",
+    "header.navigation": "Navigation",
+    "header.openMenu": "Open main menu",
+    "header.closeMenu": "Close main menu",
+    "footer.role": "Software Engineer",
+    "footer.backToTop": "Back to the top of the page",
+    "footer.builtWith": "Built with Next.js · React · TypeScript",
+    "footer.contact": "Contact me",
+    "footer.externalLinks": "External links",
     "hero.eyebrow": "Software Engineer · Product Builder",
     "hero.title.line1": "Your clients",
     "hero.title.line2": "deserve more.",
@@ -124,10 +144,6 @@ const translations: Record<Language,Record<string, TranslationValue>> = {
     "hero.nav.contact.label": "Contact",
     "hero.nav.contact.description":
       "Let's talk about what comes next.",
-    // Header
-    "nav.intro": "Intro",
-    "nav.projects": "Projects",
-    "nav.cv": "Interactive CV",
 
     // Homepage
     "home.title": "Software Engineer & Cybersecurity",
@@ -148,12 +164,6 @@ const translations: Record<Language,Record<string, TranslationValue>> = {
     "projects.brain.desc":
       "Development of a mobile / PC game combining strategy, survival, and cooperation. The game was entirely developed by me, from code to designs, from gameplay to UI, from website to art direction.",
     "projects.brain.cta": "Discover the project",
-
-    // Footer
-    "footer.built": "Built with Next.js, React & TypeScript",
-    "footer.status": "SYSTEM STATUS:",
-    "footer.online": "ONLINE",
-    "footer.contact": "Contact",
 
     // Intro
     "Intro.eyebrow": "About me",

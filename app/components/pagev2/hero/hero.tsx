@@ -67,7 +67,7 @@ export default function Hero() {
             </p>
 
             <div className={styles.heroActions}>
-              <a href="/cv" className={styles.primaryButton}>
+              <a href="/cv" className={styles.heroCvButton}>
                 {t("hero.cta")}
               </a>
             </div>

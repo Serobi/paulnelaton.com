@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { LanguageToggle } from "./LanguageToggle";
 import styles from "./header.module.css";
@@ -10,76 +10,147 @@ export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const { t } = useLanguage();
 
+  const closeMobileMenu = () => {
+    setMobileMenuOpen(false);
+  };
+
+  useEffect(() => {
+    const handleEscape = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        closeMobileMenu();
+      }
+    };
+
+    document.addEventListener("keydown", handleEscape);
+
+    return () => {
+      document.removeEventListener("keydown", handleEscape);
+    };
+  }, []);
+
+  useEffect(() => {
+    document.body.style.overflow = mobileMenuOpen ? "hidden" : "";
+
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [mobileMenuOpen]);
+
   return (
     <header className={styles.header}>
-      <div className={styles.container}>
-        <div className={styles.inner}>
-          {/* Logo */}
-          <Link href="/" className={styles.logo}>
-            Paul <br />
-            Nelaton
+      <div className={styles.headerContainer}>
+        <div className={styles.headerBar}>
+          <Link
+            href="/"
+            className={styles.brand}
+            aria-label={t("header.brandAriaLabel")}
+            onClick={closeMobileMenu}
+          >
+            <span className={styles.brandMark}>PN</span>
+
+            <span className={styles.brandContent}>
+              <span className={styles.brandName}>Paul Nelaton</span>
+              <span className={styles.brandRole}>{t("header.role")}</span>
+            </span>
           </Link>
 
-          {/* Desktop Navigation */}
-          <nav className={styles.desktopNav}>
-            <a href="/#" className={styles.navLink}>
-              {t("nav.intro")}
+          <nav
+            className={styles.desktopNav}
+            aria-label={t("header.desktopNavigationLabel")}
+          >
+            <a href="/#about" className={styles.navLink}>
+              {t("header.nav.intro")}
             </a>
-            <a href="/#projets" className={styles.navLink}>
-              {t("nav.projects")}
+
+            <a href="/#work" className={styles.navLink}>
+              {t("header.nav.projects")}
             </a>
+
             <Link href="/cv" className={styles.cvButton}>
-              {t("nav.cv")}
+              <span>{t("header.nav.cv")}</span>
             </Link>
 
-            {/* Language toggle - Desktop */}
             <LanguageToggle />
           </nav>
 
-          {/* Mobile menu button */}
           <button
-            className={styles.mobileMenuBtn}
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            aria-label="Toggle menu"
+            type="button"
+            className={`${styles.mobileMenuButton} ${
+              mobileMenuOpen ? styles.mobileMenuButtonOpen : ""
+            }`}
+            onClick={() => setMobileMenuOpen((current) => !current)}
+            aria-label={
+              mobileMenuOpen
+                ? t("header.closeMenu")
+                : t("header.openMenu")
+            }
+            aria-expanded={mobileMenuOpen}
+            aria-controls="mobile-navigation"
           >
-            {mobileMenuOpen ? "CLOSE" : "MENU"}
+            <span className={styles.menuLine} />
+            <span className={styles.menuLine} />
           </button>
         </div>
       </div>
 
-      {/* Mobile Navigation */}
-      {mobileMenuOpen && (
-        <div className={styles.mobileMenu}>
-          <nav className={styles.mobileNav}>
+      <div
+        className={`${styles.mobileMenu} ${
+          mobileMenuOpen ? styles.mobileMenuOpen : ""
+        }`}
+        aria-hidden={!mobileMenuOpen}
+      >
+        <div className={styles.mobileMenuBackdrop} />
+
+        <nav
+          id="mobile-navigation"
+          className={styles.mobileNav}
+          aria-label={t("header.mobileNavigationLabel")}
+        >
+          <div className={styles.mobileNavHeader}>
+            <span className={styles.mobileNavLabel}>
+              {t("header.navigation")}
+            </span>
+            <LanguageToggle />
+          </div>
+
+          <div className={styles.mobileNavLinks}>
             <a
-              href="/#"
-              onClick={() => setMobileMenuOpen(false)}
+              href="/#about"
               className={styles.mobileNavLink}
+              onClick={closeMobileMenu}
+              tabIndex={mobileMenuOpen ? 0 : -1}
             >
-              {t("nav.intro")}
+              <span className={styles.mobileNavIndex}>01</span>
+              <span>{t("header.nav.intro")}</span>
             </a>
+
             <a
-              href="/#projets"
-              onClick={() => setMobileMenuOpen(false)}
+              href="/#work"
               className={styles.mobileNavLink}
+              onClick={closeMobileMenu}
+              tabIndex={mobileMenuOpen ? 0 : -1}
             >
-              {t("nav.projects")}
+              <span className={styles.mobileNavIndex}>02</span>
+              <span>{t("header.nav.projects")}</span>
             </a>
+
             <Link
               href="/cv"
-              onClick={() => setMobileMenuOpen(false)}
               className={styles.mobileNavLink}
+              onClick={closeMobileMenu}
+              tabIndex={mobileMenuOpen ? 0 : -1}
             >
-              {t("nav.cv")}
+              <span className={styles.mobileNavIndex}>03</span>
+              <span>{t("header.nav.cv")}</span>
             </Link>
+          </div>
 
-            {/* Language toggle - Mobile */}
-            <div className={styles.mobileLangWrapper}>
-              <LanguageToggle />
-            </div>
-          </nav>
-        </div>
-      )}
+          <div className={styles.mobileNavFooter}>
+            <span>{t("header.role")}</span>
+            <span>{t("header.productBuilder")}</span>
+          </div>
+        </nav>
+      </div>
     </header>
   );
 }

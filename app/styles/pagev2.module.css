@@ -49,10 +49,7 @@
   position: relative;
   min-height: 100vh;
   overflow-x: hidden;
-  margin-top: 3.5rem;
-
-
-    
+  margin-top: 3.5rem;    
 }
 
 
@@ -149,7 +146,7 @@
    PROJECTS
    ========================================================= */
 
-/* .projectGrid {
+ .projectGrid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1rem;
@@ -375,7 +372,7 @@
     box-shadow var(--transition-default),
     transform var(--transition-default);
 }
-
+/*
 .projectCard:hover {
   background: var(--color-surface-raised);
   border-color: var(--color-primary);
