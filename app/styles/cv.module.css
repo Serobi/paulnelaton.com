@@ -5,16 +5,45 @@ body {
   print-color-adjust: exact !important;
 }
 
-.cvPageWrapper {
-  margin-top: 1rem;
-  min-height: 100vh;
+.page {
+  position: relative;
+
   width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+
+  background: #0e1116;
+
+  /*
+   * Espace réservé au Header global fixe.
+   * On utilise du padding et non une marge pour que
+   * le fond sombre couvre aussi cette zone.
+   */
+  padding-top: 6.5rem;
+}
+
+.cvPageWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  width: 100%;
+  min-height: calc(100vh - 7rem);
+
+  padding: 0 1.5rem 3rem;
+
+  background: #0e1116;
+  box-sizing: border-box;
+}
+
+.controlsSection {
   display: flex;
   justify-content: center;
-  background: #0e1116;
-  padding-top: 9rem;
-  padding-bottom: 3rem;
-  box-sizing: border-box;
+
+  width: 100%;
+  max-width: 210mm;
+
+  margin-bottom: 1rem;
 }
 
 .cvSheet {
@@ -126,6 +155,21 @@ body {
    ═══════════════════════════════════════════════════════════════ */
 
 @media (max-width: 768px) {
+    .page {
+    padding-top: 5.5rem;
+  }
+
+  .cvPageWrapper {
+    min-height: calc(100vh - 6rem);
+    padding-inline: 0;
+    padding-bottom: 2rem;
+  }
+
+  .controlsSection {
+    padding-inline: 1rem;
+    margin-bottom: 1rem;
+  }
+
   .webGrid {
     grid-template-columns: 36% 1fr;
     gap: 5px;
@@ -153,11 +197,23 @@ body {
     margin: 0 !important;
   }
 
-  .cvPageWrapper {
+  .page {
+    min-height: auto;
+    padding: 0 !important;
     background: white !important;
+    overflow: visible;
+  }
+
+  .controlsSection {
+    display: none !important;
+  }
+
+  .cvPageWrapper {
     width: 210mm !important;
+    min-height: auto;
     margin: 0 !important;
     padding: 0 !important;
+    background: white !important;
     box-shadow: none !important;
     border: none !important;
   }
@@ -167,12 +223,10 @@ body {
     print-color-adjust: exact !important;
   }
 
-  /* Masque la version web */
   .screenOnly {
     display: none !important;
   }
 
-  /* Affiche la version PDF */
   .printOnly {
     display: block !important;
   }

@@ -112,11 +112,14 @@ export default function Cv() {
   };
 
   return (
+    <main className={styles.page}>
     <div className={styles.cvPageWrapper}>
-      <CvControls
-        onDownload={handleDownload}
-        isGenerating={isGenerating}
-      />
+      <section className={styles.controlsSection}>
+        <CvControls
+          onDownload={handleDownload}
+          isGenerating={isGenerating}
+        />
+      </section>
 
       {/* ═══════════════════════════════════════════════════════════════
           VERSION WEB (AFFICHAGE ÉCRAN)
@@ -155,12 +158,12 @@ export default function Cv() {
               </section>
             </aside>
 
-            <main className={styles.webMain}>
+            <div className={styles.webMain}>
               <Experiences
                 experiences={profile.experience}
                 title={profile.labels.experience}
               />
-            </main>
+            </div>
           </div>
         </div>
       </div>
@@ -200,15 +203,16 @@ export default function Cv() {
             </aside>
 
             {/* Main droite */}
-            <main className={styles.pdfMain}>
+            <div className={styles.pdfMain}>
               <Experiencespdf
                 experiences={profile.experience}
                 title={profile.labels.experience}
               />
-            </main>
+            </div>
           </div>
         </div>
       </div>
     </div>
+    </main>
   );
 }
