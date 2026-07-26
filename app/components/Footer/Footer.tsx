@@ -1,11 +1,26 @@
 "use client";
 import Link from "next/link";
+import { useRouter, usePathname } from "next/navigation";
 import { useLanguage } from "@/contexts/LanguageContext";
 import styles from "./footer.module.css";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
   const { t } = useLanguage();
+
+  const router = useRouter();
+  const pathname = usePathname();
+  
+  const handleHomeClick = (event: React.MouseEvent<HTMLAnchorElement>) => {  
+    if (pathname === "/") {
+      event.preventDefault();
+  
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    }
+  };
 
   return (
     <footer className={styles.footer}>
@@ -14,6 +29,7 @@ export default function Footer() {
           href="/"
           className={styles.brand}
           aria-label={t("footer.backToTop")}
+          onClick={handleHomeClick}
         >
           <span className={styles.brandMark}>PN</span>
 

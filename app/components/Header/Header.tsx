@@ -1,9 +1,12 @@
 "use client";
 
 import Link from "next/link";
+import { useRouter, usePathname } from "next/navigation";
+
 import { useEffect, useState } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { LanguageToggle } from "./LanguageToggle";
+import ScrollToTop from "../scrolltotop";
 import styles from "./header.module.css";
 
 export default function Header() {
@@ -13,6 +16,22 @@ export default function Header() {
   const closeMobileMenu = () => {
     setMobileMenuOpen(false);
   };
+
+const router = useRouter();
+const pathname = usePathname();
+
+const handleHomeClick = (event: React.MouseEvent<HTMLAnchorElement>) => {
+  closeMobileMenu();
+
+  if (pathname === "/") {
+    event.preventDefault();
+
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  }
+};
 
   useEffect(() => {
     const handleEscape = (event: KeyboardEvent) => {
@@ -44,7 +63,7 @@ export default function Header() {
             href="/"
             className={styles.brand}
             aria-label={t("header.brandAriaLabel")}
-            onClick={closeMobileMenu}
+            onClick={handleHomeClick}
           >
             <span className={styles.brandMark}>PN</span>
 
