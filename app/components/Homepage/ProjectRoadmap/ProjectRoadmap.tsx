@@ -7,21 +7,24 @@ import {
   type ProjectRoadmapStep,
 } from "@/data/projectroadmap.data";
 
-const CURRENT_STEP_ID = "paul-nelaton";
+const currentStepIndex = projectRoadmapSteps.findIndex(
+  (step) => step.status === "current",
+);
+
+const initialActiveStepId =
+  projectRoadmapSteps[currentStepIndex]?.id ??
+  projectRoadmapSteps[0]?.id ??
+  "";
 
 export default function ProjectRoadmap() {
-  const [activeStepId, setActiveStepId] = useState(CURRENT_STEP_ID);
+  const [activeStepId, setActiveStepId] = useState(initialActiveStepId);
   const [clickedStepId, setClickedStepId] = useState<string | null>(null);
 
   const stepRefs = useRef<
     Record<string, HTMLButtonElement | null>
   >({});
 
-  const currentStepIndex = projectRoadmapSteps.findIndex(
-    (step) => step.id === CURRENT_STEP_ID,
-  );
-
-  const activeStep = useMemo<ProjectRoadmapStep>(() => {
+  const activeStep = useMemo<ProjectRoadmapStep | undefined>(() => {
     return (
       projectRoadmapSteps.find(
         (step) => step.id === activeStepId,
@@ -59,8 +62,13 @@ export default function ProjectRoadmap() {
     });
   }, [activeStepId]);
 
+  if (!activeStep) {
+    return null;
+  }
+
   return (
     <section
+      id="work"
       className={styles.projectRoadmap}
       aria-labelledby="project-roadmap-title"
     >
@@ -68,18 +76,6 @@ export default function ProjectRoadmap() {
         <span className={styles.eyebrow}>
           Selected work
         </span>
-
-        <h2
-          id="project-roadmap-title"
-          className={styles.title}
-        >
-          Projects built through experience.
-        </h2>
-
-        <p className={styles.description}>
-          A journey through the products, systems and
-          experiences I have designed and developed.
-        </p>
       </header>
 
       <section className={styles.timelineSection}>

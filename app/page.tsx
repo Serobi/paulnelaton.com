@@ -18,9 +18,9 @@ export default function Home() {
             <section className={styles.heroSection}>
                 <Intro />
             </section>
-            {/* <section className={styles.heroSection}>
+            <section className={styles.heroSection}>
                 <ProjectRoadmap />
-            </section> */}
+            </section>
             {/* <section id="work" className={styles.workSection}>
                 <div className={styles.sectionHeader}>
                     <span>Selected work</span>

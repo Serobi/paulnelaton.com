@@ -1,12 +1,20 @@
 .projectRoadmap {
+  position: relative;
+
   width: min(1180px, calc(100% - 48px));
   margin: 0 auto;
   padding: 80px 0;
+  scroll-margin-top: 20px;
+  box-sizing: border-box;
 }
+
+/* =========================================================
+   HEADER
+========================================================= */
 
 .header {
   max-width: 720px;
-  margin-bottom: 48px;
+  margin-bottom: 0px;
 }
 
 .eyebrow {
@@ -18,165 +26,248 @@
   letter-spacing: 0.16em;
   text-transform: uppercase;
 
-  color: rgba(160, 190, 255, 0.85);
+  color: rgba(121, 163, 255, 0.88);
 }
 
 .title {
-  max-width: 650px;
+  max-width: 680px;
   margin: 0;
 
-  font-size: clamp(2rem, 4vw, 4rem);
-  line-height: 1;
+  font-size: clamp(2.25rem, 4.8vw, 4.25rem);
+  line-height: 0.98;
   font-weight: 500;
-  letter-spacing: -0.045em;
+  letter-spacing: -0.05em;
 
   color: rgba(255, 255, 255, 0.96);
 }
 
 .description {
   max-width: 620px;
-  margin: 22px 0 0;
+  margin: 24px 0 0;
 
   font-size: 1rem;
   line-height: 1.75;
 
-  color: rgba(255, 255, 255, 0.55);
+  color: rgba(255, 255, 255, 0.58);
 }
 
-.timelineViewport {
+/* =========================================================
+   TIMELINE
+========================================================= */
+
+.timelineSection {
   width: 100%;
-  max-width: 100%;
-  min-width: 0;
+  margin: 0 auto 24px;
+
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
 }
 
-.timeline {
+.timelineContainer {
   position: relative;
 
   width: 100%;
-  max-width: 100%;
-  min-width: 0;
+  display: flex;
+  align-items: center;
 
-  padding: 54px 24px 70px;
+  padding: 100px 0;
 
   overflow-x: auto;
   overflow-y: hidden;
 
-  scrollbar-width: none;
-  -webkit-overflow-scrolling: touch;
-
-  border: 1px solid rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 28px;
 
   background:
     radial-gradient(
-      circle at 50% 50%,
-      rgba(64, 112, 220, 0.08),
-      transparent 62%
+      120% 90% at 50% 45%,
+      rgba(73, 115, 211, 0.08),
+      transparent 68%
     ),
-    rgba(255, 255, 255, 0.015);
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.025),
+      rgba(255, 255, 255, 0.008)
+    ),
+    rgba(8, 12, 19, 0.82);
 
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.035),
-    0 28px 80px rgba(0, 0, 0, 0.22);
+    0 30px 90px rgba(0, 0, 0, 0.22);
+
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
 
   box-sizing: border-box;
+
+  user-select: none;
+  -webkit-user-select: none;
 }
 
-.timelineProgress {
-  position: absolute;
-  inset: 0 auto 0 0;
-
-  background: linear-gradient(
-    90deg,
-    rgba(77, 123, 230, 0.6),
-    rgba(151, 184, 255, 0.95)
-  );
-
-  box-shadow: 0 0 18px rgba(100, 145, 255, 0.32);
-
-  transition: width 500ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.timeline::-webkit-scrollbar {
+.timelineContainer::-webkit-scrollbar {
   display: none;
 }
 
-.timelineInner {
-  position: relative;
-
-  width: 100%;
-  min-width: 720px;
-}
-
-.steps {
+.stepsWrapper {
   position: relative;
   z-index: 2;
 
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: space-between;
 
   width: 100%;
+  height: 100%;
+  min-width: max-content;
+
+  user-select: none;
+  -webkit-user-select: none;
 }
 
-.timelineTrack {
+/* =========================================================
+   TIMELINE LINE
+========================================================= */
+
+.mainLine {
   position: absolute;
   z-index: 1;
 
-  top: 30px;
-  left: 75px;
-  right: 75px;
+  top: 50%;
+  left: 20px;
+  right: 20px;
 
   height: 2px;
-  overflow: hidden;
 
-  background: rgba(105, 135, 195, 0.18);
+  transform: translateY(-50%);
+
+  background: rgba(97, 128, 190, 0.22);
+
+  overflow: hidden;
+  pointer-events: none;
 }
 
-.step {
-  width: 150px;
-  padding: 0;
+.progressFill {
+  position: relative;
+  z-index: 2;
+
+  display: block;
+  height: 100%;
+
+  background: linear-gradient(
+    90deg,
+    rgba(78, 128, 235, 0.72),
+    rgba(149, 184, 255, 0.94)
+  );
+
+  box-shadow:
+    0 0 8px rgba(91, 141, 247, 0.4),
+    0 0 18px rgba(91, 141, 247, 0.2);
+}
+
+.progressEffect {
+  position: absolute;
+  z-index: 1;
+
+  top: 50%;
+  left: -40px;
+
+  height: 3px;
+
+  transform: translateY(-50%);
+
+  overflow: hidden;
+  opacity: 0.82;
+  pointer-events: none;
+}
+
+.progressEffect::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    100deg,
+    transparent 40%,
+    rgba(255, 248, 200, 0.25) 46%,
+    rgba(255, 255, 255, 0.55) 50%,
+    rgba(255, 248, 200, 0.25) 54%,
+    transparent 60%
+  );
+  filter: blur(1.3px) brightness(1.4);
+  mix-blend-mode: screen;
+  pointer-events: none;
+  animation: progressFlow 4s cubic-bezier(0.3, 0, 0.4, 1)
+    infinite;
+}
+
+/* =========================================================
+   STEP
+========================================================= */
+
+.stepNode {
+  position: relative;
+  cursor: pointer;
+  width: 140px;
+  height: 100%;
 
   display: flex;
+  flex-shrink: 0;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+
+  padding: 0;
+
+  border: 0;
+  outline: none;
 
   color: inherit;
   background: transparent;
-  border: 0;
-  cursor: pointer;
+
+  user-select: none;
+  -webkit-user-select: none;
+
+  transition:
+    transform 0.3s ease;
 }
 
-.node {
+.nodeCircle {
   position: relative;
+  z-index: 2;
 
   width: 60px;
   height: 60px;
 
   display: flex;
+  flex-shrink: 0;
   align-items: center;
   justify-content: center;
+  isolation: isolate;
+  margin: 0;
 
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  border: 1.5px solid rgba(255, 255, 255, 0.12);
   border-radius: 50%;
 
   background:
     linear-gradient(
       145deg,
-      rgba(255, 255, 255, 0.05),
-      rgba(255, 255, 255, 0.01)
+      rgba(255, 255, 255, 0.04),
+      rgba(255, 255, 255, 0.008)
     ),
-    rgba(7, 10, 18, 0.9);
+    rgba(8, 12, 20, 0.96);
 
   box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.06),
-    0 8px 24px rgba(0, 0, 0, 0.3);
+    inset 0 1px 0 rgba(255, 255, 255, 0.045),
+    0 8px 22px rgba(0, 0, 0, 0.28);
+
+  overflow: visible;
 
   transition:
-    transform 250ms ease,
-    border-color 250ms ease,
-    box-shadow 250ms ease,
-    background 250ms ease;
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    background 0.3s ease,
+    border-color 0.3s ease;
 }
 
 .nodeIndex {
@@ -185,105 +276,252 @@
 
   font-size: 0.78rem;
   font-weight: 600;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.04em;
 
-  color: rgba(255, 255, 255, 0.42);
+  color: rgba(255, 255, 255, 0.35);
+
+  pointer-events: none;
+  user-select: none;
 }
 
-.stepContent {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.stepInfo {
+  position: absolute;
+  top: 70px;
 
-  margin-top: 20px;
+  width: 160px;
+
+  text-align: center;
+  pointer-events: none;
+  user-select: none;
 }
 
 .stepTitle {
-  font-size: 0.8rem;
-  font-weight: 600;
-  letter-spacing: 0.08em;
+  display: block;
+
+  font-size: 0.78rem;
+  font-weight: 650;
+  letter-spacing: 0.07em;
   text-transform: uppercase;
 
-  color: rgba(255, 255, 255, 0.76);
+  color: rgba(255, 255, 255, 0.72);
 }
 
 .stepPeriod {
-  margin-top: 5px;
+  display: block;
+  margin-top: 6px;
 
   font-size: 0.7rem;
+  line-height: 1.3;
 
-  color: rgba(255, 255, 255, 0.35);
+  color: rgba(255, 255, 255, 0.34);
 }
 
-.step:hover .node {
-  transform: translateY(-3px);
+/* =========================================================
+   PAST
+========================================================= */
 
-  border-color: rgba(130, 170, 255, 0.4);
+.past .nodeCircle {
+  border-color: rgba(74, 144, 245, 0.62);
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(74, 144, 245, 0.22),
+      rgba(74, 144, 245, 0.09)
+    ),
+    #0b1019;
 
   box-shadow:
-    0 0 20px rgba(80, 130, 240, 0.12),
-    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+    inset 0 1px 0 rgba(255, 255, 255, 0.04),
+    0 0.45rem 1.1rem rgba(74, 144, 245, 0.07);
 }
 
-.past .node {
-  border-color: rgba(110, 150, 235, 0.34);
+.past .stepTitle {
+  color: rgba(222, 233, 255, 0.78);
 }
 
-.past .nodeIndex {
-  color: rgba(145, 180, 255, 0.8);
-}
+/* =========================================================
+   CURRENT
+========================================================= */
 
-.future {
-  opacity: 0.58;
-}
-
-.active {
-  opacity: 1;
-}
-
-.active .node {
-  transform: scale(1.12);
-
-  border-color: rgba(174, 201, 255, 0.85);
+.current .nodeCircle {
+  border-color: rgba(74, 144, 245, 0.9);
 
   background:
     radial-gradient(
       circle at 50% 35%,
-      rgba(134, 174, 255, 0.2),
+      rgba(74, 144, 245, 0.08),
       transparent 70%
     ),
-    rgba(8, 12, 22, 0.96);
+    #0b1019;
 
   box-shadow:
-    0 0 14px rgba(95, 145, 255, 0.28),
-    0 0 32px rgba(74, 119, 225, 0.14),
-    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    inset 0 1px 0 rgba(255, 255, 255, 0.05),
+    0 0 0.75rem rgba(74, 144, 245, 0.16),
+    0 0.65rem 1.35rem rgba(74, 144, 245, 0.13);
 }
 
-.active .nodeIndex {
-  color: rgba(225, 236, 255, 0.96);
+.current .nodeIndex {
+  color: rgba(226, 237, 255, 0.96);
 }
 
-.active .stepTitle {
+.current .stepTitle {
   color: rgba(255, 255, 255, 0.96);
 }
 
-.nodePulse {
+.currentPulse {
   position: absolute;
-  inset: -4px;
 
-  border: 1px solid rgba(173, 202, 255, 0.65);
+  inset: -3px;
+
+  border: 1px solid rgba(165, 196, 255, 0.65);
   border-radius: 50%;
 
-  animation: nodePulse 2.8s ease-out infinite;
+  opacity: 0;
+
+  animation: currentPulse 4s ease-out infinite;
+
+  pointer-events: none;
 }
+
+/* =========================================================
+   FUTURE
+========================================================= */
+
+.future .nodeCircle {
+  border-color: rgba(255, 255, 255, 0.1);
+  background: #0b1019;
+}
+
+.future .nodeIndex {
+  color: rgba(255, 255, 255, 0.24);
+}
+
+.future .stepTitle {
+  color: rgba(255, 255, 255, 0.48);
+}
+
+/* =========================================================
+   SELECTED
+========================================================= */
+
+.selected {
+  --pulse-color: 74, 144, 245;
+
+  opacity: 1;
+  z-index: 5;
+}
+
+.selected .nodeCircle {
+  transform: scale(1.18);
+  animation: nodePulse 2.4s ease-in-out infinite;
+}
+
+/* Selected + completed */
+.past.selected .nodeCircle {
+  border-color: rgba(74, 144, 245, 0.9);
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(74, 144, 245, 0.34),
+      rgba(74, 144, 245, 0.14)
+    ),
+    #0b1019;
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.06),
+    0 0 0.75rem rgba(74, 144, 245, 0.12),
+    0 0.65rem 1.35rem rgba(74, 144, 245, 0.13);
+
+    animation: nodePulse 2.4s ease-in-out infinite;
+}
+
+.past.selected .nodeIndex {
+  color: #ffffff;
+}
+
+/* Selected + current */
+.current.selected .nodeCircle {
+    border-color: rgba(74, 144, 245, 0.95);
+
+  background:
+    radial-gradient(
+      circle at 50% 35%,
+      rgba(74, 144, 245, 0.12),
+      transparent 70%
+    ),
+    #0b1019;
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.08),
+    0 0 0.8rem rgba(74, 144, 245, 0.22),
+    0 0 1.6rem rgba(74, 144, 245, 0.14);
+
+  animation: nodePulse 2.4s ease-in-out infinite;
+}
+
+.current.selected .nodeIndex {
+  color: #ffffff;
+}
+
+.future.selected .nodeCircle {
+  border-color: rgba(215, 228, 255, 0.96);
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.08),
+    0 0 0.8rem rgba(74, 144, 245, 0.22),
+    0 0 1.6rem rgba(74, 144, 245, 0.14);
+
+  animation: nodePulse 2.4s ease-in-out infinite;
+}
+
+.future.selected .nodeIndex {
+  color: #e7efff;
+}
+
+.selected .stepTitle {
+  color: #ffffff;
+}
+
+.selected .stepPeriod {
+  color: rgba(231, 239, 255, 0.62);
+}
+
+/* =========================================================
+   CLICK PULSE
+========================================================= */
+
+.clicked .nodeCircle::after {
+  content: "";
+
+  position: absolute;
+  z-index: 10;
+
+  inset: -6px;
+
+  border: 1px solid rgba(165, 196, 255, 0.84);
+  border-radius: 50%;
+
+  box-shadow: 0 0 12px rgba(107, 158, 255, 0.32);
+
+  animation: selectPulse 0.45s ease-out;
+
+  pointer-events: none;
+}
+
+/* =========================================================
+   PROJECT PREVIEW
+========================================================= */
 
 .projectPreview {
   position: relative;
-  overflow: hidden;
 
+  width: 100%;
   margin-top: 24px;
-  padding: 34px;
+  padding: 36px 34px 30px;
+
+  overflow: hidden;
 
   border: 1px solid rgba(255, 255, 255, 0.075);
   border-radius: 28px;
@@ -291,27 +529,30 @@
   background:
     linear-gradient(
       145deg,
-      rgba(255, 255, 255, 0.035),
-      rgba(255, 255, 255, 0.012)
+      rgba(255, 255, 255, 0.03),
+      rgba(255, 255, 255, 0.008)
     ),
-    rgba(7, 10, 17, 0.76);
+    rgba(7, 10, 17, 0.82);
 
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.035),
     0 30px 80px rgba(0, 0, 0, 0.24);
 
-  animation: previewReveal 420ms ease-out;
+  box-sizing: border-box;
+
+  animation: previewReveal 0.42s ease-out;
 }
 
 .previewGlow {
   position: absolute;
   inset: 0;
 
-  background: radial-gradient(
-    circle at 15% 0%,
-    rgba(75, 125, 235, 0.1),
-    transparent 42%
-  );
+  background:
+    radial-gradient(
+      70% 100% at 5% 0%,
+      rgba(69, 116, 224, 0.1),
+      transparent 62%
+    );
 
   pointer-events: none;
 }
@@ -328,55 +569,60 @@
 
 .projectCategory {
   display: block;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 
   font-size: 0.72rem;
-  font-weight: 600;
+  font-weight: 650;
   letter-spacing: 0.14em;
   text-transform: uppercase;
 
-  color: rgba(143, 177, 247, 0.72);
+  color: rgba(121, 163, 255, 0.86);
 }
 
 .projectTitle {
   margin: 0;
 
-  font-size: clamp(1.8rem, 3vw, 2.8rem);
+  font-size: clamp(2rem, 4vw, 3.25rem);
+  line-height: 1;
   font-weight: 500;
-  letter-spacing: -0.035em;
+  letter-spacing: -0.04em;
 
-  color: rgba(255, 255, 255, 0.96);
+  color: rgba(255, 255, 255, 0.97);
 }
 
 .status {
   flex-shrink: 0;
 
-  padding: 7px 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 8px 13px;
+
+  border: 1px solid rgba(139, 176, 249, 0.25);
   border-radius: 999px;
 
-  font-size: 0.68rem;
-  font-weight: 600;
+  font-size: 0.66rem;
+  font-weight: 650;
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
 
 .status_completed {
-  color: rgba(167, 195, 255, 0.9);
-  background: rgba(79, 125, 220, 0.08);
-  border-color: rgba(110, 154, 245, 0.2);
+  color: rgba(173, 202, 255, 0.92);
+  background: rgba(76, 123, 220, 0.08);
 }
 
 .status_current {
-  color: rgba(220, 233, 255, 0.96);
-  background: rgba(106, 153, 255, 0.12);
-  border-color: rgba(140, 178, 255, 0.3);
+  color: rgba(224, 236, 255, 0.96);
+  background: rgba(91, 140, 242, 0.12);
+  border-color: rgba(143, 180, 255, 0.35);
 }
 
 .status_planned {
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(255, 255, 255, 0.52);
   background: rgba(255, 255, 255, 0.025);
+  border-color: rgba(255, 255, 255, 0.09);
 }
 
 .projectSummary {
@@ -384,7 +630,7 @@
   z-index: 1;
 
   max-width: 720px;
-  margin: 20px 0 0;
+  margin: 24px 0 0;
 
   font-size: 1rem;
   line-height: 1.75;
@@ -403,34 +649,307 @@
   align-items: center;
   justify-content: center;
 
-  border: 1px dashed rgba(130, 165, 235, 0.15);
+  border: 1px dashed rgba(122, 159, 231, 0.16);
   border-radius: 20px;
 
-  background: rgba(255, 255, 255, 0.012);
+  background: rgba(255, 255, 255, 0.01);
 
-  font-size: 0.78rem;
-  letter-spacing: 0.08em;
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
 
-  color: rgba(255, 255, 255, 0.28);
+  color: rgba(255, 255, 255, 0.26);
+}
+
+/* =========================================================
+   HOVER
+========================================================= */
+
+@media (hover: hover) and (pointer: fine) {
+  .stepNode:hover {
+    z-index: 6;
+  }
+
+  /*
+   * Le hover visuel ne s'applique qu'aux nodes
+   * qui ne sont pas déjà sélectionnées.
+   */
+  .stepNode:not(.selected):hover .nodeCircle {
+    transform: translateY(-1px) scale(1.08);
+
+    border-color: rgba(74, 144, 245, 0.9);
+
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.06),
+      0 0.65rem 1.35rem rgba(74, 144, 245, 0.13);
+  }
+
+  .past:not(.selected):hover .nodeCircle {
+    background:
+      linear-gradient(
+        135deg,
+        rgba(74, 144, 245, 0.34),
+        rgba(74, 144, 245, 0.14)
+      ),
+      #0b1019;
+  }
+
+  .current:not(.selected):hover .nodeCircle {
+    border-color: rgba(210, 226, 255, 0.96);
+
+    background:
+      radial-gradient(
+        circle at 50% 35%,
+        rgba(74, 144, 245, 0.12),
+        transparent 70%
+      ),
+      #0b1019;
+  }
+
+.future:not(.selected):hover .nodeCircle {
+    border-color: rgba(74, 144, 245, 0.75);
+
+    box-shadow:
+        0 0 8px rgba(74,144,245,.14),
+        0 0 16px rgba(74,144,245,.08);
+}
+
+.future:not(.selected):hover .stepTitle {
+    color: rgba(255,255,255,.7);
+}
+
+  .stepNode:not(.selected):hover .stepTitle {
+    color: #ffffff;
+  }
+
+  .stepNode:not(.selected):hover .stepPeriod {
+    color: rgba(231, 239, 255, 0.72);
+  }
 }
 
 @keyframes nodePulse {
-  0% {
+  0%,
+  100% {
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.06),
+      0 0 6px rgba(var(--pulse-color), 0.1),
+      0 0 12px rgba(var(--pulse-color), 0.05);
+  }
+
+  50% {
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.08),
+      0 0 10px rgba(var(--pulse-color), 0.22),
+      0 0 20px rgba(var(--pulse-color), 0.12);
+  }
+}
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 768px) {
+  .projectRoadmap {
+    width: 100%;
+    padding: 52px 0;
+
+    overflow: hidden;
+  }
+
+  .header {
+    width: calc(100% - 32px);
+    margin: 0 auto 32px;
+  }
+
+  .eyebrow {
+    margin-bottom: 10px;
+
+    font-size: clamp(0.62rem, 2.7vw, 0.75rem);
+  }
+
+  .title {
+    font-size: clamp(2rem, 10vw, 3.4rem);
+  }
+
+  .description {
+    margin-top: 20px;
+
+    font-size: clamp(0.85rem, 3.5vw, 1rem);
+    line-height: 1.65;
+  }
+
+  .timelineSection {
+    width: 100%;
+    margin: 0 auto 22px;
+    padding: 0 8px;
+
+    box-sizing: border-box;
+  }
+
+  .timelineContainer {
+    width: 100%;
+
+    padding: 64px 0;
+
+    border-radius: 24px;
+    scroll-snap-type: x mandatory;
+  }
+
+  .stepsWrapper {
+    min-width: max-content;
+  }
+
+  .stepNode {
+    width: clamp(100px, 28vw, 140px);
+
+    --node-size: clamp(45px, 12vw, 60px);
+
+    scroll-snap-align: center;
+  }
+
+  .nodeCircle {
+    width: var(--node-size);
+    height: var(--node-size);
+
+    border-width: 1.5px;
+  }
+
+  .nodeIndex {
+    font-size: clamp(0.68rem, 2.8vw, 0.8rem);
+    font-weight: 500;
+  }
+
+  .stepInfo {
+    top: calc(
+      var(--node-size) + clamp(14px, 3vw, 28px)
+    );
+
+    width: clamp(110px, 30vw, 160px);
+  }
+
+  .stepTitle {
+    width: 100%;
+
+    font-size: clamp(0.62rem, 2.8vw, 0.78rem);
+    letter-spacing: 0.06em;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .stepPeriod {
+    margin-top: 4px;
+
+    font-size: clamp(0.58rem, 2.5vw, 0.7rem);
+  }
+
+  .mainLine {
+    opacity: 0.78;
+  }
+
+  .progressEffect {
     opacity: 0.65;
+  }
+
+  .projectPreview {
+    width: auto;
+    margin: 0 8px;
+    padding: 26px 18px 20px;
+
+    border-radius: 22px;
+  }
+
+  .previewHeader {
+    flex-direction: column-reverse;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .projectCategory {
+    margin-bottom: 9px;
+
+    font-size: clamp(0.62rem, 2.7vw, 0.72rem);
+  }
+
+  .projectTitle {
+    font-size: clamp(1.9rem, 9vw, 2.8rem);
+  }
+
+  .status {
+    padding: 6px 11px;
+
+    font-size: clamp(0.58rem, 2.5vw, 0.66rem);
+  }
+
+  .projectSummary {
+    margin-top: 18px;
+
+    font-size: clamp(0.85rem, 3.5vw, 1rem);
+    line-height: 1.6;
+  }
+
+  .previewPlaceholder {
+    min-height: 130px;
+    margin-top: 22px;
+
+    border-radius: 16px;
+
+    font-size: clamp(0.58rem, 2.4vw, 0.72rem);
+  }
+}
+
+/* =========================================================
+   ANIMATIONS
+========================================================= */
+
+@keyframes progressFlow {
+  from {
+    transform: translateX(-140%);
+  }
+
+  to {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes currentPulse {
+  0% {
     transform: scale(1);
+    opacity: 0;
+  }
+
+  55% {
+    transform: scale(1);
+    opacity: 0;
+  }
+
+  60% {
+    transform: scale(1);
+    opacity: 0.72;
   }
 
   100% {
+    transform: scale(1.58);
     opacity: 0;
-    transform: scale(1.45);
+  }
+}
+
+@keyframes selectPulse {
+  from {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+
+  to {
+    transform: scale(1.22);
+    opacity: 0;
   }
 }
 
 @keyframes previewReveal {
   from {
     opacity: 0;
-    transform: translateY(14px);
+    transform: translateY(16px);
   }
 
   to {
@@ -439,85 +958,17 @@
   }
 }
 
-@media (max-width: 768px) {
-  .projectRoadmap {
-    width: 100%;
-    max-width: 100%;
-    min-width: 0;
-
-    padding: 48px 10px;
-
-    box-sizing: border-box;
-    overflow: hidden;
-  }
-
-  .timelineViewport {
-    width: 100%;
-    max-width: 100%;
-    min-width: 0;
-  }
-
-  .timeline {
-    width: 100%;
-    max-width: 100%;
-    min-width: 0;
-
-    padding: 64px 0 68px;
-
-    overflow-x: auto;
-    overflow-y: hidden;
-
-    border-radius: 24px;
-
-    box-sizing: border-box;
-  }
-
-  .timelineInner {
-    width: max-content;
-    min-width: max-content;
-
-    padding: 0 8px;
-
-    box-sizing: border-box;
-  }
-
-  .steps {
-    width: max-content;
-    min-width: max-content;
-
-    justify-content: flex-start;
-  }
-
-  .step {
-    width: clamp(105px, 28vw, 140px);
-    flex: 0 0 clamp(105px, 28vw, 140px);
-
-    scroll-snap-align: center;
-  }
-
-  .node {
-    width: clamp(46px, 13vw, 60px);
-    height: clamp(46px, 13vw, 60px);
-  }
-
-  .timelineTrack {
-    top: calc(clamp(46px, 13vw, 60px) / 2);
-
-    left: calc(clamp(105px, 28vw, 140px) / 2);
-    right: calc(clamp(105px, 28vw, 140px) / 2);
-  }
-  
-}
-
 @media (prefers-reduced-motion: reduce) {
-  .timelineProgress,
-  .node,
+  .nodeCircle,
+  .progressFill,
   .projectPreview {
     transition: none;
     animation: none;
   }
 
-  .nodePulse {
+  .currentPulse,
+  .progressEffect::after,
+  .clicked .nodeCircle::after {
     display: none;
   }
 }

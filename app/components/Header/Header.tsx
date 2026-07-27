@@ -79,8 +79,12 @@ const handleHomeClick = (event: React.MouseEvent<HTMLAnchorElement>) => {
             className={styles.desktopNav}
             aria-label={t("header.desktopNavigationLabel")}
           >
-            <a href="/#about" className={styles.navLink}>
+            <a href="#" onClick={handleHomeClick} className={styles.navLink}>
               {t("header.nav.intro")}
+            </a>  
+
+            <a href="/#about" className={styles.navLink}>
+              {t("header.nav.about")}
             </a>
 
             <a href="/#work" className={styles.navLink}>
