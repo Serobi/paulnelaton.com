@@ -85,7 +85,7 @@ const translations: Record<Language,Record<string, TranslationValue>> = {
     "projects.brain.cta": "Découvrir le projet",
 
     //intro
-    "Intro.eyebrow": "Mon approche",
+    "Intro.eyebrow": "À propos",
     "Intro.card1.title": "Ingénieur logiciel",
     "Intro.card2.title": "Créateur de produits",
     "Intro.card3.title": "Expérience utilisateur",
