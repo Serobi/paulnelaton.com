@@ -4,7 +4,7 @@
   width: min(1180px, calc(100% - 48px));
   margin: 0 auto;
   padding: 80px 0;
-  scroll-margin-top: 20px;
+  scroll-margin-top: 30px;
   box-sizing: border-box;
 }
 
@@ -19,7 +19,7 @@
 
 .eyebrow {
   display: inline-block;
-  margin-bottom: 14px;
+  margin-bottom: 2rem;
 
   font-size: 0.75rem;
   font-weight: 600;
@@ -757,11 +757,11 @@
 
   .header {
     width: calc(100% - 32px);
-    margin: 0 auto 32px;
+    margin: 0 auto 0px;
   }
 
   .eyebrow {
-    margin-bottom: 10px;
+    margin-bottom: 1.5rem;
 
     font-size: clamp(0.62rem, 2.7vw, 0.75rem);
   }
