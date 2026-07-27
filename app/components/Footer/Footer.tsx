@@ -11,16 +11,19 @@ export default function Footer() {
   const router = useRouter();
   const pathname = usePathname();
   
-  const handleHomeClick = (event: React.MouseEvent<HTMLAnchorElement>) => {  
-    if (pathname === "/") {
-      event.preventDefault();
-  
-      window.scrollTo({
-        top: 0,
-        behavior: "smooth",
-      });
-    }
-  };
+const handleHomeClick = (event: React.MouseEvent<HTMLAnchorElement>) => {
+
+  if (pathname === "/") {
+    event.preventDefault();
+
+    window.history.pushState({}, "", "/");
+
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  }
+};
 
   return (
     <footer className={styles.footer}>
