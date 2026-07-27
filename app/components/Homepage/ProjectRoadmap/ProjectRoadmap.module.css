@@ -1,0 +1,523 @@
+.projectRoadmap {
+  width: min(1180px, calc(100% - 48px));
+  margin: 0 auto;
+  padding: 80px 0;
+}
+
+.header {
+  max-width: 720px;
+  margin-bottom: 48px;
+}
+
+.eyebrow {
+  display: inline-block;
+  margin-bottom: 14px;
+
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+
+  color: rgba(160, 190, 255, 0.85);
+}
+
+.title {
+  max-width: 650px;
+  margin: 0;
+
+  font-size: clamp(2rem, 4vw, 4rem);
+  line-height: 1;
+  font-weight: 500;
+  letter-spacing: -0.045em;
+
+  color: rgba(255, 255, 255, 0.96);
+}
+
+.description {
+  max-width: 620px;
+  margin: 22px 0 0;
+
+  font-size: 1rem;
+  line-height: 1.75;
+
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.timelineViewport {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+}
+
+.timeline {
+  position: relative;
+
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+
+  padding: 54px 24px 70px;
+
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 28px;
+
+  background:
+    radial-gradient(
+      circle at 50% 50%,
+      rgba(64, 112, 220, 0.08),
+      transparent 62%
+    ),
+    rgba(255, 255, 255, 0.015);
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.035),
+    0 28px 80px rgba(0, 0, 0, 0.22);
+
+  box-sizing: border-box;
+}
+
+.timelineProgress {
+  position: absolute;
+  inset: 0 auto 0 0;
+
+  background: linear-gradient(
+    90deg,
+    rgba(77, 123, 230, 0.6),
+    rgba(151, 184, 255, 0.95)
+  );
+
+  box-shadow: 0 0 18px rgba(100, 145, 255, 0.32);
+
+  transition: width 500ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.timeline::-webkit-scrollbar {
+  display: none;
+}
+
+.timelineInner {
+  position: relative;
+
+  width: 100%;
+  min-width: 720px;
+}
+
+.steps {
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  width: 100%;
+}
+
+.timelineTrack {
+  position: absolute;
+  z-index: 1;
+
+  top: 30px;
+  left: 75px;
+  right: 75px;
+
+  height: 2px;
+  overflow: hidden;
+
+  background: rgba(105, 135, 195, 0.18);
+}
+
+.step {
+  width: 150px;
+  padding: 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  color: inherit;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+}
+
+.node {
+  position: relative;
+
+  width: 60px;
+  height: 60px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 50%;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.05),
+      rgba(255, 255, 255, 0.01)
+    ),
+    rgba(7, 10, 18, 0.9);
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.06),
+    0 8px 24px rgba(0, 0, 0, 0.3);
+
+  transition:
+    transform 250ms ease,
+    border-color 250ms ease,
+    box-shadow 250ms ease,
+    background 250ms ease;
+}
+
+.nodeIndex {
+  position: relative;
+  z-index: 2;
+
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+
+  color: rgba(255, 255, 255, 0.42);
+}
+
+.stepContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  margin-top: 20px;
+}
+
+.stepTitle {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+
+  color: rgba(255, 255, 255, 0.76);
+}
+
+.stepPeriod {
+  margin-top: 5px;
+
+  font-size: 0.7rem;
+
+  color: rgba(255, 255, 255, 0.35);
+}
+
+.step:hover .node {
+  transform: translateY(-3px);
+
+  border-color: rgba(130, 170, 255, 0.4);
+
+  box-shadow:
+    0 0 20px rgba(80, 130, 240, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.past .node {
+  border-color: rgba(110, 150, 235, 0.34);
+}
+
+.past .nodeIndex {
+  color: rgba(145, 180, 255, 0.8);
+}
+
+.future {
+  opacity: 0.58;
+}
+
+.active {
+  opacity: 1;
+}
+
+.active .node {
+  transform: scale(1.12);
+
+  border-color: rgba(174, 201, 255, 0.85);
+
+  background:
+    radial-gradient(
+      circle at 50% 35%,
+      rgba(134, 174, 255, 0.2),
+      transparent 70%
+    ),
+    rgba(8, 12, 22, 0.96);
+
+  box-shadow:
+    0 0 14px rgba(95, 145, 255, 0.28),
+    0 0 32px rgba(74, 119, 225, 0.14),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.active .nodeIndex {
+  color: rgba(225, 236, 255, 0.96);
+}
+
+.active .stepTitle {
+  color: rgba(255, 255, 255, 0.96);
+}
+
+.nodePulse {
+  position: absolute;
+  inset: -4px;
+
+  border: 1px solid rgba(173, 202, 255, 0.65);
+  border-radius: 50%;
+
+  animation: nodePulse 2.8s ease-out infinite;
+}
+
+.projectPreview {
+  position: relative;
+  overflow: hidden;
+
+  margin-top: 24px;
+  padding: 34px;
+
+  border: 1px solid rgba(255, 255, 255, 0.075);
+  border-radius: 28px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.035),
+      rgba(255, 255, 255, 0.012)
+    ),
+    rgba(7, 10, 17, 0.76);
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.035),
+    0 30px 80px rgba(0, 0, 0, 0.24);
+
+  animation: previewReveal 420ms ease-out;
+}
+
+.previewGlow {
+  position: absolute;
+  inset: 0;
+
+  background: radial-gradient(
+    circle at 15% 0%,
+    rgba(75, 125, 235, 0.1),
+    transparent 42%
+  );
+
+  pointer-events: none;
+}
+
+.previewHeader {
+  position: relative;
+  z-index: 1;
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.projectCategory {
+  display: block;
+  margin-bottom: 10px;
+
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+
+  color: rgba(143, 177, 247, 0.72);
+}
+
+.projectTitle {
+  margin: 0;
+
+  font-size: clamp(1.8rem, 3vw, 2.8rem);
+  font-weight: 500;
+  letter-spacing: -0.035em;
+
+  color: rgba(255, 255, 255, 0.96);
+}
+
+.status {
+  flex-shrink: 0;
+
+  padding: 7px 12px;
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 999px;
+
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.status_completed {
+  color: rgba(167, 195, 255, 0.9);
+  background: rgba(79, 125, 220, 0.08);
+  border-color: rgba(110, 154, 245, 0.2);
+}
+
+.status_current {
+  color: rgba(220, 233, 255, 0.96);
+  background: rgba(106, 153, 255, 0.12);
+  border-color: rgba(140, 178, 255, 0.3);
+}
+
+.status_planned {
+  color: rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.025);
+}
+
+.projectSummary {
+  position: relative;
+  z-index: 1;
+
+  max-width: 720px;
+  margin: 20px 0 0;
+
+  font-size: 1rem;
+  line-height: 1.75;
+
+  color: rgba(255, 255, 255, 0.58);
+}
+
+.previewPlaceholder {
+  position: relative;
+  z-index: 1;
+
+  min-height: 170px;
+  margin-top: 28px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px dashed rgba(130, 165, 235, 0.15);
+  border-radius: 20px;
+
+  background: rgba(255, 255, 255, 0.012);
+
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+
+  color: rgba(255, 255, 255, 0.28);
+}
+
+@keyframes nodePulse {
+  0% {
+    opacity: 0.65;
+    transform: scale(1);
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(1.45);
+  }
+}
+
+@keyframes previewReveal {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .projectRoadmap {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+
+    padding: 48px 10px;
+
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+
+  .timelineViewport {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  .timeline {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+
+    padding: 64px 0 68px;
+
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    border-radius: 24px;
+
+    box-sizing: border-box;
+  }
+
+  .timelineInner {
+    width: max-content;
+    min-width: max-content;
+
+    padding: 0 8px;
+
+    box-sizing: border-box;
+  }
+
+  .steps {
+    width: max-content;
+    min-width: max-content;
+
+    justify-content: flex-start;
+  }
+
+  .step {
+    width: clamp(105px, 28vw, 140px);
+    flex: 0 0 clamp(105px, 28vw, 140px);
+
+    scroll-snap-align: center;
+  }
+
+  .node {
+    width: clamp(46px, 13vw, 60px);
+    height: clamp(46px, 13vw, 60px);
+  }
+
+  .timelineTrack {
+    top: calc(clamp(46px, 13vw, 60px) / 2);
+
+    left: calc(clamp(105px, 28vw, 140px) / 2);
+    right: calc(clamp(105px, 28vw, 140px) / 2);
+  }
+  
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .timelineProgress,
+  .node,
+  .projectPreview {
+    transition: none;
+    animation: none;
+  }
+
+  .nodePulse {
+    display: none;
+  }
+}

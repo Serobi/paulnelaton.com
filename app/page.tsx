@@ -5,6 +5,7 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import styles from "@/styles/page.module.css";
 import Hero from "@/components/Homepage/hero/hero";
 import Intro from "@/components/Homepage/Intro/intro";
+import ProjectRoadmap from "@/components/Homepage/ProjectRoadmap/ProjectRoadmap";
 
 export default function Home() {
     const { t } = useLanguage();
@@ -17,7 +18,9 @@ export default function Home() {
             <section className={styles.heroSection}>
                 <Intro />
             </section>
-            
+            {/* <section className={styles.heroSection}>
+                <ProjectRoadmap />
+            </section> */}
             {/* <section id="work" className={styles.workSection}>
                 <div className={styles.sectionHeader}>
                     <span>Selected work</span>
