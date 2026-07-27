@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useMemo, useRef, useState } from "react";
 import styles from "./ProjectRoadmap.module.css";
 import {
   projectRoadmapSteps,
@@ -17,10 +17,15 @@ const initialActiveStepId =
   "";
 
 export default function ProjectRoadmap() {
-  const [activeStepId, setActiveStepId] = useState(initialActiveStepId);
-  const [clickedStepId, setClickedStepId] = useState<string | null>(null);
+  const [activeStepId, setActiveStepId] =
+    useState(initialActiveStepId);
 
-  const stepRefs = useRef<
+  const [clickedStepId, setClickedStepId] =
+    useState<string | null>(null);
+
+  const timelineRef = useRef<HTMLDivElement>(null);
+
+  const nodeRefs = useRef<
     Record<string, HTMLButtonElement | null>
   >({});
 
@@ -39,28 +44,37 @@ export default function ProjectRoadmap() {
         100
       : 0;
 
-  const handleStepClick = (stepId: string) => {
-    setActiveStepId(stepId);
-    setClickedStepId(stepId);
+  const centerNode = (
+    stepId: string,
+    behavior: ScrollBehavior = "smooth",
+  ) => {
+    const container = timelineRef.current;
+    const node = nodeRefs.current[stepId];
 
-    window.setTimeout(() => {
-      setClickedStepId(null);
-    }, 400);
-  };
-
-  useEffect(() => {
-    const activeElement = stepRefs.current[activeStepId];
-
-    if (!activeElement) {
+    if (!container || !node) {
       return;
     }
 
-    activeElement.scrollIntoView({
-      behavior: "smooth",
-      block: "nearest",
-      inline: "center",
+    const left =
+      node.offsetLeft -
+      container.clientWidth / 2 +
+      node.offsetWidth / 2;
+
+    container.scrollTo({
+      left,
+      behavior,
     });
-  }, [activeStepId]);
+  };
+
+  const handleStepClick = (stepId: string) => {
+    setActiveStepId(stepId);
+    setClickedStepId(stepId);
+    centerNode(stepId);
+
+    window.setTimeout(() => {
+      setClickedStepId(null);
+    }, 450);
+  };
 
   if (!activeStep) {
     return null;
@@ -79,7 +93,7 @@ export default function ProjectRoadmap() {
       </header>
 
       <section className={styles.timelineSection}>
-        <div className={styles.timelineContainer}>
+        <div ref={timelineRef} className={styles.timelineContainer}>
           <div className={styles.stepsWrapper}>
             <div
               className={styles.mainLine}
@@ -107,9 +121,9 @@ export default function ProjectRoadmap() {
               return (
                 <button
                   key={step.id}
-                  ref={(element) => {
-                    stepRefs.current[step.id] = element;
-                  }}
+                    ref={(element) => {
+                        nodeRefs.current[step.id] = element;
+                    }}
                   type="button"
                   className={[
                     styles.stepNode,

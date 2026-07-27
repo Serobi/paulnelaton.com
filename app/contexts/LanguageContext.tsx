@@ -54,16 +54,14 @@ const translations: Record<Language,Record<string, TranslationValue>> = {
       "Profil, expérience et vision produit.",
 
     "hero.nav.process.label": "Mon approche",
-    "hero.nav.process.description":
-      "Comprendre, construire et améliorer.",
+    "hero.nav.process.description": "Comprendre, construire et améliorer. Bientôt créé",
 
     "hero.nav.projects.label": "Projets",
     "hero.nav.projects.description":
       "Produits personnels et réalisations professionnelles.",
 
     "hero.nav.contact.label": "Contact",
-    "hero.nav.contact.description":
-    "Discutons de la suite.",
+    "hero.nav.contact.description": "Discutons de la suite. Bientôt créé",
 
     // Homepage
     "home.title": "Ingénieur logiciel & Cybersécurité",
@@ -137,15 +135,13 @@ const translations: Record<Language,Record<string, TranslationValue>> = {
 
     "hero.nav.process.label": "How I work",
     "hero.nav.process.description":
-      "Understand, build and improve.",
+    "Understand, build and improve. Coming soon",
 
     "hero.nav.projects.label": "Projects",
-    "hero.nav.projects.description":
-      "Personal products and professional work.",
+    "hero.nav.projects.description": "Personal products and professional work.",
 
     "hero.nav.contact.label": "Contact",
-    "hero.nav.contact.description":
-      "Let's talk about what comes next.",
+    "hero.nav.contact.description": "Let's talk about what comes next. Coming soon",
 
     // Homepage
     "home.title": "Software Engineer & Cybersecurity",

@@ -13,12 +13,12 @@ const navigationItems = [
   {
     index: "02",
     key: "process",
-    href: "#process",
+    href: "#how",
   },
   {
     index: "03",
     key: "projects",
-    href: "#projects",
+    href: "#work",
   },
   {
     index: "04",
