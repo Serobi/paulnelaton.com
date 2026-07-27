@@ -27,7 +27,7 @@ export const projectRoadmapSteps: ProjectRoadmapStep[] = [
     {
     id: "brain-eaters-io",
     index: "01",
-    title: "braineaters.io",
+    title: "Game website",
     period: "2024 - 2026",
     category: "Web Platform",
     status: "completed",
@@ -37,7 +37,7 @@ export const projectRoadmapSteps: ProjectRoadmapStep[] = [
   {
     id: "paulnelaton",
     index: "03",
-    title: "paulnelaton.com",
+    title: "Portfolio",
     period: "2026",
     category: "Web Experience",
     status: "completed",
