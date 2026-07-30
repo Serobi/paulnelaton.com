@@ -6,7 +6,6 @@ import { useRouter, usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { LanguageToggle } from "./LanguageToggle";
-import ScrollToTop from "../scrolltotop";
 import styles from "./header.module.css";
 
 export default function Header() {
@@ -17,23 +16,23 @@ export default function Header() {
     setMobileMenuOpen(false);
   };
 
-const router = useRouter();
-const pathname = usePathname();
+  const pathname = usePathname();
+  const isCvPage = pathname === "/cv";
 
-const handleHomeClick = (event: React.MouseEvent<HTMLAnchorElement>) => {
-  closeMobileMenu();
+  const handleHomeClick = (event: React.MouseEvent<HTMLAnchorElement>) => {
+    closeMobileMenu();
 
-  if (pathname === "/") {
-    event.preventDefault();
+    if (pathname === "/") {
+      event.preventDefault();
 
-    window.history.pushState({}, "", "/");
+      window.history.pushState({}, "", "/");
 
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
-  }
-};
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    }
+  };
 
   useEffect(() => {
     const handleEscape = (event: KeyboardEvent) => {
@@ -79,17 +78,33 @@ const handleHomeClick = (event: React.MouseEvent<HTMLAnchorElement>) => {
             className={styles.desktopNav}
             aria-label={t("header.desktopNavigationLabel")}
           >
-            <a href="#" onClick={handleHomeClick} className={styles.navLink}>
-              {t("header.nav.intro")}
-            </a>  
+            {isCvPage ? (
+              <Link
+                href="/"
+                className={styles.navLink}
+                onClick={handleHomeClick}
+              >
+                {t("header.nav.home")}
+              </Link>
+            ) : (
+              <>
+                <a
+                  href="/"
+                  onClick={handleHomeClick}
+                  className={styles.navLink}
+                >
+                  {t("header.nav.intro")}
+                </a>
 
-            <a href="/#about" className={styles.navLink}>
-              {t("header.nav.about")}
-            </a>
+                <a href="/#about" className={styles.navLink}>
+                  {t("header.nav.about")}
+                </a>
 
-            <a href="/#work" className={styles.navLink}>
-              {t("header.nav.projects")}
-            </a>
+                <a href="/#work" className={styles.navLink}>
+                  {t("header.nav.projects")}
+                </a>
+              </>
+            )}
 
             <Link href="/cv" className={styles.cvButton}>
               <span>{t("header.nav.cv")}</span>
@@ -100,9 +115,8 @@ const handleHomeClick = (event: React.MouseEvent<HTMLAnchorElement>) => {
 
           <button
             type="button"
-            className={`${styles.mobileMenuButton} ${
-              mobileMenuOpen ? styles.mobileMenuButtonOpen : ""
-            }`}
+            className={`${styles.mobileMenuButton} ${mobileMenuOpen ? styles.mobileMenuButtonOpen : ""
+              }`}
             onClick={() => setMobileMenuOpen((current) => !current)}
             aria-label={
               mobileMenuOpen
@@ -119,9 +133,8 @@ const handleHomeClick = (event: React.MouseEvent<HTMLAnchorElement>) => {
       </div>
 
       <div
-        className={`${styles.mobileMenu} ${
-          mobileMenuOpen ? styles.mobileMenuOpen : ""
-        }`}
+        className={`${styles.mobileMenu} ${mobileMenuOpen ? styles.mobileMenuOpen : ""
+          }`}
         aria-hidden={!mobileMenuOpen}
       >
         <div className={styles.mobileMenuBackdrop} />
@@ -139,25 +152,39 @@ const handleHomeClick = (event: React.MouseEvent<HTMLAnchorElement>) => {
           </div>
 
           <div className={styles.mobileNavLinks}>
-            <a
-              href="/#about"
-              className={styles.mobileNavLink}
-              onClick={closeMobileMenu}
-              tabIndex={mobileMenuOpen ? 0 : -1}
-            >
-              <span className={styles.mobileNavIndex}>01</span>
-              <span>{t("header.nav.intro")}</span>
-            </a>
+            {isCvPage ? (
+              <Link
+                href="/"
+                className={styles.mobileNavLink}
+                onClick={closeMobileMenu}
+                tabIndex={mobileMenuOpen ? 0 : -1}
+              >
+                <span className={styles.mobileNavIndex}>01</span>
+                <span>{t("header.nav.home")}</span>
+              </Link>
+            ) : (
+              <>
+                <a
+                  href="/#about"
+                  className={styles.mobileNavLink}
+                  onClick={closeMobileMenu}
+                  tabIndex={mobileMenuOpen ? 0 : -1}
+                >
+                  <span className={styles.mobileNavIndex}>01</span>
+                  <span>{t("header.nav.intro")}</span>
+                </a>
 
-            <a
-              href="/#work"
-              className={styles.mobileNavLink}
-              onClick={closeMobileMenu}
-              tabIndex={mobileMenuOpen ? 0 : -1}
-            >
-              <span className={styles.mobileNavIndex}>02</span>
-              <span>{t("header.nav.projects")}</span>
-            </a>
+                <a
+                  href="/#work"
+                  className={styles.mobileNavLink}
+                  onClick={closeMobileMenu}
+                  tabIndex={mobileMenuOpen ? 0 : -1}
+                >
+                  <span className={styles.mobileNavIndex}>02</span>
+                  <span>{t("header.nav.projects")}</span>
+                </a>
+              </>
+            )}
 
             <Link
               href="/cv"
@@ -165,7 +192,9 @@ const handleHomeClick = (event: React.MouseEvent<HTMLAnchorElement>) => {
               onClick={closeMobileMenu}
               tabIndex={mobileMenuOpen ? 0 : -1}
             >
-              <span className={styles.mobileNavIndex}>03</span>
+              <span className={styles.mobileNavIndex}>
+                {isCvPage ? "02" : "03"}
+              </span>
               <span>{t("header.nav.cv")}</span>
             </Link>
           </div>
