@@ -16,10 +16,10 @@ export default function Home() {
             <section className={styles.heroSection}>
                 <Hero />
             </section>
-            <section className={styles.heroSection}>
+            <section className={styles.aboutSection}>
                 <Intro />
             </section>
-            <section className={styles.heroSection}>
+            <section className={styles.projectSection}>
                 <RoadmapV2 />
             </section>
             {/* <section id="work" className={styles.workSection}>

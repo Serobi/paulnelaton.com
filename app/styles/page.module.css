@@ -81,6 +81,20 @@
     min-height: calc(100vh - 5.5rem);
 }
 
+.aboutSection {
+    display: flex;
+    align-items: center;
+
+    min-height: calc(100vh - 5.5rem);
+}
+
+.projectSection {
+    display: flex;
+    align-items: center;
+
+    min-height: calc(100vh - 5.5rem);
+}
+
 .scene {
   min-height: 100svh;
   display: grid;
