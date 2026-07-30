@@ -5,7 +5,8 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import styles from "@/styles/page.module.css";
 import Hero from "@/components/Homepage/hero/hero";
 import Intro from "@/components/Homepage/Intro/intro";
-import ProjectRoadmap from "@/components/Homepage/ProjectRoadmap/ProjectRoadmap";
+// import ProjectRoadmap from "@/components/Homepage/ProjectRoadmap/ProjectRoadmap";
+import RoadmapV2 from "@/components/Homepage/ProjectRoadmap/RoadmapV2";
 
 export default function Home() {
     const { t } = useLanguage();
@@ -19,7 +20,7 @@ export default function Home() {
                 <Intro />
             </section>
             <section className={styles.heroSection}>
-                <ProjectRoadmap />
+                <RoadmapV2 />
             </section>
             {/* <section id="work" className={styles.workSection}>
                 <div className={styles.sectionHeader}>

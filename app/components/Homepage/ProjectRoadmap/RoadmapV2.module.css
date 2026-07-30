@@ -1,0 +1,1016 @@
+.roadmapPage {
+  position: relative;
+
+  width: 100%;
+  min-height: 100vh;
+  padding: 6rem 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  scroll-margin-top: 60px;
+}
+
+.header {
+  width: min(70%, 1400px);
+  padding-left: 100px;
+  margin-bottom: 1rem;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+
+  color: var(--color-primary-light);
+
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.timelineSection {
+  width: min(98%, 1100px);
+  margin: 0 auto 40px;
+  padding: 0 40px;
+
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.timelineContainer {
+  --node-width: 140px;
+  --node-radius: 70px;
+
+  position: relative;
+  container-type: inline-size;
+
+  width: 100%;
+  padding: 100px 0;
+
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-x: contain;
+
+  border: 1px solid rgba(232, 192, 122, 0.3);
+  border-radius: 40px;
+
+  background:
+    radial-gradient(
+      50% 120% at 46% 50%,
+      rgba(68, 118, 245, 0.17),
+      transparent 70%
+    ),
+    radial-gradient(
+      32% 90% at 100% 50%,
+      rgba(232, 192, 122, 0.07),
+      transparent 72%
+    ),
+    radial-gradient(
+      34% 90% at 0% 50%,
+      rgba(50, 91, 190, 0.07),
+      transparent 74%
+    ),
+    linear-gradient(
+      135deg,
+      rgba(15, 19, 32, 0.88),
+      rgba(7, 9, 15, 0.94)
+    );
+
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.015),
+    0 0 18px rgba(78, 128, 235, 0.14),
+    0 0 42px rgba(232, 192, 122, 0.035),
+    0 25px 60px rgba(0, 0, 0, 0.34),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05),
+    inset 0 0 55px rgba(62, 103, 214, 0.035);
+
+  cursor: grab;
+
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.timelineContainer::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollTrack {
+  --scroll-space: max(
+    24px,
+    calc(50cqw - var(--node-radius))
+  );
+
+  position: relative;
+
+  display: flex;
+  align-items: center;
+
+  width: max-content;
+  min-width: 100%;
+}
+
+.scrollTrack::before,
+.scrollTrack::after {
+  content: "";
+
+  flex: 0 0 var(--scroll-space);
+  width: var(--scroll-space);
+}
+
+.stepsWrapper {
+  position: relative;
+  z-index: 2;
+  top: -10px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  flex: 0 0 max(100cqw, 700px);
+  width: max(100cqw, 700px);
+  height: 100%;
+}
+
+.mainLine {
+  position: absolute;
+  z-index: 1;
+
+  top: 50%;
+  left: 70px;
+  right: 70px;
+
+  height: 2px;
+
+  transform: translateY(-50%);
+
+  overflow: hidden;
+  pointer-events: none;
+
+  background: rgba(97, 128, 190, 0.4);
+}
+
+.progressFill {
+  position: relative;
+  z-index: 2;
+
+  display: block;
+  width: 100%;
+  height: 100%;
+
+  background: linear-gradient(90deg,
+      rgba(78, 128, 235, 0.72),
+      rgba(149, 184, 255, 0.94));
+
+  box-shadow:
+    0 0 8px rgba(91, 141, 247, 0.4),
+    0 0 18px rgba(91, 141, 247, 0.2);
+
+  transition: width 0.5s ease;
+}
+
+.progressEffect {
+  position: absolute;
+  z-index: 3;
+
+  top: 50%;
+  left: 0;
+
+  height: 6px;
+
+  transform: translateY(-50%);
+
+  overflow: hidden;
+  opacity: 0.92;
+  pointer-events: none;
+}
+
+.progressEffect::after {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(100deg,
+      transparent 40%,
+      rgba(255, 248, 200, 0.25) 46%,
+      rgba(255, 255, 255, 0.55) 50%,
+      rgba(255, 248, 200, 0.25) 54%,
+      transparent 60%);
+
+  filter: blur(1.3px) brightness(1.4);
+  mix-blend-mode: screen;
+
+  animation: humanFlow 4s cubic-bezier(0.4, 0, 0.4, 1) infinite;
+
+  pointer-events: none;
+}
+
+.stepNode {
+  position: relative;
+
+  display: flex;
+  flex: 0 0 var(--node-width);
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  width: var(--node-width);
+  height: 100%;
+
+  cursor: pointer;
+
+  transition: transform 0.3s ease;
+}
+
+.nodeCircle {
+  width: 60px;
+  height: 60px;
+  background: #0b0b0b;
+  border: 2px solid rgba(255, 255, 255, 0.12);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 3;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    background 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.stepNode,
+.nodeCircle {
+  overflow: visible;
+}
+
+.nodeNumber {
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.stepInfo {
+  position: absolute;
+  top: 70px;
+  text-align: center;
+  width: 160px;
+  pointer-events: none;
+}
+
+.stepTitle {
+  display: block;
+  text-transform: uppercase;
+  font-size: 0.95rem;
+  letter-spacing: 1px;
+  color: #fff;
+  text-align: center;
+}
+
+.stepDate {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.stepNode.past .nodeCircle {
+  background:
+    linear-gradient(135deg,
+      rgba(74, 144, 245, 0.28),
+      rgba(74, 144, 245, 0.12)),
+    #0b0f18;
+
+  border: 2px solid rgba(74, 144, 245, 0.85);
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.06),
+    inset 0 0 18px rgba(74, 144, 245, 0.08),
+    0 0.65rem 1.35rem rgba(74, 144, 245, 0.12);
+
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease,
+    background 0.3s ease;
+}
+
+.stepNode.past .nodeNumber {
+  color: rgba(235, 243, 255, 0.96);
+}
+
+.stepNode.current .nodeCircle {
+  background: #0b0b0b;
+  border: 2px solid #d6b86a;
+  box-shadow: 0 0 6px rgba(232, 192, 122, 0.35);
+}
+
+.stepNode.current .nodeNumber {
+  color: #d6b86a;
+}
+
+.stepNode.current .currentPulse {
+  animation: currentPulse 4s infinite;
+}
+
+.stepNode.future .nodeCircle {
+  background: rgba(15, 21, 42, 0.95);
+  border: 2px solid rgba(111, 137, 255, 0.65);
+
+  box-shadow:
+    0 0 6px rgba(111, 137, 255, 0.25),
+    inset 0 0 12px rgba(111, 137, 255, 0.04);
+  overflow: visible;
+}
+
+.stepNode.future .nodeNumber {
+  color: rgba(145, 163, 255, 0.9);
+}
+
+.stepNode.selected .nodeCircle {
+  transform: scale(1.2);
+  z-index: 5;
+}
+
+.stepNode.past.selected {
+  --pulse-color: 74, 144, 245;
+}
+
+.stepNode.past.selected .nodeCircle {
+  background:
+    linear-gradient(135deg,
+      rgba(74, 144, 245, .42),
+      rgba(74, 144, 245, .18)),
+    #0b0f18;
+
+  border-color: rgba(140, 180, 255, .95);
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, .08),
+    0 0 8px rgba(74, 144, 245, .35),
+    0 0 18px rgba(74, 144, 245, .18);
+}
+
+.stepNode.past.selected .nodeNumber {
+  color: white;
+}
+
+.stepNode.current.selected {
+  --pulse-color: 255, 243, 176;
+}
+
+.stepNode.current.selected .nodeCircle {
+  border-color: #fff3b0;
+  box-shadow:
+    0 0 10px rgba(255, 243, 176, 0.6),
+    0 0 18px rgba(232, 192, 122, 0.45);
+}
+
+.stepNode.current.selected .nodeNumber {
+  color: #fff3b0;
+}
+
+.stepNode.future.selected {
+  --pulse-color: 111, 137, 255;
+}
+
+.stepNode.future.selected .nodeCircle {
+  border-color: rgb(111, 137, 255);
+
+  box-shadow:
+    0 0 10px rgba(111, 137, 255, 0.55),
+    0 0 18px rgba(111, 137, 255, 0.3);
+}
+
+.stepNode.future.selected .nodeNumber {
+  color: rgb(178, 190, 255);
+}
+
+.stepNode.selected .nodeCircle {
+  animation: nodePulse 2.4s ease-in-out infinite;
+}
+
+.stepNode.clicked .nodeCircle::after {
+  content: "";
+  position: absolute;
+  inset: -6px;
+  /* <-- important */
+  border-radius: 50%;
+  border: 2px solid currentColor;
+  animation: selectPulse 0.45s ease-out;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.stepNode.past.clicked {
+  color: rgb(92, 151, 255);
+}
+
+.stepNode.current.clicked {
+  color: #fff3b0;
+}
+
+.stepNode.future.clicked {
+  color: rgb(111, 137, 255);
+}
+
+.stepNode.future.clicked .nodeCircle::after {
+  border-color: rgb(111, 137, 255);
+  box-shadow: 0 0 14px rgba(111, 137, 255, 0.55);
+}
+
+.currentPulse {
+  position: absolute;
+  inset: -2px;
+  border-radius: 50%;
+  border: 2px solid #e8c07a;
+  opacity: 0;
+}
+
+.milestoneList {
+  position: relative;
+  z-index: 1;
+
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+
+  padding-right: 6px;
+
+  user-select: none;
+  -webkit-user-select: none;
+
+  scrollbar-width: none;
+}
+
+.milestoneList::-webkit-scrollbar {
+  display: none;
+}
+
+.milestoneList.dragging {
+  cursor: grabbing;
+}
+
+.milestoneList.dragging .milestoneItem {
+  pointer-events: none;
+}
+
+.contentGlow {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.9;
+  z-index: 0;
+}
+
+.contentSection {
+  --content-accent: 74, 144, 245;
+  --content-border-opacity: 0.26;
+  --content-glow-opacity: 0.12;
+
+  position: relative;
+
+  width: 95%;
+  max-width: 900px;
+  height: auto;
+
+  margin: 0 auto 50px;
+  padding: 38px 32px 30px;
+
+  overflow: hidden;
+
+  border: 1px solid rgba(
+    var(--content-accent),
+    var(--content-border-opacity)
+  );
+  border-radius: 28px;
+
+  background:
+    radial-gradient(
+      70% 110% at 50% 0%,
+      rgba(
+        var(--content-accent),
+        var(--content-glow-opacity)
+      ),
+      transparent 68%
+    ),
+    radial-gradient(
+      45% 80% at 0% 100%,
+      rgba(50, 91, 190, 0.06),
+      transparent 74%
+    ),
+    linear-gradient(
+      145deg,
+      rgba(15, 19, 32, 0.9),
+      rgba(7, 9, 15, 0.95)
+    );
+
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.015),
+    0 0 22px rgba(
+      var(--content-accent),
+      0.08
+    ),
+    0 24px 55px rgba(0, 0, 0, 0.32),
+    inset 0 1px 0 rgba(255, 255, 255, 0.045),
+    inset 0 0 45px rgba(
+      var(--content-accent),
+      0.025
+    );
+
+  animation: contentReveal 0.45s ease-out;
+}
+
+.contentGlow {
+  position: absolute;
+  z-index: 0;
+
+  inset: 0;
+
+  pointer-events: none;
+
+  background:
+    radial-gradient(
+      65% 95% at 50% 0%,
+      rgba(
+        var(--content-accent),
+        0.08
+      ),
+      transparent 72%
+    );
+
+  opacity: 0.9;
+}
+
+.contentSection.completed {
+  --content-accent: 74, 144, 245;
+  --content-border-opacity: 0.28;
+  --content-glow-opacity: 0.13;
+}
+
+.contentSection.inProgress {
+  --content-accent: 111, 157, 255;
+  --content-border-opacity: 0.3;
+  --content-glow-opacity: 0.14;
+}
+
+.contentSection.next {
+  --content-accent: 232, 192, 122;
+  --content-border-opacity: 0.32;
+  --content-glow-opacity: 0.14;
+}
+
+.contentHeader {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.statusBadge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 7px 14px;
+  margin-bottom: 18px;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border: 1px solid transparent;
+  backdrop-filter: blur(6px);
+}
+
+.status_completed {
+  color: rgba(220, 233, 255, 0.98);
+
+  background: rgba(74, 144, 245, 0.12);
+  border-color: rgba(74, 144, 245, 0.34);
+
+  box-shadow:
+    0 0 12px rgba(74, 144, 245, 0.14),
+    inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+.status_current {
+  color: rgba(235, 243, 255, 1);
+
+  background: rgba(111, 157, 255, 0.14);
+  border-color: rgba(140, 180, 255, 0.42);
+
+  box-shadow:
+    0 0 14px rgba(111, 157, 255, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.status_next {
+  color: #fff3b0;
+
+  background: rgba(232, 192, 122, 0.12);
+  border-color: rgba(232, 192, 122, 0.34);
+
+  box-shadow:
+    0 0 12px rgba(232, 192, 122, 0.14),
+    inset 0 1px 0 rgba(255, 243, 176, 0.04);
+}
+
+.contentTitle {
+  margin: 0;
+  font-family: "Oswald", Arial, sans-serif;
+  font-size: clamp(28px, 4vw, 42px);
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
+.contentSummary {
+  max-width: 720px;
+  margin: 14px auto 0;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.milestoneItem {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 18px;
+  border-radius: 18px;
+  background: linear-gradient(180deg,
+      rgba(255, 255, 255, 0.03),
+      rgba(255, 255, 255, 0.015));
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  opacity: 0;
+  transform: translateY(12px);
+  animation: itemReveal 0.45s ease-out forwards;
+  transition:
+    transform 0.22s ease,
+    border-color 0.22s ease,
+    background 0.22s ease,
+    box-shadow 0.22s ease;
+}
+
+.itemDot {
+  position: relative;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.dot_completed {
+  background: rgb(74, 144, 245);
+
+  box-shadow:
+    0 0 5px rgba(74, 144, 245, 0.45),
+    0 0 9px rgba(74, 144, 245, 0.22);
+}
+
+.dot_inProgress {
+  background: transparent;
+  border: 1.5px solid rgb(140, 180, 255);
+
+  box-shadow:
+    0 0 6px rgba(111, 157, 255, 0.38),
+    inset 0 0 5px rgba(111, 157, 255, 0.16);
+}
+
+.dot_inProgress::after {
+  content: "";
+
+  position: absolute;
+  inset: -3px;
+
+  border: 2px solid rgb(140, 180, 255);
+  border-radius: 50%;
+
+  animation: currentPulse 4s infinite;
+}
+
+.dot_next {
+  background: #fff3b0;
+
+  box-shadow:
+    0 0 5px rgba(255, 243, 176, 0.42),
+    0 0 9px rgba(232, 192, 122, 0.24);
+}
+
+.item_completed {
+  border-color: rgba(74, 144, 245, 0.18);
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(74, 144, 245, 0.055),
+      rgba(255, 255, 255, 0.015)
+    );
+}
+
+.item_inProgress {
+  border-color: rgba(111, 157, 255, 0.22);
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(111, 157, 255, 0.07),
+      rgba(50, 91, 190, 0.035)
+    );
+}
+
+.item_next {
+  border-color: rgba(232, 192, 122, 0.2);
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(232, 192, 122, 0.055),
+      rgba(255, 255, 255, 0.015)
+    );
+}
+
+.itemText {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.88);
+}
+
+@media (max-width: 768px) {
+.roadmapPage {
+  min-height: auto;
+  padding: 4rem 0;
+}
+
+.header {
+  width: 100%;
+  padding: 0 20px;
+  margin-bottom: 2rem;
+}
+
+.eyebrow {
+  display: flex;
+  justify-content: flex-start;
+
+  width: 100%;
+
+  font-size: 0.72rem;
+  line-height: 1.4;
+  letter-spacing: 0.13em;
+}
+
+  .timelineSection {
+    margin: 0px auto 30px;
+    padding: 0 8px;
+  }
+
+  .timelineContainer {
+    padding: 64px 0;
+    border-radius: 24px;
+    touch-action: auto;
+    scroll-snap-type: x proximity;
+  }
+
+  .timelineContainer,
+  .timelineContainer * {
+    user-select: none;
+    -webkit-user-select: none;
+  }
+
+  .stepNode {
+    
+    --node-size: clamp(45px, 10vw, 60px);
+    scroll-snap-align: center;
+  }
+
+  .nodeCircle {
+    width: var(--node-size);
+    height: var(--node-size);
+    border-width: 1.5px;
+  }
+
+  .stepInfo {
+    top: calc(var(--node-size) + clamp(14px, 3vw, 28px));
+    width: clamp(110px, 6vw, 160px);
+  }
+
+  .nodeNumber {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.35);
+  }
+
+  .stepTitle {
+    font-size: clamp(10px, 2vw, 15px);
+    letter-spacing: 0.8px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .stepDate {
+    font-size: clamp(9px, 2vw, 14px);
+    margin-top: 1px;
+    color: rgba(255, 255, 255, 0.35);
+  }
+
+  .contentSection {
+    width: auto;
+    margin: 0 10px 50px;
+    padding: 26px 16px 18px;
+    border-radius: 22px;
+  }
+
+  .contentHeader {
+    margin-bottom: 20px;
+  }
+
+  .statusBadge {
+    padding: 6px 12px;
+    margin-bottom: 14px;
+    font-size: clamp(12px, 3.5vw, 16px);
+  }
+
+  .contentTitle {
+    font-size: clamp(14px, 4vw, 24px);
+  }
+
+  .contentSummary {
+    font-size: clamp(10px, 3vw, 16px);
+    line-height: 1.6;
+    margin-top: 12px;
+  }
+
+  .milestoneList {
+    gap: 10px;
+    padding-right: 2px;
+  }
+
+  .milestoneItem {
+    gap: 12px;
+    padding: 14px 14px;
+    border-radius: 14px;
+  }
+
+  .itemDot {
+    width: 8px;
+    height: 8px;
+  }
+
+  .itemText {
+    font-size: clamp(10px, 3vw, 16px);
+    line-height: 1.45;
+  }
+}
+
+@media (hover: hover) {
+  .stepNode:hover .nodeCircle {
+    transform: scale(1.1);
+  }
+
+  .stepNode.selected:hover .nodeCircle {
+    transform: scale(1.2);
+  }
+
+  .item_completed:hover {
+    border-color: rgba(255, 243, 176, 0.35);
+    box-shadow: 0 0 14px rgba(255, 243, 176, 0.08);
+  }
+
+.item_inProgress:hover {
+  border-color: rgba(255, 243, 176, 0.25);
+
+  box-shadow:
+    0 0 16px rgba(255, 243, 176, 0.06),
+    0 0 18px rgba(139, 108, 255, 0.08);
+}
+
+  .item_next:hover {
+    border-color: rgba(111, 137, 255, 0.34);
+    box-shadow: 0 0 16px rgba(111, 137, 255, 0.09);
+  }
+
+  .milestoneItem:hover .itemDot {
+    transform: scale(1.15);
+  }
+
+  .milestoneItem:hover {
+  transform: translateX(6px);
+  background: linear-gradient(180deg,
+      rgba(255, 255, 255, 0.045),
+      rgba(255, 255, 255, 0.02));
+  border-color: rgba(255, 255, 255, 0.12);
+  box-shadow: 0 0 16px rgba(255, 255, 255, 0.04);
+}
+}
+
+@keyframes shineLeftToRight {
+  0% {
+    background-position: 120% center;
+  }
+
+  100% {
+    background-position: -80% center;
+  }
+}
+
+@keyframes selectPulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+
+  100% {
+    transform: scale(1.2);
+    opacity: 0;
+  }
+}
+
+@keyframes currentPulse {
+  0% {
+    transform: scale(1);
+    opacity: 0;
+  }
+
+  55% {
+    transform: scale(1);
+    opacity: 0;
+  }
+
+  60% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+
+  100% {
+    transform: scale(1.6);
+    opacity: 0;
+  }
+}
+
+@keyframes humanFlow {
+  0% {
+    transform: translateX(-140%);
+  }
+
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes nodePulse {
+  0% {
+    box-shadow:
+      0 0 6px rgba(var(--pulse-color), 0.35),
+      0 0 12px rgba(var(--pulse-color), 0.2);
+  }
+
+  50% {
+    box-shadow:
+      0 0 12px rgba(var(--pulse-color), 0.7),
+      0 0 20px rgba(var(--pulse-color), 0.4);
+  }
+
+  100% {
+    box-shadow:
+      0 0 6px rgba(var(--pulse-color), 0.35),
+      0 0 12px rgba(var(--pulse-color), 0.2);
+  }
+}
+
+@keyframes contentReveal {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes itemReveal {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

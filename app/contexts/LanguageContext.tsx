@@ -63,27 +63,6 @@ const translations: Record<Language,Record<string, TranslationValue>> = {
     "hero.nav.contact.label": "Contact",
     "hero.nav.contact.description": "Discutons de la suite. Bientôt créé",
 
-    // Homepage
-    "home.title": "Ingénieur logiciel & Cybersécurité",
-    "home.intro1":
-      "Ingénieur issu de la cybersécurité avec 6+ ans d'expérience en infrastructures critiques (Vinci, BT, Orange Cyberdefense).",
-    "home.intro2":
-      "Spécialisé en architecture système, automatisation et développement full-stack. Conception de systèmes modulaires, performants et évolutifs.",
-    "home.cta": "Consulter mon CV",
-
-    "projects.title": "Projets",
-    "projects.cv.title": "Générateur de CV ATS Friendly",
-    "projects.cv.desc":
-      "Application web permettant de générer des CV optimisés pour les systèmes de tracking (ATS), avec export PDF automatisé.",
-    "projects.cv.wip": "Work in progress...",
-    "projects.cv.link": "Accéder à l'outil",
-
-    "projects.brain.title": "Brain Eaters — Jeu mobile de stratégie",
-    "projects.brain.desc":
-      "Développement d'un jeu mobile / PC combinant stratégie, survie et coopération. Le jeu a été entièrement développé par mes soins, du code aux designs, du gameplay aux UI, du site Web à la direction artistique.",
-    "projects.brain.cta": "Découvrir le projet",
-
-    //intro
     "Intro.eyebrow": "À propos",
     "Intro.card1.title": "Ingénieur logiciel",
     "Intro.card2.title": "Créateur de produits",
@@ -103,6 +82,7 @@ const translations: Record<Language,Record<string, TranslationValue>> = {
   "À partir de cette analyse, je conçois une solution adaptée, en réfléchissant à l'interface, aux fonctionnalités, à l'architecture et aux choix techniques les plus pertinents.",
   "Chaque décision est guidée par un objectif : créer des outils utiles, intuitifs et durables, réellement pensés pour les personnes qui les utiliseront."
 ],
+"projects.eyebrow": "Expérience et projets",
   },
   en: {
     "header.role": "Software Engineer",
@@ -143,7 +123,6 @@ const translations: Record<Language,Record<string, TranslationValue>> = {
     "hero.nav.contact.label": "Contact",
     "hero.nav.contact.description": "Let's talk about what comes next. Coming soon",
 
-    // Homepage
     "home.title": "Software Engineer & Cybersecurity",
     "home.intro1":
       "Engineer from cybersecurity with 6+ years of experience in critical infrastructures (Vinci, BT, Orange Cyberdefense).",
@@ -163,7 +142,6 @@ const translations: Record<Language,Record<string, TranslationValue>> = {
       "Development of a mobile / PC game combining strategy, survival, and cooperation. The game was entirely developed by me, from code to designs, from gameplay to UI, from website to art direction.",
     "projects.brain.cta": "Discover the project",
 
-    // Intro
     "Intro.eyebrow": "About me",
     "Intro.card1.title": "Software Engineer",
     "Intro.card2.title": "Product Builder",
@@ -183,6 +161,7 @@ const translations: Record<Language,Record<string, TranslationValue>> = {
       "From there, I design solutions by carefully considering the interface, features, architecture, and the technical choices best suited to the problem.",
       "Every decision is driven by a simple goal: creating tools that are useful, intuitive, and built around the people who will use them."
     ],
+    "projects.eyebrow": "Experience and projects",
   },
 };
 
