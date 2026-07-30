@@ -197,7 +197,6 @@ const handlePointerDown = (
   return (
     <section
   ref={sectionRef}
-  id="about"
   className={styles.cardsSection}
   onPointerDown={handlePointerDown}
   onPointerMove={handlePointerMove}

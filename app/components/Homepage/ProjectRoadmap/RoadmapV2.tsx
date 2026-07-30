@@ -259,7 +259,6 @@ export default function RoadmapV2() {
 
     return (
         <section
-            id="work"
             className={styles.roadmapPage}
             aria-labelledby="project-roadmap-title"
         >
