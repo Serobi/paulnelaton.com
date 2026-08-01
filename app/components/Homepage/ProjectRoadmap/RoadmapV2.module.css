@@ -215,8 +215,21 @@
   height: 100%;
 
   cursor: pointer;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
 
   transition: transform 0.3s ease;
+}
+
+.stepNode:focus-visible {
+  outline: none;
+}
+
+.stepNode:focus-visible .nodeCircle {
+  box-shadow:
+    0 0 0 3px rgba(10, 15, 27, 0.95),
+    0 0 0 5px rgba(111, 137, 255, 0.75),
+    0 0 24px rgba(111, 137, 255, 0.28);
 }
 
 .nodeCircle {
