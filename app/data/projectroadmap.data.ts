@@ -71,61 +71,65 @@ export const projectRoadmapData: Record<
       },
       {
         label: "Indépendant",
-        dates: "2021 — 2024",
+        dates: "2021 - 2024",
         state: "completed",
         title: "Projets indépendants",
         intro:
-          "Une période consacrée aux projets indépendants, à l'expérimentation et au développement d'un profil davantage orienté produit.",
+          "Une période entrepreneuriale qui a élargi mon profil autour de trois axes complémentaires : les investissements et les marchés financiers, la communication, ainsi que le développement de projets logiciels et créatifs.",
         content: [
           {
             label:
-              "Projets techniques et entrepreneuriaux indépendants",
+              "Stratégies d'investissement, marchés financiers et gestion du risque",
           },
           {
             label:
-              "Stratégie produit et prise de décision autonome",
+              "Communication, évènements, partenariats et marketing",
           },
           {
             label:
-              "Analyse de marché et gestion du risque",
+              "Apprentissage du Portugais",
           },
           {
             label:
-              "Développement d'un profil multidisciplinaire",
+              "Développement de projets logiciels et entrepreneuriaux",
+          },
+          {
+            label:
+              "Construction d'un profil pluridisciplinaire orienté produit",
           },
         ],
       },
       {
         label: "Brain Eaters",
-        dates: "2024 — 2026",
+        dates: "2024 - 2026",
         state: "completed",
         title: "Brain Eaters",
         intro:
-          "Conception et développement indépendant d'un jeu de stratégie et de survie, de l'architecture technique jusqu'à l'expérience utilisateur.",
+          "Un projet ambitieux de grande envergure consacré à la conception et au développement complet d'un jeu de stratégie et de survie en coopération. Ce projet a été véritable terrain d'expérimentation pour maîtriser l'architecture logicielle, la vision produit, l'expérience utilisateur et la prise de décisions techniques à grande échelle.",
         content: [
           {
             label:
-              "Architecture gameplay sous Unity et C#",
+              "Architecture complète du jeu et des systèmes de gameplay avec Unity et C#",
           },
           {
             label:
-              "Génération procédurale du monde et systèmes de biomes",
+              "Génération procédurale du monde avec biomes, systèmes d'IA et mécaniques de simulation",
           },
           {
             label:
-              "Inventaire, artisanat et gestion des objets",
+              "Conception de fonctionnalités de gameplay : inventaire, artisanat, construction de ville, exploration et systèmes de progression",
           },
           {
             label:
-              "Systèmes de construction et personnalisation de la ville",
+              "Conception UI/UX, identité visuelle et expérience joueur",
           },
           {
             label:
-              "Conception UI/UX et identité visuelle",
+              "Architecture technique, optimisation des performances et conception d'une base de code évolutive",
           },
           {
             label:
-              "Pilotage complet du produit de bout en bout",
+              "Pilotage complet du produit, de la conception à l'implémentation et à son amélioration continue",
           },
         ],
       },
@@ -135,57 +139,65 @@ export const projectRoadmapData: Record<
         state: "completed",
         title: "Maty",
         intro:
-          "Livraison d'applications métier internes centrées sur la fiabilité, l'efficacité opérationnelle et l'expérience utilisateur.",
+          "Conception et livraison de plusieurs applications métier couvrant des problématiques variées : gestion tarifaire, logistique, SEO, intégration de données et outils internes, avec un fort accent sur la fiabilité, l'expérience utilisateur et les besoins métiers.",
         content: [
           {
             label:
-              "Applications ASP.NET MVC, Web API et Razor",
+              "Conception d'un moteur de gestion des prix, remises et opérations commerciales",
           },
           {
             label:
-              "Intégration de données SQL Server et DB2",
+              "Développement d'un système complet de génération et d'impression d'étiquettes logistiques (ZPL)",
           },
           {
             label:
-              "Outils de gestion des prix et des remises",
+              "Développement de flux produits, intégrations catalogue et optimisation SEO",
           },
           {
             label:
-              "Génération d'étiquettes de stock et flux d'impression ZPL",
+              "Applications métier en ASP.NET MVC, Web API, Razor, SQL Server et DB2",
           },
           {
             label:
-              "Flux produits, SEO et intégrations catalogue",
+              "Refonte d'interfaces et amélioration des processus opérationnels avec les utilisateurs métiers",
           },
           {
             label:
-              "Amélioration de l'expérience utilisateur et des processus opérationnels",
+              "Renforcement des compétences en développement full-stack, architecture logicielle et vision produit en environnement industriel à fortes contraintes",
+          },
+          {
+            label:
+              "Prise en charge de projets de bout en bout, du cadrage fonctionnel jusqu'à la mise en production",
           },
         ],
       },
       {
         label: "Votre projet",
-        dates: "Maintenant",
+        dates: "Aujourd'hui",
         state: "next",
         title: "Votre projet",
         intro:
-          "La prochaine étape associe ingénierie logicielle, vision produit et expériences utilisateur soignées.",
+          "Aujourd'hui, je souhaite contribuer à des produits logiciels ambitieux où l'ingénierie, la vision produit et l'expérience utilisateur se rejoignent. Mon objectif est de concevoir des solutions fiables, évolutives et porteuses de sens, ayant un réel impact pour les utilisateurs et les entreprises.",
         content: [
           {
             label:
-              "Produits full-stack modernes avec React, Next.js et .NET",
+              "Concevoir des produits full-stack modernes avec React, Next.js et .NET",
           },
           {
             label:
-              "Ingénierie orientée produit et ownership technique",
+              "Transformer les besoins métiers en logiciels intuitifs et de haute qualité",
           },
           {
             label:
-              "Opportunités freelance et internationales",
+              "Allier vision produit, architecture logicielle et gestion de projets de bout en bout",
           },
           {
             label:
-              "Applications sécurisées, évolutives et centrées utilisateur",
+              "Rejoindre des équipes collaboratives pour construire des produits ambitieux et durables",
+          },
+          {
+            label:
+              "Créer des applications sécurisées, évolutives et centrées sur l'utilisateur, avec un impact réel",
           },
         ],
       },
@@ -240,57 +252,61 @@ export const projectRoadmapData: Record<
         state: "completed",
         title: "Independent Projects",
         intro:
-          "A period focused on independent work, experimentation and the development of a broader product-oriented profile.",
+          "An entrepreneurial period that broadened my profile across three complementary areas: investment and financial markets, communication, and the development of software and creative projects.",
         content: [
           {
             label:
-              "Independent technical and entrepreneurial projects",
+              "Investment strategies, financial markets and risk management",
           },
           {
             label:
-              "Product strategy and autonomous decision-making",
+              "Communication, events, partnerships and marketing",
           },
           {
             label:
-              "Market analysis and risk management",
+              "Learning Portuguese",
           },
           {
             label:
-              "Development of a multidisciplinary profile",
+              "Development of software and entrepreneurial projects",
+          },
+          {
+            label:
+              "Building a multidisciplinary product-oriented profile",
           },
         ],
       },
       {
         label: "Brain Eaters",
-        dates: "2024 — 2026",
+        dates: "2024 - 2026",
         state: "completed",
         title: "Brain Eaters",
         intro:
-          "Design and development of a survival strategy game, built independently from technical architecture to user experience.",
+          "An ambitious long-term project involving the complete design and development of a survival strategy game. More than a game, it became a playground to master software architecture, product thinking, user experience and large-scale technical decision-making.",
         content: [
           {
             label:
-              "Unity and C# gameplay architecture",
+              "Complete game architecture and gameplay systems with Unity and C#",
           },
           {
             label:
-              "Procedural world generation and biome systems",
+              "Procedural world generation, AI systems and simulation mechanics",
           },
           {
             label:
-              "Inventory, crafting and item management",
+              "Design of gameplay features including inventory, crafting, city building, exploration and progression systems",
           },
           {
             label:
-              "Building systems and city customization",
+              "UI/UX design, visual identity and player experience",
           },
           {
             label:
-              "UI/UX design and visual identity",
+              "Technical architecture, performance optimization and scalable codebase design",
           },
           {
             label:
-              "End-to-end product ownership",
+              "End-to-end product ownership, from concept and design to implementation and continuous iteration",
           },
         ],
       },
@@ -300,31 +316,35 @@ export const projectRoadmapData: Record<
         state: "completed",
         title: "Maty",
         intro:
-          "Delivery of internal business applications focused on reliability, operational efficiency and user experience.",
+          "Designed and delivered several business applications addressing a wide range of challenges, including pricing management, logistics, SEO, data integration and internal tools, with a strong focus on reliability, user experience and business needs.",
         content: [
           {
             label:
-              "ASP.NET MVC, Web API and Razor applications",
+              "Designed a pricing engine for discounts, promotions and commercial operations",
           },
           {
             label:
-              "SQL Server and DB2 data integration",
+              "Developed a complete logistics label generation and ZPL printing system",
           },
           {
             label:
-              "Pricing and discount management tools",
+              "Developed product feeds, catalog integrations and SEO optimization",
           },
           {
             label:
-              "Stock label generation and ZPL printing workflows",
+              "Business applications built with ASP.NET MVC, Web API, Razor, SQL Server and DB2",
           },
           {
             label:
-              "Product feeds, SEO and catalog integrations",
+              "Redesigned user interfaces and improved operational workflows alongside business teams",
           },
           {
             label:
-              "User experience and operational workflow improvements",
+              "Strengthened full-stack engineering, software architecture and product thinking skills in a demanding industrial environment",
+          },
+          {
+            label:
+              "Delivered projects end-to-end, from functional requirements and solution design to production deployment",
           },
         ],
       },
@@ -334,23 +354,27 @@ export const projectRoadmapData: Record<
         state: "next",
         title: "Your project",
         intro:
-          "The next step combines software engineering, product thinking and polished user experiences.",
+          "Today, I am looking to contribute to ambitious software products where engineering, product thinking and user experience come together. My goal is to build reliable, scalable and meaningful solutions that have a real impact on users and businesses.",
         content: [
           {
             label:
-              "Modern full-stack products with React, Next.js and .NET",
+              "Building modern full-stack products with React, Next.js and .NET",
           },
           {
             label:
-              "Product-driven engineering and technical ownership",
+              "Transforming business needs into intuitive, high-quality software",
           },
           {
             label:
-              "Freelance and international opportunities",
+              "Product thinking, software architecture and end-to-end project ownership",
           },
           {
             label:
-              "Secure, scalable and user-focused applications",
+              "Joining collaborative teams to build ambitious, long-term products",
+          },
+          {
+            label:
+              "Delivering secure, scalable and user-centered applications with real impact",
           },
         ],
       },

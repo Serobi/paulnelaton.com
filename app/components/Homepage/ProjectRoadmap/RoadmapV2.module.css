@@ -59,26 +59,18 @@
   border-radius: 40px;
 
   background:
-    radial-gradient(
-      50% 120% at 46% 50%,
+    radial-gradient(50% 120% at 46% 50%,
       rgba(68, 118, 245, 0.17),
-      transparent 70%
-    ),
-    radial-gradient(
-      32% 90% at 100% 50%,
+      transparent 70%),
+    radial-gradient(32% 90% at 100% 50%,
       rgba(232, 192, 122, 0.07),
-      transparent 72%
-    ),
-    radial-gradient(
-      34% 90% at 0% 50%,
+      transparent 72%),
+    radial-gradient(34% 90% at 0% 50%,
       rgba(50, 91, 190, 0.07),
-      transparent 74%
-    ),
-    linear-gradient(
-      135deg,
+      transparent 74%),
+    linear-gradient(135deg,
       rgba(15, 19, 32, 0.88),
-      rgba(7, 9, 15, 0.94)
-    );
+      rgba(7, 9, 15, 0.94));
 
   backdrop-filter: blur(15px);
   -webkit-backdrop-filter: blur(15px);
@@ -102,10 +94,8 @@
 }
 
 .scrollTrack {
-  --scroll-space: max(
-    24px,
-    calc(50cqw - var(--node-radius))
-  );
+  --scroll-space: max(24px,
+      calc(50cqw - var(--node-radius)));
 
   position: relative;
 
@@ -486,47 +476,33 @@
 
   overflow: hidden;
 
-  border: 1px solid rgba(
-    var(--content-accent),
-    var(--content-border-opacity)
-  );
+  border: 1px solid rgba(var(--content-accent),
+      var(--content-border-opacity));
   border-radius: 28px;
 
   background:
-    radial-gradient(
-      70% 110% at 50% 0%,
-      rgba(
-        var(--content-accent),
-        var(--content-glow-opacity)
-      ),
-      transparent 68%
-    ),
-    radial-gradient(
-      45% 80% at 0% 100%,
+    radial-gradient(70% 110% at 50% 0%,
+      rgba(var(--content-accent),
+        var(--content-glow-opacity)),
+      transparent 68%),
+    radial-gradient(45% 80% at 0% 100%,
       rgba(50, 91, 190, 0.06),
-      transparent 74%
-    ),
-    linear-gradient(
-      145deg,
+      transparent 74%),
+    linear-gradient(145deg,
       rgba(15, 19, 32, 0.9),
-      rgba(7, 9, 15, 0.95)
-    );
+      rgba(7, 9, 15, 0.95));
 
   backdrop-filter: blur(15px);
   -webkit-backdrop-filter: blur(15px);
 
   box-shadow:
     0 0 0 1px rgba(255, 255, 255, 0.015),
-    0 0 22px rgba(
-      var(--content-accent),
-      0.08
-    ),
+    0 0 22px rgba(var(--content-accent),
+      0.08),
     0 24px 55px rgba(0, 0, 0, 0.32),
     inset 0 1px 0 rgba(255, 255, 255, 0.045),
-    inset 0 0 45px rgba(
-      var(--content-accent),
-      0.025
-    );
+    inset 0 0 45px rgba(var(--content-accent),
+      0.025);
 
   animation: contentReveal 0.45s ease-out;
 }
@@ -540,14 +516,10 @@
   pointer-events: none;
 
   background:
-    radial-gradient(
-      65% 95% at 50% 0%,
-      rgba(
-        var(--content-accent),
-        0.08
-      ),
-      transparent 72%
-    );
+    radial-gradient(65% 95% at 50% 0%,
+      rgba(var(--content-accent),
+        0.08),
+      transparent 72%);
 
   opacity: 0.9;
 }
@@ -712,33 +684,27 @@
   border-color: rgba(74, 144, 245, 0.18);
 
   background:
-    linear-gradient(
-      180deg,
+    linear-gradient(180deg,
       rgba(74, 144, 245, 0.055),
-      rgba(255, 255, 255, 0.015)
-    );
+      rgba(255, 255, 255, 0.015));
 }
 
 .item_inProgress {
   border-color: rgba(111, 157, 255, 0.22);
 
   background:
-    linear-gradient(
-      180deg,
+    linear-gradient(180deg,
       rgba(111, 157, 255, 0.07),
-      rgba(50, 91, 190, 0.035)
-    );
+      rgba(50, 91, 190, 0.035));
 }
 
 .item_next {
   border-color: rgba(232, 192, 122, 0.2);
 
   background:
-    linear-gradient(
-      180deg,
+    linear-gradient(180deg,
       rgba(232, 192, 122, 0.055),
-      rgba(255, 255, 255, 0.015)
-    );
+      rgba(255, 255, 255, 0.015));
 }
 
 .itemText {
@@ -748,27 +714,27 @@
 }
 
 @media (max-width: 768px) {
-.roadmapPage {
-  min-height: auto;
-  padding: 4rem 0;
-}
+  .roadmapPage {
+    min-height: auto;
+    padding: 4rem 0;
+  }
 
-.header {
-  width: 100%;
-  padding: 0 20px;
-  margin-bottom: 2rem;
-}
+  .header {
+    width: 100%;
+    padding: 0 20px;
+    margin-bottom: 2rem;
+  }
 
-.eyebrow {
-  display: flex;
-  justify-content: flex-start;
+  .eyebrow {
+    display: flex;
+    justify-content: flex-start;
 
-  width: 100%;
+    width: 100%;
 
-  font-size: 0.72rem;
-  line-height: 1.4;
-  letter-spacing: 0.13em;
-}
+    font-size: 0.72rem;
+    line-height: 1.4;
+    letter-spacing: 0.13em;
+  }
 
   .timelineSection {
     margin: 0px auto 30px;
@@ -789,7 +755,7 @@
   }
 
   .stepNode {
-    
+
     --node-size: clamp(45px, 10vw, 60px);
     scroll-snap-align: center;
   }
@@ -884,35 +850,32 @@
   }
 
   .item_completed:hover {
-    border-color: rgba(255, 243, 176, 0.35);
-    box-shadow: 0 0 14px rgba(255, 243, 176, 0.08);
+    border-color: rgba(111, 137, 255, 0.45);
+
+    box-shadow:
+      0 0 16px rgba(111, 137, 255, 0.12),
+      0 0 28px rgba(111, 137, 255, 0.05);
   }
 
-.item_inProgress:hover {
-  border-color: rgba(255, 243, 176, 0.25);
-
-  box-shadow:
-    0 0 16px rgba(255, 243, 176, 0.06),
-    0 0 18px rgba(139, 108, 255, 0.08);
-}
-
   .item_next:hover {
-    border-color: rgba(111, 137, 255, 0.34);
-    box-shadow: 0 0 16px rgba(111, 137, 255, 0.09);
+    border-color: rgba(255, 243, 176, 0.45);
+
+    box-shadow:
+      0 0 16px rgba(255, 243, 176, 0.10),
+      0 0 28px rgba(255, 243, 176, 0.05);
+  }
+
+  .item_inProgress:hover {
+    border-color: rgba(255, 243, 176, 0.35);
+
+    box-shadow:
+      0 0 18px rgba(255, 243, 176, 0.08),
+      0 0 24px rgba(139, 108, 255, 0.10);
   }
 
   .milestoneItem:hover .itemDot {
     transform: scale(1.15);
   }
-
-  .milestoneItem:hover {
-  transform: translateX(6px);
-  background: linear-gradient(180deg,
-      rgba(255, 255, 255, 0.045),
-      rgba(255, 255, 255, 0.02));
-  border-color: rgba(255, 255, 255, 0.12);
-  box-shadow: 0 0 16px rgba(255, 255, 255, 0.04);
-}
 }
 
 @keyframes shineLeftToRight {
