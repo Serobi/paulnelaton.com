@@ -105,7 +105,7 @@ export const projectRoadmapData: Record<
         state: "completed",
         title: "Brain Eaters",
         intro:
-          "Un projet ambitieux de grande envergure consacré à la conception et au développement complet d'un jeu de stratégie et de survie en coopération. Ce projet a été véritable terrain d'expérimentation pour maîtriser l'architecture logicielle, la vision produit, l'expérience utilisateur et la prise de décisions techniques à grande échelle.",
+          "Un projet de grande envergure consacré à la conception et au développement complet d'un jeu de stratégie et de survie en coopération. Ce projet a été véritable terrain d'expérimentation pour maîtriser l'architecture logicielle, la vision produit, l'expérience utilisateur et la prise de décisions techniques à grande échelle.",
         content: [
           {
             label:
