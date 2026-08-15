@@ -68,23 +68,42 @@
   z-index: 1;
 
   min-width: 0;
+
+  opacity: 0;
+
+  transform:
+    translateY(calc((var(--final-offset, 0rem) * -1) - 2rem));
+
+    transition:
+    transform 1.8s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 1.4s ease;
+
+  will-change: transform, opacity;
+}
+
+.cardsSectionVisible .cardsColumn {
+  opacity: 1;
+  transform: translateY(0) scale(1);
 }
 
 .cardsColumnFirst {
   --card-reflection: 92, 112, 255;
-
+  --final-offset: 0rem;
+transition-delay: 100ms;
   padding-top: 0;
 }
 
 .cardsColumnSecond {
   --card-reflection: 205, 120, 72;
-
+  --final-offset: 4rem;
+  transition-delay: 600ms;
   padding-top: 4rem;
 }
 
 .cardsColumnThird {
   --card-reflection: 202, 164, 92;
-
+  --final-offset: 8rem;
+  transition-delay: 1100ms;
   padding-top: 8rem;
 }
 

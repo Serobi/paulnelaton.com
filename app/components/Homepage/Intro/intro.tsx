@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import type { PointerEvent as ReactPointerEvent } from "react";
 
 import { useLanguage } from "@/contexts/LanguageContext";
@@ -11,6 +11,7 @@ const MOVE_TOLERANCE = 10;
 
 export default function Intro() {
   const { t, tArray } = useLanguage();
+  const [isVisible, setIsVisible] = useState(false);
 
   const longPressTimerRef =
     useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -194,10 +195,40 @@ const handlePointerDown = (
     section.classList.remove(styles.cardsSectionTouchActive);
   };
 
+  useEffect(() => {
+  const section = sectionRef.current;
+
+  if (!section) {
+    return;
+  }
+
+  const observer = new IntersectionObserver(
+    ([entry]) => {
+      if (!entry.isIntersecting) {
+        return;
+      }
+
+      setIsVisible(true);
+      observer.disconnect();
+    },
+    {
+      threshold: 0.2,
+    }
+  );
+
+  observer.observe(section);
+
+  return () => {
+    observer.disconnect();
+  };
+}, []);
+
   return (
     <section
   ref={sectionRef}
-  className={styles.cardsSection}
+    className={`${styles.cardsSection} ${
+    isVisible ? styles.cardsSectionVisible : ""
+  }`}
   onPointerDown={handlePointerDown}
   onPointerMove={handlePointerMove}
   onPointerUp={stopTouchInteraction}
