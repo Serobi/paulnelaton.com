@@ -30,6 +30,7 @@ const translations: Record<Language,Record<string, TranslationValue>> = {
     "header.nav.intro": "Intro",
     "header.nav.about": "À propos",
     "header.nav.projects": "Projets",
+    "header.nav.next": "Suite",
     "header.nav.home" : "Accueil",
     "header.nav.cv": "CV Interactif",
     "header.brandAriaLabel": "Paul Nelaton — Accueil",
@@ -54,12 +55,12 @@ const translations: Record<Language,Record<string, TranslationValue>> = {
     "hero.nav.about.description":
       "Profil, expérience et vision produit.",
 
-    "hero.nav.process.label": "Mon approche",
-    "hero.nav.process.description": "Comprendre, construire et améliorer. Bientôt créé",
-
     "hero.nav.projects.label": "Projets",
     "hero.nav.projects.description":
-      "Produits personnels et réalisations professionnelles.",
+    "Produits personnels et réalisations professionnelles.",
+
+    "hero.nav.next.label": "La suite",
+    "hero.nav.next.description": "Ce que j'apporte et ce que je recherche.",
 
     "hero.nav.contact.label": "Contact",
     "hero.nav.contact.description": "Discutons de la suite. Bientôt créé",
@@ -91,6 +92,7 @@ const translations: Record<Language,Record<string, TranslationValue>> = {
     "header.nav.intro": "Intro",
     "header.nav.about": "About",
     "header.nav.projects": "Projects",
+    "header.nav.next": "Next",
     "header.nav.home" : "Home",
     "header.nav.cv": "Interactive CV",
     "header.brandAriaLabel": "Paul Nelaton — Home",
@@ -115,12 +117,11 @@ const translations: Record<Language,Record<string, TranslationValue>> = {
     "hero.nav.about.description":
       "Profile, experience and product mindset.",
 
-    "hero.nav.process.label": "How I work",
-    "hero.nav.process.description":
-    "Understand, build and improve. Coming soon",
-
     "hero.nav.projects.label": "Projects",
     "hero.nav.projects.description": "Personal products and professional work.",
+
+    "hero.nav.next.label": "What's next?",
+    "hero.nav.next.description": "What I bring and what I'm looking for.",
 
     "hero.nav.contact.label": "Contact",
     "hero.nav.contact.description": "Let's talk about what comes next. Coming soon",

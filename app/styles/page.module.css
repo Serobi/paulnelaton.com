@@ -96,6 +96,14 @@
     scroll-margin-top: 20px;
 }
 
+.nextSection {
+    display: flex;
+    align-items: center;
+
+    min-height: calc(100vh - 5.5rem);
+    scroll-margin-top: 20px;
+}
+
 .scene {
   min-height: 100svh;
   display: grid;

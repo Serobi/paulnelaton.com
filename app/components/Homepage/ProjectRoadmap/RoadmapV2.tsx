@@ -24,7 +24,7 @@ export default function RoadmapV2() {
 
   const getStepId = (index: number) => index + 1;
 
-  const initialActiveStepId = steps.length || 1;
+  const initialActiveStepId = 3;
 
   const [activeStepId, setActiveStepId] =
     useState<number>(initialActiveStepId);

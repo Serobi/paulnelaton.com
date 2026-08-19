@@ -103,6 +103,10 @@ export default function Header() {
                 <a href="/#work" className={styles.navLink}>
                   {t("header.nav.projects")}
                 </a>
+
+                <a href="/#next" className={styles.navLink}>
+                  {t("header.nav.next")}
+                </a>
               </>
             )}
 
