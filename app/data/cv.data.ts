@@ -167,186 +167,197 @@ export const CVData = {
     //     experience: "Expérience professionnelle",
     //   },
     // },
-      identity: {
-        name: "Paul NELATON",
-        role: "Ingénieur Logiciel Full-Stack / Produit & Fonctionnel",
-        mobility: "Mobilité Montpellier / Lyon / Lausanne",
-        summary:
-          "Ingénieur logiciel Full-Stack spécialisé dans la conception et le développement d'applications métier. Habitué à intervenir sur l'ensemble du cycle de vie d'un projet, de l'analyse des besoins jusqu'à la mise en production, en alliant expertise technique, vision produit et expérience utilisateur.",
-        contact: {
-          email: "paul.nelaton@gmail.com",
-          phone: "+33 6 85 58 93 64",
-          website: "paulnelaton.com",
-        },
-      },
-
-      stats: [
-        { label: "Développement Full-Stack" },
-        { label: "Architecture Logicielle" },
-        { label: "Produit & Fonctionnel" },
-        { label: "Automatisation & Intégration" },
-      ],
-
-      skillTrees: [
-        {
-          title: "Développement",
-          skills: [
-            "C#",
-            ".NET",
-            "ASP.NET MVC",
-            "React",
-            "Angular",
-            "Node.js",
-            "JavaScript",
-            "TypeScript",
-            "jQuery",
-            "API REST",
-            "SQL",
-            "UI / UX",
-            "Responsive Design"
-          ],
-        },
-        {
-          title: "Architecture",
-          skills: [
-            "CI/CD",
-            "Git",
-            "IIS",
-            "Azure DevOps",
-            "Agile",
-            "Clean Code",
-            "Design Patterns",
-            "SOLID",
-            "POO",
-            "Microservices",
-          ],
-        },
-        {
-          title: "Produit & Fonctionnel",
-          skills: [
-            "Analyse Métier",
-            "Analyse Fonctionnelle",
-            "Cadrage projet",
-            "Recueil des besoins",
-            "Conception fonctionnelle",
-            "Recette fonctionnelle",
-            "Rédaction spécifications",
-            "Roadmap Produit",
-          ],
-        },
-      ],
-
-      experience: [
-        {
-          period: "04/2026 - 07/2026",
-          company: "Maty",
-          role: "Développeur Full-Stack C# .NET",
-          desc: [
-            "Développement d'applications métier de bout en bout : cadrage, conception, développement, recette et mise en production.",
-            "Conception et développement Full Stack d'applications .NET, APIs REST, services métier et interfaces web.",
-            "Création d'interfaces ergonomiques, performantes et centrées sur l'expérience utilisateur.",
-            "Conception de solutions techniques et modélisation de règles métier complexes en collaboration avec les équipes fonctionnelles.",
-            "Développement de flux d'intégration et d'automatisation entre plusieurs applications de l'écosystème.",
-            "Conception de flux produits, optimisation SEO et intégration avec des plateformes e-commerce.",
-            "Optimisation des traitements et requêtes SQL pour améliorer les performances et la maintenabilité.",
-          ],
-        },
-        {
-          period: "05/2024 - 04/2026",
-          company: "Projets Indépendants",
-          role: "Développeur Full-Stack / Ingénieur Logiciel",
-          desc: [
-            "Conception et développement de projets Full Stack en C#/.NET, React, Next.js et Node.js.",
-            "Conception d'une architecture logicielle modulaire et développement de systèmes complexes.",
-            "Développement d'interfaces web modernes, responsives et centrées sur l'expérience utilisateur.",
-            "Conception d'assets et graphiques et intégration Front-End avec Photoshop et Lightroom.",
-            "Développement d'APIs, intégration de services tiers et génération dynamique de documents.",
-            "Gestion complète des projets : conception, roadmap, développement et mise en production.",
-            "Projets : braineatersgame.com • paulnelaton.com",
-          ],
-        },
-        {
-          period: "11/2019 - 06/2021",
-          company: "Vinci Autoroutes",
-          role: "Ingénieur SecOps",
-          desc: [
-            "Automatisation des contrôles de sécurité, reporting et dashboards",
-            "Conception du patch management et durcissement des systèmes.",
-            "Mise en place d'une solution de collecte et d'analyse des logs (ELK).",
-            "Pilotage de la sécurité sur des infrastructures critiques (OIV).",
-            "Gestion des vulnérabilités et remédiation (Qualys, Alsid).",
-            "Administration PAM / IAM (CyberArk).",
-          ],
-        },
-        {
-          period: "06/2018 - 12/2018",
-          company: "British Telecom",
-          role: "Ingénieur DevOps & Automatisation",
-          desc: [
-            "Automatisation des workflows de détection via intégration d'API REST.",
-            "Interconnexion des plateformes SIEM (RTIR, TheHive, ELK).",
-            "Automatisation de la conformité réseau via Ansible.",
-            "Développement de scripts d'orchestration et d'outils internes.",
-            "Rédaction de documentation technique en environnement international.",
-          ],
-        },
-        {
-          period: "02/2017 - 04/2018",
-          company: "Orange Cyberdefense",
-          role: "Ingénieur Sécurité Réseau",
-          desc: [
-            "Maintien en conditions opérationnelles d'infrastructures de sécurité.",
-            "Administration de solutions de sécurité réseau : firewalls, proxy et DNS.",
-            "Gestion des incidents et demandes sur un périmètre international.",
-            "Exploitation d'outils de gestion et de supervision.",
-          ],
-        },
-        {
-          period: "11/2016 - 12/2017",
-          company: "5ème Avenue",
-          role: "Administrateur Réseaux & VOIP",
-          desc: [
-            "Déploiement d'infrastructures réseau, sécurité et VOIP auprès de clients PME.",
-            "Planification, pilotage et réalisation des interventions techniques.",
-            "Interface client pour la définition des besoins et le suivi des projets.",
-            "Participation à la conception et au lancement d'une offre de téléphonie IP.",
-            "Formations sur les fondamentaux de gestion de projet.",
-          ],
-        },
-      ],
-
-      formations: [
-        {
-          year: "2016",
-          title: "Diplôme d'Ingénieur Systèmes, Réseaux et Sécurité",
-          school: "AFTI (Orsay)",
-        },
-        {
-          year: "2015",
-          title: "Licence Informatique",
-          school: "Université de Franche-Comté",
-        },
-        {
-          year: "2014",
-          title: "DUT Informatique",
-          school: "IUT de Belfort",
-        },
-      ],
-
-      languages: [
-        { name: "Français", level: "Langue maternelle" },
-        { name: "Anglais", level: "Courant Professionnel" },
-        { name: "Portugais", level: "Courant" },
-      ],
-
-      labels: {
-        domains: "Domaines d'expertise",
-        technicalSkills: "Compétences techniques",
-        education: "Formation",
-        languages: "Langues",
-        experience: "Expérience professionnelle",
+    identity: {
+      name: "Paul NELATON",
+      role: "Ingénieur Logiciel Full-Stack / Produit & Fonctionnel",
+      mobility: "Mobilité Montpellier / Lyon / Lausanne",
+      summary:
+        "Ingénieur logiciel Full-Stack spécialisé dans la conception et le développement d'applications métier. Habitué à intervenir sur l'ensemble du cycle de vie d'un projet, de l'analyse des besoins jusqu'à la mise en production, en alliant expertise technique, vision produit et expérience utilisateur.",
+      contact: {
+        email: "paul.nelaton@gmail.com",
+        phone: "+33 6 85 58 93 64",
+        website: "paulnelaton.com",
       },
     },
+
+    stats: [
+      { label: "Développement Full-Stack" },
+      { label: "Architecture Logicielle" },
+      { label: "Produit & Fonctionnel" },
+      { label: "Automatisation & Intégration" },
+    ],
+
+    skillTrees: [
+      {
+        title: "Développement",
+        skills: [
+          "C#",
+          ".NET",
+          "ASP.NET MVC",
+          "React",
+          "Angular",
+          "Node.js",
+          "JavaScript",
+          "TypeScript",
+          "jQuery",
+          "API REST",
+          "SQL",
+          "UI / UX",
+          "Responsive Design"
+        ],
+      },
+      {
+        title: "Architecture",
+        skills: [
+          "CI/CD",
+          "Git",
+          "IIS",
+          "Azure DevOps",
+          "Agile",
+          "Clean Code",
+          "Design Patterns",
+          "SOLID",
+          "POO",
+          "Microservices",
+        ],
+      },
+      {
+        title: "Produit & Fonctionnel",
+        skills: [
+          "Analyse Métier",
+          "Analyse Fonctionnelle",
+          "Cadrage projet",
+          "Recueil des besoins",
+          "Conception fonctionnelle",
+          "Recette fonctionnelle",
+          "Rédaction spécifications",
+          "Roadmap Produit",
+        ],
+      },
+    ],
+
+    experience: [
+      {
+        period: "04/2026 - 07/2026",
+        company: "Maty",
+        role: "Développeur Full-Stack C# .NET",
+        desc: [
+          "Développement d'applications métier de bout en bout : cadrage, conception, développement, recette et mise en production.",
+          "Conception et développement Full Stack d'applications .NET, APIs REST, services métier et interfaces web.",
+          "Création d'interfaces ergonomiques, performantes et centrées sur l'expérience utilisateur.",
+          "Conception de solutions techniques et modélisation de règles métier complexes en collaboration avec les équipes fonctionnelles.",
+          "Développement de flux d'intégration et d'automatisation entre plusieurs applications de l'écosystème.",
+          "Conception de flux produits, optimisation SEO et intégration avec des plateformes e-commerce.",
+          "Optimisation des traitements et requêtes SQL pour améliorer les performances et la maintenabilité.",
+        ],
+      },
+      {
+        period: "05/2024 - 04/2026",
+        company: "Projets Indépendants",
+        role: "Développeur Full-Stack / Ingénieur Logiciel",
+        desc: [
+          "Conception et développement de projets Full Stack en C#/.NET, React, Next.js et Node.js.",
+          "Conception d'une architecture logicielle modulaire et développement de systèmes complexes.",
+          "Développement d'interfaces web modernes, responsives et centrées sur l'expérience utilisateur.",
+          "Conception d'assets et graphiques et intégration Front-End avec Photoshop et Lightroom.",
+          "Développement d'APIs, intégration de services tiers et génération dynamique de documents.",
+          "Gestion complète des projets : conception, roadmap, développement et mise en production.",
+          "Projets : braineatersgame.com • paulnelaton.com",
+        ],
+      },
+      {
+        period: "09/2021 - 04/2024",
+        company: "Freelance et formations",
+        role: "Communication, investissements et formations",
+        desc: [
+          "Accompagnement de plusieurs startups dans leur communication digitale, leur visibilité et la gestion de leurs communautés.",
+          "Conception de contenus et animation des réseaux sociaux.",
+          "Analyse des marchés financiers, gestion du risque et gestion active d'un portefeuille d'investissement.",
+          "Formation continue en développement logiciel, technologies web modernes, création d'assets graphiques et Unity.",
+        ],
+      },
+      {
+        period: "11/2019 - 06/2021",
+        company: "Vinci Autoroutes",
+        role: "Ingénieur SecOps",
+        desc: [
+          "Automatisation des contrôles de sécurité, reporting et dashboards",
+          "Conception du patch management et durcissement des systèmes.",
+          "Mise en place d'une solution de collecte et d'analyse des logs (ELK).",
+          "Pilotage de la sécurité sur des infrastructures critiques (OIV).",
+          "Gestion des vulnérabilités et remédiation (Qualys, Alsid).",
+          "Administration PAM / IAM (CyberArk).",
+        ],
+      },
+      {
+        period: "06/2018 - 12/2018",
+        company: "British Telecom",
+        role: "Ingénieur DevOps & Automatisation",
+        desc: [
+          "Automatisation des workflows de détection via intégration d'API REST.",
+          "Interconnexion des plateformes SIEM (RTIR, TheHive, ELK).",
+          "Automatisation de la conformité réseau via Ansible.",
+          "Développement de scripts d'orchestration et d'outils internes.",
+          "Rédaction de documentation technique en environnement international.",
+        ],
+      },
+      {
+        period: "02/2017 - 04/2018",
+        company: "Orange Cyberdefense",
+        role: "Ingénieur Sécurité Réseau",
+        desc: [
+          "Maintien en conditions opérationnelles d'infrastructures de sécurité.",
+          "Administration de solutions de sécurité réseau : firewalls, proxy et DNS.",
+          "Gestion des incidents et demandes sur un périmètre international.",
+          "Exploitation d'outils de gestion et de supervision.",
+        ],
+      },
+      {
+        period: "11/2015 - 12/2016",
+        company: "5ème Avenue",
+        role: "Administrateur Réseaux & VOIP",
+        desc: [
+          "Déploiement d'infrastructures réseau, sécurité et VOIP auprès de clients PME.",
+          "Planification, pilotage et réalisation des interventions techniques.",
+          "Interface client pour la définition des besoins et le suivi des projets.",
+          "Participation à la conception et au lancement d'une offre de téléphonie IP.",
+          "Formations sur les fondamentaux de gestion de projet.",
+        ],
+      },
+    ],
+
+    formations: [
+      {
+        year: "2016",
+        title: "Diplôme d'Ingénieur Systèmes, Réseaux et Sécurité",
+        school: "AFTI (Orsay)",
+      },
+      {
+        year: "2015",
+        title: "Licence Informatique",
+        school: "Université de Franche-Comté",
+      },
+      {
+        year: "2014",
+        title: "DUT Informatique",
+        school: "IUT de Belfort",
+      },
+    ],
+
+    languages: [
+      { name: "Français", level: "Langue maternelle" },
+      { name: "Anglais", level: "Courant Professionnel" },
+      { name: "Portugais", level: "Courant" },
+    ],
+
+    labels: {
+      domains: "Domaines d'expertise",
+      technicalSkills: "Compétences techniques",
+      education: "Formation",
+      languages: "Langues",
+      experience: "Expérience professionnelle",
+    },
+  },
   en: {
     // sec: {
     //   identity: {
@@ -512,184 +523,195 @@ export const CVData = {
     //     experience: "Professional Experience",
     //   },
     // },
-      identity: {
-        name: "Paul NELATON",
-        role: "Full-Stack Software Engineer / Product & Functional",
-        mobility: "Mobility Montpellier / Lyon / Lausanne",
-        summary:
-          "Full-Stack Software Engineer specialized in the design and development of business applications. Experienced across the full project lifecycle, from requirements analysis to production deployment, combining technical expertise, product vision and user experience.",
-        contact: {
-          email: "paul.nelaton@gmail.com",
-          phone: "+33 6 85 58 93 64",
-          website: "paulnelaton.com",
-        },
+    identity: {
+      name: "Paul NELATON",
+      role: "Full-Stack Software Engineer / Product & Functional",
+      mobility: "Mobility Montpellier / Lyon / Lausanne",
+      summary:
+        "Full-Stack Software Engineer specialized in the design and development of business applications. Experienced across the full project lifecycle, from requirements analysis to production deployment, combining technical expertise, product vision and user experience.",
+      contact: {
+        email: "paul.nelaton@gmail.com",
+        phone: "+33 6 85 58 93 64",
+        website: "paulnelaton.com",
       },
+    },
 
-      stats: [
-        { label: "Full-Stack Development" },
-        { label: "Software Architecture" },
-        { label: "Product & Functional" },
-        { label: "Automation & Integration" },
-      ],
+    stats: [
+      { label: "Full-Stack Development" },
+      { label: "Software Architecture" },
+      { label: "Product & Functional" },
+      { label: "Automation & Integration" },
+    ],
 
-      skillTrees: [
-        {
-          title: "Development",
-          skills: [
-            "C#",
-            ".NET",
-            "ASP.NET MVC",
-            "React",
-            "Angular",
-            "Node.js",
-            "JavaScript",
-            "TypeScript",
-            "jQuery",
-            "REST APIs",
-            "SQL",
-            "UI / UX",
-            "Responsive Design",
-          ],
-        },
-        {
-          title: "Architecture",
-          skills: [
-            "CI/CD",
-            "Git",
-            "IIS",
-            "Azure DevOps",
-            "Agile",
-            "Clean Code",
-            "Design Patterns",
-            "SOLID",
-            "OOP",
-            "Microservices",
-          ],
-        },
-        {
-          title: "Product & Functional",
-          skills: [
-            "Business Analysis",
-            "Functional Analysis",
-            "Project Scoping",
-            "Requirement Gathering",
-            "Functional Design",
-            "Functional Testing",
-            "Specifications Writing",
-            "Product Roadmap",
-          ],
-        },
-      ],
-
-      experience: [
-        {
-          period: "04/2026 - 07/2026",
-          company: "Maty",
-          role: "Full-Stack Developer C# .NET",
-          desc: [
-            "End-to-end development of business applications: scoping, design, development, testing and production deployment.",
-            "Full-Stack design and development of .NET applications, REST APIs, business services and web interfaces.",
-            "Creation of ergonomic, performant and user-centered interfaces.",
-            "Design of technical solutions and modeling of complex business rules in collaboration with functional teams.",
-            "Development of integration and automation flows between multiple applications within the ecosystem.",
-            "Development of product data flows, SEO optimization and integration with e-commerce platforms.",
-            "Optimization of SQL processing and queries to improve performance and maintainability.",
-          ],
-        },
-        {
-          period: "05/2024 - 04/2026",
-          company: "Independent Projects",
-          role: "Full-Stack Developer / Software Engineer",
-          desc: [
-            "Design and development of Full-Stack projects using C#/.NET, React, Next.js and Node.js.",
-            "Design of a modular software architecture and development of complex systems.",
-            "Development of modern, responsive and user-centered web interfaces.",
-            "Graphic design, asset creation and Front-End integration.",
-            "Development of APIs, third-party service integrations and dynamic document generation.",
-            "End-to-end project ownership: design, roadmap, development and production deployment.",
-            "Projects: braineatersgame.com • paulnelaton.com",
-          ],
-        },
-        {
-          period: "11/2019 - 06/2021",
-          company: "Vinci Autoroutes",
-          role: "SecOps Engineer",
-          desc: [
-            "Automation of security controls, reporting and dashboards.",
-            "Design of patch management and system hardening processes.",
-            "Implementation of centralized log collection and analysis using ELK.",
-            "Security operations on critical infrastructures (OIV).",
-            "Vulnerability management and remediation (Qualys, Alsid).",
-            "PAM / IAM administration (CyberArk).",
-          ],
-        },
-        {
-          period: "06/2018 - 12/2018",
-          company: "British Telecom",
-          role: "DevOps & Automation Engineer",
-          desc: [
-            "Automation of detection workflows through REST API integration.",
-            "Interconnection of SIEM platforms (RTIR, TheHive, ELK).",
-            "Network compliance automation using Ansible.",
-            "Development of orchestration scripts and internal tools.",
-            "Technical documentation writing in an international environment.",
-          ],
-        },
-        {
-          period: "02/2017 - 04/2018",
-          company: "Orange Cyberdefense",
-          role: "Network Security Engineer",
-          desc: [
-            "Operational maintenance of security infrastructures.",
-            "Administration of network security solutions: firewalls, proxy and DNS.",
-            "Incident and request management across an international scope.",
-            "Use of management and monitoring tools.",
-          ],
-        },
-        {
-          period: "11/2016 - 12/2017",
-          company: "5ème Avenue",
-          role: "Network & VOIP Administrator",
-          desc: [
-            "Deployment of network, security and VOIP infrastructures for SME clients.",
-            "Planning, coordination and execution of technical interventions.",
-            "Client interface for requirements definition and project follow-up.",
-            "Contribution to the design and launch of an IP telephony offer.",
-            "Training on project management fundamentals.",
-          ],
-        },
-      ],
-
-      formations: [
-        {
-          year: "2016",
-          title: "Engineering Degree in Systems, Networks and Security",
-          school: "AFTI (Orsay)",
-        },
-        {
-          year: "2015",
-          title: "Bachelor's Degree in Computer Science",
-          school: "University of Franche-Comté",
-        },
-        {
-          year: "2014",
-          title: "DUT Computer Science",
-          school: "IUT of Belfort",
-        },
-      ],
-
-      languages: [
-        { name: "French", level: "Native" },
-        { name: "English", level: "Professional fluency" },
-        { name: "Portuguese", level: "Fluent" },
-      ],
-
-      labels: {
-        domains: "Areas of Expertise",
-        technicalSkills: "Technical Skills",
-        education: "Education",
-        languages: "Languages",
-        experience: "Professional Experience",
+    skillTrees: [
+      {
+        title: "Development",
+        skills: [
+          "C#",
+          ".NET",
+          "ASP.NET MVC",
+          "React",
+          "Angular",
+          "Node.js",
+          "JavaScript",
+          "TypeScript",
+          "jQuery",
+          "REST APIs",
+          "SQL",
+          "UI / UX",
+          "Responsive Design",
+        ],
       },
+      {
+        title: "Architecture",
+        skills: [
+          "CI/CD",
+          "Git",
+          "IIS",
+          "Azure DevOps",
+          "Agile",
+          "Clean Code",
+          "Design Patterns",
+          "SOLID",
+          "OOP",
+          "Microservices",
+        ],
+      },
+      {
+        title: "Product & Functional",
+        skills: [
+          "Business Analysis",
+          "Functional Analysis",
+          "Project Scoping",
+          "Requirement Gathering",
+          "Functional Design",
+          "Functional Testing",
+          "Specifications Writing",
+          "Product Roadmap",
+        ],
+      },
+    ],
+
+    experience: [
+      {
+        period: "04/2026 - 07/2026",
+        company: "Maty",
+        role: "Full-Stack Developer C# .NET",
+        desc: [
+          "End-to-end development of business applications: scoping, design, development, testing and production deployment.",
+          "Full-Stack design and development of .NET applications, REST APIs, business services and web interfaces.",
+          "Creation of ergonomic, performant and user-centered interfaces.",
+          "Design of technical solutions and modeling of complex business rules in collaboration with functional teams.",
+          "Development of integration and automation flows between multiple applications within the ecosystem.",
+          "Development of product data flows, SEO optimization and integration with e-commerce platforms.",
+          "Optimization of SQL processing and queries to improve performance and maintainability.",
+        ],
+      },
+      {
+        period: "05/2024 - 04/2026",
+        company: "Independent Projects",
+        role: "Full-Stack Developer / Software Engineer",
+        desc: [
+          "Design and development of Full-Stack projects using C#/.NET, React, Next.js and Node.js.",
+          "Design of a modular software architecture and development of complex systems.",
+          "Development of modern, responsive and user-centered web interfaces.",
+          "Graphic design, asset creation and Front-End integration.",
+          "Development of APIs, third-party service integrations and dynamic document generation.",
+          "End-to-end project ownership: design, roadmap, development and production deployment.",
+          "Projects: braineatersgame.com • paulnelaton.com",
+        ],
+      },
+      {
+        period: "09/2021 - 04/2024",
+        company: "Freelance Work & Professional Development",
+        role: "Digital Communication, Investments & Training",
+        desc: [
+          "Supported several startups with their digital communication, online visibility and community management.",
+          "Created digital content and managed social media channels.",
+          "Conducted financial market analysis, risk management and active investment portfolio management.",
+          "Continued professional development in software engineering, modern web technologies, graphic asset creation and Unity.",
+        ],
+      },
+      {
+        period: "11/2019 - 06/2021",
+        company: "Vinci Autoroutes",
+        role: "SecOps Engineer",
+        desc: [
+          "Automation of security controls, reporting and dashboards.",
+          "Design of patch management and system hardening processes.",
+          "Implementation of centralized log collection and analysis using ELK.",
+          "Security operations on critical infrastructures (OIV).",
+          "Vulnerability management and remediation (Qualys, Alsid).",
+          "PAM / IAM administration (CyberArk).",
+        ],
+      },
+      {
+        period: "06/2018 - 12/2018",
+        company: "British Telecom",
+        role: "DevOps & Automation Engineer",
+        desc: [
+          "Automation of detection workflows through REST API integration.",
+          "Interconnection of SIEM platforms (RTIR, TheHive, ELK).",
+          "Network compliance automation using Ansible.",
+          "Development of orchestration scripts and internal tools.",
+          "Technical documentation writing in an international environment.",
+        ],
+      },
+      {
+        period: "02/2017 - 04/2018",
+        company: "Orange Cyberdefense",
+        role: "Network Security Engineer",
+        desc: [
+          "Operational maintenance of security infrastructures.",
+          "Administration of network security solutions: firewalls, proxy and DNS.",
+          "Incident and request management across an international scope.",
+          "Use of management and monitoring tools.",
+        ],
+      },
+      {
+        period: "11/2015 - 12/2016",
+        company: "5ème Avenue",
+        role: "Network & VOIP Administrator",
+        desc: [
+          "Deployment of network, security and VOIP infrastructures for SME clients.",
+          "Planning, coordination and execution of technical interventions.",
+          "Client interface for requirements definition and project follow-up.",
+          "Contribution to the design and launch of an IP telephony offer.",
+          "Training on project management fundamentals.",
+        ],
+      },
+    ],
+
+    formations: [
+      {
+        year: "2016",
+        title: "Engineering Degree in Systems, Networks and Security",
+        school: "AFTI (Orsay)",
+      },
+      {
+        year: "2015",
+        title: "Bachelor's Degree in Computer Science",
+        school: "University of Franche-Comté",
+      },
+      {
+        year: "2014",
+        title: "DUT Computer Science",
+        school: "IUT of Belfort",
+      },
+    ],
+
+    languages: [
+      { name: "French", level: "Native" },
+      { name: "English", level: "Professional fluency" },
+      { name: "Portuguese", level: "Fluent" },
+    ],
+
+    labels: {
+      domains: "Areas of Expertise",
+      technicalSkills: "Technical Skills",
+      education: "Education",
+      languages: "Languages",
+      experience: "Professional Experience",
+    },
   },
 };
