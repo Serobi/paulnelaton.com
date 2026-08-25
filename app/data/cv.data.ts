@@ -238,7 +238,7 @@ export const CVData = {
 
       experience: [
         {
-          period: "2026",
+          period: "04/2026 - 07/2026",
           company: "Maty",
           role: "Développeur Full-Stack C# .NET",
           desc: [
@@ -252,7 +252,7 @@ export const CVData = {
           ],
         },
         {
-          period: "2024 - 2026",
+          period: "05/2024 - 04/2026",
           company: "Projets Indépendants",
           role: "Développeur Full-Stack / Ingénieur Logiciel",
           desc: [
@@ -266,7 +266,7 @@ export const CVData = {
           ],
         },
         {
-          period: "2019 - 2021",
+          period: "11/2019 - 06/2021",
           company: "Vinci Autoroutes",
           role: "Ingénieur SecOps",
           desc: [
@@ -279,7 +279,7 @@ export const CVData = {
           ],
         },
         {
-          period: "2018 - 2019",
+          period: "06/2018 - 12/2019",
           company: "British Telecom",
           role: "Ingénieur DevOps & Automatisation",
           desc: [
@@ -291,7 +291,7 @@ export const CVData = {
           ],
         },
         {
-          period: "2017 - 2018",
+          period: "02/2017 - 04/2018",
           company: "Orange Cyberdefense",
           role: "Ingénieur Sécurité Réseau",
           desc: [
@@ -302,7 +302,7 @@ export const CVData = {
           ],
         },
         {
-          period: "2016 - 2017",
+          period: "11/2016 - 12/2017",
           company: "5ème Avenue",
           role: "Administrateur Réseaux & VOIP",
           desc: [
@@ -583,7 +583,7 @@ export const CVData = {
 
       experience: [
         {
-          period: "2026",
+          period: "04/2026 - 07/2026",
           company: "Maty",
           role: "Full-Stack Developer C# .NET",
           desc: [
@@ -597,7 +597,7 @@ export const CVData = {
           ],
         },
         {
-          period: "2024 - 2026",
+          period: "05/2024 - 04/2026",
           company: "Independent Projects",
           role: "Full-Stack Developer / Software Engineer",
           desc: [
@@ -611,7 +611,7 @@ export const CVData = {
           ],
         },
         {
-          period: "2019 - 2021",
+          period: "11/2019 - 06/2021",
           company: "Vinci Autoroutes",
           role: "SecOps Engineer",
           desc: [
@@ -624,7 +624,7 @@ export const CVData = {
           ],
         },
         {
-          period: "2018 - 2019",
+          period: "06/2018 - 12/2019",
           company: "British Telecom",
           role: "DevOps & Automation Engineer",
           desc: [
@@ -636,7 +636,7 @@ export const CVData = {
           ],
         },
         {
-          period: "2017 - 2018",
+          period: "02/2017 - 04/2018",
           company: "Orange Cyberdefense",
           role: "Network Security Engineer",
           desc: [
@@ -647,7 +647,7 @@ export const CVData = {
           ],
         },
         {
-          period: "2016 - 2017",
+          period: "11/2016 - 12/2017",
           company: "5ème Avenue",
           role: "Network & VOIP Administrator",
           desc: [
