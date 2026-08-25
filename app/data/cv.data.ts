@@ -279,7 +279,7 @@ export const CVData = {
           ],
         },
         {
-          period: "06/2018 - 12/2019",
+          period: "06/2018 - 12/2018",
           company: "British Telecom",
           role: "Ingénieur DevOps & Automatisation",
           desc: [
@@ -624,7 +624,7 @@ export const CVData = {
           ],
         },
         {
-          period: "06/2018 - 12/2019",
+          period: "06/2018 - 12/2018",
           company: "British Telecom",
           role: "DevOps & Automation Engineer",
           desc: [
