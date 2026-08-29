@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useRef } from "react";
 import {
     BriefcaseBusiness,
     Layers3,
@@ -17,13 +18,251 @@ import { whatsNextData } from "@/data/whatsnext.data";
 
 import styles from "./WhatsNext.module.css";
 
+const STEP_DURATION = 500;
+const MOBILE_LAYOUT_QUERY = "(max-width: 600px)";
+
 export default function WhatsNext() {
     const { lang } = useLanguage();
+    const sectionRef = useRef<HTMLElement>(null);
+    const sectionsRef = useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+        const section = sectionRef.current;
+        const sections = sectionsRef.current;
+
+        if (!section || !sections) {
+            return;
+        }
+
+        const path = sections.querySelector<HTMLElement>("[data-gold-path]");
+        const trail = sections.querySelector<HTMLElement>("[data-gold-trail]");
+        const head = sections.querySelector<HTMLElement>("[data-gold-head]");
+        const icons = Array.from(
+            sections.querySelectorAll<HTMLElement>("[data-gold-icon]"),
+        );
+        const contents = Array.from(
+            sections.querySelectorAll<HTMLElement>("[data-gold-content]"),
+        );
+
+        if (!path || !trail || !head || icons.length === 0) {
+            return;
+        }
+
+        const reducedMotionQuery = window.matchMedia(
+            "(prefers-reduced-motion: reduce)",
+        );
+        const mobileLayoutQuery = window.matchMedia(MOBILE_LAYOUT_QUERY);
+
+        let iconPositions: number[] = [];
+        let animationFrame: number | null = null;
+        let animationStartedAt: number | null = null;
+        let hasStarted = false;
+
+        const measureIconPositions = () => {
+            const sectionsRect = sections.getBoundingClientRect();
+
+            iconPositions = icons.map((icon) => {
+                const iconRect = icon.getBoundingClientRect();
+
+                return iconRect.top - sectionsRect.top + iconRect.height / 2;
+            });
+        };
+
+        const setPathPosition = (position: number) => {
+            const startPosition = iconPositions[0] ?? 0;
+
+            trail.style.top = `${startPosition}px`;
+            trail.style.height = `${Math.max(0, position - startPosition)}px`;
+            head.style.top = `${position}px`;
+        };
+
+        const revealIconsThrough = (lastVisibleIndex: number) => {
+            icons.forEach((icon, index) => {
+                if (index <= lastVisibleIndex) {
+                    icon.classList.add(styles.iconRevealed);
+                }
+            });
+        };
+
+        const revealContentsThrough = (lastVisibleIndex: number) => {
+            contents.forEach((content, index) => {
+                if (index <= lastVisibleIndex) {
+                    content.classList.add(styles.contentRevealed);
+                }
+            });
+
+        };
+
+        const cancelProgression = () => {
+            if (animationFrame !== null) {
+                window.cancelAnimationFrame(animationFrame);
+                animationFrame = null;
+            }
+        };
+
+        const showFinalState = () => {
+            cancelProgression();
+            measureIconPositions();
+            revealIconsThrough(icons.length - 1);
+            revealContentsThrough(contents.length - 1);
+            setPathPosition(iconPositions.at(-1) ?? 0);
+            sections.classList.add(styles.timelineStatic);
+            sections.classList.add(styles.timelineComplete);
+        };
+
+        const animateProgression = (timestamp: number) => {
+            if (animationStartedAt === null) {
+                animationStartedAt = timestamp;
+            }
+
+            const elapsed = timestamp - animationStartedAt;
+            const segmentCount = iconPositions.length - 1;
+            const lineDuration = segmentCount * STEP_DURATION;
+            const contentDuration = Math.max(0, contents.length - 1) * STEP_DURATION;
+            const totalDuration = lineDuration + contentDuration;
+
+            if (elapsed >= totalDuration) {
+                revealIconsThrough(icons.length - 1);
+                revealContentsThrough(contents.length - 1);
+                setPathPosition(iconPositions.at(-1) ?? 0);
+                sections.classList.add(styles.timelineComplete);
+                animationFrame = null;
+                return;
+            }
+
+            if (elapsed < lineDuration && segmentCount > 0) {
+                const completedSegments = Math.floor(elapsed / STEP_DURATION);
+                const segmentProgress = (elapsed % STEP_DURATION) / STEP_DURATION;
+                const segmentStart = iconPositions[completedSegments];
+                const segmentEnd = iconPositions[completedSegments + 1];
+                const currentPosition =
+                    segmentStart + (segmentEnd - segmentStart) * segmentProgress;
+
+                revealIconsThrough(completedSegments);
+                setPathPosition(currentPosition);
+            } else {
+                revealIconsThrough(icons.length - 1);
+                setPathPosition(iconPositions.at(-1) ?? 0);
+                sections.classList.add(styles.timelineComplete);
+
+                const contentElapsed = elapsed - lineDuration;
+                const visibleContentIndex = Math.floor(
+                    contentElapsed / STEP_DURATION,
+                );
+
+                revealContentsThrough(visibleContentIndex);
+            }
+            animationFrame = window.requestAnimationFrame(animateProgression);
+        };
+
+        const startProgression = () => {
+            cancelProgression();
+            measureIconPositions();
+
+            sections.classList.remove(styles.timelineStatic);
+            sections.classList.remove(styles.timelineComplete);
+            icons.forEach((icon) => icon.classList.remove(styles.iconRevealed));
+            contents.forEach((content) =>
+                content.classList.remove(styles.contentRevealed),
+            );
+
+            animationStartedAt = null;
+            revealIconsThrough(0);
+            setPathPosition(iconPositions[0] ?? 0);
+            animationFrame = window.requestAnimationFrame(animateProgression);
+        };
+
+        const prepareProgression = () => {
+            cancelProgression();
+            measureIconPositions();
+
+            sections.classList.remove(styles.timelineStatic);
+            sections.classList.remove(styles.timelineComplete);
+            icons.forEach((icon) => icon.classList.remove(styles.iconRevealed));
+            contents.forEach((content) =>
+                content.classList.remove(styles.contentRevealed),
+            );
+            setPathPosition(iconPositions[0] ?? 0);
+        };
+
+        const sectionIsVisible = () => {
+            const sectionRect = section.getBoundingClientRect();
+            const visibleHeight = Math.max(
+                0,
+                Math.min(sectionRect.bottom, window.innerHeight) -
+                    Math.max(sectionRect.top, 0),
+            );
+
+            return visibleHeight / sectionRect.height >= 0.2;
+        };
+
+        const applyMotionMode = () => {
+            if (reducedMotionQuery.matches || mobileLayoutQuery.matches) {
+                showFinalState();
+                return;
+            }
+
+            if (hasStarted) {
+                return;
+            }
+
+            prepareProgression();
+
+            if (sectionIsVisible()) {
+                hasStarted = true;
+                startProgression();
+            }
+        };
+
+        const resizeObserver = new ResizeObserver(() => {
+            measureIconPositions();
+
+            if (sections.classList.contains(styles.timelineStatic)) {
+                setPathPosition(iconPositions.at(-1) ?? 0);
+            }
+        });
+
+        const intersectionObserver = new IntersectionObserver(
+            ([entry]) => {
+                if (
+                    !entry.isIntersecting ||
+                    hasStarted ||
+                    reducedMotionQuery.matches ||
+                    mobileLayoutQuery.matches
+                ) {
+                    return;
+                }
+
+                hasStarted = true;
+                startProgression();
+                intersectionObserver.disconnect();
+            },
+            {
+                threshold: 0.2,
+            },
+        );
+
+        resizeObserver.observe(sections);
+        intersectionObserver.observe(section);
+        reducedMotionQuery.addEventListener("change", applyMotionMode);
+        mobileLayoutQuery.addEventListener("change", applyMotionMode);
+        applyMotionMode();
+
+        return () => {
+            cancelProgression();
+            resizeObserver.disconnect();
+            intersectionObserver.disconnect();
+            reducedMotionQuery.removeEventListener("change", applyMotionMode);
+            mobileLayoutQuery.removeEventListener("change", applyMotionMode);
+        };
+    }, []);
 
     const content = whatsNextData[lang];
 
     return (
         <section
+            ref={sectionRef}
+            id="whatsnext"
             className={styles.whatsNext}
             aria-labelledby="whats-next-title"
         >
@@ -76,12 +315,15 @@ export default function WhatsNext() {
             CONTENT
         ======================================== */}
 
-                <div className={styles.sections}>
-                    {/* Future animated gold structure */}
+                <div ref={sectionsRef} className={styles.sections}>
                     <div
                         className={styles.goldPath}
+                        data-gold-path
                         aria-hidden="true"
-                    />
+                    >
+                        <span className={styles.goldTrail} data-gold-trail />
+                        <span className={styles.goldHead} data-gold-head />
+                    </div>
 
                     {/* ========================================
               ROLES
@@ -101,6 +343,7 @@ export default function WhatsNext() {
 
                         <div
                             className={styles.partIcon}
+                            data-gold-icon
                             aria-hidden="true"
                         >
                             <BriefcaseBusiness
@@ -108,7 +351,7 @@ export default function WhatsNext() {
                             />
                         </div>
 
-                        <div className={styles.partBody}>
+                        <div className={styles.partBody} data-gold-content>
                             <header className={styles.partHeader}>
                                 <h3 className={styles.partTitle}>
                                     {content.roles.title}
@@ -146,6 +389,7 @@ export default function WhatsNext() {
 
                         <div
                             className={styles.partIcon}
+                            data-gold-icon
                             aria-hidden="true"
                         >
                             <Cpu
@@ -153,7 +397,7 @@ export default function WhatsNext() {
                             />
                         </div>
 
-                        <div className={styles.partBody}>
+                        <div className={styles.partBody} data-gold-content>
                             <header className={styles.partHeader}>
                                 <h3 className={styles.partTitle}>
                                     {content.technologies.title}
@@ -193,6 +437,7 @@ export default function WhatsNext() {
 
                         <div
                             className={styles.partIcon}
+                            data-gold-icon
                             aria-hidden="true"
                         >
                             <Puzzle
@@ -200,7 +445,7 @@ export default function WhatsNext() {
                             />
                         </div>
 
-                        <div className={styles.partBody}>
+                        <div className={styles.partBody} data-gold-content>
                             <header className={styles.partHeader}>
                                 <h3 className={styles.partTitle}>
                                     {content.bring.title}
@@ -314,6 +559,7 @@ export default function WhatsNext() {
 
                         <div
                             className={styles.partIcon}
+                            data-gold-icon
                             aria-hidden="true"
                         >
                             <Globe2
@@ -321,7 +567,7 @@ export default function WhatsNext() {
                             />
                         </div>
 
-                        <div className={styles.partBody}>
+                        <div className={styles.partBody} data-gold-content>
                             <header className={styles.partHeader}>
                                 <h3 className={styles.partTitle}>
                                     {content.mobility.title}
@@ -361,6 +607,7 @@ export default function WhatsNext() {
 
                         <div
                             className={styles.partIcon}
+                            data-gold-icon
                             aria-hidden="true"
                         >
                             <Target
@@ -368,7 +615,7 @@ export default function WhatsNext() {
                             />
                         </div>
 
-                        <div className={styles.partBody}>
+                        <div className={styles.partBody} data-gold-content>
                             <header className={styles.partHeader}>
                                 <h3 className={styles.partTitle}>
                                     {content.values.title}

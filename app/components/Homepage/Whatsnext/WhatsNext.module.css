@@ -191,38 +191,64 @@
         );
 }
 
-/*
-  Placeholder for the future animated gold line.
-  Hidden for now.
-*/
-
 .goldPath {
     position: absolute;
     z-index: 0;
 
     left: 54px;
-    top: 54px;
-    bottom: 54px;
+    top: 0;
+    bottom: 0;
 
     width: 1px;
 
-    opacity: 1;
-
     pointer-events: none;
+}
+
+.goldTrail {
+    position: absolute;
+    display: block;
+
+    width: 1px;
+    height: 0;
 
     background:
         linear-gradient(
             180deg,
-            transparent 0%,
-            rgba(232, 192, 122, 0.18) 6%,
-            rgba(232, 192, 122, 0.34) 20%,
-            rgba(232, 192, 122, 0.34) 80%,
-            rgba(232, 192, 122, 0.12) 94%,
-            transparent 100%
+            rgba(232, 192, 122, 0.2) 0%,
+            rgba(232, 192, 122, 0.34) 18%,
+            rgba(232, 192, 122, 0.34) 82%,
+            rgba(232, 192, 122, 0.24) 100%
         );
 
     box-shadow:
         0 0 8px rgba(232, 192, 122, 0.06);
+}
+
+.goldHead {
+    position: absolute;
+    top: 0;
+    left: 50%;
+
+    display: block;
+
+    width: 4px;
+    height: 4px;
+
+    transform: translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    background: rgba(255, 226, 169, 0.95);
+    box-shadow:
+        0 0 2px rgba(255, 226, 169, 0.72),
+        0 0 4px rgba(232, 192, 122, 0.3),
+        0 0 8px rgba(232, 192, 122, 0.1);
+
+    transition: opacity 220ms ease;
+}
+
+.timelineComplete .goldHead {
+    opacity: 0;
 }
 
 /* =========================================
@@ -299,6 +325,58 @@
         inset 0 1px 0 rgba(255, 255, 255, 0.035);
 
     color: #e8c07a;
+
+    opacity: 0;
+    transform: scale(0.88);
+}
+
+.iconRevealed {
+    animation: revealGoldIcon 420ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes revealGoldIcon {
+    0% {
+        opacity: 0;
+        transform: scale(0.88);
+        border-color: rgba(232, 192, 122, 0.12);
+        box-shadow: none;
+    }
+
+    58% {
+        opacity: 1;
+        transform: scale(1.035);
+        border-color: rgba(255, 226, 169, 0.72);
+        box-shadow:
+            0 0 7px rgba(255, 226, 169, 0.18),
+            0 0 18px rgba(232, 192, 122, 0.1),
+            inset 0 0 12px rgba(232, 192, 122, 0.08);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+        border-color: rgba(232, 192, 122, 0.3);
+        box-shadow:
+            0 0 18px rgba(232, 192, 122, 0.04),
+            inset 0 1px 0 rgba(255, 255, 255, 0.035);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .partIcon,
+    .partBody {
+        opacity: 1;
+        transform: none;
+        filter: none;
+    }
+}
+
+.timelineStatic .partIcon,
+.timelineStatic .partBody {
+    opacity: 1;
+    transform: none;
+    filter: none;
+    animation: none;
 }
 
 
@@ -315,6 +393,31 @@
    PART BODY / HEADER
 ========================================= */
 
+.partBody {
+    opacity: 0;
+    transform: scaleX(0);
+    transform-origin: left center;
+    transform: translateX(-14px);
+    filter: blur(2px);
+}
+
+.contentRevealed {
+    animation: revealPartContent 420ms cubic-bezier(0.16, 1, 0.3, 1) 70ms forwards;
+}
+
+@keyframes revealPartContent {
+    from {
+        opacity: 0;
+        transform: translateX(-14px);
+        filter: blur(2px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+        filter: blur(0);
+    }
+}
 
 .partHeader {
     position: relative;
@@ -739,6 +842,10 @@
         border-radius: 22px;
     }
 
+    .goldPath {
+        left: 42px;
+    }
+
     .partIcon::before {
         inset: 8px;
 
@@ -804,6 +911,10 @@
         height: 66px;
 
         border-radius: 18px;
+
+        opacity: 1;
+        transform: none;
+        animation: none;
     }
 
     .partIcon::before {
@@ -814,6 +925,11 @@
 
     .partBody {
         padding-top: 0;
+
+        opacity: 1;
+        transform: none;
+        filter: none;
+        animation: none;
     }
 
     .partHeader {

@@ -182,9 +182,9 @@ export const CVData = {
 
     stats: [
       { label: "Développement Full-Stack" },
-      { label: "Architecture Logicielle" },
       { label: "Produit & Fonctionnel" },
       { label: "Automatisation & Intégration" },
+      { label: "Cybersécurité" },
     ],
 
     skillTrees: [
@@ -231,7 +231,7 @@ export const CVData = {
           "Conception fonctionnelle",
           "Recette fonctionnelle",
           "Rédaction spécifications",
-          "Roadmap Produit",
+          "Roadmap produit",
         ],
       },
     ],
@@ -243,7 +243,7 @@ export const CVData = {
         role: "Développeur Full-Stack C# .NET",
         desc: [
           "Développement d'applications métier de bout en bout : cadrage, conception, développement, recette et mise en production.",
-          "Conception et développement Full Stack d'applications .NET, APIs REST, services métier et interfaces web.",
+          "Conception et développement Full-Stack d'applications .NET, APIs REST, services métier et interfaces web.",
           "Création d'interfaces ergonomiques, performantes et centrées sur l'expérience utilisateur.",
           "Conception de solutions techniques et modélisation de règles métier complexes en collaboration avec les équipes fonctionnelles.",
           "Développement de flux d'intégration et d'automatisation entre plusieurs applications de l'écosystème.",
@@ -281,7 +281,7 @@ export const CVData = {
         company: "Vinci Autoroutes",
         role: "Ingénieur SecOps",
         desc: [
-          "Automatisation des contrôles de sécurité, reporting et dashboards",
+          "Automatisation des contrôles de sécurité, reporting et dashboards.",
           "Conception du patch management et durcissement des systèmes.",
           "Mise en place d'une solution de collecte et d'analyse des logs (ELK).",
           "Pilotage de la sécurité sur des infrastructures critiques (OIV).",
@@ -290,14 +290,26 @@ export const CVData = {
         ],
       },
       {
+        period: "08/2019 - 10/2019",
+        company: "Cyclad",
+        role: "Ingénieur DevOps",
+        desc: [
+          "Automatisation de la conformité des équipements réseau et sécurité.",
+          "Développement de playbooks Ansible et scripts Bash/YAML.",
+          "Industrialisation des contrôles de configuration et de conformité.",
+          "Développement de scripts d'orchestration et d'outils internes.",
+          "Analyse et résolution d'incidents niveau 1 et 2.",
+        ],
+      },
+      {
         period: "06/2018 - 12/2018",
         company: "British Telecom",
-        role: "Ingénieur DevOps & Automatisation",
+        role: "Ingénieur Cybersécurité & DevOps",
         desc: [
-          "Automatisation des workflows de détection via intégration d'API REST.",
-          "Interconnexion des plateformes SIEM (RTIR, TheHive, ELK).",
-          "Automatisation de la conformité réseau via Ansible.",
-          "Développement de scripts d'orchestration et d'outils internes.",
+          "Automatisation des workflows de détection des incidents de sécurité.",
+          "Intégration d'API REST et interconnexion des plateformes RTIR, TheHive et ELK.",
+          "Déploiement et intégration de la solution PAM CyberArk.",
+          "Contribution aux exigences de sécurité et de conformité PDIS.",
           "Rédaction de documentation technique en environnement international.",
         ],
       },
@@ -329,7 +341,7 @@ export const CVData = {
     formations: [
       {
         year: "2016",
-        title: "Diplôme d'Ingénieur Systèmes, Réseaux et Sécurité",
+        title: "Administrateur Systèmes, Réseaux et Sécurité",
         school: "AFTI (Orsay)",
       },
       {
@@ -346,7 +358,7 @@ export const CVData = {
 
     languages: [
       { name: "Français", level: "Langue maternelle" },
-      { name: "Anglais", level: "Courant Professionnel" },
+      { name: "Anglais", level: "Courant" },
       { name: "Portugais", level: "Courant" },
     ],
 
@@ -538,9 +550,9 @@ export const CVData = {
 
     stats: [
       { label: "Full-Stack Development" },
-      { label: "Software Architecture" },
       { label: "Product & Functional" },
       { label: "Automation & Integration" },
+      { label: "Cybersecurity" },
     ],
 
     skillTrees: [
@@ -646,15 +658,27 @@ export const CVData = {
         ],
       },
       {
+        period: "08/2019 - 10/2019",
+        company: "Cyclad",
+        role: "DevOps Engineer",
+        desc: [
+          "Automated compliance checks for network and security devices.",
+          "Developed Ansible playbooks and Bash/YAML scripts.",
+          "Industrialized configuration and compliance control processes.",
+          "Developed orchestration scripts and internal tools.",
+          "Analyzed and resolved Level 1 and Level 2 incidents.",
+        ],
+      },
+      {
         period: "06/2018 - 12/2018",
         company: "British Telecom",
-        role: "DevOps & Automation Engineer",
+        role: "Cybersecurity & DevOps Engineer",
         desc: [
-          "Automation of detection workflows through REST API integration.",
-          "Interconnection of SIEM platforms (RTIR, TheHive, ELK).",
-          "Network compliance automation using Ansible.",
-          "Development of orchestration scripts and internal tools.",
-          "Technical documentation writing in an international environment.",
+          "Automated security incident detection and response workflows.",
+          "Integrated REST APIs and interconnected RTIR, TheHive, and ELK platforms.",
+          "Deployed and integrated the CyberArk PAM solution.",
+          "Contributed to PDIS security and compliance requirements.",
+          "Produced technical documentation in an international environment.",
         ],
       },
       {
@@ -685,7 +709,7 @@ export const CVData = {
     formations: [
       {
         year: "2016",
-        title: "Engineering Degree in Systems, Networks and Security",
+        title: "Systems, Networks & Security Administrator",
         school: "AFTI (Orsay)",
       },
       {
@@ -702,7 +726,7 @@ export const CVData = {
 
     languages: [
       { name: "French", level: "Native" },
-      { name: "English", level: "Professional fluency" },
+      { name: "English", level: "Fluent" },
       { name: "Portuguese", level: "Fluent" },
     ],
 
