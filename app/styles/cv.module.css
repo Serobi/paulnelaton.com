@@ -39,6 +39,41 @@
   margin-bottom: 1rem;
 }
 
+.localModeSwitch {
+  position: fixed;
+  top: 7.25rem;
+  right: 1.5rem;
+  z-index: 20;
+  display: inline-flex;
+  overflow: hidden;
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  border-radius: 0.65rem;
+  background: rgba(14, 17, 22, 0.92);
+  box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.25);
+}
+
+.localModeSwitch button {
+  min-width: 3.25rem;
+  padding: 0.65rem 0.8rem;
+  border: 0;
+  background: transparent;
+  color: #94a3b8;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.06em;
+  cursor: pointer;
+}
+
+.localModeSwitch button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.localModeSwitch .localModeActive {
+  background: rgba(74, 144, 245, 0.25);
+  color: #fff;
+}
+
 .cvSheet {
   display: block;
   width: 100%;
@@ -163,6 +198,11 @@
     margin-bottom: 1rem;
   }
 
+  .localModeSwitch {
+    top: 5.75rem;
+    right: 0.75rem;
+  }
+
   .webGrid {
     grid-template-columns: 36% 1fr;
     gap: 5px;
@@ -198,6 +238,10 @@
   }
 
   .controlsSection {
+    display: none !important;
+  }
+
+  .localModeSwitch {
     display: none !important;
   }
 

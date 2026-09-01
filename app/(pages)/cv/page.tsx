@@ -12,15 +12,20 @@ import { Experiencespdf } from "@/components/cv/experiences/experiences-pdf";
 import { Skills } from "@/components/cv/skills/skills";
 import { Formations } from "@/components/cv/formations/formations";
 import { Languages } from "@/components/cv/languages/languages";
+import type { Mode } from "@/data/cv.types";
+
+const isLocalCvModeEnabled = process.env.NODE_ENV === "development";
 
 export default function Cv() {
   const { lang } = useLanguage();
+  const [mode, setMode] = useState<Mode>("dev");
   const [isGenerating, setIsGenerating] = useState(false);
 
   const webVersionRef = useRef<HTMLDivElement>(null);
   const pdfVersionRef = useRef<HTMLDivElement>(null);
 
-  const profile = CVData[lang];
+  const activeMode: Mode = isLocalCvModeEnabled ? mode : "dev";
+  const profile = CVData[lang][activeMode];
 
   const handleDownload = async () => {
     if (!pdfVersionRef.current) {
@@ -66,7 +71,12 @@ export default function Cv() {
       const response = await fetch("/api/generate-cv", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ html: cvHTML, css: allCSS, lang }),
+        body: JSON.stringify({
+          html: cvHTML,
+          css: allCSS,
+          lang,
+          mode: activeMode,
+        }),
       });
 
       if (!response.ok) {
@@ -78,7 +88,7 @@ export default function Cv() {
       const url = URL.createObjectURL(blob);
       const a = document.createElement("a");
       a.href = url;
-      a.download = `CV_Paul_NELATON_${lang}.pdf`;
+      a.download = `CV_Paul_NELATON_${activeMode}_${lang}.pdf`;
       document.body.appendChild(a);
       a.click();
       document.body.removeChild(a);
@@ -113,7 +123,29 @@ export default function Cv() {
 
   return (
     <main className={styles.page}>
-    <div className={styles.cvPageWrapper}>
+      {isLocalCvModeEnabled && (
+        <div className={styles.localModeSwitch} aria-label="Version du CV">
+          <button
+            type="button"
+            className={activeMode === "dev" ? styles.localModeActive : ""}
+            onClick={() => setMode("dev")}
+            disabled={isGenerating}
+            aria-pressed={activeMode === "dev"}
+          >
+            DEV
+          </button>
+          <button
+            type="button"
+            className={activeMode === "sec" ? styles.localModeActive : ""}
+            onClick={() => setMode("sec")}
+            disabled={isGenerating}
+            aria-pressed={activeMode === "sec"}
+          >
+            SEC
+          </button>
+        </div>
+      )}
+      <div className={styles.cvPageWrapper}>
       <section className={styles.controlsSection}>
         <CvControls
           onDownload={handleDownload}
@@ -212,7 +244,7 @@ export default function Cv() {
           </div>
         </div>
       </div>
-    </div>
+      </div>
     </main>
   );
 }

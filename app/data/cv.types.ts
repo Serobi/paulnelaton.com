@@ -52,3 +52,4 @@ export interface Labels {
 }
 
 export type Lang = "fr" | "en";
+export type Mode = "dev" | "sec";

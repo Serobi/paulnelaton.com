@@ -27,21 +27,27 @@ export function CvControls({
 
   return (
     <div className={styles.controls}>
-      {/* <button
-        onClick={onDownload}
-        disabled={isGenerating}
-        className={styles.downloadBtn}
-        aria-label="Télécharger le CV en PDF"
-      >
-        {isGenerating ? (
-          <>
-            <span className={styles.spinner} />
-            Génération...
-          </>
-        ) : (
-          <>Génerer PDF</>
-        )}
-      </button> */}
+      {process.env.NODE_ENV === "development" && (
+        <button
+          onClick={onDownload}
+          disabled={isGenerating}
+          className={styles.downloadBtn}
+          aria-label={
+            lang === "fr" ? "Générer le CV en PDF" : "Generate CV as PDF"
+          }
+        >
+          {isGenerating ? (
+            <>
+              <span className={styles.spinner} />
+              {lang === "fr" ? "Génération..." : "Generating..."}
+            </>
+          ) : lang === "fr" ? (
+            <>Générer PDF</>
+          ) : (
+            <>Generate PDF</>
+          )}
+        </button>
+      )}
       <button
         onClick={() => downloadCV(lang)}
         className={styles.downloadBtn}

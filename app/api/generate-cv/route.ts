@@ -1,18 +1,23 @@
 // app/api/generate-cv/route.ts
 import { NextRequest, NextResponse } from "next/server";
 import { generatePDFFromReact } from "@/../lib/pdf-generator";
-import { CVData } from "@/data/cv.data";
+import type { Mode } from "@/data/cv.types";
 
 export const maxDuration = 30;
 
 export async function POST(request: NextRequest) {
   try {
     const LANGS = ["fr", "en"] as const;
+    const MODES: Mode[] = ["dev", "sec"];
 
     type Lang = (typeof LANGS)[number];
 
     function isLang(value: unknown): value is Lang {
       return LANGS.includes(value as Lang);
+    }
+
+    function isMode(value: unknown): value is Mode {
+      return MODES.includes(value as Mode);
     }
 
     const body = await request.json();
@@ -26,14 +31,14 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    if (!isLang(lang)) {
+    if (!isLang(lang) || !isMode(mode)) {
       return NextResponse.json(
-        { error: "Invalid lang" },
+        { error: "Invalid lang or mode" },
         { status: 400 },
       );
     }
 
-    console.log(`[PDF Generator] Generating CV: ${lang}`);
+    console.log(`[PDF Generator] Generating CV: ${lang}/${mode}`);
     const startTime = Date.now();
 
     const pdfBuffer = await generatePDFFromReact({
@@ -44,7 +49,7 @@ export async function POST(request: NextRequest) {
     const elapsed = ((Date.now() - startTime) / 1000).toFixed(2);
     console.log(`[PDF Generator] ✅ PDF generated in ${elapsed}s`);
 
-    const filename = `Paul_NELATON_${lang}.pdf`;
+    const filename = `Paul_NELATON_${mode}_${lang}.pdf`;
 
     return new NextResponse(new Uint8Array(pdfBuffer), {
       status: 200,
