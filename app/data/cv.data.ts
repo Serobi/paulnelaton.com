@@ -3,10 +3,10 @@ export const CVData = {
     sec: {
       identity: {
         name: "Paul NELATON",
-        role: "Ingénieur SecOps & Spécialiste Technico-Fonctionnel",
-        mobility: "Mobilité Montpellier / Toulouse / Besançon",
+        role: "Ingénieur Cybersécurité / DevSecOps",
+        mobility: "Mobilité Montpellier / Lyon / Lausanne",
         summary:
-          "Ingénieur SecOps avec une forte approche fonctionnelle, spécialisé dans la sécurisation d'infrastructures critiques et l'industrialisation des processus de sécurité. Mêlant cybersécurité, automatisation et analyse métier avec une capacité à structurer des environnements, améliorer les processus et répondre efficacement aux enjeux opérationnels et organisationnels.",
+          "Ingénieur cybersécurité spécialisé en SecOps, expérimenté dans la sécurisation d’infrastructures critiques et l’industrialisation des opérations de sécurité. Associant cybersécurité, automatisation et développement logiciel pour améliorer l’efficacité opérationnelle.",
         contact: {
           email: "paul.nelaton@gmail.com",
           phone: "+33 6 85 58 93 64",
@@ -18,19 +18,23 @@ export const CVData = {
         { label: "Cybersécurité & SecOps" },
         { label: "Analyse Fonctionnelle & Structuration" },
         { label: "Automatisation & DevOps" },
-        { label: "Sécurité des Identités & Infrastructures" },
+        { label: "IAM & PAM" },
       ],
 
       skillTrees: [
         {
           title: "Cybersécurité",
           skills: [
-            "Management Vulnérabilités (Qualys, Alsid)",
-            "PAM (CyberArk)",
-            "SIEM / ELK",
-            "Threat Detection & SOC",
-            "Incident Response",
-            "Security Hardening",
+            "Gestion des vulnérabilités",
+            "Qualys",
+            "Alsid",
+            "Varonis",
+            "CyberArk",
+            "ELK",
+            "EDR",
+            "Détection menaces",
+            "Réponse incidents",
+            "Durcissement systèmes",
             "Firewalls",
             "Proxy",
           ],
@@ -44,7 +48,8 @@ export const CVData = {
             "VMware ESXi",
             "IAM",
             "SCCM",
-            "High Availability Systems",
+            "Haute disponibilité",
+            "Patching",
           ],
         },
         {
@@ -63,51 +68,79 @@ export const CVData = {
 
       experience: [
         {
-          period: "2024 - 2026",
-          company: "Projet Indépendant",
-          role: "Ingénieur Logiciel",
+          period: "04/2026 - 07/2026",
+          company: "Maty",
+          role: "Développeur Full-Stack C# .NET",
           desc: [
-            "Conception et développement d'une architecture logicielle modulaire en C# (.NET / .NET Core), orientée performance, maintenabilité et scalabilité.",
-            "Gestion du projet en autonomie complète : structuration, planification, priorisation et pilotage de la livraison.",
-            "Développement de systèmes complexes (génération procédurale, logique métier, gestion d'états) avec une forte approche algorithmique.",
-            "Développement de fonctionnalités full-stack : backend, intégration UI et interface web (React / Next.js).",
-            "Mise en œuvre de bonnes pratiques d'architecture logicielle (modularité, séparation des responsabilités, SOLID).",
-            "Approche orientée industrialisation : structuration des composants, automatisation et optimisation des performances.",
-            "Montée en compétences continue sur les problématiques d'architecture, de performance et de fiabilité des systèmes.",
-            "Portfolio : https://braineatersgame.com/",
+            "Développement d'applications métier de bout en bout : analyse, conception, développement, recette et mise en production.",
+            "Conception et développement d'applications .NET, APIs REST, services métier et interfaces web.",
+            "Développement de flux d'intégration et d'automatisation entre plusieurs applications de l'écosystème.",
+            "Intervention sur des environnements SQL Server et DB2, avec optimisation des traitements et requêtes.",
+            "Participation au maintien et à l'évolution d'applications existantes en environnement de production.",
           ],
         },
         {
-          period: "2019 - 2021",
+          period: "05/2024 - 04/2026",
+          company: "Projets Indépendants",
+          role: "Ingénieur Logiciel",
+          desc: [
+            "Conception et développement de projets logiciels en C#/.NET, React, Next.js et Node.js.",
+            "Conception d'architectures modulaires et développement de systèmes complexes.",
+            "Développement d'APIs, intégration de services et automatisation.",
+            "Gestion autonome du cycle de vie des projets, de la conception jusqu'au déploiement.",
+            "Projets : braineatersgame.com • paulnelaton.com",
+          ],
+        },
+        {
+          period: "09/2021 - 04/2024",
+          company: "Freelance et formations",
+          role: "Projets indépendants & Formation continue",
+          desc: [
+            "Analyse de marché et gestion de risque.",
+            "Prise de décision basée sur l'analyse de données et de scénarios.",
+            "Réalisation de missions indépendantes en communication et partenariats.",
+            "Formations en portugais et développement logiciel.",
+          ],
+        },
+        {
+          period: "11/2019 - 06/2021",
           company: "Vinci Autoroutes",
           role: "Ingénieur SecOps",
           desc: [
-            "Automatisation des contrôles de sécurité, reporting et tableaux de bord pour améliorer l'efficacité du MCO.",
+            "Maintien en conditions opérationnelles et sécurisation d'infrastructures critiques à haute disponibilité dans un environnement OIV.",
+            "Gestion des vulnérabilités et pilotage des remédiations (Qualys, Alsid, Varonis).",
             "Conception et industrialisation des processus de patch management et de durcissement des systèmes.",
-            "Mise en place d'une solution de collecte et d'analyse des logs (ELK) dans un contexte SOC.",
-            "Maintien et sécurisation d'infrastructures critiques à haute disponibilité (Windows, VMware, Solaris).",
-            "Pilotage de la sécurité sur des infrastructures sensibles (OIV).",
-            "Gestion des vulnérabilités et remédiation (Qualys, Alsid), notamment sur Active Directory.",
-            "Administration et sécurisation des accès à privilèges via une solution PAM (CyberArk).",
-            "Contribution à la sécurité des identités (IAM / Active Directory) et gestion des droits.",
-            "Participation à la mise en place d'un SOC et gestion des incidents de sécurité (N2/N3).",
-            "Investigation de menaces réelles (Emotet, CVE-2020-1472 - Netlogon).",
+            "Administration et sécurisation des identités, droits et accès à privilèges (Active Directory, IAM, PAM / CyberArk).",
+            "Automatisation des contrôles de sécurité, reportings et tableaux de bord pour améliorer l'efficacité du MCO.",
+            "Mise en place d'une solution de collecte et d'analyse des logs avec ELK dans un contexte SOC.",
+            "Participation à la mise en place du SOC et gestion des incidents de sécurité N2/N3.",
+            "Investigation et remédiation de menaces réelles, notamment Emotet et CVE-2020-1472 (Netlogon).",
           ],
         },
         {
-          period: "2018 - 2019",
+          period: "08/2019 - 10/2019",
+          company: "Cyclad / Amadeus",
+          role: "Ingénieur DevOps",
+          desc: [
+            "Automatisation des contrôles de conformité des équipements réseau et sécurité avec Ansible.",
+            "Développement de playbooks Ansible et scripts Bash/YAML.",
+            "Analyse et résolution d'incidents en environnement de production.",
+          ],
+        },
+        {
+          period: "06/2018 - 12/2018",
           company: "British Telecom",
           role: "Ingénieur Cybersécurité & DevOps",
           desc: [
-            "Automatisation des workflows de détection et d'escalade via intégration d'API.",
-            "Interconnexion de plateformes SIEM (RTIR, TheHive, ELK).",
-            "Automatisation de la conformité des équipements réseau et sécurité (Ansible).",
-            "Contribution à l'intégration de solutions PAM.",
+            "Automatisation des workflows de détection et d'escalade des incidents de sécurité via APIs REST.",
+            "Intégration et interconnexion des plateformes RTIR, TheHive et ELK.",
+            "Déploiement et intégration de la solution PAM CyberArk.",
+            "Contribution aux exigences de sécurité et de conformité PDIS.",
             "Rédaction de documentation technique en environnement international.",
           ],
         },
         {
-          period: "2017 - 2018",
+          period: "02/2017 - 04/2018",
           company: "Orange Cyberdefense",
           role: "Ingénieur Sécurité Réseau",
           desc: [
@@ -120,7 +153,7 @@ export const CVData = {
           ],
         },
         {
-          period: "2016 - 2017",
+          period: "11/2015 - 12/2016",
           company: "5ème Avenue",
           role: "Administrateur Réseaux & VOIP",
           desc: [
@@ -135,13 +168,8 @@ export const CVData = {
 
       formations: [
         {
-          year: "2019-2020",
-          title: "Certifications",
-          school: "Zscaler ZCCA / ZCCP",
-        },
-        {
           year: "2016",
-          title: "Ingénieur Réseaux, Systèmes et Sécurité",
+          title: "Administrateur Systèmes, Réseaux et Sécurité",
           school: "AFTI (Orsay)",
         },
         {
@@ -149,11 +177,16 @@ export const CVData = {
           title: "Licence Informatique",
           school: "Université de Franche-Comté",
         },
+        {
+          year: "2014",
+          title: "DUT Informatique",
+          school: "IUT de Belfort",
+        },
       ],
 
       languages: [
         { name: "Français", level: "Langue maternelle" },
-        { name: "Anglais", level: "Professionnel" },
+        { name: "Anglais", level: "Courant" },
         { name: "Portugais", level: "Courant" },
       ],
 
@@ -374,10 +407,10 @@ export const CVData = {
     sec: {
       identity: {
         name: "Paul NELATON",
-        role: "SecOps Engineer & Functional Specialist",
-        mobility: "Mobility Montpellier / Toulouse / Besançon",
+        role: "Cybersecurity Engineer / DevSecOps",
+        mobility: "Mobility Montpellier / Lyon / Lausanne",
         summary:
-          "SecOps Engineer with a strong functional mindset, specialized in securing critical infrastructures and industrializing security processes. Combines cybersecurity, automation and system analysis with the ability to structure environments, improve processes and deliver efficient solutions to operational and organizational challenges.",
+          "Cybersecurity Engineer specializing in SecOps, experienced in securing critical infrastructure and industrializing security operations. Combining cybersecurity, automation and software development to improve operational efficiency.",
         contact: {
           email: "paul.nelaton@gmail.com",
           phone: "+33 6 85 58 93 64",
@@ -389,19 +422,23 @@ export const CVData = {
         { label: "Cybersecurity & SecOps" },
         { label: "Functional Analysis & Structuring" },
         { label: "Automation & DevOps" },
-        { label: "Identity & Infrastructure Security" },
+        { label: "IAM & PAM" },
       ],
 
       skillTrees: [
         {
           title: "Cybersecurity",
           skills: [
-            "Vulnerability Management (Qualys, Alsid)",
-            "PAM (CyberArk)",
-            "SIEM / ELK",
-            "Threat Detection & SOC",
+            "Vulnerability Management",
+            "Qualys",
+            "Alsid",
+            "Varonis",
+            "CyberArk",
+            "ELK",
+            "EDR",
+            "Threat Detection",
             "Incident Response",
-            "Security Hardening",
+            "System Hardening",
             "Firewalls",
             "Proxy",
           ],
@@ -415,6 +452,8 @@ export const CVData = {
             "VMware ESXi",
             "IAM",
             "SCCM",
+            "High Availability",
+            "Patching",
           ],
         },
         {
@@ -433,56 +472,84 @@ export const CVData = {
 
       experience: [
         {
-          period: "2024 - 2026",
-          company: "Independent Project",
-          role: "Software Engineer",
+          period: "04/2026 - 07/2026",
+          company: "Maty",
+          role: "Full-Stack Developer C# .NET",
           desc: [
-            "Designed and developed a modular software architecture in C# (.NET / .NET Core), focused on performance, maintainability and scalability.",
-            "Managed the project end-to-end as a solo developer: structuring, planning, prioritization and delivery.",
-            "Developed complex systems and algorithms (procedural generation, business logic, state management).",
-            "Delivered full-stack features: backend systems, UI integration and web interface (React / Next.js).",
-            "Applied software architecture best practices (modularity, separation of concerns, SOLID principles).",
-            "Adopted an industrialization approach: component structuring, automation and performance optimization.",
-            "Continuously improved skills in system architecture, performance and reliability.",
-            "Portfolio: https://braineatersgame.com/",
+            "End-to-end development of business applications: analysis, design, development, testing and production deployment.",
+            "Design and development of .NET applications, REST APIs, business services and web interfaces.",
+            "Development of integration and automation workflows across multiple applications within the ecosystem.",
+            "Work with SQL Server and DB2 environments, including process and query optimization.",
+            "Contribution to the maintenance and evolution of existing applications in production environments.",
           ],
         },
         {
-          period: "2019 - 2021",
+          period: "05/2024 - 04/2026",
+          company: "Independent Projects",
+          role: "Software Engineer",
+          desc: [
+            "Design and development of software projects using C#/.NET, React, Next.js and Node.js.",
+            "Design of modular architectures and development of complex systems.",
+            "API development, service integration and automation.",
+            "Independent management of the full project lifecycle, from design through deployment.",
+            "Projects: braineatersgame.com • paulnelaton.com",
+          ],
+        },
+        {
+          period: "09/2021 - 04/2024",
+          company: "Freelance Work & Training",
+          role: "Independent Projects & Continued Training",
+          desc: [
+            "Market analysis and risk management.",
+            "Data- and scenario-driven decision-making.",
+            "Independent assignments in communications and partnerships.",
+            "Continued training in Portuguese and software development.",
+          ],
+        },
+        {
+          period: "11/2019 - 06/2021",
           company: "Vinci Autoroutes",
           role: "SecOps Engineer",
           desc: [
-            "Automated security controls, reporting and dashboards to improve operational efficiency (MCO).",
+            "Operational maintenance and security of critical high-availability infrastructure within an OIV environment.",
+            "Vulnerability management and remediation oversight using Qualys, Alsid and Varonis.",
             "Designed and industrialized patch management and system hardening processes.",
-            "Implemented centralized log collection and analysis using ELK in a SOC context.",
-            "Maintained and secured critical high-availability infrastructures (Windows, VMware, Solaris).",
-            "Led security operations on sensitive infrastructures (OIV).",
-            "Managed vulnerability assessment and remediation (Qualys, Alsid), including Active Directory.",
-            "Administered and secured privileged access using a PAM solution (CyberArk).",
-            "Contributed to identity security (IAM / Active Directory) and access management.",
-            "Participated in SOC setup and handled security incidents (L2/L3).",
-            "Performed threat investigations on real-world attacks (Emotet, Netlogon CVE-2020-1472).",
+            "Administration and security of identities, permissions and privileged access (Active Directory, IAM, PAM / CyberArk).",
+            "Automated security controls, reporting and dashboards to improve operational efficiency.",
+            "Implemented log collection and analysis using ELK within a SOC environment.",
+            "Contributed to SOC implementation and handled L2/L3 security incidents.",
+            "Investigated and remediated real-world threats, including Emotet and CVE-2020-1472 (Netlogon).",
           ],
         },
         {
-          period: "2018 - 2019",
+          period: "08/2019 - 10/2019",
+          company: "Cyclad / Amadeus",
+          role: "DevOps Engineer",
+          desc: [
+            "Automated compliance controls for network and security devices using Ansible.",
+            "Developed Ansible playbooks and Bash/YAML scripts.",
+            "Analyzed and resolved incidents in production environments.",
+          ],
+        },
+        {
+          period: "06/2018 - 12/2018",
           company: "British Telecom",
           role: "Cybersecurity & DevOps Engineer",
           desc: [
-            "Automated detection and escalation workflows through API integrations.",
-            "Integrated and interconnected SIEM platforms (RTIR, TheHive, ELK).",
-            "Automated network and security compliance using Ansible.",
-            "Contributed to the integration of PAM solutions.",
+            "Automated security incident detection and escalation workflows through REST APIs.",
+            "Integrated and interconnected RTIR, TheHive and ELK platforms.",
+            "Deployed and integrated the CyberArk PAM solution.",
+            "Contributed to PDIS security and compliance requirements.",
             "Produced technical documentation in an international environment.",
           ],
         },
         {
-          period: "2017 - 2018",
+          period: "02/2017 - 04/2018",
           company: "Orange Cyberdefense",
           role: "Network Security Engineer",
           desc: [
             "Maintained global security infrastructures for Air Liquide (international scope).",
-            "Administered network security solutions: firewalls (Checkpoint, Cisco ASA, Fortinet, Palo Alto), proxy (Zscaler) and secure DNS (F5).",
+            "Administered network security solutions: firewalls (Check Point, Cisco ASA, Fortinet, Palo Alto), proxy (Zscaler) and secure DNS (F5).",
             "Handled incidents and requests across multiple technologies (L1/L2), ensuring full resolution.",
             "Analyzed client needs and adapted security solutions accordingly.",
             "Used monitoring and management tools (Tufin, ServiceNow, Centreon, IPAM).",
@@ -490,7 +557,7 @@ export const CVData = {
           ],
         },
         {
-          period: "2016 - 2017",
+          period: "11/2015 - 12/2016",
           company: "5ème Avenue",
           role: "Network & VoIP Administrator",
           desc: [
@@ -505,13 +572,8 @@ export const CVData = {
 
       formations: [
         {
-          year: "2019-2020",
-          title: "Certifications",
-          school: "Zscaler ZCCA / ZCCP",
-        },
-        {
           year: "2016",
-          title: "Engineering Degree in Networks, Systems and Security",
+          title: "Systems, Networks & Security Administrator",
           school: "AFTI (Orsay)",
         },
         {
@@ -519,18 +581,23 @@ export const CVData = {
           title: "Bachelor's Degree in Computer Science",
           school: "University of Franche-Comté",
         },
+        {
+          year: "2014",
+          title: "DUT Computer Science",
+          school: "IUT of Belfort",
+        },
       ],
 
       languages: [
         { name: "French", level: "Native" },
-        { name: "English", level: "Professional proficiency" },
+        { name: "English", level: "Fluent" },
         { name: "Portuguese", level: "Fluent" },
       ],
 
       labels: {
         domains: "Areas of Expertise",
         technicalSkills: "Technical Skills",
-        education: "Education & Certifications",
+        education: "Education",
         languages: "Languages",
         experience: "Professional Experience",
       },
