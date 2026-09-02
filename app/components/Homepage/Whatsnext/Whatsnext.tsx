@@ -116,6 +116,30 @@ export default function WhatsNext() {
             }
 
             const elapsed = timestamp - animationStartedAt;
+
+            if (mobileLayoutQuery.matches) {
+                const pairCount = Math.max(icons.length, contents.length);
+                const mobileEventCount = pairCount * 2;
+                const mobileDuration = Math.max(0, mobileEventCount - 1) * STEP_DURATION;
+
+                if (elapsed >= mobileDuration) {
+                    revealIconsThrough(icons.length - 1);
+                    revealContentsThrough(contents.length - 1);
+                    sections.classList.add(styles.timelineComplete);
+                    animationFrame = null;
+                    return;
+                }
+
+                const eventIndex = Math.floor(elapsed / STEP_DURATION);
+                const visibleIconIndex = Math.floor(eventIndex / 2);
+                const visibleContentIndex = Math.floor((eventIndex - 1) / 2);
+
+                revealIconsThrough(visibleIconIndex);
+                revealContentsThrough(visibleContentIndex);
+                animationFrame = window.requestAnimationFrame(animateProgression);
+                return;
+            }
+
             const segmentCount = iconPositions.length - 1;
             const lineDuration = segmentCount * STEP_DURATION;
             const contentDuration = Math.max(0, contents.length - 1) * STEP_DURATION;
@@ -197,12 +221,15 @@ export default function WhatsNext() {
         };
 
         const applyMotionMode = () => {
-            if (reducedMotionQuery.matches || mobileLayoutQuery.matches) {
+            if (reducedMotionQuery.matches) {
                 showFinalState();
                 return;
             }
 
             if (hasStarted) {
+                if (animationFrame !== null) {
+                    startProgression();
+                }
                 return;
             }
 
@@ -227,8 +254,7 @@ export default function WhatsNext() {
                 if (
                     !entry.isIntersecting ||
                     hasStarted ||
-                    reducedMotionQuery.matches ||
-                    mobileLayoutQuery.matches
+                    reducedMotionQuery.matches
                 ) {
                     return;
                 }
