@@ -85,6 +85,7 @@
     gap: 0.75rem;
     margin: 0;
     font-style: normal;
+    transform: translateY(1rem);
 }
 
 .contactItem {
@@ -229,6 +230,7 @@
 
     .links {
         max-width: 34rem;
+        transform: none;
     }
 }
 
