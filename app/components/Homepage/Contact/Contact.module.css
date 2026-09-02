@@ -102,15 +102,12 @@
         linear-gradient(135deg, rgba(74, 144, 245, 0.035), transparent 55%),
         rgba(15, 19, 32, 0.64);
     box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.025);
+    transition: border-color 220ms ease;
 }
 
 .contactAction {
     color: inherit;
     text-decoration: none;
-    transition:
-        border-color 220ms ease,
-        background 220ms ease,
-        box-shadow 220ms ease;
 }
 
 .icon {
@@ -182,14 +179,8 @@
 }
 
 @media (hover: hover) {
-    .contactAction:hover {
-        border-color: rgba(232, 192, 122, 0.22);
-        background:
-            linear-gradient(135deg, rgba(232, 192, 122, 0.055), transparent 58%),
-            rgba(15, 19, 32, 0.78);
-        box-shadow:
-            0 12px 32px rgba(0, 0, 0, 0.16),
-            inset 0 1px 0 rgba(255, 255, 255, 0.035);
+    .contactItem:hover {
+        border-color: rgba(217, 181, 111, 0.55);
     }
 
     .contactAction:hover .arrow {
