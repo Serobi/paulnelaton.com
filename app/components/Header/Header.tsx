@@ -173,13 +173,23 @@ export default function Header() {
             ) : (
               <>
                 <a
+                  href="/"
+                  className={styles.mobileNavLink}
+                  onClick={handleHomeClick}
+                  tabIndex={mobileMenuOpen ? 0 : -1}
+                >
+                  <span className={styles.mobileNavIndex}>01</span>
+                  <span>{t("header.nav.intro")}</span>
+                </a>
+
+                <a
                   href="/#about"
                   className={styles.mobileNavLink}
                   onClick={closeMobileMenu}
                   tabIndex={mobileMenuOpen ? 0 : -1}
                 >
-                  <span className={styles.mobileNavIndex}>01</span>
-                  <span>{t("header.nav.intro")}</span>
+                  <span className={styles.mobileNavIndex}>02</span>
+                  <span>{t("header.nav.about")}</span>
                 </a>
 
                 <a
@@ -188,8 +198,28 @@ export default function Header() {
                   onClick={closeMobileMenu}
                   tabIndex={mobileMenuOpen ? 0 : -1}
                 >
-                  <span className={styles.mobileNavIndex}>02</span>
+                  <span className={styles.mobileNavIndex}>03</span>
                   <span>{t("header.nav.projects")}</span>
+                </a>
+
+                <a
+                  href="/#next"
+                  className={styles.mobileNavLink}
+                  onClick={closeMobileMenu}
+                  tabIndex={mobileMenuOpen ? 0 : -1}
+                >
+                  <span className={styles.mobileNavIndex}>04</span>
+                  <span>{t("header.nav.next")}</span>
+                </a>
+
+                <a
+                  href="/#contact"
+                  className={styles.mobileNavLink}
+                  onClick={closeMobileMenu}
+                  tabIndex={mobileMenuOpen ? 0 : -1}
+                >
+                  <span className={styles.mobileNavIndex}>05</span>
+                  <span>{t("header.nav.contact")}</span>
                 </a>
               </>
             )}
@@ -201,7 +231,7 @@ export default function Header() {
               tabIndex={mobileMenuOpen ? 0 : -1}
             >
               <span className={styles.mobileNavIndex}>
-                {isCvPage ? "02" : "03"}
+                {isCvPage ? "02" : "06"}
               </span>
               <span>{t("header.nav.cv")}</span>
             </Link>
