@@ -107,6 +107,10 @@ export default function Header() {
                 <a href="/#next" className={styles.navLink}>
                   {t("header.nav.next")}
                 </a>
+
+                <a href="/#contact" className={styles.navLink}>
+                  {t("header.nav.contact")}
+                </a>
               </>
             )}
 

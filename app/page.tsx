@@ -6,6 +6,7 @@ import styles from "@/styles/page.module.css";
 import Hero from "@/components/Homepage/hero/hero";
 import Intro from "@/components/Homepage/Intro/intro";
 import Whatsnext from "@/components/Homepage/Whatsnext/Whatsnext";
+import Contact from "@/components/Homepage/Contact/Contact";
 // import ProjectRoadmap from "@/components/Homepage/ProjectRoadmap/ProjectRoadmap";
 import RoadmapV2 from "@/components/Homepage/ProjectRoadmap/RoadmapV2";
 
@@ -26,6 +27,7 @@ export default function Home() {
             <section id="next" className={styles.nextSection}>
                 <Whatsnext />
             </section>
+            <Contact />
             {/* <section id="work" className={styles.workSection}>
                 <div className={styles.sectionHeader}>
                     <span>Selected work</span>

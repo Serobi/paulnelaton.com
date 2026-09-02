@@ -31,6 +31,7 @@ const translations: Record<Language,Record<string, TranslationValue>> = {
     "header.nav.about": "À propos",
     "header.nav.projects": "Projets",
     "header.nav.next": "Suite",
+    "header.nav.contact" : "Contact",
     "header.nav.home" : "Accueil",
     "header.nav.cv": "CV Interactif",
     "header.brandAriaLabel": "Paul Nelaton — Accueil",
@@ -63,7 +64,7 @@ const translations: Record<Language,Record<string, TranslationValue>> = {
     "hero.nav.next.description": "Ce que j'apporte et ce que je recherche.",
 
     "hero.nav.contact.label": "Contact",
-    "hero.nav.contact.description": "Discutons de la suite. Bientôt créé",
+    "hero.nav.contact.description": "Discutons de la suite.",
 
     "Intro.eyebrow": "À propos",
     "Intro.card1.title": "Ingénieur logiciel",
@@ -93,6 +94,7 @@ const translations: Record<Language,Record<string, TranslationValue>> = {
     "header.nav.about": "About",
     "header.nav.projects": "Projects",
     "header.nav.next": "Next",
+    "header.nav.contact" : "Contact",
     "header.nav.home" : "Home",
     "header.nav.cv": "Interactive CV",
     "header.brandAriaLabel": "Paul Nelaton — Home",
@@ -124,7 +126,7 @@ const translations: Record<Language,Record<string, TranslationValue>> = {
     "hero.nav.next.description": "What I bring and what I'm looking for.",
 
     "hero.nav.contact.label": "Contact",
-    "hero.nav.contact.description": "Let's talk about what comes next. Coming soon",
+    "hero.nav.contact.description": "Let's talk about what comes next.",
 
     "home.title": "Software Engineer & Cybersecurity",
     "home.intro1":
