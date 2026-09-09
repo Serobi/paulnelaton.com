@@ -2,7 +2,6 @@
 
 import {
   useEffect,
-  useLayoutEffect,
   useMemo,
   useRef,
   useState,
@@ -14,17 +13,22 @@ import {
   type ProjectRoadmapState,
 } from "@/data/projectroadmap.data";
 
-import styles from "./RoadmapV2.module.css";
+import styles from "./Roadmap_test.module.css";
+import Cybersecurity from "./Cybersecurity/Cybersecurity";
+import { useCybersecurityChapter } from "./Cybersecurity/useCybersecurityChapter";
 
-export default function RoadmapV2() {
+export default function RoadmapTest() {
   const { lang } = useLanguage();
+  const chapter = useCybersecurityChapter();
+  const chapterOpen = chapter.phase !== "idle";
+  const chapterAnimating = chapterOpen && chapter.phase !== "ready";
 
   const roadmap = projectRoadmapData[lang];
   const steps = roadmap.nodes;
 
   const getStepId = (index: number) => index + 1;
 
-  const initialActiveStepId = 3;
+  const initialActiveStepId = 1;
 
   const [activeStepId, setActiveStepId] =
     useState<number>(initialActiveStepId);
@@ -85,7 +89,7 @@ export default function RoadmapV2() {
   const handleMouseDown = (
     event: React.MouseEvent<HTMLDivElement>,
   ) => {
-    if (event.button !== 0) {
+    if (event.button !== 0 || chapterAnimating) {
       return;
     }
 
@@ -146,27 +150,28 @@ export default function RoadmapV2() {
     };
   }, []);
 
-  useEffect(() => {
-    setActiveStepId((currentId) => {
-      if (steps.length === 0) {
-        return 1;
-      }
-
-      return Math.min(
-        Math.max(currentId, 1),
-        steps.length,
-      );
-    });
-  }, [steps.length]);
-
-  useLayoutEffect(() => {
-    centerNode(activeStepId, "auto");
-  }, [lang]);
-
   const handleStepClick = (
     stepId: number,
   ) => {
+    if (chapterAnimating) return;
+    if (chapter.phase === "ready") {
+      if (stepId === 1) {
+        chapter.stageRef.current?.scrollIntoView({ block: "start", behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "instant" : "smooth" });
+        return;
+      }
+      chapter.reset();
+    }
     setActiveStepId(stepId);
+
+    if (stepId === 1) {
+      if (clickTimerRef.current) clearTimeout(clickTimerRef.current);
+      setClickedStepId(null);
+      const timeline = timelineRef.current;
+      const node = nodeRefs.current[1];
+      if (timeline) timeline.scrollTo({ left: timeline.scrollLeft, behavior: "instant" });
+      if (timeline && node) void chapter.open(timeline, node);
+      return;
+    }
 
     if (clickTimerRef.current) {
       clearTimeout(clickTimerRef.current);
@@ -280,6 +285,7 @@ export default function RoadmapV2() {
   return (
     <section
       className={styles.roadmapPage}
+      data-chapter={chapter.phase}
       aria-labelledby="project-roadmap-title"
     >
       <header className={styles.header}>
@@ -374,6 +380,9 @@ export default function RoadmapV2() {
                       ] = element;
                     }}
                     type="button"
+                    tabIndex={chapterAnimating ? -1 : 0}
+                    aria-hidden={chapterAnimating && stepId !== 1 ? true : undefined}
+                    data-cyber={stepId === 1 ? "true" : undefined}
                     className={
                       stepClassName
                     }
@@ -448,7 +457,12 @@ export default function RoadmapV2() {
         </div>
       </div>
 
-      <article
+      {activeStepId === 1 ? (chapterOpen && <Cybersecurity lang={lang} phase={chapter.phase} introRef={chapter.introRef} stageRef={chapter.stageRef} onBack={() => {
+        chapter.reset();
+        const node = nodeRefs.current[1];
+        node?.focus({ preventScroll: true });
+        node?.scrollIntoView({ block: "center", inline: "nearest", behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "instant" : "smooth" });
+      }} />) : <article
         key={activeStepId}
         className={[
           styles.contentSection,
@@ -550,7 +564,7 @@ export default function RoadmapV2() {
             },
           )}
         </div>
-      </article>
+      </article>}
     </section>
   );
 }
