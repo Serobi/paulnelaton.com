@@ -4,9 +4,9 @@ export const CVData = {
       identity: {
         name: "Paul NELATON",
         role: "Ingénieur Cybersécurité / DevSecOps",
-        mobility: "Mobilité Montpellier / Lyon / Lausanne",
+        mobility: "Mobilité Montpellier / Lyon / Suisse / Luxembourg",
         summary:
-          "Ingénieur cybersécurité spécialisé en SecOps, expérimenté dans la sécurisation d’infrastructures critiques et l’industrialisation des opérations de sécurité. Associant cybersécurité, automatisation et développement logiciel pour améliorer l’efficacité opérationnelle.",
+          "Ingénieur cybersécurité spécialisé en SecOps, expérimenté dans la sécurisation d'infrastructures critiques et l'industrialisation des opérations de sécurité. Associant cybersécurité, automatisation et développement logiciel pour améliorer l'efficacité opérationnelle.",
         contact: {
           email: "paul.nelaton@gmail.com",
           phone: "+33 6 85 58 93 64",
@@ -53,15 +53,16 @@ export const CVData = {
           ],
         },
         {
-          title: "Automatisation & Fonctionnel",
+          title: "Automatisation & Développement",
           skills: [
             "C# / .NET",
             "PowerShell",
             "Python",
             "Ansible",
             "REST APIs",
+            "Git",
+            "CI/CD",
             "Automatisation & Scripting",
-            "Analyse Fonctionnelle",
           ],
         },
       ],
@@ -202,7 +203,7 @@ export const CVData = {
       identity: {
         name: "Paul NELATON",
         role: "Ingénieur Logiciel Full-Stack / Produit & Fonctionnel",
-        mobility: "Mobilité Montpellier / Lyon / Lausanne",
+        mobility: "Mobilité Montpellier / Lyon / Suisse / Luxembourg",
         summary:
           "Ingénieur logiciel Full-Stack spécialisé dans la conception et le développement d'applications métier. Habitué à intervenir sur l'ensemble du cycle de vie d'un projet, de l'analyse des besoins jusqu'à la mise en production, en alliant expertise technique, vision produit et expérience utilisateur.",
         contact: {
@@ -405,7 +406,7 @@ export const CVData = {
       identity: {
         name: "Paul NELATON",
         role: "Cybersecurity Engineer / DevSecOps",
-        mobility: "Mobility Montpellier / Lyon / Lausanne",
+        mobility: "Mobility Montpellier / Lyon / Switzerland / Luxembourg",
         summary:
           "Cybersecurity Engineer specializing in SecOps, experienced in securing critical infrastructure and industrializing security operations. Combining cybersecurity, automation and software development to improve operational efficiency.",
         contact: {
@@ -454,15 +455,16 @@ export const CVData = {
           ],
         },
         {
-          title: "Automation & Functional",
+          title: "Automation & Development",
           skills: [
             "C# / .NET",
             "PowerShell",
             "Python",
             "Ansible",
             "REST APIs",
+            "Git",
+            "CI/CD",
             "Automation & Scripting",
-            "Functional Analysis",
           ],
         },
       ],
@@ -603,7 +605,7 @@ export const CVData = {
       identity: {
         name: "Paul NELATON",
         role: "Full-Stack Software Engineer / Product & Functional",
-        mobility: "Mobility Montpellier / Lyon / Lausanne",
+        mobility: "Mobility Montpellier / Lyon / Switzerland / Luxembourg",
         summary:
           "Full-Stack Software Engineer specialized in the design and development of business applications. Experienced across the full project lifecycle, from requirements analysis to production deployment, combining technical expertise, product vision and user experience.",
         contact: {
