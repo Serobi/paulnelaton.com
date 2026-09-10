@@ -5,6 +5,7 @@ import {
   useMemo,
   useRef,
   useState,
+  type CSSProperties,
 } from "react";
 
 import { useLanguage } from "@/contexts/LanguageContext";
@@ -15,7 +16,7 @@ import {
 
 import styles from "./Roadmap_test.module.css";
 import Cybersecurity from "./Cybersecurity/Cybersecurity";
-import { useCybersecurityChapter } from "./Cybersecurity/useCybersecurityChapter";
+import { CHAPTER_CHARGE_MS, useCybersecurityChapter } from "./Cybersecurity/useCybersecurityChapter";
 
 export default function RoadmapTest() {
   const { lang } = useLanguage();
@@ -286,6 +287,7 @@ export default function RoadmapTest() {
     <section
       className={styles.roadmapPage}
       data-chapter={chapter.phase}
+      style={{ "--chapter-charge-duration": `${CHAPTER_CHARGE_MS}ms` } as CSSProperties}
       aria-labelledby="project-roadmap-title"
     >
       <header className={styles.header}>
@@ -457,7 +459,7 @@ export default function RoadmapTest() {
         </div>
       </div>
 
-      {activeStepId === 1 ? (chapterOpen && <Cybersecurity lang={lang} phase={chapter.phase} introRef={chapter.introRef} stageRef={chapter.stageRef} onBack={() => {
+      {activeStepId === 1 ? (chapterOpen && <Cybersecurity lang={lang} phase={chapter.phase} stageRef={chapter.stageRef} onBack={() => {
         chapter.reset();
         const node = nodeRefs.current[1];
         node?.focus({ preventScroll: true });

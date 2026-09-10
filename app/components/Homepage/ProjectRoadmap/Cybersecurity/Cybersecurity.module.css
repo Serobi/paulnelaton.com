@@ -1,4 +1,8 @@
-.stage { width: 100%; scroll-margin-top: 120px; }
+.stage {
+  width: 100%;
+  scroll-margin-top: 120px;
+}
+
 .back {
   display: block;
   margin: 24px auto 0;
@@ -11,60 +15,176 @@
   font-size: .8rem;
   cursor: pointer;
 }
-.back:hover { color: #edf2fc; border-color: var(--cyber-accent); }
-.back:focus-visible { outline: 2px solid var(--cyber-accent); outline-offset: 4px; }
+
+.back:hover {
+  color: #edf2fc;
+  border-color: var(--cyber-accent);
+}
+
+.back:focus-visible {
+  outline: 2px solid var(--cyber-accent);
+  outline-offset: 4px;
+}
 
 /* The same content supports standalone use and the staged chapter entrance. */
-.root.chapter { animation: none; padding-bottom: 12vh; }
-.chapter .header { margin-bottom: clamp(160px, 18vh, 240px); }
-.chapter .stage { min-height: calc(100svh - 160px); }
-.chapter[data-phase="centering"] .header,
+.root.chapter {
+  animation: none;
+  padding-bottom: 12vh;
+}
+
+.chapter .stage {
+  min-height: calc(100svh - 160px);
+}
+
 .chapter[data-phase="centering"] .stage,
-.chapter[data-phase="isolating"] .header,
-.chapter[data-phase="charging"] .header,
 .chapter[data-phase="isolating"] .stage,
 .chapter[data-phase="charging"] .stage,
-.chapter[data-phase="intro"] .stage,
 .chapter[data-phase="travelling"] .stage {
   visibility: hidden;
 }
-.chapter[data-phase="intro"] .header { animation: reveal 600ms ease-out both; }
-.chapter:not([data-phase="revealing"]):not([data-phase="ready"]) .tabs::before { animation: none; }
+
+.chapter:not([data-phase="revealing"]):not([data-phase="ready"]) .tabs::before {
+  animation: none;
+}
+
 /* Finishing the chapter entrance must not start the ordinary panel animation. */
-.chapter .panelContent { animation: none; }
-.chapter .panelContent.experienceSwitch { animation: reveal 320ms ease-out both; }
-.chapter[data-phase="revealing"] .tabs::before { animation: connect 650ms ease-out both; }
-.chapter[data-phase="revealing"] .tab { animation: reveal 420ms ease-out var(--node-delay) both; }
-.chapter[data-phase="revealing"] .tab[aria-selected="true"] .node { animation: activateNode 400ms ease-out 620ms both; }
-.chapter[data-phase="revealing"] .panel { animation: reveal 450ms ease-out 820ms both; }
-.chapter[data-phase="revealing"] .panelContent { animation: none; }
-.chapter[data-phase="revealing"] .panelContent > * { animation: reveal 350ms ease-out 940ms both; }
-.chapter[data-phase="revealing"] .panelContent > :nth-child(2) { animation-delay: 1040ms; }
-.chapter[data-phase="revealing"] .panelContent > :nth-child(3) { animation-delay: 1140ms; }
-.chapter[data-phase="revealing"] .panelContent > :nth-child(4) { animation-delay: 1240ms; }
-.chapter[data-phase="revealing"] .back { animation: reveal 300ms ease-out 1300ms both; }
+.chapter .panelContent {
+  animation: none;
+}
+
+.chapter .panelContent.experienceSwitch {
+  animation: reveal 320ms ease-out both;
+}
+
+.chapter[data-phase="revealing"] .tabs::before {
+  animation: connect 650ms ease-out both;
+}
+
+.chapter[data-phase="revealing"] .tab {
+  animation: reveal 420ms ease-out var(--node-delay) both;
+}
+
+.chapter[data-phase="revealing"] .tab[aria-selected="true"] .node {
+  animation: activateNode 400ms ease-out 620ms both;
+}
+
+.chapter[data-phase="revealing"] .panel {
+  animation: reveal 450ms ease-out 820ms both;
+}
+
+.chapter[data-phase="revealing"] .panelContent {
+  animation: none;
+}
+
+.chapter[data-phase="revealing"] .panelContent>* {
+  animation: reveal 350ms ease-out 940ms both;
+}
+
+.chapter[data-phase="revealing"] .panelContent> :nth-child(2) {
+  animation-delay: 1040ms;
+}
+
+.chapter[data-phase="revealing"] .panelContent> :nth-child(3) {
+  animation-delay: 1140ms;
+}
+
+.chapter[data-phase="revealing"] .panelContent> :nth-child(4) {
+  animation-delay: 1240ms;
+}
+
+.chapter[data-phase="revealing"] .back {
+  animation: reveal 300ms ease-out 1300ms both;
+}
+
 /* Keep the complete composition legible on shorter desktop viewports. */
 @media (min-width: 701px) and (max-height: 850px) {
-  .chapter .panelContent { min-height: 0; padding: 20px 24px; }
-  .chapter .experienceHeader h3 { font-size: 1.3rem; margin-top: 6px; }
-  .chapter .context { margin: 12px 0 18px; font-size: .85rem; line-height: 1.6; }
-  .chapter .details { gap: 24px; }
-  .chapter h4 { margin-bottom: 10px; }
-  .chapter .responsibilities { gap: 10px; }
-  .chapter .responsibilities li, .chapter .highlight p { font-size: .8rem; line-height: 1.55; }
-  .chapter .highlight { padding: 14px 18px; }
-  .chapter .signal { display: none; }
-  .chapter .technologies { display: flex; align-items: center; gap: 16px; margin-top: 18px; padding-top: 16px; }
-  .chapter .technologies h4 { margin: 0; flex: 0 0 130px; }
-  .chapter .technologies li { font-size: .65rem; }
-  .chapter .back { margin-top: 16px; }
+  .chapter .panelContent {
+    min-height: 0;
+    padding: 20px 24px;
+  }
+
+  .chapter .experienceHeader h3 {
+    font-size: 1.3rem;
+    margin-top: 6px;
+  }
+
+  .chapter .context {
+    margin: 12px 0 18px;
+    font-size: .85rem;
+    line-height: 1.6;
+  }
+
+  .chapter .details {
+    gap: 24px;
+  }
+
+  .chapter h4 {
+    margin-bottom: 10px;
+  }
+
+  .chapter .responsibilities {
+    gap: 10px;
+  }
+
+  .chapter .responsibilities li,
+  .chapter .highlight p {
+    font-size: .8rem;
+    line-height: 1.55;
+  }
+
+  .chapter .highlight {
+    padding: 14px 18px;
+  }
+
+  .chapter .signal {
+    display: none;
+  }
+
+  .chapter .technologies {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-top: 18px;
+    padding-top: 16px;
+  }
+
+  .chapter .technologies h4 {
+    margin: 0;
+    flex: 0 0 130px;
+  }
+
+  .chapter .technologies li {
+    font-size: .65rem;
+  }
+
+  .chapter .back {
+    margin-top: 16px;
+  }
 }
+
 @keyframes activateNode {
-  from { background: #0d1421; border-color: #354760; box-shadow: none; color: #8d9bb2; }
-  to { background: #1b3154; border-color: #8cabff; box-shadow: 0 0 24px #4a90f52b; color: #ecf4ff; }
+  from {
+    background: #0d1421;
+    border-color: #354760;
+    box-shadow: none;
+    color: #8d9bb2;
+  }
+
+  to {
+    background: #1b3154;
+    border-color: #8cabff;
+    box-shadow: 0 0 24px #4a90f52b;
+    color: #ecf4ff;
+  }
 }
+
 @media (prefers-reduced-motion: reduce) {
-  .chapter *, .chapter *::before { animation: none !important; transition: none !important; }
+
+  .chapter *,
+  .chapter *::before {
+    animation: none !important;
+    transition: none !important;
+  }
 }
 
 .root,
@@ -328,12 +448,29 @@
   background: #ffffff03;
   font-family: var(--font-mono, monospace);
   font-size: .7rem;
+
+  transition:
+    transform 180ms ease,
+    border-color 180ms ease,
+    background 180ms ease,
+    box-shadow 180ms ease,
+    color 180ms ease;
 }
 
 @media (hover: hover) {
-  .tab:hover .node {
+  .tab:not([aria-selected="true"]):hover .node {
     border-color: var(--cyber-accent);
     background: #192a44;
+  }
+
+  .technologies li:hover {
+    border-color: rgba(140, 180, 255, 0.42);
+    background: rgba(74, 144, 245, 0.07);
+    color: #edf4ff;
+
+    box-shadow:
+      0 0 10px rgba(74, 144, 245, 0.10),
+      0 4px 12px rgba(0, 0, 0, 0.18);
   }
 }
 

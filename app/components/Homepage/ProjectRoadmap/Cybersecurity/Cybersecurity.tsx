@@ -8,12 +8,11 @@ import styles from "./Cybersecurity.module.css";
 type CybersecurityProps = {
   lang?: CybersecurityLanguage;
   phase?: ChapterPhase;
-  introRef?: Ref<HTMLElement>;
   stageRef?: Ref<HTMLDivElement>;
   onBack?: () => void;
 };
 
-export default function Cybersecurity({ lang = "fr", phase, introRef, stageRef, onBack }: CybersecurityProps) {
+export default function Cybersecurity({ lang = "fr", phase, stageRef, onBack }: CybersecurityProps) {
   const content = cybersecurityData[lang];
   const [activeId, setActiveId] = useState(content.experiences[0].id);
   const [hasNavigated, setHasNavigated] = useState(false);
@@ -41,13 +40,7 @@ export default function Cybersecurity({ lang = "fr", phase, introRef, stageRef, 
   }
 
   return (
-    <section className={`${styles.root} ${phase ? styles.chapter : ""}`} data-phase={phase} aria-labelledby={`${prefix}-title`}>
-      <header ref={introRef} className={styles.header} aria-hidden={phase === "centering" || phase === "isolating" || phase === "charging"}>
-        <span className={styles.eyebrow}>Infrastructure / Security / Automation</span>
-        <h2 id={`${prefix}-title`}>{content.title}</h2>
-        <p>{content.intro}</p>
-      </header>
-
+    <section className={`${styles.root} ${phase ? styles.chapter : ""}`} data-phase={phase} aria-label={content.title}>
       <div ref={stageRef} className={styles.stage} inert={!!phase && phase !== "ready"} aria-hidden={!!phase && !["revealing", "ready"].includes(phase)}>
       <div className={styles.tabs} role="tablist" aria-label={content.navigation}>
         {content.experiences.map((experience, index) => (

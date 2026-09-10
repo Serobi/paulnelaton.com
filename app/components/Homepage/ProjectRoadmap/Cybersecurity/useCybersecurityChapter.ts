@@ -2,7 +2,8 @@
 
 import { useEffect, useRef, useState } from "react";
 
-export type ChapterPhase = "idle" | "centering" | "isolating" | "charging" | "intro" | "travelling" | "revealing" | "ready";
+export type ChapterPhase = "idle" | "centering" | "isolating" | "charging" | "travelling" | "revealing" | "ready";
+export const CHAPTER_CHARGE_MS = 1250;
 
 function centerChapterNode(container: HTMLElement, node: HTMLElement, duration: number, signal: AbortSignal) {
   const containerRect = container.getBoundingClientRect();
@@ -67,7 +68,6 @@ function scrollToComposition(element: HTMLElement, center: boolean, duration: nu
 
 export function useCybersecurityChapter() {
   const [phase, setPhase] = useState<ChapterPhase>("idle");
-  const introRef = useRef<HTMLElement | null>(null);
   const stageRef = useRef<HTMLDivElement | null>(null);
   const controller = useRef<AbortController | null>(null);
 
@@ -102,11 +102,7 @@ export function useCybersecurityChapter() {
       setPhase("isolating");
       await wait(reduced ? 0 : 380, run.signal);
       setPhase("charging");
-      await wait(reduced ? 0 : 1250, run.signal);
-      setPhase("intro");
-      await wait(32, run.signal); // Allow React to commit the intro before measuring it.
-      if (introRef.current && !reduced) await scrollToComposition(introRef.current, true, 700, run.signal);
-      await wait(reduced ? 0 : 850, run.signal);
+      await wait(reduced ? 0 : CHAPTER_CHARGE_MS, run.signal);
       setPhase("travelling");
       if (stageRef.current) await scrollToComposition(stageRef.current, true, reduced ? 0 : 850, run.signal);
       setPhase("revealing");
@@ -125,5 +121,5 @@ export function useCybersecurityChapter() {
     setPhase("idle");
   }
 
-  return { phase, introRef, stageRef, open, reset };
+  return { phase, stageRef, open, reset };
 }
