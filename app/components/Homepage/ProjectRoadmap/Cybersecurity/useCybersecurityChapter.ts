@@ -5,29 +5,6 @@ import { useEffect, useRef, useState } from "react";
 export type ChapterPhase = "idle" | "centering" | "isolating" | "charging" | "travelling" | "revealing" | "ready";
 export const CHAPTER_CHARGE_MS = 1250;
 
-function centerChapterNode(container: HTMLElement, node: HTMLElement, duration: number, signal: AbortSignal) {
-  const containerRect = container.getBoundingClientRect();
-  const nodeRect = node.getBoundingClientRect();
-  const start = container.scrollLeft;
-  const target = Math.max(0, Math.min(container.scrollWidth - container.clientWidth,
-    start + nodeRect.left + nodeRect.width / 2 - containerRect.left - containerRect.width / 2));
-  return new Promise<void>((resolve, reject) => {
-    let frame = 0;
-    const started = performance.now();
-    const cancel = () => { cancelAnimationFrame(frame); reject(signal.reason); };
-    const tick = (now: number) => {
-      const progress = duration === 0 ? 1 : Math.min(1, (now - started) / duration);
-      const eased = progress * progress * (3 - 2 * progress);
-      container.scrollTo({ left: start + (target - start) * eased, behavior: "instant" });
-      if (progress < 1) frame = requestAnimationFrame(tick);
-      else { signal.removeEventListener("abort", cancel); resolve(); }
-    };
-    signal.addEventListener("abort", cancel, { once: true });
-    if (signal.aborted) cancel();
-    else frame = requestAnimationFrame(tick);
-  });
-}
-
 // Each phase awaits its own completion; aborting also cancels pending animation frames.
 function wait(duration: number, signal: AbortSignal): Promise<void> {
   return new Promise((resolve, reject) => {
@@ -91,16 +68,12 @@ export function useCybersecurityChapter() {
     };
   }, [phase]);
 
-  async function open(container: HTMLElement, node: HTMLElement) {
+  async function open() {
     if (controller.current || phase !== "idle") return;
     const run = new AbortController();
     controller.current = run;
     const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     try {
-      setPhase("centering");
-      await centerChapterNode(container, node, reduced ? 0 : 450, run.signal);
-      setPhase("isolating");
-      await wait(reduced ? 0 : 380, run.signal);
       setPhase("charging");
       await wait(reduced ? 0 : CHAPTER_CHARGE_MS, run.signal);
       setPhase("travelling");

@@ -1,50 +1,67 @@
-.roadmapPage[data-chapter]:not([data-chapter="idle"]):not([data-chapter="centering"]):not([data-chapter="ready"]) .stepNode:not([data-cyber="true"]),
-.roadmapPage[data-chapter]:not([data-chapter="idle"]):not([data-chapter="centering"]):not([data-chapter="ready"]) .mainLine,
-.roadmapPage[data-chapter]:not([data-chapter="idle"]):not([data-chapter="centering"]):not([data-chapter="ready"]) .timelineSection::before,
-.roadmapPage[data-chapter]:not([data-chapter="idle"]):not([data-chapter="centering"]):not([data-chapter="ready"])>.header {
+.roadmapPage[data-selection]:not([data-selection="idle"]) .nodeSlot:not([data-active="true"]),
+.roadmapPage[data-selection]:not([data-selection="idle"]) .mainLine,
+.roadmapPage[data-selection]:not([data-selection="idle"]) .timelineSection::before,
+.roadmapPage[data-selection]:not([data-selection="idle"])>.header {
   opacity: 0;
   pointer-events: none;
 }
 
-.roadmapPage[data-chapter]:not([data-chapter="idle"]):not([data-chapter="ready"]) .timelineContainer {
-  overflow-x: hidden;
-  cursor: default;
+.nodeSlot {
+  position: relative;
+  /* Keep every node above the line when opacity creates a stacking context. */
+  z-index: 2;
+  flex: 0 0 25%;
+  min-width: 0;
+  display: flex;
+  justify-content: center;
+  transition: opacity 380ms ease, transform 450ms cubic-bezier(.33, 0, .67, 1);
+}
+
+.nodeSlot[data-active="true"] {
+  z-index: 3;
+}
+
+.roadmapPage[data-selection="centering"] .nodeSlot[data-active="true"],
+.roadmapPage[data-selection="opening"] .nodeSlot[data-active="true"] {
+  transform: translateX(var(--node-offset, 0px));
+}
+
+.roadmapPage[data-selection="isolating"] .stepNode.selected .nodeCircle,
+.roadmapPage[data-selection="centering"] .stepNode.selected .nodeCircle {
+  animation: none;
+}
+
+.mainLine {
+  transition:
+    opacity 120ms ease,
+    transform 300ms ease;
+}
+
+.roadmapPage[data-selection="idle"] .mainLine {
+  transition-delay: 150ms, 0ms;
 }
 
 .roadmapPage .stepNode,
-.roadmapPage .mainLine,
 .roadmapPage>.header {
   transition: opacity 380ms ease, transform 300ms ease;
 }
 
-.roadmapPage[data-chapter="centering"]
-.stepNode[data-cyber="true"] .nodeCircle,
-.roadmapPage[data-chapter="isolating"]
-.stepNode[data-cyber="true"] .nodeCircle,
-.roadmapPage[data-chapter="intro"]
-.stepNode[data-cyber="true"] .nodeCircle,
-.roadmapPage[data-chapter="travelling"]
-.stepNode[data-cyber="true"] .nodeCircle,
-.roadmapPage[data-chapter="revealing"]
-.stepNode[data-cyber="true"] .nodeCircle {
+.roadmapPage[data-chapter="centering"] .stepNode[data-cyber="true"] .nodeCircle,
+.roadmapPage[data-chapter="isolating"] .stepNode[data-cyber="true"] .nodeCircle,
+.roadmapPage[data-chapter="travelling"] .stepNode[data-cyber="true"] .nodeCircle,
+.roadmapPage[data-chapter="revealing"] .stepNode[data-cyber="true"] .nodeCircle {
   animation: none;
 }
 
-.roadmapPage[data-chapter="charging"]
-.stepNode[data-cyber="true"]
-.nodeCircle {
+.roadmapPage[data-chapter="charging"] .stepNode[data-cyber="true"] .nodeCircle {
   transform: scale(1.2);
 }
 
-.roadmapPage[data-chapter="charging"]
-.stepNode[data-cyber="true"]
-.nodeCircle::before {
+.roadmapPage[data-chapter="charging"] .stepNode[data-cyber="true"] .nodeCircle::before {
   content: none;
 }
 
-.roadmapPage[data-chapter="charging"]
-.stepNode[data-cyber="true"]
-.nodeCircle::after {
+.roadmapPage[data-chapter="charging"] .stepNode[data-cyber="true"] .nodeCircle::after {
   content: "";
   position: absolute;
   inset: -3px;
@@ -61,22 +78,18 @@
   animation: chapterPulse 1250ms ease-out both;
 }
 
-.roadmapPage[data-chapter="charging"]
-.stepNode[data-cyber="true"] {
+.roadmapPage[data-chapter="charging"] .stepNode[data-cyber="true"] {
   animation: chapterNodeExit 1250ms ease both;
 }
 
-.roadmapPage[data-chapter="intro"]
-.stepNode[data-cyber="true"],
-.roadmapPage[data-chapter="travelling"]
-.stepNode[data-cyber="true"],
-.roadmapPage[data-chapter="revealing"]
-.stepNode[data-cyber="true"] {
+.roadmapPage[data-chapter="travelling"] .stepNode[data-cyber="true"],
+.roadmapPage[data-chapter="revealing"] .stepNode[data-cyber="true"] {
   opacity: 0;
   pointer-events: none;
 }
 
 @keyframes chapterNodeExit {
+
   0%,
   82% {
     opacity: 1;
@@ -157,8 +170,8 @@
 }
 
 .timelineContainer {
-  --node-width: 140px;
-  --node-radius: 70px;
+
+
 
   position: relative;
   container-type: inline-size;
@@ -166,17 +179,17 @@
   width: 100%;
   padding: 100px 0;
 
-  overflow-x: auto;
-  overflow-y: hidden;
+  overflow: clip;
 
-  scrollbar-width: none;
-  -webkit-overflow-scrolling: touch;
-  overscroll-behavior-x: contain;
+
+
+
+
 
   border: 1px solid transparent;
   border-radius: 40px;
 
-  cursor: grab;
+
   user-select: none;
   -webkit-user-select: none;
 }
@@ -216,35 +229,10 @@
     inset 0 1px 0 rgba(255, 255, 255, 0.05),
     inset 0 0 55px rgba(62, 103, 214, 0.035);
 
-  cursor: grab;
+
 
   user-select: none;
   -webkit-user-select: none;
-}
-
-.timelineContainer::-webkit-scrollbar {
-  display: none;
-}
-
-.scrollTrack {
-  --scroll-space: max(24px,
-      calc(50cqw - var(--node-radius)));
-
-  position: relative;
-
-  display: flex;
-  align-items: center;
-
-  width: max-content;
-  min-width: 100%;
-}
-
-.scrollTrack::before,
-.scrollTrack::after {
-  content: "";
-
-  flex: 0 0 var(--scroll-space);
-  width: var(--scroll-space);
 }
 
 .stepsWrapper {
@@ -256,8 +244,8 @@
   align-items: center;
   justify-content: space-between;
 
-  flex: 0 0 max(100cqw, 700px);
-  width: max(100cqw, 700px);
+
+  width: 100%;
   height: 100%;
 }
 
@@ -266,8 +254,8 @@
   z-index: 1;
 
   top: 50%;
-  left: 70px;
-  right: 70px;
+  left: 12.5%;
+  right: 12.5%;
 
   height: 2px;
 
@@ -339,12 +327,12 @@
   position: relative;
 
   display: flex;
-  flex: 0 0 var(--node-width);
+
   flex-direction: column;
   align-items: center;
   justify-content: center;
 
-  width: var(--node-width);
+  width: 100%;
   height: 100%;
 
   cursor: pointer;
@@ -399,7 +387,7 @@
   position: absolute;
   top: 70px;
   text-align: center;
-  width: 160px;
+  width: min(100%, 160px);
   pointer-events: none;
 }
 
@@ -583,19 +571,7 @@
   user-select: none;
   -webkit-user-select: none;
 
-  scrollbar-width: none;
-}
 
-.milestoneList::-webkit-scrollbar {
-  display: none;
-}
-
-.milestoneList.dragging {
-  cursor: grabbing;
-}
-
-.milestoneList.dragging .milestoneItem {
-  pointer-events: none;
 }
 
 .contentGlow {
@@ -895,8 +871,8 @@
   .timelineContainer {
     padding: 64px 0;
     border-radius: 24px;
-    touch-action: auto;
-    scroll-snap-type: x proximity;
+    touch-action: pan-y pinch-zoom;
+
   }
 
   .timelineContainer,
@@ -908,7 +884,7 @@
   .stepNode {
 
     --node-size: clamp(45px, 10vw, 60px);
-    scroll-snap-align: center;
+
   }
 
   .nodeCircle {
@@ -919,7 +895,7 @@
 
   .stepInfo {
     top: calc(var(--node-size) + clamp(14px, 3vw, 28px));
-    width: clamp(110px, 6vw, 160px);
+    width: calc(100% - 4px);
   }
 
   .nodeNumber {
@@ -929,11 +905,11 @@
   }
 
   .stepTitle {
-    font-size: clamp(10px, 2vw, 15px);
-    letter-spacing: 0.8px;
-    white-space: nowrap;
+    font-size: clamp(9px, 2.3vw, 13px);
+    letter-spacing: 0.2px;
+    white-space: normal;
     overflow: hidden;
-    text-overflow: ellipsis;
+    overflow-wrap: anywhere;
   }
 
   .stepDate {

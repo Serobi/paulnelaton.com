@@ -8,6 +8,7 @@ export type ProjectRoadmapContentItem = {
 };
 
 export type ProjectRoadmapNode = {
+  id: "cybersecurity" | "independent" | "brain-eaters" | "maty" | "next";
   label: string;
   dates: string;
   state: ProjectRoadmapState;
@@ -36,6 +37,7 @@ export const projectRoadmapData: Record<
     },
     nodes: [
       {
+        id: "cybersecurity",
         label: "Cybersécurité",
         dates: "2015 - 2021",
         state: "completed",
@@ -70,6 +72,7 @@ export const projectRoadmapData: Record<
         ],
       },
       {
+        id: "independent",
         label: "Indépendant",
         dates: "2021 - 2024",
         state: "completed",
@@ -100,6 +103,7 @@ export const projectRoadmapData: Record<
         ],
       },
       {
+        id: "brain-eaters",
         label: "Brain Eaters",
         dates: "2024 - 2026",
         state: "completed",
@@ -134,6 +138,7 @@ export const projectRoadmapData: Record<
         ],
       },
       {
+        id: "maty",
         label: "Maty",
         dates: "2026",
         state: "completed",
@@ -172,6 +177,7 @@ export const projectRoadmapData: Record<
         ],
       },
       {
+        id: "next",
         label: "Votre projet",
         dates: "Aujourd'hui",
         state: "next",
@@ -213,6 +219,7 @@ export const projectRoadmapData: Record<
     },
     nodes: [
       {
+        id: "cybersecurity",
         label: "Cybersecurity",
         dates: "2015 - 2021",
         state: "completed",
@@ -247,6 +254,7 @@ export const projectRoadmapData: Record<
         ],
       },
       {
+        id: "independent",
         label: "Independent",
         dates: "2021 - 2024",
         state: "completed",
@@ -277,6 +285,7 @@ export const projectRoadmapData: Record<
         ],
       },
       {
+        id: "brain-eaters",
         label: "Brain Eaters",
         dates: "2024 - 2026",
         state: "completed",
@@ -311,6 +320,7 @@ export const projectRoadmapData: Record<
         ],
       },
       {
+        id: "maty",
         label: "Maty",
         dates: "2026",
         state: "completed",
@@ -349,6 +359,7 @@ export const projectRoadmapData: Record<
         ],
       },
       {
+        id: "next",
         label: "Your project",
         dates: "Now",
         state: "next",
