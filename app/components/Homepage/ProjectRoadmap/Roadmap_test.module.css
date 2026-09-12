@@ -46,22 +46,22 @@
   transition: opacity 380ms ease, transform 300ms ease;
 }
 
-.roadmapPage[data-chapter="centering"] .stepNode[data-cyber="true"] .nodeCircle,
-.roadmapPage[data-chapter="isolating"] .stepNode[data-cyber="true"] .nodeCircle,
-.roadmapPage[data-chapter="travelling"] .stepNode[data-cyber="true"] .nodeCircle,
-.roadmapPage[data-chapter="revealing"] .stepNode[data-cyber="true"] .nodeCircle {
+.roadmapPage[data-chapter="centering"] .stepNode[data-chapter-node="true"] .nodeCircle,
+.roadmapPage[data-chapter="isolating"] .stepNode[data-chapter-node="true"] .nodeCircle,
+.roadmapPage[data-chapter="travelling"] .stepNode[data-chapter-node="true"] .nodeCircle,
+.roadmapPage[data-chapter="revealing"] .stepNode[data-chapter-node="true"] .nodeCircle {
   animation: none;
 }
 
-.roadmapPage[data-chapter="charging"] .stepNode[data-cyber="true"] .nodeCircle {
+.roadmapPage[data-chapter="charging"] .stepNode[data-chapter-node="true"] .nodeCircle {
   transform: scale(1.2);
 }
 
-.roadmapPage[data-chapter="charging"] .stepNode[data-cyber="true"] .nodeCircle::before {
+.roadmapPage[data-chapter="charging"] .stepNode[data-chapter-node="true"] .nodeCircle::before {
   content: none;
 }
 
-.roadmapPage[data-chapter="charging"] .stepNode[data-cyber="true"] .nodeCircle::after {
+.roadmapPage[data-chapter="charging"] .stepNode[data-chapter-node="true"] .nodeCircle::after {
   content: "";
   position: absolute;
   inset: -3px;
@@ -78,12 +78,12 @@
   animation: chapterPulse 1250ms ease-out both;
 }
 
-.roadmapPage[data-chapter="charging"] .stepNode[data-cyber="true"] {
+.roadmapPage[data-chapter="charging"] .stepNode[data-chapter-node="true"] {
   animation: chapterNodeExit 1250ms ease both;
 }
 
-.roadmapPage[data-chapter="travelling"] .stepNode[data-cyber="true"],
-.roadmapPage[data-chapter="revealing"] .stepNode[data-cyber="true"] {
+.roadmapPage[data-chapter="travelling"] .stepNode[data-chapter-node="true"],
+.roadmapPage[data-chapter="revealing"] .stepNode[data-chapter-node="true"] {
   opacity: 0;
   pointer-events: none;
 }

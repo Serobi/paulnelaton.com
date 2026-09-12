@@ -5,6 +5,7 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import { projectRoadmapData, type ProjectRoadmapNode, type ProjectRoadmapState } from "@/data/projectroadmap.data";
 import styles from "./Roadmap_test.module.css";
 import Cybersecurity from "./Cybersecurity/Cybersecurity";
+import BrainEaters from "./BrainEaters/BrainEaters";
 import { CHAPTER_CHARGE_MS, useCybersecurityChapter } from "./Cybersecurity/useCybersecurityChapter";
 import { useRoadmapSelection } from "./useRoadmapSelection";
 
@@ -13,6 +14,7 @@ type StepId = ProjectRoadmapNode["id"];
 export default function RoadmapTest() {
   const { lang } = useLanguage();
   const chapter = useCybersecurityChapter();
+  const brainChapter = useCybersecurityChapter();
   const selection = useRoadmapSelection();
   const roadmap = projectRoadmapData[lang];
   const steps = roadmap.nodes.filter((step) => step.id !== "independent");
@@ -25,12 +27,14 @@ export default function RoadmapTest() {
   const clickTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const selectionBusy = selection.phase !== "idle";
   const chapterAnimating = chapter.phase !== "idle" && chapter.phase !== "ready";
-  const busy = selectionBusy || chapterAnimating;
+  const busy = selectionBusy || chapterAnimating || (brainChapter.phase !== "idle" && brainChapter.phase !== "ready");
   const currentStepIndex = steps.findIndex((step) => step.state === "next");
   const progress = currentStepIndex < 0 ? 0 : currentStepIndex / (steps.length - 1) * 100;
   const renderedStep = steps.find((step) => step.id === renderedId);
   const cyberVisible = activeStepId === "cybersecurity" && (selectionBusy || chapter.phase !== "idle");
   const cyberPhase = chapter.phase !== "idle" ? chapter.phase : selection.phase === "centering" ? "centering" : "isolating";
+  const brainVisible = activeStepId === "brain-eaters" && (selectionBusy || brainChapter.phase !== "idle");
+  const activeChapter = activeStepId === "brain-eaters" ? brainChapter : chapter;
 
   useEffect(() => () => {
     if (clickTimerRef.current) clearTimeout(clickTimerRef.current);
@@ -39,6 +43,8 @@ export default function RoadmapTest() {
   function returnToRoadmap() {
     selection.reset();
     chapter.reset();
+    brainChapter.reset();
+    setRenderedId(null);
     const node = nodeRefs.current[activeStepId];
     node?.focus({ preventScroll: true });
     timelineRef.current?.scrollIntoView({ block: "center", behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "instant" : "smooth" });
@@ -46,6 +52,10 @@ export default function RoadmapTest() {
 
   function handleStepClick(stepId: StepId) {
     if (busy) return;
+    if (stepId === "brain-eaters" && brainChapter.phase === "ready") {
+      brainChapter.stageRef.current?.scrollIntoView({ block: "start", behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "instant" : "smooth" });
+      return;
+    }
     if (stepId === "cybersecurity" && chapter.phase === "ready") {
       chapter.stageRef.current?.scrollIntoView({ block: "start", behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "instant" : "smooth" });
       return;
@@ -54,6 +64,7 @@ export default function RoadmapTest() {
     const slot = slotRefs.current[stepId];
     if (!container || !slot) return;
     chapter.reset();
+    brainChapter.reset();
     setActiveStepId(stepId);
     setRenderedId(null);
     setClickedId(null);
@@ -61,6 +72,8 @@ export default function RoadmapTest() {
     void selection.open(container, slot, async () => {
       if (stepId === "cybersecurity") {
         await chapter.open();
+      } else if (stepId === "brain-eaters") {
+        await brainChapter.open();
       } else {
         setRenderedId(stepId);
         setClickedId(stepId);
@@ -70,7 +83,7 @@ export default function RoadmapTest() {
   }
 
   return (
-    <section className={styles.roadmapPage} data-chapter={chapter.phase}
+    <section className={styles.roadmapPage} data-chapter={activeChapter.phase}
       data-selection={selection.phase}
       style={{ "--chapter-charge-duration": `${CHAPTER_CHARGE_MS}ms`, "--node-offset": `${selection.offset}px` } as CSSProperties}
       aria-labelledby="project-roadmap-title">
@@ -98,7 +111,7 @@ export default function RoadmapTest() {
                   ref={(element) => { slotRefs.current[step.id] = element; }}>
                   <button type="button" className={stepClassName}
                     ref={(element) => { nodeRefs.current[step.id] = element; }}
-                    data-cyber={step.id === "cybersecurity" ? "true" : undefined}
+                    data-chapter-node={isSelected && (step.id === "cybersecurity" || step.id === "brain-eaters") ? "true" : undefined}
                     tabIndex={busy ? -1 : 0} aria-hidden={busy && !isSelected ? true : undefined}
                     aria-pressed={isSelected} aria-label={`${roadmap.openStepLabel} ${step.label}`}
                     onClick={() => handleStepClick(step.id)}>
@@ -118,7 +131,8 @@ export default function RoadmapTest() {
         </div>
       </div>
       {cyberVisible && <Cybersecurity lang={lang} phase={cyberPhase} stageRef={chapter.stageRef} onBack={returnToRoadmap} />}
-      {renderedStep && <article
+      {brainVisible && <BrainEaters lang={lang} stageRef={brainChapter.stageRef} phase={brainChapter.phase} onBack={returnToRoadmap} />}
+      {renderedStep && renderedId !== "brain-eaters" && <article
         key={renderedStep.id}
         className={[
           styles.contentSection,

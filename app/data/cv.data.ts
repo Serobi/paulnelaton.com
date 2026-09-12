@@ -68,41 +68,41 @@ export const CVData = {
       ],
 
       experience: [
-        {
-          period: "04/2026 - 07/2026",
-          company: "Maty",
-          role: "Développeur Full-Stack C# .NET",
-          desc: [
-            "Développement d'applications métier de bout en bout : analyse, conception, développement, recette et mise en production.",
-            "Conception et développement d'applications .NET, APIs REST, services métier et interfaces web.",
-            "Développement de flux d'intégration et d'automatisation entre plusieurs applications de l'écosystème.",
-            "Intervention sur des environnements SQL Server et DB2, avec optimisation des traitements et requêtes.",
-            "Participation au maintien et à l'évolution d'applications existantes en environnement de production.",
-          ],
-        },
-        {
-          period: "05/2024 - 04/2026",
-          company: "Projets Indépendants",
-          role: "Ingénieur Logiciel",
-          desc: [
-            "Conception et développement de projets logiciels en C#/.NET, React, Next.js et Node.js.",
-            "Conception d'architectures modulaires et développement de systèmes complexes.",
-            "Développement d'APIs, intégration de services et automatisation.",
-            "Gestion autonome du cycle de vie des projets, de la conception jusqu'au déploiement.",
-            "Projets : braineatersgame.com • paulnelaton.com",
-          ],
-        },
-        {
-          period: "09/2021 - 04/2024",
-          company: "Formation continue",
-          role: "Développement logiciel & Technologies Web",
-          desc: [
-            "Formation continue en développement logiciel et technologies web modernes.",
-            "Approfondissement de C#, JavaScript / TypeScript, React et Node.js.",
-            "Conception et développement de projets personnels.",
-            "Développement continu des compétences en automatisation et conception logicielle.",
-          ],
-        },
+        // {
+        //   period: "04/2026 - 07/2026",
+        //   company: "Maty",
+        //   role: "Développeur Full-Stack C# .NET",
+        //   desc: [
+        //     "Développement d'applications métier de bout en bout : analyse, conception, développement, recette et mise en production.",
+        //     "Conception et développement d'applications .NET, APIs REST, services métier et interfaces web.",
+        //     "Développement de flux d'intégration et d'automatisation entre plusieurs applications de l'écosystème.",
+        //     "Intervention sur des environnements SQL Server et DB2, avec optimisation des traitements et requêtes.",
+        //     "Participation au maintien et à l'évolution d'applications existantes en environnement de production.",
+        //   ],
+        // },
+        // {
+        //   period: "05/2024 - 04/2026",
+        //   company: "Projets Indépendants",
+        //   role: "Ingénieur Logiciel",
+        //   desc: [
+        //     "Conception et développement de projets logiciels en C#/.NET, React, Next.js et Node.js.",
+        //     "Conception d'architectures modulaires et développement de systèmes complexes.",
+        //     "Développement d'APIs, intégration de services et automatisation.",
+        //     "Gestion autonome du cycle de vie des projets, de la conception jusqu'au déploiement.",
+        //     "Projets : braineatersgame.com • paulnelaton.com",
+        //   ],
+        // },
+        // {
+        //   period: "09/2021 - 04/2024",
+        //   company: "Formation continue",
+        //   role: "Développement logiciel & Technologies Web",
+        //   desc: [
+        //     "Formation continue en développement logiciel et technologies web modernes.",
+        //     "Approfondissement de C#, JavaScript / TypeScript, React et Node.js.",
+        //     "Conception et développement de projets personnels.",
+        //     "Développement continu des compétences en automatisation et conception logicielle.",
+        //   ],
+        // },
         {
           period: "11/2019 - 06/2021",
           company: "Vinci Autoroutes",
