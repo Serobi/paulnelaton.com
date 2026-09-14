@@ -14,7 +14,19 @@ export function Header({ identity }: HeaderProps) {
         <h1 className={styles.name}>{identity.name}</h1>
         <h2 className={styles.role}>{identity.role}</h2>
         <p className={styles.target}>{identity.mobility}</p>
+
         <p className={styles.summary}>{identity.summary}</p>
+
+        <p className={styles.portfolio}>
+          Portfolio :{" "}
+          <a
+            href={`https://${identity.contact.website}`}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {identity.contact.website}
+          </a>
+        </p>
       </div>
 
       <div className={styles.rightHeader}>
@@ -26,15 +38,6 @@ export function Header({ identity }: HeaderProps) {
           />
           <span>{identity.contact.email}</span>
           <span>{identity.contact.phone}</span>
-          <span>
-            <a
-              href={`https://${identity.contact.website}`}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              {identity.contact.website}
-            </a>
-          </span>
         </div>
       </div>
     </header>

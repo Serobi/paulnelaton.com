@@ -6,7 +6,7 @@
 }
 
 .root {
-  --be-accent: #c9b183;
+  --be-accent: #d8c49a;
   width: min(95%, 1100px);
   margin: 0 auto;
   padding-bottom: 12vh;
@@ -197,22 +197,21 @@
   border-radius: 5px;
   background: #8296b405;
   color: #8f9fb5;
-  transition: color 220ms ease, border-color 220ms ease, background 220ms ease, transform 220ms ease;
+  transition: color 220ms ease, border-color 220ms ease, background 220ms ease;
   font: .6rem/1.6 var(--font-mono, monospace);
 }
 
 .navigation {
   display: flex;
   flex-direction: column;
-  gap: 8px;
-  padding: 4px 0 0 22px;
-  border-left: 1px solid #ffffff0b;
-  min-width: 0;
-  align-self: stretch;
+  gap: 10px;
+  padding: 4px 0 4px 22px;
+  border-left: 1px solid rgba(255, 255, 255, .06);
+  
 }
 
 .navHeading {
-  margin: 0 0 20px;
+  margin: 0 0 6px;
   color: #8291a7;
   text-transform: uppercase;
   letter-spacing: .1em;
@@ -220,25 +219,24 @@
 }
 
 .navItem {
-  display: block;
-  width: 100%;
   position: relative;
-  flex: 1;
-  max-height: 105px;
-  padding: 16px 12px 16px 16px;
-  border-radius: 8px;
-  border: 0;
+  width: 100%;
+  padding: 16px 14px 16px 18px;
+
   border: 1px solid transparent;
+  border-radius: 9px;
+
   background: transparent;
   text-align: left;
-  font: inherit;
-  cursor: pointer;
-  color: #a8b6c9;
-  transition: background 230ms ease, border-color 230ms ease, color 230ms ease;
+
+  transition:
+    background-color .22s ease,
+    border-color .22s ease,
 }
 
 .navTitle {
   display: block;
+  color: #aeb9c9;
   font-size: .82rem;
   font-weight: 500;
   line-height: 1.4;
@@ -254,17 +252,49 @@
   transition: color 230ms ease;
 }
 
+.navCopy {
+  display: block;
+  transition:
+    transform 230ms cubic-bezier(.22, .7, .25, 1);
+}
+
 .navItem[aria-pressed="true"] {
-  border-color: #c9b18318;
-  background-color: #c9b18309;
+  background: rgba(201, 177, 131, .035);
+  border-color: rgba(201, 177, 131, .09);
+  cursor: default;
+}
+
+.navItem[aria-pressed="true"] .navCopy {
+  transform: translateX(3px);
 }
 
 .navItem[aria-pressed="true"] .navTitle {
   color: var(--be-accent);
 }
 
-.navItem:hover .navTitle {
-  color: #edf2fc;
+.navItem[aria-pressed="true"] .navDetail {
+  color: #a3977f;
+}
+
+.navItem::before {
+  content: "";
+  position: absolute;
+
+  left: 0;
+  top: 20%;
+  bottom: 20%;
+
+  width: 2px;
+  border-radius: 99px;
+
+  background: var(--be-accent);
+  opacity: 0;
+
+  transition: opacity .22s ease;
+}
+
+.navItem[aria-pressed="true"]::before {
+  opacity: .9;
 }
 
 .root button:focus-visible {
@@ -283,12 +313,7 @@
   font: inherit;
   font-size: .8rem;
   cursor: pointer;
-}
-
-.back:hover {
-  color: #edf2fc;
-  border-color: #819fc326;
-  background: #819fc305;
+  transition: color 220ms ease, border-color 220ms ease, background 220ms ease;
 }
 
 @media (max-width: 900px) {
@@ -363,56 +388,8 @@
   .navDetail {
     font-size: .6rem;
   }
-}
 
-.navCopy {
-  display: block;
-  transition: transform 230ms cubic-bezier(.22, .7, .25, 1);
-}
-
-.navItem::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 22%;
-  bottom: 22%;
-  width: 2px;
-  border-radius: 2px;
-  background: var(--be-accent);
-  opacity: 0;
-  transition: opacity 230ms ease;
-}
-
-.navItem[aria-pressed="true"]::before {
-  opacity: .8;
-}
-
-.navItem[aria-pressed="true"] .navDetail {
-  color: #a3977f;
-}
-
-.back {
-  transition: color 220ms ease, border-color 220ms ease, background 220ms ease;
-}
-
-@media (hover: hover) {
-  .navItem:hover {
-    background-color: #94a9c307;
-  }
-
-  .navItem:hover .navCopy {
-    transform: translateX(3px);
-  }
-
-  .metadata li:hover {
-    color: var(--be-accent);
-    border-color: #c9b18335;
-    background: #c9b18309;
-  }
-}
-
-@media (max-width: 560px) {
-  .visualTile {
+    .visualTile {
     width: min(100%, 180px);
   }
 
@@ -423,6 +400,37 @@
   .navItem {
     max-height: none;
     padding-left: 12px;
+  }
+}
+
+@media (hover: hover) {
+  .navItem:not([aria-pressed="true"]):hover {
+    background: rgba(255, 255, 255, .025);
+    border-color: rgba(255, 255, 255, .05);
+  }
+
+  .navItem:not([aria-pressed="true"]):hover .navCopy {
+    transform: translateX(3px);
+  }
+
+  .navItem:not([aria-pressed="true"]):hover .navTitle {
+    color: #f4f7fb;
+  }
+
+  .navItem:not([aria-pressed="true"]) {
+  cursor: pointer;
+}
+
+  .metadata li:hover {
+    color: var(--be-accent);
+    border-color: #c9b18335;
+    background: #c9b18309;
+  }
+
+  .back:hover {
+    color: #edf2fc;
+    border-color: #819fc326;
+    background: #819fc305;
   }
 }
 

@@ -66,6 +66,19 @@
   gap: 0.5px;
 }
 
+.portfolio {
+  margin: 6px 0 0;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.portfolio a {
+  color: inherit;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
 @media (max-width: 680px) {
   .header {
     padding: 20px 20px;
@@ -93,6 +106,10 @@
   .profilePic {
     width: clamp(80px, 20vw, 130px);
     height: clamp(80px, 20vw, 130px);
+  }
+
+  .portfolio {
+    font-size: clamp(0.5rem, 2.5vw, 0.85rem);
   }
 }
 
