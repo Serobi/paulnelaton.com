@@ -155,6 +155,7 @@ export const CVData = {
         {
           year: "2017",
           title: "Certification Zscaler ZCCP-IA",
+          school: "",
         },
         {
           year: "2016",
@@ -537,6 +538,7 @@ export const CVData = {
         {
           year: "2017",
           title: "Zscaler ZCCP-IA Certification",
+          school: "",
         },
         {
           year: "2016",
