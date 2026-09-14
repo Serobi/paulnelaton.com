@@ -6,7 +6,7 @@ export const CVData = {
         role: "Ingénieur Cybersécurité / DevSecOps",
         mobility: "Mobilité Montpellier / Lyon / Suisse / Luxembourg",
         summary:
-          "Ingénieur cybersécurité spécialisé en SecOps, expérimenté dans la sécurisation d'infrastructures critiques et l'industrialisation des opérations de sécurité. Associant cybersécurité, automatisation et développement logiciel pour améliorer l'efficacité opérationnelle.",
+          "Ingénieur sécurité opérationnelle et DevSecOps, expérimenté en infrastructures critiques, automatisation et développement logiciel.",
         contact: {
           email: "paul.nelaton@gmail.com",
           phone: "+33 6 85 58 93 64",
@@ -29,12 +29,15 @@ export const CVData = {
             "Qualys",
             "Alsid",
             "Varonis",
+            "PAM",
             "CyberArk",
             "ELK",
             "EDR",
             "Détection menaces",
             "Réponse incidents",
             "Durcissement systèmes",
+            "Patch Management",
+            "SOC",
             "Firewalls",
             "Proxy",
           ],
@@ -49,7 +52,7 @@ export const CVData = {
             "IAM",
             "SCCM",
             "Haute disponibilité",
-            "Patching",
+            "Supervision",
           ],
         },
         {
@@ -59,50 +62,31 @@ export const CVData = {
             "PowerShell",
             "Python",
             "Ansible",
+            "Bash",
+            "YAML",
             "REST APIs",
             "Git",
             "CI/CD",
+            "SQL Server",
             "Automatisation & Scripting",
           ],
         },
       ],
 
       experience: [
-        // {
-        //   period: "04/2026 - 07/2026",
-        //   company: "Maty",
-        //   role: "Développeur Full-Stack C# .NET",
-        //   desc: [
-        //     "Développement d'applications métier de bout en bout : analyse, conception, développement, recette et mise en production.",
-        //     "Conception et développement d'applications .NET, APIs REST, services métier et interfaces web.",
-        //     "Développement de flux d'intégration et d'automatisation entre plusieurs applications de l'écosystème.",
-        //     "Intervention sur des environnements SQL Server et DB2, avec optimisation des traitements et requêtes.",
-        //     "Participation au maintien et à l'évolution d'applications existantes en environnement de production.",
-        //   ],
-        // },
-        // {
-        //   period: "05/2024 - 04/2026",
-        //   company: "Projets Indépendants",
-        //   role: "Ingénieur Logiciel",
-        //   desc: [
-        //     "Conception et développement de projets logiciels en C#/.NET, React, Next.js et Node.js.",
-        //     "Conception d'architectures modulaires et développement de systèmes complexes.",
-        //     "Développement d'APIs, intégration de services et automatisation.",
-        //     "Gestion autonome du cycle de vie des projets, de la conception jusqu'au déploiement.",
-        //     "Projets : braineatersgame.com • paulnelaton.com",
-        //   ],
-        // },
-        // {
-        //   period: "09/2021 - 04/2024",
-        //   company: "Formation continue",
-        //   role: "Développement logiciel & Technologies Web",
-        //   desc: [
-        //     "Formation continue en développement logiciel et technologies web modernes.",
-        //     "Approfondissement de C#, JavaScript / TypeScript, React et Node.js.",
-        //     "Conception et développement de projets personnels.",
-        //     "Développement continu des compétences en automatisation et conception logicielle.",
-        //   ],
-        // },
+        {
+          period: "05/2024 - 07/2026",
+          company: "Maty / Brain Eaters",
+          role: "Développeur Full-Stack C# .NET / React",
+          desc: [
+            "Conception et développement d'applications en C#/.NET, React, TypeScript et Node.js.",
+            "Développement d'applications métier, APIs REST et interfaces web responsives, avec une forte attention portée à l'UI/UX.",
+            "Conception d'architectures logicielles, intégration de services et automatisation de traitements.",
+            "Tests unitaires et d'intégration, Git, CI/CD et mise en production.",
+            "Développement SQL Server et DB2, optimisation des traitements et requêtes.",
+            "Projets : braineatersgame.com • paulnelaton.com"
+          ],
+        },
         {
           period: "11/2019 - 06/2021",
           company: "Vinci Autoroutes",
@@ -120,7 +104,7 @@ export const CVData = {
         },
         {
           period: "08/2019 - 10/2019",
-          company: "Cyclad / Amadeus",
+          company: "Cyclad",
           role: "Ingénieur DevOps",
           desc: [
             "Automatisation des contrôles de conformité des équipements réseau et sécurité avec Ansible.",
@@ -169,6 +153,10 @@ export const CVData = {
 
       formations: [
         {
+          year: "2017",
+          title: "Certification Zscaler ZCCP-IA",
+        },
+        {
           year: "2016",
           title: "Administrateur Systèmes, Réseaux et Sécurité",
           school: "AFTI (Orsay)",
@@ -188,7 +176,6 @@ export const CVData = {
       languages: [
         { name: "Français", level: "Langue maternelle" },
         { name: "Anglais", level: "Courant" },
-        { name: "Portugais", level: "Courant" },
       ],
 
       labels: {
@@ -399,9 +386,9 @@ export const CVData = {
       identity: {
         name: "Paul NELATON",
         role: "Cybersecurity Engineer / DevSecOps",
-        mobility: "Mobility Montpellier / Lyon / Switzerland / Luxembourg",
+        mobility: "Open to Montpellier / Lyon / Switzerland / Luxembourg",
         summary:
-          "Cybersecurity Engineer specializing in SecOps, experienced in securing critical infrastructure and industrializing security operations. Combining cybersecurity, automation and software development to improve operational efficiency.",
+          "Security Operations and DevSecOps Engineer experienced in critical infrastructure, automation and software development.",
         contact: {
           email: "paul.nelaton@gmail.com",
           phone: "+33 6 85 58 93 64",
@@ -424,12 +411,15 @@ export const CVData = {
             "Qualys",
             "Alsid",
             "Varonis",
+            "PAM",
             "CyberArk",
             "ELK",
             "EDR",
             "Threat Detection",
             "Incident Response",
             "System Hardening",
+            "Patch Management",
+            "SOC",
             "Firewalls",
             "Proxy",
           ],
@@ -444,7 +434,7 @@ export const CVData = {
             "IAM",
             "SCCM",
             "High Availability",
-            "Patching",
+            "Monitoring",
           ],
         },
         {
@@ -454,9 +444,12 @@ export const CVData = {
             "PowerShell",
             "Python",
             "Ansible",
+            "Bash",
+            "YAML",
             "REST APIs",
             "Git",
             "CI/CD",
+            "SQL Server",
             "Automation & Scripting",
           ],
         },
@@ -464,38 +457,16 @@ export const CVData = {
 
       experience: [
         {
-          period: "04/2026 - 07/2026",
-          company: "Maty",
-          role: "Full-Stack Developer C# .NET",
+          period: "05/2024 - 07/2026",
+          company: "Maty / Brain Eaters",
+          role: "Full-Stack C# .NET / React Developer",
           desc: [
-            "End-to-end development of business applications: analysis, design, development, testing and production deployment.",
-            "Design and development of .NET applications, REST APIs, business services and web interfaces.",
-            "Development of integration and automation workflows across multiple applications within the ecosystem.",
-            "Work with SQL Server and DB2 environments, including process and query optimization.",
-            "Contribution to the maintenance and evolution of existing applications in production environments.",
-          ],
-        },
-        {
-          period: "05/2024 - 04/2026",
-          company: "Independent Projects",
-          role: "Software Engineer",
-          desc: [
-            "Design and development of software projects using C#/.NET, React, Next.js and Node.js.",
-            "Design of modular architectures and development of complex systems.",
-            "API development, service integration and automation.",
-            "Independent management of the full project lifecycle, from design through deployment.",
+            "Design and development of applications using C#/.NET, React, TypeScript and Node.js.",
+            "Development of business applications, REST APIs and responsive web interfaces with a strong focus on UI/UX.",
+            "Software architecture design, service integration and process automation.",
+            "Unit and integration testing, Git, CI/CD and production deployment.",
+            "Development with SQL Server and DB2, including query and processing optimization.",
             "Projects: braineatersgame.com • paulnelaton.com",
-          ],
-        },
-        {
-          period: "09/2021 - 04/2024",
-          company: "Continuous Learning",
-          role: "Web Development & Modern Frameworks",
-          desc: [
-            "Continuous learning in software development and modern web technologies.",
-            "Hands-on practice with JavaScript / TypeScript, React, Node.js and modern web architectures.",
-            "Design and development of personal projects applying the technologies studied.",
-            "Continuous work on UI/UX, responsive design and digital product design.",
           ],
         },
         {
@@ -503,24 +474,24 @@ export const CVData = {
           company: "Vinci Autoroutes",
           role: "SecOps Engineer",
           desc: [
-            "Operational maintenance and security of critical high-availability infrastructure within an OIV environment.",
-            "Vulnerability management and remediation oversight using Qualys, Alsid and Varonis.",
-            "Designed and industrialized patch management and system hardening processes.",
-            "Administration and security of identities, permissions and privileged access (Active Directory, IAM, PAM / CyberArk).",
-            "Automated security controls, reporting and dashboards to improve operational efficiency.",
-            "Implemented log collection and analysis using ELK within a SOC environment.",
-            "Contributed to SOC implementation and handled L2/L3 security incidents.",
-            "Investigated and remediated real-world threats, including Emotet and CVE-2020-1472 (Netlogon).",
+            "Operational maintenance and security of high-availability critical infrastructure within an OIV environment.",
+            "Vulnerability management and remediation coordination using Qualys, Alsid and Varonis.",
+            "Design and implementation of industrialized patch management and system hardening processes.",
+            "Administration and security of identities, permissions and privileged access using Active Directory, IAM and PAM / CyberArk.",
+            "Automation of security controls, reporting and dashboards to improve operational efficiency.",
+            "Implementation of a centralized log collection and analysis solution using ELK within a SOC environment.",
+            "Contribution to SOC implementation and Level 2/3 security incident management.",
+            "Investigation and remediation of real-world threats, including Emotet and CVE-2020-1472 (Netlogon).",
           ],
         },
         {
           period: "08/2019 - 10/2019",
-          company: "Cyclad / Amadeus",
+          company: "Cyclad",
           role: "DevOps Engineer",
           desc: [
-            "Automated compliance controls for network and security devices using Ansible.",
-            "Developed Ansible playbooks and Bash/YAML scripts.",
-            "Analyzed and resolved incidents in production environments.",
+            "Automation of network and security equipment compliance controls using Ansible.",
+            "Development of Ansible playbooks and Bash/YAML scripts.",
+            "Analysis and resolution of incidents in production environments.",
           ],
         },
         {
@@ -528,11 +499,11 @@ export const CVData = {
           company: "British Telecom",
           role: "Cybersecurity & DevOps Engineer",
           desc: [
-            "Automated security incident detection and escalation workflows through REST APIs.",
-            "Integrated and interconnected RTIR, TheHive and ELK platforms.",
-            "Deployed and integrated the CyberArk PAM solution.",
-            "Contributed to PDIS security and compliance requirements.",
-            "Produced technical documentation in an international environment.",
+            "Automation of security incident detection and escalation workflows through REST APIs.",
+            "Integration and interconnection of RTIR, TheHive and ELK platforms.",
+            "Deployment and integration of the CyberArk PAM solution.",
+            "Contribution to PDIS security and compliance requirements.",
+            "Technical documentation in an international environment.",
           ],
         },
         {
@@ -540,12 +511,12 @@ export const CVData = {
           company: "Orange Cyberdefense",
           role: "Network Security Engineer",
           desc: [
-            "Maintained global security infrastructures for Air Liquide (international scope).",
-            "Administered network security solutions: firewalls (Check Point, Cisco ASA, Fortinet, Palo Alto), proxy (Zscaler) and secure DNS (F5).",
-            "Handled incidents and requests across multiple technologies (L1/L2), ensuring full resolution.",
-            "Analyzed client needs and adapted security solutions accordingly.",
-            "Used monitoring and management tools (Tufin, ServiceNow, Centreon, IPAM).",
-            "Operated on a large-scale perimeter: firewalls across Europe & America, global proxy and endpoint protection.",
+            "Operational maintenance of global security infrastructure for Air Liquide across an international environment.",
+            "Administration of network security solutions including firewalls (Check Point, Cisco ASA, Fortinet, Palo Alto), Zscaler proxy and secure DNS (F5).",
+            "Incident and service request management across multiple technologies (L1/L2), with end-to-end ownership through resolution.",
+            "Analysis of client requirements and implementation of appropriate security solutions.",
+            "Operation of management and monitoring tools including Tufin, ServiceNow, Centreon and IPAM.",
+            "Support across a global scope including firewalls in Europe and the Americas, proxy services and worldwide endpoint protection.",
           ],
         },
         {
@@ -553,16 +524,20 @@ export const CVData = {
           company: "5ème Avenue",
           role: "Network & VoIP Administrator",
           desc: [
-            "Deployed network, security and VoIP infrastructures for SME clients.",
-            "Planned, coordinated and executed technical interventions.",
-            "Interfaced with clients for requirement gathering and project follow-up.",
-            "Contributed to the design and launch of an IP telephony offering (XiVO).",
-            "Completed internal SFR training on telecom deployment project management.",
+            "Deployment of network, security and VoIP infrastructure for small and medium-sized businesses.",
+            "Planning, coordination and execution of technical deployments and on-site interventions.",
+            "Client-facing requirements gathering and project follow-up.",
+            "Contribution to the design and launch of an IP telephony service offering using XiVO.",
+            "Internal SFR training in project management fundamentals for telecom deployments.",
           ],
         },
       ],
 
       formations: [
+        {
+          year: "2017",
+          title: "Zscaler ZCCP-IA Certification",
+        },
         {
           year: "2016",
           title: "Systems, Networks & Security Administrator",
@@ -575,21 +550,20 @@ export const CVData = {
         },
         {
           year: "2014",
-          title: "DUT Computer Science",
-          school: "IUT of Belfort",
+          title: "DUT in Computer Science",
+          school: "IUT Belfort",
         },
       ],
 
       languages: [
         { name: "French", level: "Native" },
         { name: "English", level: "Fluent" },
-        { name: "Portuguese", level: "Fluent" },
       ],
 
       labels: {
         domains: "Areas of Expertise",
         technicalSkills: "Technical Skills",
-        education: "Education",
+        education: "Education & Certifications",
         languages: "Languages",
         experience: "Professional Experience",
       },
