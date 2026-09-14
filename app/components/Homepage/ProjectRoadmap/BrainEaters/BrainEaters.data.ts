@@ -14,11 +14,19 @@ export const brainEatersMedia: Record<BrainEatersSection, {
   placeholder: string;
   fit: "contain" | "cover";
 }> = {
-  overview: { placeholder: "Image 1", fit: "contain" },
-  gameplay: { placeholder: "Image 2", fit: "cover" },
-  cityBuilder: { placeholder: "Image 3", fit: "cover" },
-  procedural: { placeholder: "Image 4", fit: "cover" },
-  uiux: { placeholder: "Image 5", fit: "cover" },
+    overview: {
+    src: "/brain-eaters/brain-eaters-1.webp",
+    placeholder: "Brain Eaters",
+    fit: "cover",
+  },
+  gameplay: { 
+    src: "/brain-eaters/brain-eaters-2.webp",
+    placeholder: "Image 2", 
+    fit: "cover" 
+  },
+  cityBuilder: { src: "/brain-eaters/brain-eaters-3.webp", placeholder: "Image 3", fit: "cover" },
+  procedural: { src: "/brain-eaters/brain-eaters-4.webp", placeholder: "Image 4", fit: "cover" },
+  uiux: { src: "/brain-eaters/brain-eaters-5.webp", placeholder: "Image 5", fit: "cover" },
 };
 
 type Content = {
@@ -63,7 +71,7 @@ export const brainEatersData: Record<BrainEatersLanguage, Content> = {
       },
       gameplay: {
         eyebrow: "Gameplay",
-        description: "L’exploration et la collecte de ressources alimentent la construction et la progression. Inventaire, artisanat et coopération relient les décisions du joueur aux systèmes du monde, pour une expérience de survie pensée dans son ensemble.",
+        description: "L'exploration et la collecte de ressources alimentent la construction et la progression. Inventaire, artisanat et coopération relient les décisions du joueur aux systèmes du monde, pour une expérience de survie pensée dans son ensemble.",
         highlights: [
           { label: "Exploration", detail: "Découvrir & collecter" },
           { label: "Survie", detail: "Inventaire & artisanat" },
