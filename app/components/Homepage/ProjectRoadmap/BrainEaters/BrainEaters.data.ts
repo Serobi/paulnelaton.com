@@ -1,11 +1,15 @@
 export type BrainEatersSection = "overview" | "gameplay" | "cityBuilder" | "procedural" | "uiux";
 export type BrainEatersLanguage = "fr" | "en";
 
+type ProductAspect = { title: string; description: string };
+
 export type BrainEatersView = {
-  eyebrow: string;
-  description: string;
-  highlights: { label: string; detail: string }[];
-  metadata: string[];
+  functional: [ProductAspect, ProductAspect, ProductAspect];
+  technical: {
+    title: string;
+    description: string;
+    tags: string[];
+  };
 };
 
 // Add a public asset path to src. The overview contains the logo; the other views contain screenshots.
@@ -14,15 +18,15 @@ export const brainEatersMedia: Record<BrainEatersSection, {
   placeholder: string;
   fit: "contain" | "cover";
 }> = {
-    overview: {
+  overview: {
     src: "/brain-eaters/brain-eaters-1.webp",
     placeholder: "Brain Eaters",
     fit: "cover",
   },
-  gameplay: { 
+  gameplay: {
     src: "/brain-eaters/brain-eaters-2.webp",
-    placeholder: "Image 2", 
-    fit: "cover" 
+    placeholder: "Image 2",
+    fit: "cover"
   },
   cityBuilder: { src: "/brain-eaters/brain-eaters-3.webp", placeholder: "Image 3", fit: "cover" },
   procedural: { src: "/brain-eaters/brain-eaters-4.webp", placeholder: "Image 4", fit: "cover" },
@@ -60,54 +64,129 @@ export const brainEatersData: Record<BrainEatersLanguage, Content> = {
     ],
     sections: {
       overview: {
-        eyebrow: "Stratégie · Survie · Coopération",
-        description: "Brain Eaters est un jeu de stratégie et de survie en coopération, où exploration, construction et gestion se rencontrent. Un produit conçu de bout en bout, de la vision de jeu aux systèmes logiciels et à l’expérience joueur.",
-        highlights: [
-          { label: "Vision", detail: "Game design & mécaniques" },
-          { label: "Développement", detail: "Architecture & systèmes" },
-          { label: "Expérience", detail: "Interfaces & identité visuelle" },
+        functional: [
+          {
+            title: "Survie & stratégie",
+            description:
+              "Exploration, construction, gestion et survie dans un univers post-apocalyptique."
+          },
+          {
+            title: "PC & Mobile",
+            description:
+              "Une expérience pensée pour ordinateur et mobile, avec des interactions adaptées à chaque support."
+          },
+          {
+            title: "Coopération en ligne",
+            description:
+              "Les joueurs explorent, construisent et font progresser leur communauté ensemble."
+          },
         ],
-        metadata: ["Unity", "C#", "Conception produit"],
+        technical: {
+          title: "Conception & développement",
+          description:
+            "Développé sous Unity en C#, Brain Eaters est un projet conçu de bout en bout : architecture, systèmes de gameplay, multijoueur, génération du monde et interfaces. Son développement implique de faire évoluer des systèmes interdépendants tout en conservant une architecture cohérente et extensible.",
+          tags: ["Unity", "C#", ".NET", "Architecture", "Multiplayer", "PC / Mobile"],
+        },
       },
       gameplay: {
-        eyebrow: "Gameplay",
-        description: "L'exploration et la collecte de ressources alimentent la construction et la progression. Inventaire, artisanat et coopération relient les décisions du joueur aux systèmes du monde, pour une expérience de survie pensée dans son ensemble.",
-        highlights: [
-          { label: "Exploration", detail: "Découvrir & collecter" },
-          { label: "Survie", detail: "Inventaire & artisanat" },
-          { label: "Progression", detail: "Décisions & coopération" },
+        functional: [
+          {
+            title: "Explorer & survivre",
+            description:
+              "Explorer le monde, collecter des ressources et s'équiper pour survivre dans un environnement hostile."
+          },
+          {
+            title: "Construire & développer",
+            description:
+              "Construire la ville, gérer ses ressources et développer les infrastructures nécessaires à la communauté."
+          },
+          {
+            title: "Coopérer & progresser",
+            description:
+              "Agir seul ou en groupe pour faire progresser les survivants, la ville et débloquer de nouvelles possibilités."
+          },
         ],
-        metadata: ["Gameplay systems", "C#", "Game design"],
+        technical: {
+          title: "Des systèmes de gameplay interconnectés",
+          description:
+            "Le gameplay repose sur plusieurs systèmes qui évoluent ensemble : joueur, inventaire, ressources, construction, monde et progression. Le développement consiste autant à construire chaque système qu’à gérer leurs interactions au sein d’une même boucle de jeu.",
+          tags: ["Unity", "C#", "Gameplay Systems", "Architecture", "Game Design"],
+        },
       },
       cityBuilder: {
-        eyebrow: "City Builder",
-        description: "La construction prolonge la survie : organiser sa base, utiliser les ressources et faire évoluer la ville. Le travail porte sur les liens entre bâtiments, gestion et progression, pour donner du sens aux choix de développement.",
-        highlights: [
-          { label: "Construction", detail: "Bâtiments & organisation" },
-          { label: "Gestion", detail: "Ressources & arbitrages" },
-          { label: "Développement", detail: "Expansion & progression" },
+        functional: [
+          {
+            title: "Construire la ville",
+            description:
+              "Placer et construire les bâtiments qui permettent à la communauté de se développer."
+          },
+          {
+            title: "Gérer les ressources",
+            description:
+              "Produire, stocker et répartir les ressources nécessaires au fonctionnement et à l'expansion de la ville."
+          },
+          {
+            title: "Défendre",
+            description:
+              "Chaque nuit, la ville subit une attaque. Les survivants doivent progresser rapidement pour renforcer leurs défenses et survivre."
+          },
         ],
-        metadata: ["City building", "Simulation", "Systèmes de gestion"],
+        technical: {
+          title: "Un système de construction & de gestion",
+          description:
+            "Le City Builder combine placement des bâtiments, décorations, règles de construction, coûts et gestion des ressources. Son développement consiste à offrir aux joueurs un maximum de liberté dans la personnalisation et la progression de la ville.",
+          tags: ["Unity", "C#", "Building System", "Resource Management", "Game Design"],
+        },
       },
       procedural: {
-        eyebrow: "Map & Procedural",
-        description: "La génération procédurale structure le monde et ses biomes. Derrière l’exploration, des systèmes de génération, d’IA et de simulation composent un environnement dont la cohérence repose autant sur le design que sur l’architecture technique.",
-        highlights: [
-          { label: "Génération", detail: "Monde & biomes" },
-          { label: "Exploration", detail: "Structure & découverte" },
-          { label: "Technique", detail: "IA & simulation" },
+        functional: [
+          {
+            title: "Générer le monde",
+            description:
+              "Chaque partie génère un nouveau monde composé de différents environnements, ressources et zones à explorer."
+          },
+          {
+            title: "Explorer",
+            description:
+              "Les survivants explorent la carte à la recherche de ressources, de lieux et d'opportunités utiles au développement de la ville."
+          },
+          {
+            title: "Renouveler les parties",
+            description:
+              "La génération procédurale renouvelle la carte et les situations rencontrées pour rendre chaque partie différente."
+          },
         ],
-        metadata: ["Génération procédurale", "Unity", "Architecture"],
+        technical: {
+          title: "Génération procédurale du monde",
+          description:
+            "Le monde est généré dynamiquement à partir d'un ensemble de règles définissant sa structure, ses environnements et la répartition de ses éléments. L’objectif est de produire des cartes variées et cohérentes tout en conservant suffisamment de contrôle sur la génération pour servir le gameplay.",
+          tags: ["Unity", "C#", "Procedural Generation", "Algorithms", "World Design"],
+        },
       },
       uiux: {
-        eyebrow: "UI / UX & Design",
-        description: "Les interfaces accompagnent les mécaniques du jeu : consulter un inventaire, comprendre une action, naviguer dans les systèmes. UI, UX et identité visuelle sont travaillées ensemble pour construire une expérience cohérente et faciliter la lecture du jeu.",
-        highlights: [
-          { label: "Interfaces", detail: "HUD, menus & inventaire" },
-          { label: "Lisibilité", detail: "Hiérarchie & feedbacks" },
-          { label: "Identité", detail: "Cohérence visuelle" },
+        functional: [
+          {
+            title: "Informer",
+            description:
+              "Présenter clairement les ressources, états et informations nécessaires aux décisions du joueur."
+          },
+          {
+            title: "Interagir",
+            description:
+              "Permettre d'agir rapidement sur les différents systèmes, de l'inventaire à la gestion de la ville."
+          },
+          {
+            title: "Guider",
+            description:
+              "Donner un retour clair sur les actions du joueur et rendre les mécaniques du jeu faciles à comprendre."
+          },
         ],
-        metadata: ["UI / UX", "Design visuel", "Expérience joueur"],
+        technical: {
+          title: "Conception des interfaces & expérience utilisateur",
+          description:
+            "Les interfaces relient le joueur aux différents systèmes de Brain Eaters : inventaire, ressources, construction, progression et gestion de la ville. Leur conception vise à rendre cette quantité d’informations accessible et intuitive, tout en conservant une identité visuelle cohérente sur PC et mobile.",
+          tags: ["UI / UX", "Unity", "PC / Mobile", "Interaction Design", "Visual Design"],
+        },
       },
     },
   },
@@ -126,54 +205,64 @@ export const brainEatersData: Record<BrainEatersLanguage, Content> = {
     ],
     sections: {
       overview: {
-        eyebrow: "Strategy · Survival · Cooperation",
-        description: "Brain Eaters is a cooperative strategy and survival game, bringing together exploration, building and management. A product designed end to end, from the game vision to software systems and the player experience.",
-        highlights: [
-          { label: "Vision", detail: "Game design & mechanics" },
-          { label: "Development", detail: "Architecture & systems" },
-          { label: "Experience", detail: "Interfaces & visual identity" },
+        functional: [
+          { title: "Survival & strategy game", description: "An experience combining exploration, building, management and survival in a post-apocalyptic world." },
+          { title: "PC & Mobile", description: "An experience designed for desktop and mobile, with interfaces and interaction methods tailored to each platform." },
+          { title: "Online cooperation", description: "A multiplayer experience in which players explore, build and develop their community together." },
         ],
-        metadata: ["Unity", "C#", "Product design"],
+        technical: {
+          title: "Design & development",
+          description: "Brain Eaters is developed in C# with Unity and spans multiple aspects of a software product: game design, gameplay systems, multiplayer, building, world generation and interfaces. The project requires many systems to evolve and communicate within a shared architecture.",
+          tags: ["Unity", "C#", "PC / Mobile", "Multiplayer", "Architecture"],
+        },
       },
       gameplay: {
-        eyebrow: "Gameplay",
-        description: "Exploration and resource gathering feed into building and progression. Inventory, crafting and cooperation connect player decisions to the systems of the world, shaping a cohesive survival experience.",
-        highlights: [
-          { label: "Exploration", detail: "Discover & gather" },
-          { label: "Survival", detail: "Inventory & crafting" },
-          { label: "Progression", detail: "Decisions & cooperation" },
+        functional: [
+          { title: "Exploration & gathering", description: "Explore the world, discover resources and gather the materials needed for survival and development." },
+          { title: "Survival & crafting", description: "Manage inventory and equipment, use gathered resources and craft the items needed to progress." },
+          { title: "Shared progression", description: "Individual actions contribute to the development of the city and the progression of the group." },
         ],
-        metadata: ["Gameplay systems", "C#", "Game design"],
+        technical: {
+          title: "Gameplay systems development",
+          description: "Development connects exploration, gathering, inventory and crafting to player and group progression. This section covers the interactions between these mechanics, from game design to their implementation in C# with Unity.",
+          tags: ["Unity", "C#", "Gameplay Systems", "Game design"],
+        },
       },
       cityBuilder: {
-        eyebrow: "City Builder",
-        description: "Building extends the survival experience: organise a base, use resources and develop the city. The focus is on connecting buildings, management and progression to make development choices meaningful.",
-        highlights: [
-          { label: "Building", detail: "Structures & organisation" },
-          { label: "Management", detail: "Resources & trade-offs" },
-          { label: "Development", detail: "Expansion & progression" },
+        functional: [
+          { title: "Building", description: "Place buildings and organise the development of the city to support the community." },
+          { title: "Resources", description: "Consider the costs, production and needs associated with the development of the city." },
+          { title: "Management & growth", description: "Develop the city while accounting for the links between buildings, resources and community needs." },
         ],
-        metadata: ["City building", "Simulation", "Management systems"],
+        technical: {
+          title: "Building & management systems",
+          description: "The work focuses on the links between buildings, resource management and progression. Building integrates with the other game mechanics to make city development choices meaningful.",
+          tags: ["City building", "Game design", "Management systems"],
+        },
       },
       procedural: {
-        eyebrow: "Map & Procedural",
-        description: "Procedural generation structures the world and its biomes. Behind exploration, generation, AI and simulation systems compose an environment whose coherence depends on both design and technical architecture.",
-        highlights: [
-          { label: "Generation", detail: "World & biomes" },
-          { label: "Exploration", detail: "Structure & discovery" },
-          { label: "Technology", detail: "AI & simulation" },
+        functional: [
+          { title: "World generation", description: "Compose the explorable world and its biomes to provide a setting for survival and development." },
+          { title: "Exploration", description: "Discover the environment and its resources to guide the decisions of players and their group." },
+          { title: "Variety across playthroughs", description: "World generation aims to offer different exploration situations and development choices from one playthrough to the next." },
         ],
-        metadata: ["Procedural generation", "Unity", "Architecture"],
+        technical: {
+          title: "Procedural world generation",
+          description: "Procedural generation structures the world and its biomes. The work combines world design and Unity development to connect environment generation with the exploration experience.",
+          tags: ["Procedural generation", "Unity", "World design"],
+        },
       },
       uiux: {
-        eyebrow: "UI / UX & Design",
-        description: "Interfaces support the mechanics of the game: checking inventory, understanding an action and navigating systems. UI, UX and visual identity are designed together to create a consistent, readable player experience.",
-        highlights: [
-          { label: "Interfaces", detail: "HUD, menus & inventory" },
-          { label: "Clarity", detail: "Hierarchy & feedback" },
-          { label: "Identity", detail: "Visual consistency" },
+        functional: [
+          { title: "Information", description: "Make resources, states and the data needed for player decisions easy to read." },
+          { title: "Interaction", description: "Let players act quickly on game systems, from inventory to management interfaces." },
+          { title: "Feedback", description: "Make the consequences of actions understandable through visual hierarchy and clear feedback." },
         ],
-        metadata: ["UI / UX", "Visual design", "Player experience"],
+        technical: {
+          title: "Interface design",
+          description: "Interfaces support the mechanics of the game: checking inventory, understanding an action and navigating systems. UI, UX and visual identity are designed together to create a consistent, readable player experience.",
+          tags: ["UI / UX", "Visual design", "Player experience"],
+        },
       },
     },
   },

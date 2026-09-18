@@ -212,27 +212,31 @@ export default function BrainEaters({ lang = "fr", stageRef, phase, onBack }: Br
               const view = content.sections[section];
               const media = brainEatersMedia[section];
               const active = section === displayedSection;
+              const sectionTitle = section === "overview" ? content.overviewLabel : content.navigation.find((item) => item.id === section)?.label;
               return (
                 <article key={section} id={`${prefix}-${section}`} className={styles.panel}
                   aria-labelledby={`${prefix}-title`} aria-hidden={!active} inert={!active}
                   style={{ visibility: active ? "visible" : "hidden" }}>
                   <motion.div className={styles.visualTile} data-fit={media.fit} custom={0}
                     initial={incoming} animate={tiles}>
-                    {media.src ? <Image src={media.src} alt={`${currentTitle} — Brain Eaters`} fill
+                    <div className={styles.visualFrame}>
+                    {media.src ? <Image src={media.src} alt={`${sectionTitle} — Brain Eaters`} fill
                       sizes="(max-width: 560px) 180px, (max-width: 900px) 26vw, 230px" className={styles.image} /> : (
                       <div className={styles.placeholder}><span>{media.placeholder}</span>
-                        <small>{section === "overview" ? "Brain Eaters" : view.eyebrow}</small></div>
+                        <small>{section === "overview" ? "Brain Eaters" : sectionTitle}</small></div>
                     )}
+                    </div>
                   </motion.div>
                   <motion.aside className={styles.sideTile} custom={1} initial={incoming} animate={tiles}
-                    aria-label={view.eyebrow}>
+                    aria-label={sectionTitle}>
                     <dl className={styles.highlights}>
-                      {view.highlights.map((item) => <div key={item.label}><dt>{item.label}</dt><dd>{item.detail}</dd></div>)}
+                      {view.functional.map((item) => <div key={item.title}><dt>{item.title}</dt><dd>{item.description}</dd></div>)}
                     </dl>
                   </motion.aside>
                   <motion.div className={styles.mainTile} custom={2} initial={incoming} animate={tiles}>
-                    <p className={styles.description}>{view.description}</p>
-                    <ul className={styles.metadata}>{view.metadata.map((item) => <li key={item}>{item}</li>)}</ul>
+                    <h3 className={styles.technicalTitle}>{view.technical.title}</h3>
+                    <p className={styles.description}>{view.technical.description}</p>
+                    <ul className={styles.metadata}>{view.technical.tags.map((item) => <li key={item}>{item}</li>)}</ul>
                   </motion.div>
                 </article>
               );
