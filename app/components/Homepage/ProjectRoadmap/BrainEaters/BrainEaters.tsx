@@ -256,6 +256,16 @@ export default function BrainEaters({ lang = "fr", stageRef, phase, onBack }: Br
           ))}
         </nav>
       </motion.div>
+      <nav className={styles.mobileNavigation} aria-label={content.explore}
+        style={{ visibility: revealed ? "visible" : "hidden" }}>
+        {[{ id: "overview" as const, label: content.overviewLabel }, ...content.navigation].map((item) => (
+          <button key={item.id} type="button" className={styles.mobileNavItem}
+            aria-pressed={activeSection === item.id} aria-controls={`${prefix}-${item.id}`}
+            onClick={() => setActiveSection(item.id)}>
+            {item.id === "uiux" ? "UI/UX" : item.label}
+          </button>
+        ))}
+      </nav>
       {onBack && <motion.button type="button" className={styles.back} onClick={onBack}
         {...entrance(.66)}><span aria-hidden="true">← </span>{content.back}</motion.button>}
     </section>
