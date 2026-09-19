@@ -207,9 +207,7 @@ export default function BrainEaters({ lang = "fr", stageRef, phase, onBack }: Br
   });
 
   const currentTitle =
-    displayedSection === "overview"
-      ? content.overviewLabel
-      : content.navigation.find((item) => item.id === displayedSection)?.label;
+    content.navigation.find((item) => item.id === displayedSection)?.label;
 
   return (
     <section className={styles.root} aria-label="Brain Eaters" data-active-section={activeSection}
@@ -234,7 +232,7 @@ export default function BrainEaters({ lang = "fr", stageRef, phase, onBack }: Br
               const view = content.sections[section];
               const media = brainEatersMedia[section];
               const active = section === displayedSection;
-              const sectionTitle = section === "overview" ? content.overviewLabel : content.navigation.find((item) => item.id === section)?.label;
+              const sectionTitle = content.navigation.find((item) => item.id === section)?.label;
               return (
                 <article key={section} id={`${prefix}-${section}`} className={styles.panel}
                   aria-labelledby={`${prefix}-title`} aria-hidden={!active} inert={!active}
@@ -242,11 +240,11 @@ export default function BrainEaters({ lang = "fr", stageRef, phase, onBack }: Br
                   <motion.div className={styles.visualTile} data-fit={media.fit} custom={0}
                     initial={incoming} animate={tiles}>
                     <div className={styles.visualFrame}>
-                    {media.src ? <Image src={media.src} alt={`${sectionTitle} — Brain Eaters`} fill
-                      sizes="(max-width: 560px) 180px, (max-width: 900px) 26vw, 230px" className={styles.image} /> : (
-                      <div className={styles.placeholder}><span>{media.placeholder}</span>
-                        <small>{section === "overview" ? "Brain Eaters" : sectionTitle}</small></div>
-                    )}
+                      {media.src ? <Image src={media.src} alt={`${sectionTitle} — Brain Eaters`} fill
+                        sizes="(max-width: 560px) 180px, (max-width: 900px) 26vw, 230px" className={styles.image} /> : (
+                        <div className={styles.placeholder}><span>{media.placeholder}</span>
+                          <small>{section === "overview" ? "Brain Eaters" : sectionTitle}</small></div>
+                      )}
                     </div>
                   </motion.div>
                   <motion.aside className={styles.sideTile} custom={1} initial={incoming} animate={tiles}
@@ -278,12 +276,21 @@ export default function BrainEaters({ lang = "fr", stageRef, phase, onBack }: Br
           ))}
         </nav>
       </motion.div>
-      <nav ref={mobileNavigationRef} className={styles.mobileNavigation} aria-label={content.explore}
-        style={{ visibility: revealed ? "visible" : "hidden" }}>
-        {[{ id: "overview" as const, label: content.overviewLabel }, ...content.navigation].map((item) => (
-          <button key={item.id} type="button" className={styles.mobileNavItem}
-            aria-pressed={activeSection === item.id} aria-controls={`${prefix}-${item.id}`}
-            onClick={() => setActiveSection(item.id)}>
+      <nav
+        ref={mobileNavigationRef}
+        className={styles.mobileNavigation}
+        aria-label={content.explore}
+        style={{ visibility: revealed ? "visible" : "hidden" }}
+      >
+        {content.navigation.map((item) => (
+          <button
+            key={item.id}
+            type="button"
+            className={styles.mobileNavItem}
+            aria-pressed={activeSection === item.id}
+            aria-controls={`${prefix}-${item.id}`}
+            onClick={() => setActiveSection(item.id)}
+          >
             {item.id === "uiux" ? "UI/UX" : item.label}
           </button>
         ))}

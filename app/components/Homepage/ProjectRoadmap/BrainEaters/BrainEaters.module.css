@@ -343,32 +343,30 @@
     display: none;
   }
 
-.mobileNavigation {
-  display: flex;
-  overflow-x: auto;
-  overscroll-behavior-x: contain;
+  .mobileNavigation {
+    display: flex;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
 
-  scrollbar-width: none;
+    scrollbar-width: none;
 
-  position: fixed;
-  z-index: 50;
-  inset: auto 0 0;
+    position: fixed;
+    z-index: 50;
+    inset: auto 0 0;
 
-  height: calc(var(--mobile-nav-height) + env(safe-area-inset-bottom, 0px));
-  padding:
-    8px max(6px, env(safe-area-inset-right, 0px))
-    calc(8px + env(safe-area-inset-bottom, 0px))
-    max(6px, env(safe-area-inset-left, 0px));
+    height: calc(var(--mobile-nav-height) + env(safe-area-inset-bottom, 0px));
+    padding:
+      8px max(6px, env(safe-area-inset-right, 0px)) calc(8px + env(safe-area-inset-bottom, 0px)) max(6px, env(safe-area-inset-left, 0px));
 
-  gap: 3px;
-  border-top: 1px solid #94a9c32a;
-  background: #0c1118f5;
-  backdrop-filter: blur(12px);
-}
+    gap: 3px;
+    border-top: 1px solid #94a9c32a;
+    background: #0c1118f5;
+    backdrop-filter: blur(12px);
+  }
 
-.mobileNavigation::-webkit-scrollbar {
-  display: none;
-}
+  .mobileNavigation::-webkit-scrollbar {
+    display: none;
+  }
 
   .mobileNavItem {
     flex: 1 0 auto;
@@ -475,8 +473,8 @@
 
   .metadata li:hover {
     color: var(--be-accent);
-    border-color: #c9b18335;
-    background: #c9b18309;
+    border-color: #d8c49a35;
+    background: #d8c49a09;
   }
 
   .back:hover {
@@ -489,7 +487,8 @@
 @media (prefers-reduced-motion: reduce) {
 
   .root *,
-  .root *::before {
+  .root *::before,
+  .root *::after {
     transition: none !important;
   }
 

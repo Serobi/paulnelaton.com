@@ -37,11 +37,10 @@ type Content = {
   category: string;
   projectContext: string;
   overview: string;
-  overviewLabel: string;
   back: string;
   explore: string;
   navigation: {
-    id: Exclude<BrainEatersSection, "overview">;
+    id: BrainEatersSection;
     label: string;
     detail: string;
   }[];
@@ -53,14 +52,34 @@ export const brainEatersData: Record<BrainEatersLanguage, Content> = {
     category: "Projet indépendant · 2024 — 2026",
     projectContext: "Survie · Stratégie · Coopération",
     overview: "Revenir à la présentation de Brain Eaters",
-    overviewLabel: "Présentation",
     back: "Revenir au parcours",
     explore: "Explorer le projet",
     navigation: [
-      { id: "gameplay", label: "Gameplay", detail: "Survie & coopération" },
-      { id: "cityBuilder", label: "City Builder", detail: "Construction & gestion" },
-      { id: "procedural", label: "Map & Procedural", detail: "Monde & exploration" },
-      { id: "uiux", label: "UI / UX & Design", detail: "Interfaces & expérience" },
+      {
+        id: "overview",
+        label: "Présentation",
+        detail: "Le projet"
+      },
+      {
+        id: "gameplay",
+        label: "Gameplay",
+        detail: "Survie & coopération"
+      },
+      {
+        id: "cityBuilder",
+        label: "City Builder",
+        detail: "Construction & gestion"
+      },
+      {
+        id: "procedural",
+        label: "Map & Procedural",
+        detail: "Monde & exploration"
+      },
+      {
+        id: "uiux",
+        label: "UI / UX & Design",
+        detail: "Interfaces & expérience"
+      },
     ],
     sections: {
       overview: {
@@ -194,10 +213,14 @@ export const brainEatersData: Record<BrainEatersLanguage, Content> = {
     category: "Independent project · 2024 — 2026",
     projectContext: "Survival · Strategy · Cooperation",
     overview: "Back to the Brain Eaters overview",
-    overviewLabel: "Overview",
     back: "Back to the journey",
     explore: "Explore the project",
     navigation: [
+      {
+        id: "overview",
+        label: "Overview",
+        detail: "The project"
+      },
       { id: "gameplay", label: "Gameplay", detail: "Survival & cooperation" },
       { id: "cityBuilder", label: "City Builder", detail: "Building & management" },
       { id: "procedural", label: "Map & Procedural", detail: "World & exploration" },
