@@ -21,6 +21,7 @@ const incoming = { opacity: 0, x: -8, y: 14, scale: .985 };
 
 export default function BrainEaters({ lang = "fr", stageRef, phase, onBack }: BrainEatersProps) {
   const localRef = useRef<HTMLDivElement | null>(null);
+  const mobileNavigationRef = useRef<HTMLElement | null>(null);
   const rootRef = stageRef ?? localRef;
   const inView = useInView(rootRef, { once: true, amount: .15 });
   const revealed = phase ? phase === "revealing" || phase === "ready" : inView;
@@ -32,6 +33,27 @@ export default function BrainEaters({ lang = "fr", stageRef, phase, onBack }: Br
   const title = useAnimationControls();
   const prefix = useId();
   const content = brainEatersData[lang];
+
+  useEffect(() => {
+    if (!revealed) return;
+    const centerSelection = (smooth: boolean) => {
+      const navigation = mobileNavigationRef.current;
+      const selected = navigation?.querySelector<HTMLElement>('[aria-pressed="true"]');
+      if (!navigation || !selected || navigation.clientWidth === 0 || navigation.scrollWidth <= navigation.clientWidth) return;
+      const bar = navigation.getBoundingClientRect();
+      const item = selected.getBoundingClientRect();
+      const target = navigation.scrollLeft + item.left - bar.left - navigation.clientLeft
+        - (navigation.clientWidth - item.width) / 2;
+      navigation.scrollTo({
+        left: Math.max(0, Math.min(target, navigation.scrollWidth - navigation.clientWidth)),
+        behavior: smooth && !reduced ? "smooth" : "instant",
+      });
+    };
+    centerSelection(true);
+    const onResize = () => centerSelection(false);
+    window.addEventListener("resize", onResize);
+    return () => window.removeEventListener("resize", onResize);
+  }, [activeSection, revealed, reduced, lang]);
 
   // Await the outgoing tiles before replacing content. Cleanup cancels stale
   // selections, including fast clicks and leaving the Roadmap chapter.
@@ -256,7 +278,7 @@ export default function BrainEaters({ lang = "fr", stageRef, phase, onBack }: Br
           ))}
         </nav>
       </motion.div>
-      <nav className={styles.mobileNavigation} aria-label={content.explore}
+      <nav ref={mobileNavigationRef} className={styles.mobileNavigation} aria-label={content.explore}
         style={{ visibility: revealed ? "visible" : "hidden" }}>
         {[{ id: "overview" as const, label: content.overviewLabel }, ...content.navigation].map((item) => (
           <button key={item.id} type="button" className={styles.mobileNavItem}
